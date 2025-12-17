@@ -71,14 +71,14 @@ export default function ExperienceBlock({
             // Style the control button to match your dimmed text style
             styles={{
               control: {
-                fontSize: 'var(--mantine-font-size-xs)',
-                color: 'var(--mantine-color-dimmed)',
-                marginTop: 0,
+                fontSize: 'var(--mantine-font-size-sm)',
+                marginTop: 4,
                 marginLeft: 20,
+                color: 'var(--mantine-color-dimmed)',
               },
             }}
           >
-            <List spacing={6} size="xs" center={false}>
+            <List spacing={6} size="sm" center={false}>
               {bullets.map((item, index) => (
                 <List.Item key={index} style={{ lineHeight: 1.4, opacity: 0.85 }}>
                   {item}

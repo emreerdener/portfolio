@@ -1,12 +1,17 @@
 // src/components/Shell.tsx
 'use client';
 
+import { IconFile, IconUserCircle } from '@tabler/icons-react';
 import {
   AppShell,
   Burger,
+  Button,
+  Divider,
   Group,
   Image,
   Overlay,
+  ScrollArea,
+  Space,
   Stack,
   Text,
   Title,
@@ -14,6 +19,8 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import AboutMe from '../features/AboutMe';
+import Education from '../features/Experience/Education';
 import Experience from '../features/Experience/Experience';
 import NavContent from './NavContent';
 import classes from './layout.module.css';
@@ -26,7 +33,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       layout="alt"
       header={{ height: 86 }}
       navbar={{ width: 268, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-      aside={{ width: 380, breakpoint: 'md', collapsed: { desktop: false, mobile: true } }}
+      aside={{ width: 480, breakpoint: 'xl', collapsed: { desktop: false, mobile: true } }}
       padding="xl"
       className={classes.shell}
     >
@@ -39,7 +46,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <UnstyledButton onClick={toggle} className={classes.headerButton}>
           <Group gap="xs">
             <Image
-              src="/images/amos.jpg"
+              src="/images/profile-pic.png"
               alt="Profile picture"
               w={40}
               h={40}
@@ -80,7 +87,26 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </AppShell.Navbar>
       <AppShell.Main className={classes.main}>{children}</AppShell.Main>
       <AppShell.Aside className={classes.aside}>
-        <Experience />
+        <ScrollArea type="never" h="100%">
+          <Stack gap={0}>
+            <AboutMe />
+            <Divider />
+            <Experience />
+            <Divider />
+            <Education />
+            <Divider />
+            <Stack gap="lg" p="xl">
+              <Button size="lg" leftSection={<IconFile size={24} />}>
+                View resume
+              </Button>
+              <Button size="lg" variant="outline" leftSection={<IconUserCircle size={24} />}>
+                View profile
+              </Button>
+            </Stack>
+
+            <Space h="xl" />
+          </Stack>
+        </ScrollArea>
       </AppShell.Aside>
     </AppShell>
   );

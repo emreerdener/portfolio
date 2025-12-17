@@ -8,7 +8,7 @@ export default function NavContent() {
     <>
       <Stack align="center">
         <Image
-          src="/images/amos.jpg"
+          src="/images/profile-pic.png"
           alt="Profile picture"
           w={160}
           h={160}
@@ -17,7 +17,7 @@ export default function NavContent() {
           className={classes.profilepic}
         />
         <Stack gap={0} align="center">
-          <Title order={3} ta="center">
+          <Title order={2} ta="center">
             Emre Erdener
           </Title>
           <Text size="sm" ta="center" c="dimmed">

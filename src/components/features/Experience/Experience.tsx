@@ -1,5 +1,5 @@
-import { IconDownload, IconFile, IconUserCircle } from '@tabler/icons-react';
-import { Button, Divider, Group, ScrollArea, Space, Stack, Title } from '@mantine/core';
+import { IconDownload } from '@tabler/icons-react';
+import { Button, Group, Stack, Title } from '@mantine/core';
 import ExperienceBlock from './ExperienceBlock';
 
 const jobs = [
@@ -23,8 +23,8 @@ const jobs = [
     location: 'Remote',
     logoSrc: '/images/logos/shopify.jpg',
     bullets: [
+      'Led design for several key projects on the Monetization team. All key metrics and signup rates surpassed our goals, breaking company performance records.',
       'Researched, designed, prototyped, tested, and shipped a merchant referral program. The feature is a successful growth lever, continuing to increase signups, user retention, and user engagement.',
-      'Led design for several key projects on the Monetization team during an org-wide “code red.” All key metrics and signup rates surpassed our goals, breaking company records and successfully ending the code red.',
       'Spearheaded the redesign and successful launch of an improved admin checkout experience for both new and existing users of the product.',
       'Designed, tested, and shipped conversion rate optimizations for shopify.com/pricing. The results led the direction for the redesign and implementation with the rebrand and website 3.0 launch.',
       'Champion of a CMS internal tool for the Website Platform team. I published weekly status updates to the team and leadership. I designed the app, documented components and user flows, presented interactive prototypes, and organized project deliverables.',
@@ -64,62 +64,24 @@ const jobs = [
   },
 ];
 
-const education = [
-  {
-    role: 'Bachelor of Arts - BA, Philosophy',
-    company: 'The University of Texas at Austin',
-    date: '2007 - 2012',
-    location: 'Austin, TX',
-    bullets: [],
-    logoSrc: '/images/logos/UT.jpg',
-  },
-];
-
 export default function Experience() {
   return (
-    <ScrollArea type="never" h="100%">
-      <Stack gap="xl" p="lg">
-        {/* Experience */}
-        <Group justify="space-between" w="100%">
-          <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
-            Experience
-          </Title>
-
-          <Button size="compact-sm" variant="subtle" rightSection={<IconDownload size={16} />}>
-            Download PDF
-          </Button>
-        </Group>
-        <Stack gap="lg">
-          {jobs.map((job, index) => (
-            <ExperienceBlock key={index} {...job} />
-          ))}
-        </Stack>
-
-        <Divider />
-
-        {/* Education */}
+    <Stack gap="xl" p="xl">
+      {/* Experience */}
+      <Group justify="space-between" w="100%">
         <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
-          Education
+          Experience
         </Title>
-        <Stack gap="md">
-          {education.map((edu, index) => (
-            <ExperienceBlock key={index} {...edu} />
-          ))}
-        </Stack>
 
-        <Divider />
-
-        <Stack gap="md">
-          <Button size="lg" leftSection={<IconFile size={24} />}>
-            View resume
-          </Button>
-          <Button size="lg" variant="outline" leftSection={<IconUserCircle size={24} />}>
-            View profile
-          </Button>
-        </Stack>
+        <Button size="compact-sm" variant="light" rightSection={<IconDownload size={16} />}>
+          Download PDF
+        </Button>
+      </Group>
+      <Stack gap="xl">
+        {jobs.map((job, index) => (
+          <ExperienceBlock key={index} {...job} />
+        ))}
       </Stack>
-
-      <Space h="xl" />
-    </ScrollArea>
+    </Stack>
   );
 }
