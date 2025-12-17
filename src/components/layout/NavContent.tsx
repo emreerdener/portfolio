@@ -10,8 +10,8 @@ export default function NavContent() {
         <Image
           src="/images/profile-pic.png"
           alt="Profile picture"
-          w={160}
-          h={160}
+          w={140}
+          h={140}
           radius="100%"
           fit="cover"
           className={classes.profilepic}
@@ -21,7 +21,7 @@ export default function NavContent() {
             Emre Erdener
           </Title>
           <Text size="sm" ta="center" c="dimmed">
-            Product Designer
+            erdener.emre@gmail.com
           </Text>
         </Stack>
         <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing="xs">

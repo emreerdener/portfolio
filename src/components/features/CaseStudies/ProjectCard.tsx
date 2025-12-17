@@ -4,12 +4,11 @@ import { ActionIcon, AspectRatio, Group, Image, Paper, Stack, Text, Title } from
 interface ProjectCardProps {
   title: string;
   company: string;
-  date: string;
   imageSrc?: string;
   logoSrc?: string;
 }
 
-export default function ProjectCard({ title, company, date, imageSrc, logoSrc }: ProjectCardProps) {
+export default function ProjectCard({ title, company, imageSrc, logoSrc }: ProjectCardProps) {
   return (
     <Paper shadow="sm" radius="xl" withBorder style={{ overflow: 'hidden' }}>
       <AspectRatio ratio={16 / 10}>
@@ -23,7 +22,7 @@ export default function ProjectCard({ title, company, date, imageSrc, logoSrc }:
         />
       </AspectRatio>
 
-      <Group p="lg" wrap="nowrap" justify="space-between">
+      <Group p="lg" wrap="nowrap" gap="xs" justify="space-between">
         {/* Left */}
         <Group wrap="nowrap">
           <Image
@@ -34,7 +33,7 @@ export default function ProjectCard({ title, company, date, imageSrc, logoSrc }:
             radius={12}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
-          <Stack gap={0}>
+          <Stack gap={4}>
             <Title order={4} lineClamp={1}>
               {title}
             </Title>
@@ -42,12 +41,6 @@ export default function ProjectCard({ title, company, date, imageSrc, logoSrc }:
             <Group gap={6} wrap="nowrap" align="center">
               <Text size="md" c="dimmed" lineClamp={1}>
                 {company}
-              </Text>
-              <Text size="md" c="dimmed">
-                •
-              </Text>
-              <Text size="md" c="dimmed">
-                {date}
               </Text>
             </Group>
           </Stack>

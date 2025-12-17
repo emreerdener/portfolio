@@ -52,7 +52,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                 Emre Erdener
               </Title>
               <Text size="xs" c="dimmed">
-                Product Designer
+                erdener.emre@gmail.com
               </Text>
             </Stack>
           </Group>
@@ -73,7 +73,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </Transition>
 
       <AppShell.Navbar className={classes.navbar}>
-        <Stack className={classes.navbarContainer}>
+        <Stack gap={0} className={classes.navbarContainer}>
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <NavContent />
         </Stack>
