@@ -1,13 +1,5 @@
 import { IconBook, IconPlayerPlay, IconSparkles2, IconUserCircle } from '@tabler/icons-react';
-import {
-  Button,
-  Image as MantineImage,
-  NavLink,
-  SimpleGrid,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Button, Image, NavLink, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
@@ -15,7 +7,7 @@ export default function NavContent() {
   return (
     <>
       <Stack align="center">
-        <MantineImage
+        <Image
           src="/images/amos.jpg"
           alt="Profile picture"
           w={160}
@@ -32,7 +24,7 @@ export default function NavContent() {
             Product Designer
           </Text>
         </Stack>
-        <SimpleGrid w="100%" cols={{ base: 1, xs: 2, sm: 1 }} spacing="xs">
+        <SimpleGrid maw={200} w="100%" cols={{ base: 1 }} spacing="xs">
           <NavLink
             href="#required-for-focus"
             label="Featured work"
@@ -53,16 +45,16 @@ export default function NavContent() {
           />
           <NavLink
             href="#required-for-focus"
-            label="About me"
+            label="Profile"
             rightSection={<IconUserCircle size={24} />}
             className={classes.navlink}
           />
         </SimpleGrid>
         <Stack maw={200} w="100%">
-          <ThemeSwitch />
           <Button size="sm" radius="md" w="100%">
             Email me
           </Button>
+          <ThemeSwitch />
         </Stack>
       </Stack>
     </>

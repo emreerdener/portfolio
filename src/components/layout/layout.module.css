@@ -1,3 +1,32 @@
+.navbar {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  padding: var(--mantine-spacing-xl);
+  padding-right: 0;
+}
+.navbarContainer {
+  border: 1px solid var(--app-shell-border-color);
+  border-radius: 24px;
+  padding: var(--mantine-spacing-lg);
+  box-shadow: var(--mantine-shadow-md);
+  background: light-dark(#ffffff, var(--mantine-color-dark-7));
+}
+
+.header {
+  border-bottom: 0;
+  background-color: transparent;
+  padding: var(--mantine-spacing-lg);
+}
+.headerButton {
+  padding: var(--mantine-spacing-sm);
+  padding-right: var(--mantine-spacing-md);
+  border-radius: var(--mantine-radius-lg);
+  background-color: var(--mantine-color-body);
+  border: 1px solid var(--app-shell-border-color);
+  box-shadow: var(--mantine-shadow-xs);
+}
+
 .navlink {
   border-radius: 8px;
   align-items: center;
@@ -13,12 +42,19 @@
   flex: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .navlink {
-    justify-content: center;
+.profilepic {
+  border: 1px solid var(--app-shell-border-color);
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-top: var(--mantine-spacing-xl) !important;
   }
 }
 
-.profilepic {
-  border: 1px solid var(--app-shell-border-color);
+@media (max-width: 768px) {
+  .main {
+    padding-left: var(--mantine-spacing-lg);
+    padding-right: var(--mantine-spacing-lg);
+  }
 }
