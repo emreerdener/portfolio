@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, company, imageSrc, logoSrc }: ProjectCardProps) {
   return (
-    <Paper shadow="sm" radius="xl" withBorder style={{ overflow: 'hidden' }}>
+    <Paper shadow="sm" radius="lg" withBorder style={{ overflow: 'hidden' }}>
       <AspectRatio ratio={16 / 10}>
         <Image
           src={imageSrc}
@@ -22,7 +22,7 @@ export default function ProjectCard({ title, company, imageSrc, logoSrc }: Proje
         />
       </AspectRatio>
 
-      <Group p="lg" wrap="nowrap" gap="xs" justify="space-between">
+      <Group p="sm" wrap="nowrap" gap="xs" justify="space-between">
         {/* Left */}
         <Group wrap="nowrap">
           <Image
@@ -33,16 +33,14 @@ export default function ProjectCard({ title, company, imageSrc, logoSrc }: Proje
             radius={12}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
-          <Stack gap={4}>
+          <Stack gap={3}>
+            {/* Details */}
+            <Text size="sm" c="dimmed" lineClamp={1}>
+              {company}
+            </Text>
             <Title order={4} lineClamp={1}>
               {title}
             </Title>
-            {/* Details */}
-            <Group gap={6} wrap="nowrap" align="center">
-              <Text size="md" c="dimmed" lineClamp={1}>
-                {company}
-              </Text>
-            </Group>
           </Stack>
         </Group>
 
