@@ -61,15 +61,15 @@ export default function AboutMe() {
 
       <Stack gap="xs">
         <Title order={1}>Hello, I'm Emre</Title>
-        <Text c="dimmed">
-          I am an interdisciplinary product designer helping businesses conceptualize, design, and
-          build software, systems, experiences, websites, and brands.
+        <Text c="dimmed" size="lg" lh={1.3}>
+          I am an interdisciplinary designer, helping businesses conceptualize and build software,
+          systems, experiences, websites, and brands.
         </Text>
       </Stack>
 
       <Stack gap="md">
         <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
-          I am also...
+          I'm also...
         </Title>
         <SimpleGrid cols={{ base: 1 }} spacing="md">
           {funFacts.map((item, index) => (

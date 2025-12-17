@@ -1,5 +1,5 @@
 import { IconBook, IconPlayerPlay, IconSparkles2, IconUserCircle } from '@tabler/icons-react';
-import { Button, Image, NavLink, SimpleGrid, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Image, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
@@ -20,9 +20,9 @@ export default function NavContent() {
           <Title order={2} ta="center">
             Emre Erdener
           </Title>
-          <Text size="sm" ta="center" c="dimmed">
+          <Anchor href="mailto: erdener.emre@gmail.com" td="none" size="sm" ta="center">
             erdener.emre@gmail.com
-          </Text>
+          </Anchor>
         </Stack>
         <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing="xs">
           <NavLink
@@ -51,9 +51,6 @@ export default function NavContent() {
           />
         </SimpleGrid>
         <Stack maw={260} w="100%">
-          <Button size="md" w="100%" variant="light">
-            Email me
-          </Button>
           <ThemeSwitch />
         </Stack>
       </Stack>

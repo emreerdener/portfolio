@@ -4,7 +4,7 @@ import ProjectCard from '../components/features/CaseStudies/ProjectCard';
 export default function HomePage() {
   return (
     <>
-      <SimpleGrid cols={{ base: 1, lg: 1 }} spacing="xl">
+      <SimpleGrid cols={{ base: 1, lg: 1 }} spacing={48} className="featuredGrid">
         <ProjectCard
           title="Merchant Referral Program"
           company="Shopify"

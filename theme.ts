@@ -3,6 +3,7 @@
 import { ActionIcon, Button, createTheme, SegmentedControl } from '@mantine/core';
 
 export const theme = createTheme({
+  primaryColor: 'orange',
   components: {
     Button: Button.extend({
       defaultProps: {

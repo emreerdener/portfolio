@@ -4,5 +4,17 @@
 }
 
 body {
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-9));
+}
+
+.featuredGrid {
+  padding-right: var(--mantine-spacing-lg);
+  padding-left: var(--mantine-spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .featuredGrid {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
