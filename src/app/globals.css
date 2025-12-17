@@ -2,3 +2,19 @@
 :root {
   --font-primary: 'Inter', sans-serif;
 }
+
+body {
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.navbar {
+  border: none;
+  background-color: transparent;
+}
+.navbar-container {
+  border: 1px solid var(--app-shell-border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--mantine-shadow-md);
+  background: light-dark(#ffffff, var(--mantine-color-dark-7));
+}

@@ -1,0 +1,11 @@
+.navlink {
+  border-radius: 8px;
+}
+.navlink span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profilepic {
+  border: 1px solid var(--app-shell-border-color);
+}

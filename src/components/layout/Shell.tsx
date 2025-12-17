@@ -3,7 +3,7 @@
 
 import { AppShell, Burger, Group, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import NavLinks from './NavLinks';
+import NavContent from './NavContent';
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
@@ -16,16 +16,16 @@ export function Shell({ children }: { children: React.ReactNode }) {
       aside={{ width: 300, breakpoint: 'md', collapsed: { desktop: false, mobile: true } }}
       padding="md"
     >
-      <AppShell.Header>
+      <AppShell.Header hiddenFrom="sm">
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           Header
         </Group>
       </AppShell.Header>
-      <AppShell.Navbar p="md">
-        <Stack>
+      <AppShell.Navbar p="xl" className="navbar">
+        <Stack className="navbar-container">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <NavLinks />
+          <NavContent />
         </Stack>
       </AppShell.Navbar>
       <AppShell.Main>{children}</AppShell.Main>
