@@ -25,13 +25,22 @@ export default function ProjectCard({ title, company, date, imageSrc, logoSrc }:
 
       <Group p="lg" wrap="nowrap" justify="space-between">
         {/* Left */}
-        <Group>
-          <Image src={logoSrc} alt={`${company} logo`} w={48} h={48} />
+        <Group wrap="nowrap">
+          <Image
+            src={logoSrc}
+            alt={`${company} logo`}
+            w={56}
+            h={56}
+            radius={12}
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
           <Stack gap={0}>
-            <Title order={4}>{title}</Title>
+            <Title order={4} lineClamp={1}>
+              {title}
+            </Title>
             {/* Details */}
             <Group gap={6} wrap="nowrap" align="center">
-              <Text size="md" c="dimmed">
+              <Text size="md" c="dimmed" lineClamp={1}>
                 {company}
               </Text>
               <Text size="md" c="dimmed">
