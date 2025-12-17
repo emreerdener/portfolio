@@ -1,17 +1,12 @@
 // src/components/Shell.tsx
 'use client';
 
-import { IconFile, IconUserCircle } from '@tabler/icons-react';
 import {
   AppShell,
   Burger,
-  Button,
-  Divider,
   Group,
   Image,
   Overlay,
-  ScrollArea,
-  Space,
   Stack,
   Text,
   Title,
@@ -19,9 +14,7 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import AboutMe from '../features/AboutMe';
-import Education from '../features/Experience/Education';
-import Experience from '../features/Experience/Experience';
+import Aside from './Aside';
 import NavContent from './NavContent';
 import classes from './layout.module.css';
 
@@ -87,26 +80,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </AppShell.Navbar>
       <AppShell.Main className={classes.main}>{children}</AppShell.Main>
       <AppShell.Aside className={classes.aside}>
-        <ScrollArea type="never" h="100%">
-          <Stack gap={0}>
-            <AboutMe />
-            <Divider />
-            <Experience />
-            <Divider />
-            <Education />
-            <Divider />
-            <Stack gap="lg" p="xl">
-              <Button size="lg" leftSection={<IconFile size={24} />}>
-                View resume
-              </Button>
-              <Button size="lg" variant="outline" leftSection={<IconUserCircle size={24} />}>
-                View profile
-              </Button>
-            </Stack>
-
-            <Space h="xl" />
-          </Stack>
-        </ScrollArea>
+        <Aside />
       </AppShell.Aside>
     </AppShell>
   );

@@ -7,9 +7,9 @@
 }
 .navbarContainer {
   border: 1px solid var(--app-shell-border-color);
-  border-radius: 24px;
+  border-radius: var(--mantine-radius-xl);
   padding: var(--mantine-spacing-lg);
-  box-shadow: var(--mantine-shadow-md);
+  box-shadow: var(--mantine-shadow-sm);
   background: light-dark(#ffffff, var(--mantine-color-dark-7));
 }
 
@@ -63,5 +63,8 @@
   .main {
     padding-left: var(--mantine-spacing-lg);
     padding-right: var(--mantine-spacing-lg);
+  }
+  .navbar {
+    padding-right: var(--mantine-spacing-xl);
   }
 }

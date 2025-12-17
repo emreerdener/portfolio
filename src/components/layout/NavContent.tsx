@@ -24,7 +24,7 @@ export default function NavContent() {
             Product Designer
           </Text>
         </Stack>
-        <SimpleGrid maw={200} w="100%" cols={{ base: 1 }} spacing="xs">
+        <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing="xs">
           <NavLink
             href="#required-for-focus"
             label="Featured work"
@@ -50,7 +50,7 @@ export default function NavContent() {
             className={classes.navlink}
           />
         </SimpleGrid>
-        <Stack maw={200} w="100%">
+        <Stack maw={260} w="100%">
           <Button size="md" w="100%" variant="light">
             Email me
           </Button>

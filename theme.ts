@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, createTheme, SegmentedControl } from '@mantine/core';
+import { ActionIcon, Button, createTheme, SegmentedControl } from '@mantine/core';
 
 export const theme = createTheme({
   components: {
@@ -10,6 +10,11 @@ export const theme = createTheme({
       },
     }),
     SegmentedControl: SegmentedControl.extend({
+      defaultProps: {
+        radius: 999,
+      },
+    }),
+    ActionIcon: ActionIcon.extend({
       defaultProps: {
         radius: 999,
       },
