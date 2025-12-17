@@ -1,25 +1,21 @@
 // src/components/Shell.tsx
 'use client';
 
-import {
-  AppShell,
-  Burger,
-  Group,
-  Image,
-  Overlay,
-  Stack,
-  Text,
-  Title,
-  Transition,
-  UnstyledButton,
-} from '@mantine/core';
+import { useEffect } from 'react';
+import { AppShell, Burger, Overlay, Stack, Transition } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { useScrollLock } from '@/src/hooks/use-scroll-lock';
 import Aside from './Aside';
+import MobileHeader from './MobileHeader';
 import NavContent from './NavContent';
 import classes from './layout.module.css';
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
+  const [_scrollLocked, setScrollLocked] = useScrollLock();
+  useEffect(() => {
+    setScrollLocked(opened);
+  }, [opened, setScrollLocked]);
 
   return (
     <AppShell
@@ -30,34 +26,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       padding="xl"
       className={classes.shell}
     >
-      <AppShell.Header
-        hiddenFrom="sm"
-        // Hide the header entirely when the menu is open to prevent duplicate close buttons and visual overlap
-        style={{ display: opened ? 'none' : undefined }}
-        className={classes.header}
-      >
-        <UnstyledButton onClick={toggle} className={classes.headerButton}>
-          <Group gap="xs">
-            <Image
-              src="/images/profile-pic.png"
-              alt="Profile picture"
-              w={40}
-              h={40}
-              radius="100%"
-              fit="cover"
-              className={classes.profilepic}
-            />
-            <Stack gap={0}>
-              <Title order={4} lh={1.1}>
-                Emre Erdener
-              </Title>
-              <Text size="xs" c="dimmed">
-                erdener.emre@gmail.com
-              </Text>
-            </Stack>
-          </Group>
-        </UnstyledButton>
-      </AppShell.Header>
+      <MobileHeader opened={opened} toggle={toggle} />
 
       <Transition transition="fade" duration={100} mounted={opened}>
         {(styles) => (
@@ -68,6 +37,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             hiddenFrom="sm"
             onClick={toggle} // Close menu when clicking backdrop
             style={styles}
+            fixed
           />
         )}
       </Transition>
