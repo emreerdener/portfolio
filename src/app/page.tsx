@@ -1,14 +1,14 @@
-import { Skeleton, Stack } from '@mantine/core';
+import { SimpleGrid, Skeleton } from '@mantine/core';
 
 export default function HomePage() {
   return (
     <>
-      <Stack gap="xl">
+      <SimpleGrid cols={{ base: 1, sm: 1, md: 1, lg: 2 }} spacing="xl">
         <Skeleton h={400} w="100%" radius="lg" />
         <Skeleton h={400} w="100%" radius="lg" />
         <Skeleton h={400} w="100%" radius="lg" />
         <Skeleton h={400} w="100%" radius="lg" />
-      </Stack>
+      </SimpleGrid>
     </>
   );
 }

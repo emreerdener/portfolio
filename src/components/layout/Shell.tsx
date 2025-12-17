@@ -14,6 +14,7 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import Experience from '../features/Experience/Experience';
 import NavContent from './NavContent';
 import classes from './layout.module.css';
 
@@ -25,7 +26,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       layout="alt"
       header={{ height: 86 }}
       navbar={{ width: 268, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-      aside={{ width: 300, breakpoint: 'md', collapsed: { desktop: false, mobile: true } }}
+      aside={{ width: 380, breakpoint: 'md', collapsed: { desktop: false, mobile: true } }}
       padding="xl"
       className={classes.shell}
     >
@@ -78,7 +79,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </Stack>
       </AppShell.Navbar>
       <AppShell.Main className={classes.main}>{children}</AppShell.Main>
-      <AppShell.Aside p="md">Aside</AppShell.Aside>
+      <AppShell.Aside className={classes.aside}>
+        <Experience />
+      </AppShell.Aside>
     </AppShell>
   );
 }

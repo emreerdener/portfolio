@@ -51,7 +51,7 @@ export default function NavContent() {
           />
         </SimpleGrid>
         <Stack maw={200} w="100%">
-          <Button size="sm" radius="md" w="100%">
+          <Button size="md" w="100%" variant="light">
             Email me
           </Button>
           <ThemeSwitch />

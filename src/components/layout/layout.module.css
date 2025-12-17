@@ -28,10 +28,13 @@
 }
 
 .navlink {
-  border-radius: 8px;
+  border-radius: 999px;
   align-items: center;
   justify-content: space-between;
   flex: 0;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
 }
 .navlink span {
   font-size: 16px;
@@ -44,6 +47,10 @@
 
 .profilepic {
   border: 1px solid var(--app-shell-border-color);
+}
+
+.aside {
+  padding: 0;
 }
 
 @media (min-width: 768px) {

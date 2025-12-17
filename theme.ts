@@ -1,7 +1,18 @@
 'use client';
 
-import { createTheme } from '@mantine/core';
+import { Button, createTheme, SegmentedControl } from '@mantine/core';
 
 export const theme = createTheme({
-  /* Put your mantine theme override here */
+  components: {
+    Button: Button.extend({
+      defaultProps: {
+        radius: 999,
+      },
+    }),
+    SegmentedControl: SegmentedControl.extend({
+      defaultProps: {
+        radius: 999,
+      },
+    }),
+  },
 });

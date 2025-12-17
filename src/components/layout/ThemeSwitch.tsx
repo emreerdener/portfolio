@@ -21,7 +21,6 @@ export function ThemeSwitch() {
     <SegmentedControl
       value={colorScheme}
       onChange={(value) => setColorScheme(value as 'light' | 'dark')}
-      radius="md"
       size="md"
       data={[
         {
