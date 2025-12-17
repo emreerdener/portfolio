@@ -1,5 +1,13 @@
 import { IconBook, IconPlayerPlay, IconSparkles2, IconUserCircle } from '@tabler/icons-react';
-import { Image as MantineImage, NavLink, Stack, Text, Title } from '@mantine/core';
+import {
+  Button,
+  Image as MantineImage,
+  NavLink,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
@@ -24,33 +32,38 @@ export default function NavContent() {
             Product Designer
           </Text>
         </Stack>
-        <Stack w="100%" gap="xs">
+        <SimpleGrid w="100%" cols={{ base: 1, xs: 2, sm: 1 }} spacing="xs">
           <NavLink
             href="#required-for-focus"
             label="Featured work"
-            leftSection={<IconSparkles2 size={24} />}
+            rightSection={<IconSparkles2 size={24} />}
             className={classes.navlink}
           />
           <NavLink
             href="#required-for-focus"
             label="Case studies"
-            leftSection={<IconBook size={24} />}
+            rightSection={<IconBook size={24} />}
             className={classes.navlink}
           />
           <NavLink
             href="#required-for-focus"
             label="Presentation"
-            leftSection={<IconPlayerPlay size={24} />}
+            rightSection={<IconPlayerPlay size={24} />}
             className={classes.navlink}
           />
           <NavLink
             href="#required-for-focus"
             label="About me"
-            leftSection={<IconUserCircle size={24} />}
+            rightSection={<IconUserCircle size={24} />}
             className={classes.navlink}
           />
+        </SimpleGrid>
+        <Stack maw={200} w="100%">
+          <ThemeSwitch />
+          <Button size="sm" radius="md" w="100%">
+            Email me
+          </Button>
         </Stack>
-        <ThemeSwitch />
       </Stack>
     </>
   );

@@ -16,7 +16,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
       aside={{ width: 300, breakpoint: 'md', collapsed: { desktop: false, mobile: true } }}
       padding="md"
     >
-      <AppShell.Header hiddenFrom="sm">
+      <AppShell.Header
+        hiddenFrom="sm"
+        // Hide the header entirely when the menu is open to prevent
+        // duplicate close buttons and visual overlap
+        style={{ display: opened ? 'none' : undefined }}
+      >
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           Header
