@@ -1,10 +1,4 @@
-import {
-  IconBook,
-  IconMoodSmile,
-  IconPlayerPlay,
-  IconSparkles2,
-  IconUserCircle,
-} from '@tabler/icons-react';
+import { IconBook, IconPlayerPlay, IconSparkles2, IconUserCircle } from '@tabler/icons-react';
 import { Image as MantineImage, NavLink, Stack, Text, Title } from '@mantine/core';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
@@ -51,18 +45,12 @@ export default function NavContent() {
           />
           <NavLink
             href="#required-for-focus"
-            label="Clients"
-            leftSection={<IconMoodSmile size={24} />}
-            className={classes.navlink}
-          />
-          <NavLink
-            href="#required-for-focus"
             label="About me"
             leftSection={<IconUserCircle size={24} />}
             className={classes.navlink}
           />
-          <ThemeSwitch />
         </Stack>
+        <ThemeSwitch />
       </Stack>
     </>
   );

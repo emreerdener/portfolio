@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { IconMoon, IconSun } from '@tabler/icons-react';
-import { Center, rem, SegmentedControl, useMantineColorScheme } from '@mantine/core';
+import { Center, SegmentedControl, useMantineColorScheme } from '@mantine/core';
 
 export function ThemeSwitch() {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
@@ -22,13 +22,13 @@ export function ThemeSwitch() {
       value={colorScheme}
       onChange={(value) => setColorScheme(value as 'light' | 'dark')}
       radius="xl"
+      size="md"
       data={[
         {
           value: 'light',
           label: (
             <Center style={{ gap: 10 }}>
-              Light
-              <IconSun style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
+              <IconSun size={20} />
             </Center>
           ),
         },
@@ -36,8 +36,7 @@ export function ThemeSwitch() {
           value: 'dark',
           label: (
             <Center style={{ gap: 10 }}>
-              Dark
-              <IconMoon style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
+              <IconMoon size={20} />
             </Center>
           ),
         },
