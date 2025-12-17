@@ -47,7 +47,7 @@ export default function ProjectCard({ title, company, imageSrc, logoSrc }: Proje
         </Group>
 
         {/* Right */}
-        <ActionIcon component="div" variant="subtle" size="xl">
+        <ActionIcon visibleFrom="xs" component="div" variant="subtle" size="xl">
           <IconArrowRight size={32} />
         </ActionIcon>
       </Group>
