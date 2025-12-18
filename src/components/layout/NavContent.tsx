@@ -1,9 +1,21 @@
-import { IconBook, IconPlayerPlay, IconSparkles2, IconUserCircle } from '@tabler/icons-react';
+import { usePathname, useRouter } from 'next/navigation';
+import {
+  IconBook,
+  IconBookFilled,
+  IconPlayerPlay,
+  IconPlayerPlayFilled,
+  IconStar,
+  IconStarFilled,
+  IconUser,
+  IconUserFilled,
+} from '@tabler/icons-react';
 import { Anchor, Image, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
 export default function NavContent() {
+  const pathname = usePathname();
+  const router = useRouter();
   return (
     <>
       <Stack align="center">
@@ -26,28 +38,42 @@ export default function NavContent() {
         </Stack>
         <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing="xs">
           <NavLink
-            href="#required-for-focus"
+            onClick={() => router.push('/')}
             label="Featured work"
-            rightSection={<IconSparkles2 size={24} />}
+            rightSection={pathname === '/' ? <IconStarFilled size={24} /> : <IconStar size={24} />}
             className={classes.navlink}
+            active={pathname === '/'}
           />
           <NavLink
-            href="#required-for-focus"
+            onClick={() => router.push('/case-studies')}
             label="Case studies"
-            rightSection={<IconBook size={24} />}
+            rightSection={
+              pathname === '/case-studies' ? <IconBookFilled size={24} /> : <IconBook size={24} />
+            }
             className={classes.navlink}
+            active={pathname === '/case-studies'}
           />
           <NavLink
-            href="#required-for-focus"
+            onClick={() => router.push('/presentation')}
             label="Presentation"
-            rightSection={<IconPlayerPlay size={24} />}
+            rightSection={
+              pathname === '/presentation' ? (
+                <IconPlayerPlayFilled size={24} />
+              ) : (
+                <IconPlayerPlay size={24} />
+              )
+            }
             className={classes.navlink}
+            active={pathname === '/presentation'}
           />
           <NavLink
-            href="#required-for-focus"
+            onClick={() => router.push('/profile')}
             label="Profile"
-            rightSection={<IconUserCircle size={24} />}
+            rightSection={
+              pathname === '/profile' ? <IconUserFilled size={24} /> : <IconUser size={24} />
+            }
             className={classes.navlink}
+            active={pathname === '/profile'}
           />
         </SimpleGrid>
         <Stack maw={260} w="100%">

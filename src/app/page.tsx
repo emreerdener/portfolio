@@ -12,18 +12,6 @@ export default function HomePage() {
           logoSrc="/images/apps/shopify.svg"
         />
         <ProjectCard
-          title="Audi Dyno Display"
-          company="BTRES"
-          imageSrc="/images/covers/btres.png"
-          logoSrc="/images/apps/btres.svg"
-        />
-        <ProjectCard
-          title="Simplify Travel Expenses"
-          company="Tripway"
-          imageSrc="/images/covers/tripway.png"
-          logoSrc="/images/apps/tripway.svg"
-        />
-        <ProjectCard
           title="Inventory Management System"
           company="Eureka Software"
           imageSrc="/images/covers/waxwing.png"
@@ -34,6 +22,24 @@ export default function HomePage() {
           company="The Squire Tarbox Inn"
           imageSrc="/images/covers/tarbox.jpg"
           logoSrc="/images/apps/tarbox.svg"
+        />
+        <ProjectCard
+          title="Admin Checkout 2.0"
+          company="Shopify"
+          imageSrc="/images/covers/shopify-admin.png"
+          logoSrc="/images/apps/shopify.svg"
+        />
+        <ProjectCard
+          title="Audi Dyno Display"
+          company="BTRES"
+          imageSrc="/images/covers/btres.png"
+          logoSrc="/images/apps/btres.svg"
+        />
+        <ProjectCard
+          title="Simplify Travel Expenses"
+          company="Tripway"
+          imageSrc="/images/covers/tripway.png"
+          logoSrc="/images/apps/tripway.svg"
         />
 
         <Space h="xl" />
