@@ -38,7 +38,7 @@ export default function ProjectCard({ title, company, imageSrc, logoSrc }: Proje
             <Text size="sm" c="dimmed" lineClamp={1}>
               {company}
             </Text>
-            <Title order={4} lineClamp={1}>
+            <Title order={4} lineClamp={1} lts={-0.5}>
               {title}
             </Title>
           </Stack>
