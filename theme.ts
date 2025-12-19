@@ -9,6 +9,11 @@ export const theme = createTheme({
       defaultProps: {
         radius: 999,
       },
+      styles: {
+        root: {
+          flexShrink: 0,
+        },
+      },
     }),
     SegmentedControl: SegmentedControl.extend({
       defaultProps: {
