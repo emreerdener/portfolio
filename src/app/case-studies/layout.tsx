@@ -9,7 +9,7 @@ export default function CaseStudiesLayout({ children }: { children: React.ReactN
   return (
     <>
       <Container>
-        <Stack>
+        <Stack gap="lg">
           <Group>
             <Button
               onClick={() => router.push('/case-studies')}

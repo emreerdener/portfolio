@@ -10,20 +10,18 @@ export default function Aside() {
     <ScrollArea type="never" h="100%">
       <Stack gap={0}>
         <AboutMe />
+        <Group grow gap="lg" p="xl" pt={0}>
+          <Button size="md" variant="light" leftSection={<IconFile size={24} />}>
+            Resume
+          </Button>
+          <Button size="md" variant="default" leftSection={<IconBrandLinkedin size={24} />}>
+            LinkedIn
+          </Button>
+        </Group>
         <Divider />
         <Experience />
         <Divider />
         <Education />
-        <Divider />
-        <Group grow gap="lg" p="xl">
-          <Button size="lg" leftSection={<IconFile size={24} />}>
-            Resume
-          </Button>
-          <Button size="lg" variant="default" leftSection={<IconBrandLinkedin size={24} />}>
-            LinkedIn
-          </Button>
-        </Group>
-
         <Space h="xl" />
       </Stack>
     </ScrollArea>

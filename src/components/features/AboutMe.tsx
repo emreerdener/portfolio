@@ -15,10 +15,9 @@ const images = [
 const funFacts = [
   { emoji: '👯', text: 'A twin' },
   { emoji: '🦒', text: 'Taller than a baby giraffe: 6\'8" (2m)' },
-  { emoji: '🎲', text: 'Riding my bike and playing backgammon' },
+  { emoji: '🎲', text: 'Playing backgammon' },
   { emoji: '🇹🇷', text: 'Named after a Sufi mystic and poet from the 13th century' },
-  { emoji: '🚲', text: 'Building a cycling app' },
-  { emoji: '🪵', text: 'Practicing woodworking' },
+  { emoji: '🚲', text: 'Riding my bicycle' },
 ];
 
 export default function AboutMe() {

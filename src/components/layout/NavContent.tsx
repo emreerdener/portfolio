@@ -40,7 +40,7 @@ export default function NavContent() {
           <NavLink
             onClick={() => router.push('/')}
             label="Featured work"
-            rightSection={pathname === '/' ? <IconStarFilled size={24} /> : <IconStar size={24} />}
+            rightSection={pathname === '/' ? <IconStarFilled size={20} /> : <IconStar size={20} />}
             className={classes.navlink}
             active={pathname === '/'}
           />
@@ -48,7 +48,7 @@ export default function NavContent() {
             onClick={() => router.push('/case-studies')}
             label="Case studies"
             rightSection={
-              pathname === '/case-studies' ? <IconBookFilled size={24} /> : <IconBook size={24} />
+              pathname === '/case-studies' ? <IconBookFilled size={20} /> : <IconBook size={20} />
             }
             className={classes.navlink}
             active={pathname === '/case-studies'}
@@ -58,9 +58,9 @@ export default function NavContent() {
             label="Presentation"
             rightSection={
               pathname === '/presentation' ? (
-                <IconPlayerPlayFilled size={24} />
+                <IconPlayerPlayFilled size={20} />
               ) : (
-                <IconPlayerPlay size={24} />
+                <IconPlayerPlay size={20} />
               )
             }
             className={classes.navlink}
@@ -70,7 +70,7 @@ export default function NavContent() {
             onClick={() => router.push('/profile')}
             label="Profile"
             rightSection={
-              pathname === '/profile' ? <IconUserFilled size={24} /> : <IconUser size={24} />
+              pathname === '/profile' ? <IconUserFilled size={20} /> : <IconUser size={20} />
             }
             className={classes.navlink}
             active={pathname === '/profile'}

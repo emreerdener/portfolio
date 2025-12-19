@@ -1,7 +1,8 @@
-// src/components/Shell.tsx
+// src/components/layout/Shell.tsx
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { AppShell, Burger, Overlay, Stack, Transition } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useScrollLock } from '@/src/hooks/use-scroll-lock';
@@ -13,6 +14,11 @@ import classes from './layout.module.css';
 export function Shell({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
   const [_scrollLocked, setScrollLocked] = useScrollLock();
+  const pathname = usePathname();
+
+  // Hide aside on any page that is not the home page ('/')
+  const shouldHideAside = pathname !== '/';
+
   useEffect(() => {
     setScrollLocked(opened);
   }, [opened, setScrollLocked]);
@@ -22,7 +28,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
       layout="alt"
       header={{ height: 86 }}
       navbar={{ width: 268, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-      aside={{ width: 480, breakpoint: 'xl', collapsed: { desktop: false, mobile: true } }}
+      aside={{
+        width: 480,
+        breakpoint: 'xl',
+        collapsed: { desktop: shouldHideAside, mobile: true },
+      }}
       padding="xl"
       className={classes.shell}
     >
@@ -49,9 +59,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </Stack>
       </AppShell.Navbar>
       <AppShell.Main className={classes.main}>{children}</AppShell.Main>
-      <AppShell.Aside className={classes.aside}>
-        <Aside />
-      </AppShell.Aside>
+      {!shouldHideAside && (
+        <AppShell.Aside className={classes.aside}>
+          <Aside />
+        </AppShell.Aside>
+      )}
     </AppShell>
   );
 }

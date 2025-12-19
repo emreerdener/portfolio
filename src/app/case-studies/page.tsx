@@ -1,3 +1,9 @@
+import { Skeleton } from '@mantine/core';
+
 export default function CaseStudiesPage() {
-  return <>Case Studies page</>;
+  return (
+    <>
+      <Skeleton h={400} radius="lg" />
+    </>
+  );
 }
