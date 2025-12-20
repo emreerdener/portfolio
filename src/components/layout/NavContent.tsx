@@ -36,7 +36,7 @@ export default function NavContent() {
             erdener.emre@gmail.com
           </Anchor>
         </Stack>
-        <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing="xs">
+        <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing={8}>
           <NavLink
             onClick={() => router.push('/')}
             label="Featured work"

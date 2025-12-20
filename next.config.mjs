@@ -9,4 +9,14 @@ export default withBundleAnalyzer({
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: process.env.NEXT_PUBLIC_R2_DOMAIN,
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 });

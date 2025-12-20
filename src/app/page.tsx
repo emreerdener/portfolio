@@ -59,7 +59,7 @@ export default function HomePage() {
           </Grid.Col>
         </Grid>
 
-        <Paper p="lg" withBorder radius="lg">
+        <Paper p="lg" withBorder radius="lg" shadow="sm">
           <Group justify="space-between" wrap="nowrap">
             <Stack gap={4}>
               <Title order={4}>All case studies</Title>

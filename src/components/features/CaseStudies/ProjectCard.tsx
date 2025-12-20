@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { IconArrowRight } from '@tabler/icons-react';
 import {
@@ -15,18 +16,19 @@ import {
 interface ProjectCardProps {
   title: string;
   company: string;
-  imageSrc?: string;
+  imageSrc: string | StaticImageData;
   logoSrc?: string;
   href: string;
 }
 
 export default function ProjectCard({ title, company, imageSrc, logoSrc, href }: ProjectCardProps) {
+  const finalSrc = typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
   return (
     <UnstyledButton component={Link} href={href} aria-label="Go to case study">
       <Paper shadow="sm" radius="lg" withBorder style={{ overflow: 'hidden' }}>
         <AspectRatio ratio={16 / 10}>
           <Image
-            src={imageSrc}
+            src={finalSrc}
             alt={`${title} project image`}
             w="100%"
             h="100%"
