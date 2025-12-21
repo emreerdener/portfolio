@@ -9,12 +9,12 @@ export default function PresentationPage() {
       <Stack gap="xl">
         <Box
           component="iframe"
-          src="https://embed.figma.com/proto/HJiWeAVq9BdNEXOK8ty5wi/Emre-Erdener--Presentation?page-id=0%3A1&node-id=1-2&p=f&viewport=1011%2C566%2C0.02&scaling=contain&content-scaling=fixed&starting-point-node-id=1%3A2&embed-host=share&hide-ui=1"
+          src="https://embed.figma.com/proto/HJiWeAVq9BdNEXOK8ty5wi/Emre-Erdener--Presentation?page-id=0%3A1&node-id=1-2&p=f&viewport=29682%2C3758%2C0.45&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&hotspot-hints=0&embed-host=share&hide-ui=1"
           allowFullScreen
           style={{
             border: '1px solid var(--app-shell-border-color)',
             width: '100%',
-            height: '80vh',
+            height: '90vh',
             borderRadius: 'var(--mantine-radius-lg)',
           }}
         />
