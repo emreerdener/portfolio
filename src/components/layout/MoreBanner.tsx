@@ -24,7 +24,7 @@ export default function MoreBanner() {
           size="md"
           className={classes.bannerButton}
         >
-          View more
+          View work
         </Button>
       </Group>
     </Paper>
