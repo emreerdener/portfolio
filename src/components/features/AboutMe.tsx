@@ -5,10 +5,10 @@ import { Carousel } from '@mantine/carousel';
 import { AspectRatio, Group, Image, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 
 const images = [
-  '/images/about/1.jpg',
-  '/images/about/2.jpg',
-  '/images/about/3.jpg',
-  '/images/about/4.jpg',
+  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/amos.jpg',
+  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/sisters.jpg',
+  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/cat.jpg',
+  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/bike.jpg',
 ];
 
 // Data array for easy management

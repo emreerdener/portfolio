@@ -16,67 +16,24 @@ import {
   useCombobox,
 } from '@mantine/core';
 import ProjectCard from '../../components/features/CaseStudies/ProjectCard';
+import { CASE_STUDIES } from '../../data/case-studies';
 
-// 1. Centralized Project Data
-const PROJECTS = [
-  {
-    title: 'Merchant Referral Program',
-    company: 'Shopify',
-    imageSrc: '/images/covers/shopify-m2m.png',
-    logoSrc: '/images/apps/shopify.svg',
-    href: '/case-studies/merchant-referrals',
-  },
-  {
-    title: 'Inventory Management System',
-    company: 'Eureka Software',
-    imageSrc: '/images/covers/waxwing.png',
-    logoSrc: '/images/apps/eureka.svg',
-    href: '/',
-  },
-  {
-    title: 'Booking Platform Redesign',
-    company: 'The Squire Tarbox Inn',
-    imageSrc: '/images/covers/tarbox.jpg',
-    logoSrc: '/images/apps/tarbox.svg',
-    href: '/',
-  },
-  {
-    title: 'Admin Checkout 2.0',
-    company: 'Shopify',
-    imageSrc: '/images/covers/shopify-admin.png',
-    logoSrc: '/images/apps/shopify.svg',
-    href: '/',
-  },
-  {
-    title: 'Audi Dyno Display',
-    company: 'BTRES',
-    imageSrc: '/images/covers/btres.png',
-    logoSrc: '/images/apps/btres.svg',
-    href: '/',
-  },
-  {
-    title: 'Simplify Travel Expenses',
-    company: 'Tripway',
-    imageSrc: '/images/covers/tripway.png',
-    logoSrc: '/images/apps/tripway.svg',
-    href: '/',
-  },
-];
-
-// Extract unique companies with their logos
-const CLIENTS = Array.from(new Set(PROJECTS.map((p) => p.company)))
+// 1. Extract unique values for filters
+const CLIENTS = Array.from(new Set(CASE_STUDIES.map((p) => p.company)))
   .sort()
   .map((company) => {
-    // Find the first project match to grab the correct logoSrc
-    const project = PROJECTS.find((p) => p.company === company);
+    const project = CASE_STUDIES.find((p) => p.company === company);
     return {
       name: company,
       logoSrc: project?.logoSrc,
     };
   });
 
+const CATEGORIES = Array.from(new Set(CASE_STUDIES.flatMap((p) => p.categories))).sort();
+const PLATFORMS = Array.from(new Set(CASE_STUDIES.flatMap((p) => p.platforms))).sort();
+
 export default function CaseStudiesPage() {
-  // --- Combobox Logic ---
+  // --- Combobox Logic (Clients) ---
   const combobox = useCombobox({
     onDropdownClose: () => combobox.resetSelectedOption(),
     onDropdownOpen: () => combobox.updateSelectedOptionIndex('active'),
@@ -84,6 +41,11 @@ export default function CaseStudiesPage() {
 
   const [search, setSearch] = useState('');
   const [selectedCompanies, setSelectedCompanies] = useState<string[]>([]);
+
+  // New State for Filters
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
+  const [sortOrder, setSortOrder] = useState<string | null>('Recent');
 
   const handleValueSelect = (val: string) => {
     setSearch('');
@@ -95,7 +57,6 @@ export default function CaseStudiesPage() {
   const handleValueRemove = (val: string) =>
     setSelectedCompanies((current) => current.filter((v) => v !== val));
 
-  // Filter available options based on search input
   const options = CLIENTS.filter((item) =>
     item.name.toLowerCase().includes(search.trim().toLowerCase())
   ).map((item) => (
@@ -105,7 +66,6 @@ export default function CaseStudiesPage() {
       active={selectedCompanies.includes(item.name)}
     >
       <Group gap="sm">
-        {/* Dropdown Logo */}
         <Avatar src={item.logoSrc} size="sm" radius="md" />
         <span>{item.name}</span>
         {selectedCompanies.includes(item.name) ? (
@@ -115,7 +75,6 @@ export default function CaseStudiesPage() {
     </Combobox.Option>
   ));
 
-  // Render selected pills
   const values = selectedCompanies.map((name) => {
     return (
       <Pill key={name} withRemoveButton onRemove={() => handleValueRemove(name)}>
@@ -126,11 +85,22 @@ export default function CaseStudiesPage() {
     );
   });
 
-  // --- Filtering Projects ---
-  const filteredProjects =
-    selectedCompanies.length > 0
-      ? PROJECTS.filter((p) => selectedCompanies.includes(p.company))
-      : PROJECTS;
+  // --- Filtering Logic ---
+  const filteredProjects = CASE_STUDIES.filter((project) => {
+    // 1. Client Filter
+    if (selectedCompanies.length > 0 && !selectedCompanies.includes(project.company)) {
+      return false;
+    }
+    // 2. Category Filter
+    if (selectedCategory && !project.categories.includes(selectedCategory as any)) {
+      return false;
+    }
+    // 3. Platform Filter
+    if (selectedPlatform && !project.platforms.includes(selectedPlatform as any)) {
+      return false;
+    }
+    return true;
+  });
 
   return (
     <>
@@ -138,11 +108,12 @@ export default function CaseStudiesPage() {
         {/* Filter Section */}
         <Group justify="space-between">
           <Group>
+            {/* Client Multi-Select */}
             <Combobox store={combobox} onOptionSubmit={handleValueSelect}>
               <Combobox.DropdownTarget>
                 <PillsInput
                   onClick={() => combobox.openDropdown()}
-                  radius="xl"
+                  radius="md"
                   size="lg"
                   rightSection={<IconCaretDownFilled size={20} />}
                   rightSectionPointerEvents="none"
@@ -183,20 +154,39 @@ export default function CaseStudiesPage() {
               </Combobox.Dropdown>
             </Combobox>
 
+            {/* Category Filter */}
             <Select
               size="lg"
-              radius="xl"
+              radius="md"
               placeholder="Filter by type"
-              data={['Product', 'Web', 'Marketing']}
+              data={CATEGORIES}
+              value={selectedCategory}
+              onChange={setSelectedCategory}
+              clearable
+              rightSection={<IconCaretDownFilled size={20} />}
+            />
+
+            {/* Platform Filter */}
+            <Select
+              size="lg"
+              radius="md"
+              placeholder="Filter by platform"
+              data={PLATFORMS}
+              value={selectedPlatform}
+              onChange={setSelectedPlatform}
+              clearable
               rightSection={<IconCaretDownFilled size={20} />}
             />
           </Group>
 
+          {/* Sort */}
           <Select
             size="lg"
-            radius="xl"
+            radius="md"
             placeholder="Sort by"
             data={['Recent', 'Featured']}
+            value={sortOrder}
+            onChange={setSortOrder}
             rightSection={<IconCaretDownFilled size={20} />}
           />
         </Group>
@@ -208,12 +198,19 @@ export default function CaseStudiesPage() {
               <ProjectCard
                 title={project.title}
                 company={project.company}
-                imageSrc={project.imageSrc}
+                coverSrc={project.coverSrc}
                 logoSrc={project.logoSrc}
                 href={project.href}
               />
             </Grid.Col>
           ))}
+          {filteredProjects.length === 0 && (
+            <Grid.Col span={12}>
+              <Stack align="center" py="xl" c="dimmed">
+                No projects match the selected filters.
+              </Stack>
+            </Grid.Col>
+          )}
         </Grid>
       </Stack>
 

@@ -16,13 +16,13 @@ import {
 interface ProjectCardProps {
   title: string;
   company: string;
-  imageSrc: string | StaticImageData;
+  coverSrc: string | StaticImageData;
   logoSrc?: string;
   href: string;
 }
 
-export default function ProjectCard({ title, company, imageSrc, logoSrc, href }: ProjectCardProps) {
-  const finalSrc = typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+export default function ProjectCard({ title, company, coverSrc, logoSrc, href }: ProjectCardProps) {
+  const finalSrc = typeof coverSrc === 'string' ? coverSrc : coverSrc.src;
   return (
     <UnstyledButton component={Link} href={href} aria-label="Go to case study">
       <Paper shadow="sm" radius="lg" withBorder style={{ overflow: 'hidden' }}>
