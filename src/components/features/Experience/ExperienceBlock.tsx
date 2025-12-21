@@ -8,6 +8,7 @@ interface ExperienceBlockProps {
   location: string;
   bullets?: string[];
   logoSrc?: string;
+  defaultExpanded?: boolean;
 }
 
 export default function ExperienceBlock({
@@ -17,10 +18,9 @@ export default function ExperienceBlock({
   location,
   bullets = [],
   logoSrc,
+  defaultExpanded = false,
 }: ExperienceBlockProps) {
-  // 1. Manage the expanded state to toggle the fade overlay
-  const [expanded, setExpanded] = useState(false);
-
+  const [expanded, setExpanded] = useState(defaultExpanded);
   // 2. Define the height at which the content is cut off
   const MAX_HEIGHT = 110;
 
@@ -71,6 +71,8 @@ export default function ExperienceBlock({
             // Style the control button to match your dimmed text style
             styles={{
               control: {
+                // If defaultExpanded is true, hide the button entirely
+                display: defaultExpanded ? 'none' : undefined,
                 fontSize: 'var(--mantine-font-size-sm)',
                 marginTop: 4,
                 marginLeft: 20,
@@ -88,9 +90,6 @@ export default function ExperienceBlock({
           </Spoiler>
 
           {/* 4. Custom Fade Overlay 
-              - Positioned absolutely relative to the container
-              - Sits at the bottom of the visible MAX_HEIGHT area
-              - Uses a gradient from transparent to the body background color
               - Only visible when collapsed AND we have enough content to likely need it
           */}
           {!expanded && bullets.length > 2 && (

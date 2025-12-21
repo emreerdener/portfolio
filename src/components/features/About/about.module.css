@@ -1,0 +1,10 @@
+.aboutWrapper {
+  padding: var(--mantine-spacing-xl);
+}
+
+@media (max-width: 1200px) {
+  .aboutWrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,13 +1,11 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { Button, Grid, Group, Paper, Space, Stack, Text, Title } from '@mantine/core';
+import { Grid, Space, Stack } from '@mantine/core';
 import ProjectCard from '../components/features/CaseStudies/ProjectCard';
+import MoreBanner from '../components/layout/MoreBanner';
 import { CASE_STUDIES } from '../data/case-studies';
 
 export default function HomePage() {
-  const router = useRouter();
-
   // We only want to show the first 5 items on the homepage
   const featuredProjects = CASE_STUDIES.slice(0, 5);
 
@@ -28,20 +26,7 @@ export default function HomePage() {
           ))}
         </Grid>
 
-        <Paper p="lg" withBorder radius="lg" shadow="sm">
-          <Group justify="space-between" wrap="nowrap">
-            <Stack gap={4}>
-              <Title order={4}>More design work</Title>
-              <Text c="dimmed">
-                Explore more of my design work across mobile apps, SaaS platforms, and design
-                systems.
-              </Text>
-            </Stack>
-            <Button onClick={() => router.push('/case-studies')} size="md">
-              View more
-            </Button>
-          </Group>
-        </Paper>
+        <MoreBanner />
 
         <Space h="xl" />
       </Stack>

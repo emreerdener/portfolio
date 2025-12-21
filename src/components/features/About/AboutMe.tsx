@@ -1,0 +1,67 @@
+import { IconBrandLinkedin, IconFile } from '@tabler/icons-react';
+import {
+  Button,
+  Group,
+  SimpleGrid,
+  Stack,
+  Text,
+  TextProps,
+  Title,
+  TitleProps,
+} from '@mantine/core';
+
+// Data array for easy management
+const funFacts = [
+  { emoji: '👯', text: 'A twin' },
+  { emoji: '🦒', text: 'Taller than a baby giraffe: 6\'8" (2m)' },
+  { emoji: '🎲', text: 'Playing backgammon' },
+  { emoji: '🇹🇷', text: 'Named after a Sufi mystic and poet from the 13th century' },
+  { emoji: '🚲', text: 'Riding my bicycle' },
+];
+
+interface AboutMeProps {
+  titleSize?: TitleProps['size'];
+  bodySize?: TextProps['size'];
+}
+
+export default function AboutMe({ titleSize, bodySize = 'lg' }: AboutMeProps) {
+  return (
+    <Stack gap="xl">
+      <Stack gap="xs">
+        <Title order={1} size={titleSize}>
+          Hello, I'm Emre
+        </Title>
+        <Text c="dimmed" size={bodySize} lh={1.3}>
+          I am an interdisciplinary designer, helping businesses conceptualize and build software,
+          systems, experiences, websites, and brands.
+        </Text>
+      </Stack>
+
+      <Stack gap="md">
+        <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
+          I'm also...
+        </Title>
+        <SimpleGrid cols={{ base: 1 }} spacing="md">
+          {funFacts.map((item, index) => (
+            <Group wrap="nowrap" gap="xs" key={index}>
+              <Text size="1.4rem" lh={1}>
+                {item.emoji}
+              </Text>
+              <Text size="sm" fw={500} lh={1.4}>
+                {item.text}
+              </Text>
+            </Group>
+          ))}
+        </SimpleGrid>
+      </Stack>
+      <Group gap="lg">
+        <Button size="md" variant="light" leftSection={<IconFile size={24} />}>
+          Resume
+        </Button>
+        <Button size="md" variant="default" leftSection={<IconBrandLinkedin size={24} />}>
+          LinkedIn
+        </Button>
+      </Group>
+    </Stack>
+  );
+}

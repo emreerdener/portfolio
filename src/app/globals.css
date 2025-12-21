@@ -6,3 +6,7 @@
 body {
   background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-9));
 }
+
+.mantine-Popover-dropdown {
+  border-radius: var(--mantine-radius-md);
+}
