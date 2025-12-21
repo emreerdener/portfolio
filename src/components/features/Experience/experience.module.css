@@ -1,0 +1,9 @@
+.experienceWrapper {
+  padding: var(--mantine-spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .experienceWrapper {
+    padding: var(--mantine-spacing-lg);
+  }
+}

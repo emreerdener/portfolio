@@ -2,6 +2,7 @@ import { IconDownload } from '@tabler/icons-react';
 import { Button, Group, Stack, Title } from '@mantine/core';
 import { JOBS } from '@/src/data/jobs';
 import ExperienceBlock from './ExperienceBlock';
+import classes from './experience.module.css';
 
 interface ExperienceProps {
   defaultExpanded?: boolean;
@@ -9,7 +10,7 @@ interface ExperienceProps {
 
 export default function Experience({ defaultExpanded = false }: ExperienceProps) {
   return (
-    <Stack gap="xl" p="xl">
+    <Stack gap="xl" className={classes.experienceWrapper}>
       {/* Experience */}
       <Group justify="space-between" w="100%">
         <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
