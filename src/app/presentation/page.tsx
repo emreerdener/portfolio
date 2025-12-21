@@ -14,9 +14,9 @@ export default function PresentationPage() {
           style={{
             border: '1px solid var(--app-shell-border-color)',
             width: '100%',
-            height: '90vh',
             borderRadius: 'var(--mantine-radius-lg)',
           }}
+          h={{ base: '30vh', sm: '40vh', md: '30vh', lg: '40vh', xl: '90vh' }}
         />
 
         <MoreBanner />
