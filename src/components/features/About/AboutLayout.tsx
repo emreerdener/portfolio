@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Divider, Grid, Paper, Stack } from '@mantine/core';
+import { Box, Divider, Grid, Paper, Space, Stack } from '@mantine/core';
 import MoreBanner from '../../layout/MoreBanner';
 import Education from '../Experience/Education';
 import Experience from '../Experience/Experience';
@@ -21,13 +21,15 @@ export default function AboutLayout() {
         </Grid.Col>
       </Grid>
 
-      <Paper radius="lg" withBorder>
+      <Paper radius="lg" withBorder shadow="sm">
         <Experience defaultExpanded />
         <Divider />
         <Education />
       </Paper>
 
       <MoreBanner />
+
+      <Space h="xl" />
     </Stack>
   );
 }

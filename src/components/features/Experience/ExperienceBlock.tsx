@@ -25,7 +25,7 @@ export default function ExperienceBlock({
   const MAX_HEIGHT = 110;
 
   return (
-    <Stack gap="xs">
+    <Stack gap="md">
       <Group>
         {logoSrc && (
           <Image
@@ -33,7 +33,7 @@ export default function ExperienceBlock({
             alt="Company logo"
             w={64}
             h={64}
-            radius="lg"
+            radius={12}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         )}

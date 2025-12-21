@@ -7,7 +7,7 @@ export const theme = createTheme({
   components: {
     Button: Button.extend({
       defaultProps: {
-        radius: 999,
+        radius: 'md',
       },
       styles: {
         root: {
@@ -17,12 +17,12 @@ export const theme = createTheme({
     }),
     SegmentedControl: SegmentedControl.extend({
       defaultProps: {
-        radius: 999,
+        radius: 'md',
       },
     }),
     ActionIcon: ActionIcon.extend({
       defaultProps: {
-        radius: 999,
+        radius: 'md',
       },
     }),
   },

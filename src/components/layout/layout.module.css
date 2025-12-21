@@ -28,7 +28,7 @@
 }
 
 .navlink {
-  border-radius: 999px;
+  border-radius: var(--mantine-radius-md);
   align-items: center;
   justify-content: space-between;
   flex: 0;
@@ -67,5 +67,14 @@
   }
   .navbar {
     padding-right: var(--mantine-spacing-xl);
+  }
+  .bannerLayout,
+  .bannerHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bannerButton,
+  .bannerHeader {
+    width: 100%;
   }
 }
