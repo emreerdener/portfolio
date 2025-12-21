@@ -22,9 +22,16 @@ const funFacts = [
 interface AboutMeProps {
   titleSize?: TitleProps['size'];
   bodySize?: TextProps['size'];
+  emojiSize?: TextProps['size'];
+  funFactSize?: TextProps['size'];
 }
 
-export default function AboutMe({ titleSize, bodySize = 'lg' }: AboutMeProps) {
+export default function AboutMe({
+  titleSize,
+  bodySize = 'lg',
+  emojiSize = '1.4rem',
+  funFactSize = 'sm',
+}: AboutMeProps) {
   return (
     <Stack gap="xl">
       <Stack gap="xs">
@@ -44,10 +51,10 @@ export default function AboutMe({ titleSize, bodySize = 'lg' }: AboutMeProps) {
         <SimpleGrid cols={{ base: 1 }} spacing="md">
           {funFacts.map((item, index) => (
             <Group wrap="nowrap" gap="xs" key={index}>
-              <Text size="1.4rem" lh={1}>
+              <Text size={emojiSize} lh={1}>
                 {item.emoji}
               </Text>
-              <Text size="sm" fw={500} lh={1.4}>
+              <Text size={funFactSize} fw={500} lh={1.4}>
                 {item.text}
               </Text>
             </Group>
@@ -55,7 +62,7 @@ export default function AboutMe({ titleSize, bodySize = 'lg' }: AboutMeProps) {
         </SimpleGrid>
       </Stack>
       <Group gap="lg">
-        <Button size="md" variant="light" leftSection={<IconFile size={24} />}>
+        <Button size="md" leftSection={<IconFile size={24} />}>
           Resume
         </Button>
         <Button size="md" variant="default" leftSection={<IconBrandLinkedin size={24} />}>

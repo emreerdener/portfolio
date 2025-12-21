@@ -13,7 +13,7 @@ export default function AboutLayout() {
       <Grid align="center">
         <Grid.Col span={{ base: 12, lg: 6 }} order={{ base: 2, lg: 1 }}>
           <Box className={classes.aboutWrapper}>
-            <AboutMe titleSize="3.5rem" bodySize="1.4rem" />
+            <AboutMe titleSize="3.5rem" bodySize="1.4rem" emojiSize="1.8rem" funFactSize="lg" />
           </Box>
         </Grid.Col>
         <Grid.Col span={{ base: 12, lg: 6 }} order={{ base: 1, lg: 2 }}>
