@@ -2,12 +2,12 @@ import { IconBrandLinkedin, IconFile } from '@tabler/icons-react';
 import {
   Button,
   Group,
+  MantineSize,
   SimpleGrid,
   Stack,
+  StyleProp,
   Text,
-  TextProps,
   Title,
-  TitleProps,
 } from '@mantine/core';
 
 // Data array for easy management
@@ -20,10 +20,10 @@ const funFacts = [
 ];
 
 interface AboutMeProps {
-  titleSize?: TitleProps['size'];
-  bodySize?: TextProps['size'];
-  emojiSize?: TextProps['size'];
-  funFactSize?: TextProps['size'];
+  titleSize?: StyleProp<MantineSize | (string & {}) | number>;
+  bodySize?: StyleProp<MantineSize | (string & {}) | number>;
+  emojiSize?: StyleProp<MantineSize | (string & {}) | number>;
+  funFactSize?: StyleProp<MantineSize | (string & {}) | number>;
 }
 
 export default function AboutMe({
@@ -35,10 +35,10 @@ export default function AboutMe({
   return (
     <Stack gap="xl">
       <Stack gap="xs">
-        <Title order={1} size={titleSize}>
+        <Title order={1} fz={titleSize}>
           Hello, I'm Emre
         </Title>
-        <Text c="dimmed" size={bodySize} lh={1.3}>
+        <Text c="dimmed" fz={bodySize} lh={1.3}>
           I am an interdisciplinary designer, helping businesses conceptualize and build software,
           systems, experiences, websites, and brands.
         </Text>
@@ -51,10 +51,10 @@ export default function AboutMe({
         <SimpleGrid cols={{ base: 1 }} spacing="md">
           {funFacts.map((item, index) => (
             <Group wrap="nowrap" gap="xs" key={index}>
-              <Text size={emojiSize} lh={1}>
+              <Text fz={emojiSize} lh={1}>
                 {item.emoji}
               </Text>
-              <Text size={funFactSize} fw={500} lh={1.4}>
+              <Text fz={funFactSize} fw={500} lh={1.4}>
                 {item.text}
               </Text>
             </Group>

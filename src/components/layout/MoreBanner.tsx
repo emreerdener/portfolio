@@ -22,7 +22,6 @@ export default function MoreBanner() {
         <Button
           onClick={() => router.push('/case-studies')}
           size="md"
-          variant="default"
           className={classes.bannerButton}
         >
           View more
