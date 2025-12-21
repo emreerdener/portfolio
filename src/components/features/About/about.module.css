@@ -1,5 +1,5 @@
 .aboutWrapper {
-  padding: var(--mantine-spacing-xl);
+  padding: var(--mantine-spacing-lg);
 }
 
 @media (max-width: 1200px) {
