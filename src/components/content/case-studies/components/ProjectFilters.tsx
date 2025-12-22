@@ -67,7 +67,7 @@ export default function ProjectFilters({
       <Drawer
         opened={opened}
         onClose={close}
-        title="Filters"
+        title="Case study filters"
         padding="lg"
         size="lg"
         position="bottom"
