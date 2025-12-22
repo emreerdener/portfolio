@@ -18,14 +18,20 @@ const CLIENTS = Array.from(new Set(CASE_STUDIES.map((p) => p.company)))
   });
 
 const CATEGORIES = Array.from(new Set(CASE_STUDIES.flatMap((p) => p.categories))).sort();
-const PLATFORMS = Array.from(new Set(CASE_STUDIES.flatMap((p) => p.platforms))).sort();
+
+// Custom order for platforms: Mobile, Web (Desktop), IoT
+const PLATFORM_ORDER = ['Mobile', 'Web', 'IoT'];
+
+const PLATFORMS = Array.from(new Set(CASE_STUDIES.flatMap((p) => p.platforms))).sort(
+  (a, b) => PLATFORM_ORDER.indexOf(a) - PLATFORM_ORDER.indexOf(b)
+);
 
 export default function CaseStudiesPage() {
   const {
     selectedCompanies,
     setSelectedCompanies,
-    selectedCategory,
-    setSelectedCategory,
+    selectedCategories,
+    setSelectedCategories,
     selectedPlatform,
     setSelectedPlatform,
     sortOrder,
@@ -43,8 +49,8 @@ export default function CaseStudiesPage() {
           platforms={PLATFORMS}
           selectedCompanies={selectedCompanies}
           setSelectedCompanies={setSelectedCompanies}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
+          selectedCategories={selectedCategories}
+          setSelectedCategories={setSelectedCategories}
           selectedPlatform={selectedPlatform}
           setSelectedPlatform={setSelectedPlatform}
           sortOrder={sortOrder}
