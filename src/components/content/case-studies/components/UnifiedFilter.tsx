@@ -2,7 +2,16 @@
 
 import { useState } from 'react';
 import { IconCaretDownFilled, IconCategory2, IconX } from '@tabler/icons-react';
-import { Avatar, Combobox, Group, Pill, PillsInput, SimpleGrid, useCombobox } from '@mantine/core';
+import {
+  Avatar,
+  Combobox,
+  Group,
+  Pill,
+  PillsInput,
+  SimpleGrid,
+  Text,
+  useCombobox,
+} from '@mantine/core';
 
 export type ClientFilterOption = {
   name: string;
@@ -69,9 +78,11 @@ export default function UnifiedFilter({
     )
     .map((item) => (
       <Combobox.Option value={`company:${item.name}`} key={`company:${item.name}`}>
-        <Group gap="sm">
+        <Group gap="sm" wrap="nowrap">
           <Avatar src={item.logoSrc} size="xs" radius="sm" />
-          <span>{item.name}</span>
+          <Text size="sm" lineClamp={1}>
+            {item.name}
+          </Text>
         </Group>
       </Combobox.Option>
     ));
@@ -86,7 +97,9 @@ export default function UnifiedFilter({
       <Combobox.Option value={`category:${item}`} key={`category:${item}`}>
         <Group gap="sm">
           <IconCategory2 size={16} style={{ opacity: 0.5 }} />
-          <span>{item}</span>
+          <Text size="sm" lineClamp={1}>
+            {item}
+          </Text>
         </Group>
       </Combobox.Option>
     ));
