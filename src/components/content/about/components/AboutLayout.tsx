@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Divider, Grid, Paper, Space, Stack } from '@mantine/core';
-import MoreBanner from '../../layout/MoreBanner';
-import Education from '../Experience/Education';
-import Experience from '../Experience/Experience';
+import MoreBanner from '../../../layout/components/MoreBanner';
+import Education from '../../experience/components/Education';
+import Experience from '../../experience/components/Experience';
 import AboutImageCarousel from './AboutImageCarousel';
 import AboutMe from './AboutMe';
 import classes from './about.module.css';

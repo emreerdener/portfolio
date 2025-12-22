@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Space, Stack } from '@mantine/core';
-import MoreBanner from '@/src/components/layout/MoreBanner';
+import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function PresentationPage() {
   return (

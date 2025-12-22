@@ -1,6 +1,6 @@
 import { IconDownload } from '@tabler/icons-react';
 import { Button, Group, Stack, Title } from '@mantine/core';
-import { JOBS } from '@/src/data/jobs';
+import { JOBS } from '@/src/components/content/experience/data/jobs';
 import ExperienceBlock from './ExperienceBlock';
 import classes from './experience.module.css';
 

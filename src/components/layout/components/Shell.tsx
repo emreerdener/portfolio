@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { AppShell, Burger, Overlay, Stack, Transition } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { useScrollLock } from '@/src/hooks/use-scroll-lock';
+import { useScrollLock } from '@/src/components/layout/hooks/use-scroll-lock';
 import Aside from './Aside';
 import MobileHeader from './MobileHeader';
 import NavContent from './NavContent';

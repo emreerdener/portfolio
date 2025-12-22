@@ -1,8 +1,8 @@
 import { Divider, ScrollArea, Space, Stack } from '@mantine/core';
-import AboutImageCarousel from '../features/About/AboutImageCarousel';
-import AboutMe from '../features/About/AboutMe';
-import Education from '../features/Experience/Education';
-import Experience from '../features/Experience/Experience';
+import AboutImageCarousel from '../../content/about/components/AboutImageCarousel';
+import AboutMe from '../../content/about/components/AboutMe';
+import Education from '../../content/experience/components/Education';
+import Experience from '../../content/experience/components/Experience';
 
 export default function Aside() {
   return (

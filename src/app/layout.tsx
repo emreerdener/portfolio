@@ -4,7 +4,7 @@ import './globals.css';
 
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 import { theme } from '../../theme';
-import { Shell } from '../components/layout/Shell';
+import { Shell } from '../components/layout/components/Shell';
 
 export const metadata = {
   title: 'Emre Erdener',
