@@ -2,6 +2,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import {
   IconBook,
   IconBookFilled,
+  IconIcons,
+  IconIconsFilled,
   IconPlayerPlay,
   IconPlayerPlayFilled,
   IconStar,
@@ -65,6 +67,15 @@ export default function NavContent() {
             }
             className={classes.navlink}
             active={pathname === '/presentation'}
+          />
+          <NavLink
+            onClick={() => router.push('/other-work')}
+            label="Other work"
+            rightSection={
+              pathname === '/other-work' ? <IconIconsFilled size={20} /> : <IconIcons size={20} />
+            }
+            className={classes.navlink}
+            active={pathname === '/other-work'}
           />
           <NavLink
             onClick={() => router.push('/profile')}

@@ -7,7 +7,7 @@ import {
   IconDeviceMobile,
   IconX,
 } from '@tabler/icons-react';
-import { ActionIcon, Button, Drawer, Group, Select, Stack } from '@mantine/core';
+import { ActionIcon, Box, Button, Drawer, Group, Select, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import UnifiedFilter, { ClientFilterOption } from './UnifiedFilter';
 import classes from './case-studies.module.css';
@@ -170,7 +170,9 @@ export default function ProjectFilters({
         </ActionIcon>
 
         {/* Unified Filter on Desktop (Takes up remaining space) */}
-        <div style={{ flexGrow: 1, minWidth: '250px' }}>{filterInput}</div>
+        <Box visibleFrom="md" style={{ flexGrow: 1, minWidth: '250px' }}>
+          {filterInput}
+        </Box>
       </Group>
     </>
   );

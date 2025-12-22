@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { IconCaretDownFilled, IconCategory2, IconCheck } from '@tabler/icons-react';
-import { Avatar, Combobox, Group, Pill, PillsInput, useCombobox } from '@mantine/core';
+import { IconCaretDownFilled, IconCategory2, IconX } from '@tabler/icons-react';
+import { Avatar, Combobox, Group, Pill, PillsInput, SimpleGrid, useCombobox } from '@mantine/core';
 
 export type ClientFilterOption = {
   name: string;
@@ -33,19 +33,23 @@ export default function UnifiedFilter({
 
   const [search, setSearch] = useState('');
 
-  // Helper to parse the composite value "type:value"
+  const hasActiveFilters = selectedCompanies.length > 0 || selectedCategories.length > 0;
+
+  const handleClear = () => {
+    setSelectedCompanies([]);
+    setSelectedCategories([]);
+    setSearch('');
+  };
+
   const handleValueSelect = (val: string) => {
     setSearch('');
     const [type, value] = val.split(':');
 
     if (type === 'company') {
-      setSelectedCompanies((current) =>
-        current.includes(value) ? current.filter((v) => v !== value) : [...current, value]
-      );
+      // We only need to add, since selection hides it from the list
+      setSelectedCompanies((current) => [...current, value]);
     } else if (type === 'category') {
-      setSelectedCategories((current) =>
-        current.includes(value) ? current.filter((v) => v !== value) : [...current, value]
-      );
+      setSelectedCategories((current) => [...current, value]);
     }
   };
 
@@ -58,52 +62,44 @@ export default function UnifiedFilter({
   // --- Render Options ---
 
   const companyOptions = clients
-    .filter((item) => item.name.toLowerCase().includes(search.trim().toLowerCase()))
+    .filter(
+      (item) =>
+        item.name.toLowerCase().includes(search.trim().toLowerCase()) &&
+        !selectedCompanies.includes(item.name) // <--- Hide selected
+    )
     .map((item) => (
-      <Combobox.Option
-        value={`company:${item.name}`}
-        key={`company:${item.name}`}
-        active={selectedCompanies.includes(item.name)}
-      >
+      <Combobox.Option value={`company:${item.name}`} key={`company:${item.name}`}>
         <Group gap="sm">
           <Avatar src={item.logoSrc} size="xs" radius="sm" />
           <span>{item.name}</span>
-          {selectedCompanies.includes(item.name) && (
-            <IconCheck size={12} style={{ marginLeft: 'auto' }} />
-          )}
         </Group>
       </Combobox.Option>
     ));
 
   const categoryOptions = categories
-    .filter((item) => item.toLowerCase().includes(search.trim().toLowerCase()))
+    .filter(
+      (item) =>
+        item.toLowerCase().includes(search.trim().toLowerCase()) &&
+        !selectedCategories.includes(item) // <--- Hide selected
+    )
     .map((item) => (
-      <Combobox.Option
-        value={`category:${item}`}
-        key={`category:${item}`}
-        active={selectedCategories.includes(item)}
-      >
+      <Combobox.Option value={`category:${item}`} key={`category:${item}`}>
         <Group gap="sm">
           <IconCategory2 size={16} style={{ opacity: 0.5 }} />
           <span>{item}</span>
-          {selectedCategories.includes(item) && (
-            <IconCheck size={12} style={{ marginLeft: 'auto' }} />
-          )}
         </Group>
       </Combobox.Option>
     ));
 
   // --- Render Pills ---
 
-  const companyPills = selectedCompanies.map((name) => {
-    return (
-      <Pill key={`company-${name}`} withRemoveButton onRemove={() => handleRemoveCompany(name)}>
-        <Group gap="xs" align="center">
-          {name}
-        </Group>
-      </Pill>
-    );
-  });
+  const companyPills = selectedCompanies.map((name) => (
+    <Pill key={`company-${name}`} withRemoveButton onRemove={() => handleRemoveCompany(name)}>
+      <Group gap="xs" align="center">
+        {name}
+      </Group>
+    </Pill>
+  ));
 
   const categoryPills = selectedCategories.map((name) => (
     <Pill key={`cat-${name}`} withRemoveButton onRemove={() => handleRemoveCategory(name)}>
@@ -122,8 +118,21 @@ export default function UnifiedFilter({
           onClick={() => combobox.openDropdown()}
           radius="md"
           size="lg"
-          rightSection={<IconCaretDownFilled size={20} />}
-          rightSectionPointerEvents="none"
+          rightSection={
+            hasActiveFilters ? (
+              <IconX
+                size={24}
+                style={{ cursor: 'pointer' }}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleClear();
+                }}
+              />
+            ) : (
+              <IconCaretDownFilled size={20} />
+            )
+          }
+          rightSectionPointerEvents={hasActiveFilters ? 'all' : 'none'}
           pointer
           w={{ base: '100%' }}
         >
@@ -147,7 +156,6 @@ export default function UnifiedFilter({
                 onKeyDown={(event) => {
                   if (event.key === 'Backspace' && search.length === 0) {
                     event.preventDefault();
-                    // Remove last added item (check categories first as they are rendered last)
                     if (selectedCategories.length > 0) {
                       handleRemoveCategory(selectedCategories[selectedCategories.length - 1]);
                     } else if (selectedCompanies.length > 0) {
@@ -166,11 +174,19 @@ export default function UnifiedFilter({
           {hasOptions ? (
             <>
               {categoryOptions.length > 0 && (
-                <Combobox.Group label="Categories">{categoryOptions}</Combobox.Group>
+                <Combobox.Group label="Categories">
+                  <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing={4} verticalSpacing={4}>
+                    {categoryOptions}
+                  </SimpleGrid>
+                </Combobox.Group>
               )}
 
               {companyOptions.length > 0 && (
-                <Combobox.Group label="Clients">{companyOptions}</Combobox.Group>
+                <Combobox.Group label="Clients">
+                  <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing={4} verticalSpacing={4}>
+                    {companyOptions}
+                  </SimpleGrid>
+                </Combobox.Group>
               )}
             </>
           ) : (

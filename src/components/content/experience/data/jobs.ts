@@ -13,7 +13,7 @@ export const JOBS: Job[] = [
     company: 'Vivint',
     date: '2024 - present',
     location: 'Remote',
-    logoSrc: '/images/logos/vivint.jpg',
+    logoSrc: '/images/logos/experience/vivint.jpg',
     bullets: [
       'Lead design strategy and execution across 4+ product initiatives, directly collaborating with C-suite executives and cross-functional teams to align design vision with business objectives.',
       'Spearheaded the Energy Intelligence UX design for Vivint and NRG platforms, transforming complex energy data into intuitive interfaces.',
@@ -26,7 +26,7 @@ export const JOBS: Job[] = [
     company: 'Shopify',
     date: '2021 - 2023',
     location: 'Remote',
-    logoSrc: '/images/logos/shopify.jpg',
+    logoSrc: '/images/logos/experience/shopify.jpg',
     bullets: [
       'Led design for several key projects on the Monetization team. All key metrics and signup rates surpassed our goals, breaking company performance records.',
       'Researched, designed, prototyped, tested, and shipped a merchant referral program. The feature is a successful growth lever, continuing to increase signups, user retention, and user engagement.',
@@ -42,7 +42,7 @@ export const JOBS: Job[] = [
     company: 'Mello Studio',
     date: '2016 - 2021',
     location: '🇺🇸 Austin, TX',
-    logoSrc: '/images/logos/mello.jpg',
+    logoSrc: '/images/logos/experience/mello.jpg',
     bullets: [
       'Product, web, and marketing design for startups and enterprise clients.',
       'User research, user flows, onboarding optimization, usability testing, and user experience audits to define product roadmaps.',
@@ -56,7 +56,7 @@ export const JOBS: Job[] = [
     company: 'Justuno',
     date: '2018 - 2020',
     location: '🇺🇸 Austin, TX',
-    logoSrc: '/images/logos/justuno.png',
+    logoSrc: '/images/logos/experience/justuno.png',
     bullets: [
       'Conceptualized product, usability, and design based on requirements gathered during interviews with key stakeholders and users.',
       'Created high-fidelity wireframes and clickable prototypes to define visual and interactive product design and direction.',
