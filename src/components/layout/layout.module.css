@@ -58,6 +58,11 @@
   padding: 0;
 }
 
+.bannerPaper {
+  padding: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-lg);
+}
+
 @media (min-width: 768px) {
   .main {
     padding-top: var(--mantine-spacing-xl) !important;
@@ -81,5 +86,8 @@
   .bannerButton,
   .bannerHeader {
     width: 100%;
+  }
+  .bannerPaper {
+    padding-right: var(--mantine-spacing-md);
   }
 }
