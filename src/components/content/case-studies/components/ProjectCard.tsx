@@ -40,14 +40,7 @@ export default function ProjectCard({ title, company, coverSrc, logoSrc, href }:
         <Group p="sm" wrap="nowrap" gap="xs" justify="space-between">
           {/* Left */}
           <Group wrap="nowrap">
-            <Image
-              src={logoSrc}
-              alt={`${company} logo`}
-              w={56}
-              h={56}
-              radius={12}
-              style={{ border: '1px solid var(--app-shell-border-color)' }}
-            />
+            <Image src={logoSrc} alt={`${company} logo`} w={56} h={56} radius={12} />
             <Stack gap={3}>
               {/* Details */}
               <Text size="sm" c="dimmed" lineClamp={1}>

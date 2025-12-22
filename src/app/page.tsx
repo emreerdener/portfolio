@@ -12,7 +12,10 @@ export default function HomePage() {
       <Stack gap="xl">
         <Grid gutter={{ base: 'lg', xs: 'xl' }}>
           {featuredProjects.map((project, index) => (
-            <Grid.Col key={project.title} span={{ base: 12, md: index === 0 ? 12 : 6 }}>
+            <Grid.Col
+              key={project.title}
+              span={{ base: 12, md: index === 0 || index === 5 ? 12 : 6 }}
+            >
               <ProjectCard
                 title={project.title}
                 company={project.company}
