@@ -134,7 +134,7 @@ export default function ProjectFilters({
         radius="lg"
         variant="default"
         pos="fixed"
-        top={24}
+        top={20}
         right={20}
         style={{
           zIndex: 100,

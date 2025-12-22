@@ -24,7 +24,7 @@
   padding: var(--mantine-spacing-lg);
 }
 .headerButton {
-  padding: var(--mantine-spacing-sm);
+  padding: var(--mantine-spacing-xs);
   padding-right: var(--mantine-spacing-md);
   border-radius: var(--mantine-radius-lg);
   background-color: light-dark(var(--mantine-color-body), var(--mantine-color-dark-6));

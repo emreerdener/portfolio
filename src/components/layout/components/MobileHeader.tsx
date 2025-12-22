@@ -21,14 +21,14 @@ export default function MobileHeader({ opened, toggle }: MobileHeaderProps) {
           <Image
             src="/images/profile-pic.png"
             alt="Profile picture"
-            w={40}
-            h={40}
+            w={34}
+            h={34}
             radius="100%"
             fit="cover"
             className={classes.profilepic}
           />
           <Stack gap={0}>
-            <Title order={4} lh={1.1}>
+            <Title order={5} lh={1.1}>
               Emre Erdener
             </Title>
             <Text size="xs" c="dimmed">
