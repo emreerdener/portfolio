@@ -26,7 +26,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
   return (
     <AppShell
       layout="alt"
-      header={{ height: 86 }}
+      header={{ height: 76 }}
       navbar={{ width: 268, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       aside={{
         width: 480,
