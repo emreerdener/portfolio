@@ -9,7 +9,7 @@ import {
   IconX,
 } from '@tabler/icons-react';
 import { Button, Drawer, Group, Select, Stack } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure, useViewportSize } from '@mantine/hooks';
 import ClientFilter, { ClientFilterOption } from './ClientFilter';
 
 // Map platform strings to specific icons
@@ -55,6 +55,7 @@ export default function ProjectFilters({
   resetFilters,
 }: ProjectFiltersProps) {
   const [opened, { open, close }] = useDisclosure(false);
+  const isMobile = useViewportSize().width < 768;
 
   // Helper to check if any filter is active
   const hasActiveFilters =
@@ -123,30 +124,33 @@ export default function ProjectFilters({
         </Stack>
       </Drawer>
 
+      {/* Mobile: Filter Button Trigger */}
+      <Button
+        hiddenFrom="sm"
+        onClick={open}
+        size="xl"
+        h={66}
+        radius="lg"
+        variant="default"
+        leftSection={<IconAdjustmentsHorizontal size={isMobile ? 26 : 20} />}
+        pl={isMobile ? 14 : 'xs'}
+        pr={isMobile ? 6 : 'xs'}
+        pos="fixed"
+        top={20}
+        right={20}
+        style={{
+          zIndex: 100,
+          boxShadow: 'var(--mantine-shadow-xs)',
+        }}
+      >
+        {isMobile ? null : 'Filters'}
+      </Button>
+
       {/* --- Main Bar --- */}
-      <Group justify="space-between" align="flex-start" w="100%">
+      <Group justify="space-between" align="flex-start" w="100%" visibleFrom="sm">
         <Group align="flex-start" w={{ base: 'auto', sm: 'auto' }}>
-          {/* Mobile: Filter Button Trigger */}
-          <Button
-            hiddenFrom="sm"
-            onClick={open}
-            size="xl"
-            h={66}
-            radius="lg"
-            variant="default"
-            leftSection={<IconAdjustmentsHorizontal size={20} />}
-            pos="fixed"
-            top={20}
-            right={20}
-            style={{
-              zIndex: 100,
-              boxShadow: 'var(--mantine-shadow-xs)',
-            }}
-          >
-            Filters
-          </Button>
           {/* Desktop: Visible Filters */}
-          <Group visibleFrom="sm" align="flex-start">
+          <Group align="flex-start">
             <ClientFilter
               clients={clients}
               selectedCompanies={selectedCompanies}
