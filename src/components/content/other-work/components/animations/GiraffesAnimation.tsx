@@ -8,8 +8,8 @@ const BLOB_URL = '/images/blobs/blue-blob.svg';
 
 export default function GiraffesAnimation() {
   return (
-    <Center py="xl">
-      <Box pos="relative" w={400}>
+    <Center py={56}>
+      <Box pos="relative" w={800}>
         <Box
           style={{
             position: 'absolute',
@@ -19,6 +19,7 @@ export default function GiraffesAnimation() {
             width: '110%',
             height: '110%',
             zIndex: 0,
+            filter: 'blur(8px)',
           }}
         >
           <Image src={BLOB_URL} alt="" w="100%" h="100%" fit="contain" />

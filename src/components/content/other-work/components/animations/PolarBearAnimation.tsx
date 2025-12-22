@@ -8,8 +8,8 @@ const BLOB_URL = '/images/blobs/purple-blob.svg';
 
 export default function PolarBearAnimation() {
   return (
-    <Center py="xl">
-      <Box pos="relative" w={400}>
+    <Center py={56}>
+      <Box pos="relative" w={700}>
         <Box
           style={{
             position: 'absolute',
@@ -19,6 +19,7 @@ export default function PolarBearAnimation() {
             width: '110%',
             height: '110%',
             zIndex: 0,
+            filter: 'blur(8px)',
           }}
         >
           <Image src={BLOB_URL} alt="" w="100%" h="100%" fit="contain" />

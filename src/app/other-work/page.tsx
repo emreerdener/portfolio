@@ -5,6 +5,7 @@ import GiraffesAnimation from '@/src/components/content/other-work/components/an
 import PolarBearAnimation from '@/src/components/content/other-work/components/animations/PolarBearAnimation';
 import TurtleAnimation from '@/src/components/content/other-work/components/animations/TurtleAnimation';
 import HealthCarousel from '@/src/components/content/other-work/components/HealthCarousel';
+import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function page() {
   return (
@@ -19,6 +20,7 @@ export default function page() {
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/other-work/kicktoys.png"
           alt="Kick Toys"
           radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
         <Card withBorder radius="lg">
@@ -30,6 +32,35 @@ export default function page() {
         <Card withBorder radius="lg">
           <GiraffesAnimation />
         </Card>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/other-work/yoga.jpg"
+          alt="Yoga and meditation illustrations"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/other-work/vintage-heart.jpg"
+          alt="Vintage Heart logo"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/other-work/ironmarrow.jpg"
+          alt="Ironmarrow logo"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/other-work/lotus.jpg"
+          alt="Lotus logo"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <MoreBanner />
 
         <Space h="xl" />
       </Stack>

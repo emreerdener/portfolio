@@ -9,7 +9,7 @@ const BLOB_URL = '/images/blobs/tan-blob.svg';
 export default function TurtleAnimation() {
   return (
     <Center py="xl">
-      <Box pos="relative" w={400}>
+      <Box pos="relative" w={500}>
         <Box
           style={{
             position: 'absolute',
@@ -19,6 +19,7 @@ export default function TurtleAnimation() {
             width: '100%',
             height: '100%',
             zIndex: 0,
+            filter: 'blur(8px)',
           }}
         >
           <Image src={BLOB_URL} alt="" w="100%" h="100%" fit="contain" />
