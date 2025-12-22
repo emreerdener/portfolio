@@ -2,28 +2,25 @@
 
 import { useRouter } from 'next/navigation';
 import { IconArrowLeft } from '@tabler/icons-react';
-import { Button, Container, Group, Stack } from '@mantine/core';
+import { Button, Group, Stack } from '@mantine/core';
 
 export default function CaseStudiesLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   return (
     <>
-      <Container>
-        <Stack gap="lg">
-          <Group>
-            <Button
-              onClick={() => router.push('/case-studies')}
-              variant="subtle"
-              color="gray"
-              size="md"
-              leftSection={<IconArrowLeft size={24} />}
-            >
-              Case studies
-            </Button>
-          </Group>
-          {children}
-        </Stack>
-      </Container>
+      <Stack gap={60}>
+        <Group>
+          <Button
+            onClick={() => router.push('/case-studies')}
+            variant="outline"
+            size="md"
+            leftSection={<IconArrowLeft size={24} />}
+          >
+            All case studies
+          </Button>
+        </Group>
+        {children}
+      </Stack>
     </>
   );
 }
