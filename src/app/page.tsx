@@ -6,9 +6,7 @@ import { CASE_STUDIES } from '../components/content/case-studies/data/case-studi
 import MoreBanner from '../components/layout/components/MoreBanner';
 
 export default function HomePage() {
-  // We only want to show the first 5 items on the homepage
-  const featuredProjects = CASE_STUDIES.slice(0, 5);
-
+  const featuredProjects = CASE_STUDIES.filter((project) => project.featured);
   return (
     <>
       <Stack gap="xl">

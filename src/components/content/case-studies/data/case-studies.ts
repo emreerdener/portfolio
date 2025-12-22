@@ -4,9 +4,18 @@ export interface CaseStudy {
   coverSrc: string;
   logoSrc: string;
   href: string;
-  categories: ('Product' | 'Marketing' | 'System' | 'Growth')[];
+  categories: (
+    | '0 to 1'
+    | 'Redesign'
+    | 'Marketing'
+    | 'Design System'
+    | 'Growth'
+    | 'SaaS'
+    | 'E-commerce'
+  )[];
   platforms: ('Web' | 'Mobile' | 'IoT')[];
   date: string;
+  featured?: boolean;
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -16,9 +25,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png',
     logoSrc: '/images/apps/shopify.svg',
     href: '/case-study/merchant-referrals',
-    categories: ['Product', 'Growth'],
+    categories: ['0 to 1', 'Growth', 'SaaS', 'E-commerce'],
     platforms: ['Web'],
     date: '2023-11-01',
+    featured: true,
   },
   {
     title: 'Inventory Management System',
@@ -26,7 +36,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/waxwing.png',
     logoSrc: '/images/apps/eureka.svg',
     href: '/',
-    categories: ['Product', 'System'],
+    categories: ['0 to 1', 'SaaS', 'E-commerce'],
     platforms: ['Web'],
     date: '2023-11-01',
   },
@@ -36,9 +46,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/tarbox.jpg',
     logoSrc: '/images/apps/tarbox.svg',
     href: '/',
-    categories: ['Marketing', 'System'],
-    platforms: ['Web'],
+    categories: ['Marketing', 'Redesign'],
+    platforms: ['Web', 'IoT'],
     date: '2023-11-01',
+    featured: true,
   },
   {
     title: 'Admin Checkout 2.0',
@@ -46,9 +57,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/shopify-admin.png',
     logoSrc: '/images/apps/shopify.svg',
     href: '/',
-    categories: ['Product', 'System'],
+    categories: ['0 to 1', 'SaaS', 'E-commerce'],
     platforms: ['Web'],
     date: '2023-11-01',
+    featured: true,
   },
   {
     title: 'Audi Dyno Display',
@@ -56,9 +68,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/btres.png',
     logoSrc: '/images/apps/btres.svg',
     href: '/',
-    categories: ['Product'],
+    categories: ['0 to 1'],
     platforms: ['IoT'],
     date: '2023-11-01',
+    featured: true,
   },
   {
     title: 'Simplify Travel Expenses',
@@ -66,8 +79,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/tripway.png',
     logoSrc: '/images/apps/tripway.svg',
     href: '/',
-    categories: ['Product', 'Marketing', 'System'],
+    categories: ['0 to 1', 'Design System'],
     platforms: ['Mobile', 'Web'],
     date: '2023-11-01',
+    featured: true,
   },
 ];

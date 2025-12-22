@@ -2,15 +2,14 @@
 
 import {
   IconAdjustmentsHorizontal,
-  IconCaretDownFilled,
   IconCpu,
   IconDeviceDesktop,
   IconDeviceMobile,
   IconX,
 } from '@tabler/icons-react';
-import { ActionIcon, Button, Drawer, Group, MultiSelect, Select, Stack } from '@mantine/core';
+import { ActionIcon, Button, Drawer, Group, Select, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import ClientFilter, { ClientFilterOption } from './ClientFilter';
+import UnifiedFilter, { ClientFilterOption } from './UnifiedFilter';
 import classes from './case-studies.module.css';
 
 // Map platform strings to specific icons
@@ -57,9 +56,20 @@ export default function ProjectFilters({
 }: ProjectFiltersProps) {
   const [opened, { open, close }] = useDisclosure(false);
 
-  // Helper to check if any filter is active
   const hasActiveFilters =
     selectedCompanies.length > 0 || selectedCategories.length > 0 || selectedPlatform !== null;
+
+  // Common unified filter instance to reuse in Drawer and Desktop
+  const filterInput = (
+    <UnifiedFilter
+      clients={clients}
+      categories={categories}
+      selectedCompanies={selectedCompanies}
+      setSelectedCompanies={setSelectedCompanies}
+      selectedCategories={selectedCategories}
+      setSelectedCategories={setSelectedCategories}
+    />
+  );
 
   return (
     <>
@@ -74,24 +84,8 @@ export default function ProjectFilters({
         radius="lg"
       >
         <Stack gap="md">
-          <ClientFilter
-            clients={clients}
-            selectedCompanies={selectedCompanies}
-            setSelectedCompanies={setSelectedCompanies}
-          />
-
-          <MultiSelect
-            size="lg"
-            radius="md"
-            placeholder="Filter by type"
-            data={categories}
-            value={selectedCategories}
-            onChange={setSelectedCategories}
-            clearable
-            searchable
-            hidePickedOptions
-            rightSection={<IconCaretDownFilled size={20} />}
-          />
+          {/* Replaced separate inputs with unified filter */}
+          {filterInput}
 
           <Select
             size="lg"
@@ -101,7 +95,6 @@ export default function ProjectFilters({
             value={selectedPlatform}
             onChange={setSelectedPlatform}
             clearable
-            rightSection={<IconCaretDownFilled size={20} />}
           />
 
           <Select
@@ -111,7 +104,6 @@ export default function ProjectFilters({
             data={['Recent', 'Featured']}
             value={sortOrder}
             onChange={setSortOrder}
-            rightSection={<IconCaretDownFilled size={20} />}
           />
 
           <Button size="lg" fullWidth onClick={close} mt="md">
@@ -177,21 +169,8 @@ export default function ProjectFilters({
           <IconAdjustmentsHorizontal size={26} />
         </ActionIcon>
 
-        <MultiSelect
-          visibleFrom="md"
-          size="lg"
-          radius="md"
-          placeholder="More filters"
-          data={categories}
-          value={selectedCategories}
-          onChange={setSelectedCategories}
-          clearable
-          searchable
-          hidePickedOptions
-          rightSection={<IconCaretDownFilled size={20} />}
-          w={{ base: '100%' }}
-          style={{ minWidth: '200px', flexGrow: 1 }}
-        />
+        {/* Unified Filter on Desktop (Takes up remaining space) */}
+        <div style={{ flexGrow: 1, minWidth: '250px' }}>{filterInput}</div>
       </Group>
     </>
   );

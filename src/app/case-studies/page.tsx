@@ -1,6 +1,7 @@
 'use client';
 
-import { Grid, Space, Stack } from '@mantine/core';
+import { IconSearch } from '@tabler/icons-react';
+import { Button, Grid, Space, Stack, Text, Title } from '@mantine/core';
 import ProjectCard from '@/src/components/content/case-studies/components/ProjectCard';
 import ProjectFilters from '@/src/components/content/case-studies/components/ProjectFilters';
 import { useProjectFilters } from '@/src/components/content/case-studies/hooks/use-project-filters';
@@ -70,10 +71,21 @@ export default function CaseStudiesPage() {
               />
             </Grid.Col>
           ))}
+
+          {/* Empty */}
           {filteredProjects.length === 0 && (
             <Grid.Col span={12}>
-              <Stack align="center" py="xl" c="dimmed">
-                No projects match the selected filters.
+              <Stack align="center" py={60} gap="md">
+                <IconSearch size={32} />
+
+                <Title order={3}>No projects found</Title>
+                <Text c="dimmed" ta="center" maw={420}>
+                  We couldn&apos;t find any case studies matching your current filters. Try
+                  adjusting your search criteria.
+                </Text>
+                <Button variant="light" size="md" onClick={resetFilters}>
+                  Clear all filters
+                </Button>
               </Stack>
             </Grid.Col>
           )}
