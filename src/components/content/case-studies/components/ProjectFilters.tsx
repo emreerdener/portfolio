@@ -1,21 +1,22 @@
 'use client';
 
-import { useState } from 'react';
-import { IconCaretDownFilled } from '@tabler/icons-react';
 import {
-  Avatar,
-  CheckIcon,
-  Combobox,
-  Group,
-  Pill,
-  PillsInput,
-  Select,
-  useCombobox,
-} from '@mantine/core';
+  IconAdjustmentsHorizontal,
+  IconCaretDownFilled,
+  IconCpu,
+  IconDeviceDesktop,
+  IconDeviceMobile,
+  IconX,
+} from '@tabler/icons-react';
+import { Button, Drawer, Group, Select, Stack } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import ClientFilter, { ClientFilterOption } from './ClientFilter';
 
-export type ClientFilterOption = {
-  name: string;
-  logoSrc?: string;
+// Map platform strings to specific icons
+const PLATFORM_ICONS: Record<string, React.ReactNode> = {
+  Web: <IconDeviceDesktop size={18} />,
+  Mobile: <IconDeviceMobile size={18} />,
+  IoT: <IconCpu size={18} />,
 };
 
 interface ProjectFiltersProps {
@@ -51,133 +52,124 @@ export default function ProjectFilters({
   sortOrder,
   setSortOrder,
 }: ProjectFiltersProps) {
-  const combobox = useCombobox({
-    onDropdownClose: () => combobox.resetSelectedOption(),
-    onDropdownOpen: () => combobox.updateSelectedOptionIndex('active'),
-  });
-
-  const [search, setSearch] = useState('');
-
-  const handleValueSelect = (val: string) => {
-    setSearch('');
-    setSelectedCompanies((current) =>
-      current.includes(val) ? current.filter((v) => v !== val) : [...current, val]
-    );
-  };
-
-  const handleValueRemove = (val: string) =>
-    setSelectedCompanies((current) => current.filter((v) => v !== val));
-
-  const options = clients
-    .filter((item) => item.name.toLowerCase().includes(search.trim().toLowerCase()))
-    .map((item) => (
-      <Combobox.Option
-        value={item.name}
-        key={item.name}
-        active={selectedCompanies.includes(item.name)}
-      >
-        <Group gap="sm">
-          <Avatar src={item.logoSrc} size="sm" radius="md" />
-          <span>{item.name}</span>
-          {selectedCompanies.includes(item.name) ? (
-            <CheckIcon size={12} style={{ marginLeft: 'auto' }} />
-          ) : null}
-        </Group>
-      </Combobox.Option>
-    ));
-
-  const values = selectedCompanies.map((name) => (
-    <Pill key={name} withRemoveButton onRemove={() => handleValueRemove(name)}>
-      <Group gap="xs" align="center">
-        {name}
-      </Group>
-    </Pill>
-  ));
+  const [opened, { open, close }] = useDisclosure(false);
 
   return (
-    <Group justify="space-between">
-      <Group>
-        {/* Client Multi-Select */}
-        <Combobox store={combobox} onOptionSubmit={handleValueSelect}>
-          <Combobox.DropdownTarget>
-            <PillsInput
-              onClick={() => combobox.openDropdown()}
-              radius="md"
+    <>
+      {/* --- Mobile Filter Drawer --- */}
+      <Drawer
+        opened={opened}
+        onClose={close}
+        title="Filters"
+        padding="md"
+        size="md"
+        position="bottom"
+        radius="lg"
+      >
+        <Stack gap="md">
+          <ClientFilter
+            clients={clients}
+            selectedCompanies={selectedCompanies}
+            setSelectedCompanies={setSelectedCompanies}
+          />
+
+          <Select
+            size="lg"
+            radius="md"
+            placeholder="Filter by type"
+            data={categories}
+            value={selectedCategory}
+            onChange={setSelectedCategory}
+            clearable
+            rightSection={<IconCaretDownFilled size={20} />}
+          />
+
+          <Select
+            size="lg"
+            radius="md"
+            placeholder="Filter by platform"
+            data={platforms}
+            value={selectedPlatform}
+            onChange={setSelectedPlatform}
+            clearable
+            rightSection={<IconCaretDownFilled size={20} />}
+          />
+
+          <Button size="lg" fullWidth onClick={close} mt="md">
+            Apply Filters
+          </Button>
+        </Stack>
+      </Drawer>
+
+      {/* --- Main Bar --- */}
+      <Group justify="space-between" align="flex-start" w="100%">
+        <Group align="flex-start" w={{ base: 'auto', sm: 'auto' }}>
+          {/* Mobile: Filter Button Trigger */}
+          <Button
+            hiddenFrom="sm"
+            onClick={open}
+            size="lg"
+            variant="default"
+            leftSection={<IconAdjustmentsHorizontal size={20} />}
+          >
+            Filters
+          </Button>
+
+          {/* Desktop: Visible Filters */}
+          <Group visibleFrom="sm" align="flex-start">
+            <ClientFilter
+              clients={clients}
+              selectedCompanies={selectedCompanies}
+              setSelectedCompanies={setSelectedCompanies}
+            />
+
+            <Select
               size="lg"
+              radius="md"
+              placeholder="Filter by type"
+              data={categories}
+              value={selectedCategory}
+              onChange={setSelectedCategory}
+              clearable
               rightSection={<IconCaretDownFilled size={20} />}
-              rightSectionPointerEvents="none"
-              pointer
-            >
-              <Pill.Group>
-                {values}
-                <Combobox.EventsTarget>
-                  <PillsInput.Field
-                    onFocus={() => combobox.openDropdown()}
-                    onBlur={() => combobox.closeDropdown()}
-                    value={search}
-                    placeholder="Filter by client"
-                    onChange={(event) => {
-                      combobox.updateSelectedOptionIndex();
-                      setSearch(event.currentTarget.value);
-                    }}
-                    onKeyDown={(event) => {
-                      if (
-                        event.key === 'Backspace' &&
-                        search.length === 0 &&
-                        selectedCompanies.length > 0
-                      ) {
-                        event.preventDefault();
-                        handleValueRemove(selectedCompanies[selectedCompanies.length - 1]);
-                      }
-                    }}
-                  />
-                </Combobox.EventsTarget>
-              </Pill.Group>
-            </PillsInput>
-          </Combobox.DropdownTarget>
+              w={{ base: '100%', sm: 'auto' }}
+            />
 
-          <Combobox.Dropdown>
-            <Combobox.Options>
-              {options.length > 0 ? options : <Combobox.Empty>Nothing found...</Combobox.Empty>}
-            </Combobox.Options>
-          </Combobox.Dropdown>
-        </Combobox>
+            {/* Desktop Platform Buttons */}
+            <Group gap="xs">
+              {platforms.map((platform) => {
+                const isActive = selectedPlatform === platform;
+                return (
+                  <Button
+                    key={platform}
+                    size="lg"
+                    radius="md"
+                    variant={isActive ? 'filled' : 'default'}
+                    leftSection={PLATFORM_ICONS[platform]}
+                    rightSection={isActive ? <IconX size={24} /> : undefined}
+                    onClick={() => setSelectedPlatform(isActive ? null : platform)}
+                  >
+                    {platform}
+                  </Button>
+                );
+              })}
+            </Group>
+          </Group>
+        </Group>
 
-        {/* Category Filter */}
+        {/* Sort (Visible on both Mobile and Desktop) */}
         <Select
           size="lg"
           radius="md"
-          placeholder="Filter by type"
-          data={categories}
-          value={selectedCategory}
-          onChange={setSelectedCategory}
-          clearable
+          placeholder="Sort by"
+          data={['Recent', 'Featured']}
+          value={sortOrder}
+          onChange={setSortOrder}
           rightSection={<IconCaretDownFilled size={20} />}
-        />
-
-        {/* Platform Filter */}
-        <Select
-          size="lg"
-          radius="md"
-          placeholder="Filter by platform"
-          data={platforms}
-          value={selectedPlatform}
-          onChange={setSelectedPlatform}
-          clearable
-          rightSection={<IconCaretDownFilled size={20} />}
+          w={{ base: 'auto', sm: 'auto' }}
+          style={{ flexGrow: 0, minWidth: '130px' }}
         />
       </Group>
-
-      {/* Sort */}
-      <Select
-        size="lg"
-        radius="md"
-        placeholder="Sort by"
-        data={['Recent', 'Featured']}
-        value={sortOrder}
-        onChange={setSortOrder}
-        rightSection={<IconCaretDownFilled size={20} />}
-      />
-    </Group>
+    </>
   );
 }
