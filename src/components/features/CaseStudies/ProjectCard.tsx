@@ -60,7 +60,7 @@ export default function ProjectCard({ title, company, coverSrc, logoSrc, href }:
           </Group>
 
           {/* Right */}
-          <ActionIcon visibleFrom="xs" component="div" variant="subtle" size="xl">
+          <ActionIcon visibleFrom="xs" component="div" variant="subtle" size={56}>
             <IconArrowRight size={32} />
           </ActionIcon>
         </Group>

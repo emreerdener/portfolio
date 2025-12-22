@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Stack } from '@mantine/core';
+import { Box, Space, Stack } from '@mantine/core';
 import MoreBanner from '@/src/components/layout/MoreBanner';
 
 export default function PresentationPage() {
@@ -16,10 +16,11 @@ export default function PresentationPage() {
             width: '100%',
             borderRadius: 'var(--mantine-radius-lg)',
           }}
-          h={{ base: '30vh', sm: '40vh', md: '30vh', lg: '40vh', xl: '90vh' }}
+          h={{ base: '44vh', sm: '50vh', md: '60vh', lg: '70vh', xl: '90vh' }}
         />
 
         <MoreBanner />
+        <Space h="xl" />
       </Stack>
     </>
   );

@@ -15,7 +15,7 @@ const funFacts = [
   { emoji: '👯', text: 'A twin' },
   { emoji: '🦒', text: 'Taller than a baby giraffe: 6\'8" (2m)' },
   { emoji: '🎲', text: 'Playing backgammon' },
-  { emoji: '🇹🇷', text: 'Named after a Sufi mystic and poet from the 13th century' },
+  { emoji: '🇹🇷', text: 'Named after a Sufi mystic & poet from the 13th century' },
   { emoji: '🚲', text: 'Riding my bicycle' },
 ];
 

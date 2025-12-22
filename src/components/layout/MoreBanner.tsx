@@ -6,7 +6,7 @@ import classes from './layout.module.css';
 export default function MoreBanner() {
   const router = useRouter();
   return (
-    <Paper p="md" withBorder radius="lg" shadow="sm">
+    <Paper p="md" pr="lg" withBorder radius="lg" shadow="sm">
       <Group justify="space-between" wrap="nowrap" className={classes.bannerLayout}>
         <Group wrap="nowrap" className={classes.bannerHeader}>
           <ThemeIcon size={56} variant="light" radius={12}>
