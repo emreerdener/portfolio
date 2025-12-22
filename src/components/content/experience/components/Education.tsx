@@ -8,7 +8,7 @@ const education = [
     date: '2007 - 2012',
     location: 'Austin, TX',
     bullets: [],
-    logoSrc: '/images/logos/UT.jpg',
+    logoSrc: '/images/logos/experience/UT.jpg',
   },
 ];
 

@@ -19,7 +19,7 @@ export default function PolarBearAnimation() {
             width: '110%',
             height: '110%',
             zIndex: 0,
-            filter: 'blur(8px)',
+            filter: 'blur(10px)',
           }}
         >
           <Image src={BLOB_URL} alt="" w="100%" h="100%" fit="contain" />

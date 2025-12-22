@@ -19,7 +19,7 @@ export default function GiraffesAnimation() {
             width: '110%',
             height: '110%',
             zIndex: 0,
-            filter: 'blur(8px)',
+            filter: 'blur(20px)',
           }}
         >
           <Image src={BLOB_URL} alt="" w="100%" h="100%" fit="contain" />

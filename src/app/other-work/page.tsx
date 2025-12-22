@@ -23,13 +23,13 @@ export default function page() {
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
-        <Card withBorder radius="lg">
+        <Card withBorder radius="lg" style={{ background: 'white' }}>
           <PolarBearAnimation />
         </Card>
-        <Card withBorder radius="lg">
+        <Card withBorder radius="lg" style={{ background: 'white' }}>
           <TurtleAnimation />
         </Card>
-        <Card withBorder radius="lg">
+        <Card withBorder radius="lg" style={{ background: 'white' }}>
           <GiraffesAnimation />
         </Card>
 
