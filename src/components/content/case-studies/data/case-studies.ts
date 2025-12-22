@@ -6,6 +6,7 @@ export interface CaseStudy {
   href: string;
   categories: ('Product' | 'Marketing' | 'System' | 'Growth')[];
   platforms: ('Web' | 'Mobile' | 'IoT')[];
+  date: string;
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -17,6 +18,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/merchant-referrals',
     categories: ['Product', 'Growth'],
     platforms: ['Web'],
+    date: '2023-11-01',
   },
   {
     title: 'Inventory Management System',
@@ -26,6 +28,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/',
     categories: ['Product', 'System'],
     platforms: ['Web'],
+    date: '2023-11-01',
   },
   {
     title: 'Booking Platform Redesign',
@@ -35,6 +38,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/',
     categories: ['Marketing', 'System'],
     platforms: ['Web'],
+    date: '2023-11-01',
   },
   {
     title: 'Admin Checkout 2.0',
@@ -44,6 +48,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/',
     categories: ['Product', 'System'],
     platforms: ['Web'],
+    date: '2023-11-01',
   },
   {
     title: 'Audi Dyno Display',
@@ -53,6 +58,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/',
     categories: ['Product'],
     platforms: ['IoT'],
+    date: '2023-11-01',
   },
   {
     title: 'Simplify Travel Expenses',
@@ -62,5 +68,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/',
     categories: ['Product', 'Marketing', 'System'],
     platforms: ['Mobile', 'Web'],
+    date: '2023-11-01',
   },
 ];

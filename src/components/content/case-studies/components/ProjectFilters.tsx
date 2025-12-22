@@ -24,6 +24,7 @@ interface ProjectFiltersProps {
   clients: ClientFilterOption[];
   categories: string[];
   platforms: string[];
+  resetFilters: () => void;
 
   // State
   selectedCompanies: string[];
@@ -51,8 +52,13 @@ export default function ProjectFilters({
   setSelectedPlatform,
   sortOrder,
   setSortOrder,
+  resetFilters,
 }: ProjectFiltersProps) {
   const [opened, { open, close }] = useDisclosure(false);
+
+  // Helper to check if any filter is active
+  const hasActiveFilters =
+    selectedCompanies.length > 0 || selectedCategory !== null || selectedPlatform !== null;
 
   return (
     <>
@@ -61,8 +67,8 @@ export default function ProjectFilters({
         opened={opened}
         onClose={close}
         title="Filters"
-        padding="md"
-        size="md"
+        padding="lg"
+        size="lg"
         position="bottom"
         radius="lg"
       >
@@ -95,9 +101,25 @@ export default function ProjectFilters({
             rightSection={<IconCaretDownFilled size={20} />}
           />
 
+          <Select
+            size="lg"
+            radius="md"
+            placeholder="Sort by"
+            data={['Recent', 'Featured']}
+            value={sortOrder}
+            onChange={setSortOrder}
+            rightSection={<IconCaretDownFilled size={20} />}
+          />
+
           <Button size="lg" fullWidth onClick={close} mt="md">
-            Apply Filters
+            Apply filters
           </Button>
+
+          {hasActiveFilters && (
+            <Button variant="default" onClick={resetFilters} size="lg">
+              Clear all filters
+            </Button>
+          )}
         </Stack>
       </Drawer>
 
@@ -108,13 +130,21 @@ export default function ProjectFilters({
           <Button
             hiddenFrom="sm"
             onClick={open}
-            size="lg"
+            size="xl"
+            h={66}
+            radius="lg"
             variant="default"
             leftSection={<IconAdjustmentsHorizontal size={20} />}
+            pos="fixed"
+            top={20}
+            right={20}
+            style={{
+              zIndex: 100,
+              boxShadow: 'var(--mantine-shadow-xs)',
+            }}
           >
             Filters
           </Button>
-
           {/* Desktop: Visible Filters */}
           <Group visibleFrom="sm" align="flex-start">
             <ClientFilter
@@ -157,8 +187,9 @@ export default function ProjectFilters({
           </Group>
         </Group>
 
-        {/* Sort (Visible on both Mobile and Desktop) */}
+        {/* Sort (Visible on Desktop only) */}
         <Select
+          visibleFrom="sm"
           size="lg"
           radius="md"
           placeholder="Sort by"
