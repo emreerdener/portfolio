@@ -17,7 +17,14 @@ export default function Experience({ defaultExpanded = false }: ExperienceProps)
           Experience
         </Title>
 
-        <Button size="compact-sm" variant="light" rightSection={<IconDownload size={16} />}>
+        <Button
+          component="a"
+          href="/Emre-Erdener-Resume.pdf"
+          download="Emre-Erdener-Resume.pdf"
+          size="compact-sm"
+          variant="light"
+          rightSection={<IconDownload size={16} />}
+        >
           Download PDF
         </Button>
       </Group>

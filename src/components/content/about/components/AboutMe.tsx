@@ -62,10 +62,23 @@ export default function AboutMe({
         </SimpleGrid>
       </Stack>
       <Group gap="lg">
-        <Button size="md" leftSection={<IconFile size={24} />}>
+        <Button
+          component="a"
+          href="/Emre-Erdener-Resume.pdf"
+          target="_blank"
+          size="md"
+          leftSection={<IconFile size={24} />}
+        >
           Resume
         </Button>
-        <Button size="md" variant="default" leftSection={<IconBrandLinkedin size={24} />}>
+        <Button
+          component="a"
+          href="https://www.linkedin.com/in/emre-erdener/"
+          target="_blank"
+          size="md"
+          variant="default"
+          leftSection={<IconBrandLinkedin size={24} />}
+        >
           LinkedIn
         </Button>
       </Group>
