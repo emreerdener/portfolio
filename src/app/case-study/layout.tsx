@@ -8,11 +8,12 @@ export default function CaseStudiesLayout({ children }: { children: React.ReactN
   const router = useRouter();
   return (
     <>
-      <Stack gap={60}>
+      <Stack gap="xl" maw={1000}>
         <Group>
           <Button
             onClick={() => router.push('/case-studies')}
-            variant="outline"
+            variant="transparent"
+            p={0}
             size="md"
             leftSection={<IconArrowLeft size={24} />}
           >
