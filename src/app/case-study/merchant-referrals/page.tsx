@@ -1,10 +1,20 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import {
+  IconArrowLeft,
+  IconCircleCheckFilled,
+  IconExclamationCircleFilled,
+} from '@tabler/icons-react';
+import {
+  Alert,
   Blockquote,
+  Button,
   Center,
   Group,
   Image,
   Paper,
-  Skeleton,
+  SimpleGrid,
   Space,
   Stack,
   Text,
@@ -12,9 +22,23 @@ import {
 } from '@mantine/core';
 
 export default function MerchantReferrals() {
+  const router = useRouter();
   return (
     <>
       <Stack gap="xl">
+        <Group wrap="nowrap" justify="space-between">
+          <Button
+            onClick={() => router.push('/case-studies')}
+            variant="light"
+            size="md"
+            leftSection={<IconArrowLeft size={24} />}
+          >
+            All case studies
+          </Button>
+
+          <Button size="md">View prototype</Button>
+        </Group>
+
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg"
           alt="Shopify Merchant Referral Program cover image"
@@ -22,27 +46,57 @@ export default function MerchantReferrals() {
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
-        <Stack gap="xs" py="xl">
+        <Stack gap="xs" py="lg">
           <Group justify="space-between">
             <Text size="lg" c="dimmed">
               Shopify • Lead Designer • 2022
             </Text>
           </Group>
-          <Title order={1} fz="2.8rem">
-            Shopify Merchant Referral Program
-          </Title>
-          <Text size="lg">
-            I was responsible for designing a referral program for Shopify merchants, which enables
-            them to recommend Shopify to other entrepreneurs in their network, provide signup
-            rewards, and receive rewards for their efforts. I oversaw the design process from the
-            initial MVP launch in the US and UK, to conceptualizing a north-star incentive platform
-            within the Shopify product ecosystem, to full feature release.
-          </Text>
+          <Stack>
+            <Title order={1} fz="2.8rem" lh={1.1} fw={800}>
+              Shopify Merchant Referral Program
+            </Title>
+            <Text size="lg">
+              I was responsible for designing a referral program for Shopify merchants, which
+              enables them to recommend Shopify to other entrepreneurs in their network, provide
+              signup rewards, and receive rewards for their efforts. I oversaw the design process
+              from the initial MVP launch in the US and UK, to conceptualizing a north-star
+              incentive platform within the Shopify product ecosystem, to full feature release.
+            </Text>
+          </Stack>
         </Stack>
 
-        <Paper radius="lg" p="xl" withBorder>
+        <SimpleGrid cols={{ base: 1, xs: 2 }} spacing="xl">
+          <Paper radius="lg" p="xl" withBorder>
+            <Stack gap="xs">
+              <Text c="dimmed" size="sm">
+                Lead to customer
+              </Text>
+              <Title order={1}>+24%</Title>
+              <Text>UX optimizations led to an increase in customer acquisition.</Text>
+            </Stack>
+          </Paper>
+
+          <Paper radius="lg" p="xl" withBorder>
+            <Stack gap="xs">
+              <Text c="dimmed" size="sm">
+                Cross-functional teams
+              </Text>
+              <Title order={1}>6</Title>
+              <Text>
+                Coordinated design across billing, retention, activation, plans & pricing, and core
+                teams.
+              </Text>
+            </Stack>
+          </Paper>
+        </SimpleGrid>
+
+        <Alert radius="lg" p="xl" color="red">
           <Stack>
-            <Title order={3}>Problem</Title>
+            <Group justify="space-between" wrap="nowrap">
+              <Title order={3}>Problem</Title>
+              <IconExclamationCircleFilled size={32} color="red" />
+            </Group>
             <Text size="lg">
               The expenses associated with acquiring users through paid ads are excessively high,
               without necessarily yielding the highest quality leads. The payback period for paid
@@ -50,11 +104,15 @@ export default function MerchantReferrals() {
               ultimately leading to a net loss for the company.
             </Text>
           </Stack>
-        </Paper>
+        </Alert>
 
-        <Paper radius="lg" p="xl" withBorder>
+        <Alert radius="lg" p="xl" color="green">
           <Stack>
-            <Title order={3}>Proposal</Title>
+            <Group justify="space-between" wrap="nowrap">
+              <Title order={3}>Proposal</Title>
+              <IconCircleCheckFilled size={32} color="green" />
+            </Group>
+
             <Text size="xl">
               Develop and implement an innovative growth strategy for Shopify that reduces
               dependence on costly paid advertisements and instead utilizes existing research data
@@ -63,7 +121,7 @@ export default function MerchantReferrals() {
               incentive mechanisms.
             </Text>
           </Stack>
-        </Paper>
+        </Alert>
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png"
@@ -367,10 +425,6 @@ export default function MerchantReferrals() {
             maw={650}
           />
         </Center>
-
-        <Skeleton h={400} radius="lg" />
-        <Skeleton h={400} radius="lg" />
-
         <Space h="xl" />
       </Stack>
     </>
