@@ -20,6 +20,7 @@ import {
   Text,
   Title,
 } from '@mantine/core';
+import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function MerchantReferrals() {
   const router = useRouter();
@@ -67,23 +68,19 @@ export default function MerchantReferrals() {
         </Stack>
 
         <SimpleGrid cols={{ base: 1, xs: 2 }} spacing="xl">
-          <Paper radius="lg" p="xl" withBorder>
+          <Paper radius="lg" p="xl" withBorder shadow="xs">
             <Stack gap="xs">
-              <Text c="dimmed" size="sm">
-                Lead to customer
-              </Text>
+              <Text c="dimmed">Lead to customer</Text>
               <Title order={1}>+24%</Title>
-              <Text>UX optimizations led to an increase in customer acquisition.</Text>
+              <Text lh={1.2}>UX optimizations led to an increase in customer acquisition.</Text>
             </Stack>
           </Paper>
 
-          <Paper radius="lg" p="xl" withBorder>
+          <Paper radius="lg" p="xl" withBorder shadow="xs">
             <Stack gap="xs">
-              <Text c="dimmed" size="sm">
-                Cross-functional teams
-              </Text>
+              <Text c="dimmed">Cross-functional teams</Text>
               <Title order={1}>6</Title>
-              <Text>
+              <Text lh={1.2}>
                 Coordinated design across billing, retention, activation, plans & pricing, and core
                 teams.
               </Text>
@@ -197,7 +194,8 @@ export default function MerchantReferrals() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/phone-m2m.png"
             alt="Shopify Merchant Referral Program phone mockup image"
-            radius="md"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
 
@@ -425,6 +423,8 @@ export default function MerchantReferrals() {
             maw={650}
           />
         </Center>
+
+        <MoreBanner />
         <Space h="xl" />
       </Stack>
     </>
