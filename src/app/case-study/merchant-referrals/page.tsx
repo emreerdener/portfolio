@@ -71,7 +71,9 @@ export default function MerchantReferrals() {
           <Paper radius="lg" p="xl" withBorder shadow="xs">
             <Stack gap="xs">
               <Text c="dimmed">Lead to customer</Text>
-              <Title order={1}>+24%</Title>
+              <Text fz={40} fw="bold">
+                +24%
+              </Text>
               <Text lh={1.2}>UX optimizations led to an increase in customer acquisition.</Text>
             </Stack>
           </Paper>
@@ -79,7 +81,9 @@ export default function MerchantReferrals() {
           <Paper radius="lg" p="xl" withBorder shadow="xs">
             <Stack gap="xs">
               <Text c="dimmed">Cross-functional teams</Text>
-              <Title order={1}>6</Title>
+              <Text fz={40} fw="bold">
+                6
+              </Text>
               <Text lh={1.2}>
                 Coordinated design across billing, retention, activation, plans & pricing, and core
                 teams.
