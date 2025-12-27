@@ -120,7 +120,7 @@ export default function MerchantReferrals() {
           />
         </Center>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/phase1.png"
             alt="Shopify Merchant Referral Program phase 1 image"
@@ -143,7 +143,7 @@ export default function MerchantReferrals() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/entry-points.png"
             alt="Shopify Merchant Referral Program entry points image"
@@ -191,11 +191,12 @@ export default function MerchantReferrals() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/north-star.png"
             alt="Shopify Merchant Referral Program north star image"
             radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
 
@@ -210,7 +211,7 @@ export default function MerchantReferrals() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/phase2.png"
             alt="Shopify Merchant Referral Program phase 2 image"
@@ -232,7 +233,7 @@ export default function MerchantReferrals() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/share-sheet.png"
             alt="Shopify Merchant Referral Program share sheet image"
@@ -240,7 +241,7 @@ export default function MerchantReferrals() {
           />
         </Center>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/admin-updates.png"
             alt="Shopify Merchant Referral Program admin updates image"
@@ -263,7 +264,7 @@ export default function MerchantReferrals() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/internal.png"
             alt="Shopify Merchant Referral Program internal tool image"
@@ -283,14 +284,15 @@ export default function MerchantReferrals() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/home-cards.png"
             alt="Shopify Merchant Referral Program home cards image"
             maw={650}
           />
         </Center>
-        <Center py="md">
+
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/monitor-m2m.png"
             alt="Shopify Merchant Referral Program monitor mockup image"
@@ -310,14 +312,14 @@ export default function MerchantReferrals() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/share-preview.png"
             alt="Shopify Merchant Referral Program share preview image"
           />
         </Center>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/twitter.png"
             alt="Shopify Merchant Referral Program tweet image"

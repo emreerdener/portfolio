@@ -40,7 +40,7 @@ export default function Waxwing() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/up-fade-c.png"
             alt="Waxwing user stories image"
@@ -61,14 +61,14 @@ export default function Waxwing() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/ds-elements.png"
             alt="Waxwing design system elements image"
           />
         </Center>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/ui-cover.png"
             alt="Waxwing UI mockup image"
@@ -90,7 +90,7 @@ export default function Waxwing() {
           </Text>
         </Stack>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/canvas.png"
             alt="Waxwing design image"
@@ -189,7 +189,7 @@ export default function Waxwing() {
           />
         </Center>
 
-        <Center py="md">
+        <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/mockup-laptop.png"
             alt="Waxwing mockup image"
