@@ -1,115 +1,25 @@
 'use client';
 
-import { IconCircleCheckFilled, IconExclamationCircleFilled } from '@tabler/icons-react';
-import {
-  Alert,
-  Blockquote,
-  Button,
-  Center,
-  Group,
-  Image,
-  Paper,
-  SimpleGrid,
-  Space,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Blockquote, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
+import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
+import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function MerchantReferrals() {
   return (
     <>
       <Stack gap="xl">
-        <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg"
-          alt="Shopify Merchant Referral Program cover image"
-          radius="lg"
-          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        <CaseStudyHeader
+          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg"
+          coverAlt="Shopify Merchant Referral Program cover image"
+          metadata="Shopify • Lead Designer • 2022"
+          title="Unlocking a new growth lever"
+          description="As the Lead Designer, I spearheaded the end-to-end execution of Shopify’s Merchant Referral Program. I drove the design lifecycle from the initial MVP launch in the US and UK through to the global full-feature release, simultaneously conceptualizing the north-star incentive strategy and delivering the final production-ready interface."
+          prototypeUrl="figma.com/proto/I98Ec6IN7ng4dlrRw3vDgp/M2M?page-id=1868%3A20716&node-id=2091%3A22734&viewport=316%2C48%2C0.05&scaling=min-zoom&starting-point-node-id=2091%3A22734&show-proto-sidebar=1"
+          problem="The expenses associated with acquiring users through paid ads are excessively high, without necessarily yielding the highest quality leads. The payback period for paid ads is prolonged and frequently fails to achieve a successful return on investment, ultimately leading to a net loss for the company."
+          proposal="Develop and implement an innovative growth strategy for Shopify that reduces dependence on costly paid advertisements and instead utilizes existing research data on user sign-ups, particularly through referrals. The primary objective is to create avenues to engage and activate users within the Shopify ecosystem by incorporating incentive mechanisms."
         />
-
-        <Stack gap="xs" py="lg">
-          <Stack align="flex-start" gap="lg">
-            <Group justify="space-between">
-              <Text size="lg" c="dimmed">
-                Shopify • Lead Designer • 2022
-              </Text>
-            </Group>
-            <Stack>
-              <Title order={1} fz="2.8rem" lh={1.1} fw={800}>
-                Shopify Merchant Referral Program
-              </Title>
-              <Text size="lg">
-                I was responsible for designing a referral program for Shopify merchants, which
-                enables them to recommend Shopify to other entrepreneurs in their network, provide
-                signup rewards, and receive rewards for their efforts. I oversaw the design process
-                from the initial MVP launch in the US and UK, to conceptualizing a north-star
-                incentive platform within the Shopify product ecosystem, to full feature release.
-              </Text>
-            </Stack>
-
-            <Button size="md">View prototype</Button>
-          </Stack>
-        </Stack>
-
-        <SimpleGrid cols={{ base: 1, xs: 2 }} spacing="xl">
-          <Paper radius="lg" p="xl" withBorder shadow="xs">
-            <Stack gap="xs">
-              <Text>Lead to customer</Text>
-              <Text fz="2.8rem" fw="bold">
-                +24%
-              </Text>
-              <Text lh={1.3} c="dimmed">
-                UX optimizations led to an increase in customer acquisition.
-              </Text>
-            </Stack>
-          </Paper>
-
-          <Paper radius="lg" p="xl" withBorder shadow="xs">
-            <Stack gap="xs">
-              <Text>Cross-functional teams</Text>
-              <Text fz="2.8rem" fw="bold">
-                6
-              </Text>
-              <Text lh={1.3} c="dimmed">
-                Coordinated design across billing, retention, activation, plans & pricing, and core
-                teams.
-              </Text>
-            </Stack>
-          </Paper>
-        </SimpleGrid>
-
-        <Alert radius="lg" p="xl" color="red">
-          <Stack>
-            <Group justify="space-between" wrap="nowrap">
-              <Title order={3}>Problem</Title>
-              <IconExclamationCircleFilled size={32} color="red" />
-            </Group>
-            <Text size="lg">
-              The expenses associated with acquiring users through paid ads are excessively high,
-              without necessarily yielding the highest quality leads. The payback period for paid
-              ads is prolonged and frequently fails to achieve a successful return on investment,
-              ultimately leading to a net loss for the company.
-            </Text>
-          </Stack>
-        </Alert>
-
-        <Alert radius="lg" p="xl" color="green">
-          <Stack>
-            <Group justify="space-between" wrap="nowrap">
-              <Title order={3}>Proposal</Title>
-              <IconCircleCheckFilled size={32} color="green" />
-            </Group>
-
-            <Text size="xl">
-              Develop and implement an innovative growth strategy for Shopify that reduces
-              dependence on costly paid advertisements and instead utilizes existing research data
-              on user sign-ups, particularly through referrals. The primary objective is to create
-              avenues to engage and activate users within the Shopify ecosystem by incorporating
-              incentive mechanisms.
-            </Text>
-          </Stack>
-        </Alert>
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png"
@@ -414,6 +324,38 @@ export default function MerchantReferrals() {
             maw={650}
           />
         </Center>
+
+        <CaseStudyImpact
+          stats={[
+            {
+              label: 'Lead to customer',
+              value: '+24%',
+              description: 'UX optimizations led to an increase in customer acquisition.',
+            },
+            {
+              label: 'Cross-functional teams',
+              value: '6',
+              description:
+                'Coordinated design across billing, retention, activation, plans & pricing, and core teams.',
+            },
+          ]}
+          description="By operationalizing word-of-mouth, we achieved immediate improvements in acquisition costs and cross-team alignment."
+        />
+
+        <CaseStudySkills
+          skills={[
+            'UX design',
+            'Product strategy',
+            'Interaction design',
+            'Visual design',
+            'Research & validation',
+            '0 to 1',
+            'Information architecture',
+            'Prototyping',
+            'Design systems',
+            'Cross-functional leadership',
+          ]}
+        />
 
         <MoreBanner />
         <Space h="xl" />
