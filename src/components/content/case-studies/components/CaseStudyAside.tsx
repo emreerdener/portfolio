@@ -6,8 +6,8 @@ import { ScrollArea, Stack, TableOfContents, Text } from '@mantine/core';
 export default function CaseStudyAside() {
   return (
     <ScrollArea type="never" h="100%">
-      <Stack gap="md" p="lg">
-        <Text fw={700} size="sm" tt="uppercase" c="dimmed">
+      <Stack gap="lg" px="lg" py="xl">
+        <Text fw={700} fz={14} tt="uppercase" c="dimmed" lh={1}>
           On this page
         </Text>
 
@@ -18,10 +18,10 @@ export default function CaseStudyAside() {
           scrollSpyOptions={{
             selector: 'main :is(h1, h2, h3)',
           }}
-          getControlProps={({ data }) => ({
+          getControlProps={({ active, data }) => ({
             onClick: () => {
               const element = data.getNode();
-              const headerOffset = 40; // Adjust this value (Header height + padding)
+              const headerOffset = 40;
               const elementPosition = element.getBoundingClientRect().top;
               const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -32,8 +32,13 @@ export default function CaseStudyAside() {
             },
             children: data.value,
             style: {
-              paddingLeft: 'var(--mantine-spacing-md)',
-              marginBottom: 'var(--mantine-spacing-xs)',
+              paddingLeft: 12,
+              paddingRight: 12,
+              paddingTop: 8,
+              paddingBottom: 8,
+              marginBottom: 4,
+              letterSpacing: '-0.5px',
+              fontWeight: active ? 700 : 400,
             },
           })}
         />

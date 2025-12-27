@@ -1,11 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import {
-  IconArrowLeft,
-  IconCircleCheckFilled,
-  IconExclamationCircleFilled,
-} from '@tabler/icons-react';
+import { IconCircleCheckFilled, IconExclamationCircleFilled } from '@tabler/icons-react';
 import {
   Alert,
   Blockquote,
@@ -23,23 +18,9 @@ import {
 import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function MerchantReferrals() {
-  const router = useRouter();
   return (
     <>
       <Stack gap="xl">
-        <Group wrap="nowrap" justify="space-between">
-          <Button
-            onClick={() => router.push('/case-studies')}
-            variant="light"
-            size="md"
-            leftSection={<IconArrowLeft size={24} />}
-          >
-            All case studies
-          </Button>
-
-          <Button size="md">View prototype</Button>
-        </Group>
-
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg"
           alt="Shopify Merchant Referral Program cover image"
@@ -48,43 +29,49 @@ export default function MerchantReferrals() {
         />
 
         <Stack gap="xs" py="lg">
-          <Group justify="space-between">
-            <Text size="lg" c="dimmed">
-              Shopify • Lead Designer • 2022
-            </Text>
-          </Group>
-          <Stack>
-            <Title order={1} fz="2.8rem" lh={1.1} fw={800}>
-              Shopify Merchant Referral Program
-            </Title>
-            <Text size="lg">
-              I was responsible for designing a referral program for Shopify merchants, which
-              enables them to recommend Shopify to other entrepreneurs in their network, provide
-              signup rewards, and receive rewards for their efforts. I oversaw the design process
-              from the initial MVP launch in the US and UK, to conceptualizing a north-star
-              incentive platform within the Shopify product ecosystem, to full feature release.
-            </Text>
+          <Stack align="flex-start" gap="lg">
+            <Group justify="space-between">
+              <Text size="lg" c="dimmed">
+                Shopify • Lead Designer • 2022
+              </Text>
+            </Group>
+            <Stack>
+              <Title order={1} fz="2.8rem" lh={1.1} fw={800}>
+                Shopify Merchant Referral Program
+              </Title>
+              <Text size="lg">
+                I was responsible for designing a referral program for Shopify merchants, which
+                enables them to recommend Shopify to other entrepreneurs in their network, provide
+                signup rewards, and receive rewards for their efforts. I oversaw the design process
+                from the initial MVP launch in the US and UK, to conceptualizing a north-star
+                incentive platform within the Shopify product ecosystem, to full feature release.
+              </Text>
+            </Stack>
+
+            <Button size="md">View prototype</Button>
           </Stack>
         </Stack>
 
         <SimpleGrid cols={{ base: 1, xs: 2 }} spacing="xl">
           <Paper radius="lg" p="xl" withBorder shadow="xs">
             <Stack gap="xs">
-              <Text c="dimmed">Lead to customer</Text>
-              <Text fz={40} fw="bold">
+              <Text>Lead to customer</Text>
+              <Text fz="2.8rem" fw="bold">
                 +24%
               </Text>
-              <Text lh={1.2}>UX optimizations led to an increase in customer acquisition.</Text>
+              <Text lh={1.3} c="dimmed">
+                UX optimizations led to an increase in customer acquisition.
+              </Text>
             </Stack>
           </Paper>
 
           <Paper radius="lg" p="xl" withBorder shadow="xs">
             <Stack gap="xs">
-              <Text c="dimmed">Cross-functional teams</Text>
-              <Text fz={40} fw="bold">
+              <Text>Cross-functional teams</Text>
+              <Text fz="2.8rem" fw="bold">
                 6
               </Text>
-              <Text lh={1.2}>
+              <Text lh={1.3} c="dimmed">
                 Coordinated design across billing, retention, activation, plans & pricing, and core
                 teams.
               </Text>
