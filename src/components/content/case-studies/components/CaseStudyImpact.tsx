@@ -25,7 +25,7 @@ export default function CaseStudyImpact({ stats, description }: CaseStudyImpactP
 
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
         {stats.map((stat, index) => (
-          <Paper key={index} radius="lg" p="xl" withBorder>
+          <Paper key={index} radius="lg" p="xl" withBorder shadow="sm">
             <Stack gap="sm">
               <Text fw={600} tt="uppercase" c="dimmed" size="sm">
                 {stat.label}
