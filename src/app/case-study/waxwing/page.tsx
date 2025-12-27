@@ -42,8 +42,10 @@ export default function Waxwing() {
 
         <Center py="md">
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/users.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/up-fade-c.png"
             alt="Waxwing user stories image"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
 
