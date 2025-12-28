@@ -4,7 +4,7 @@ import { Paper, rem, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 
 interface Stat {
   label: string;
-  value: string;
+  value?: string;
   description: string;
 }
 
@@ -31,9 +31,11 @@ export default function CaseStudyImpact({ stats, description }: CaseStudyImpactP
                 {stat.label}
               </Text>
 
-              <Text fz={rem(48)} fw={800} lh={1}>
-                {stat.value}
-              </Text>
+              {stat.value && (
+                <Text fz={rem(48)} fw={800} lh={1}>
+                  {stat.value}
+                </Text>
+              )}
 
               <Text size="md" c="dimmed" lh={1.4}>
                 {stat.description}
