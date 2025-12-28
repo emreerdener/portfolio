@@ -55,7 +55,7 @@ export default function CaseStudyHeader({
             </Button>
           )}
           {websiteUrl && (
-            <Button size="md" component="a" href={websiteUrl} target="_blank" variant="outline">
+            <Button size="md" component="a" href={websiteUrl} target="_blank">
               View website
             </Button>
           )}
