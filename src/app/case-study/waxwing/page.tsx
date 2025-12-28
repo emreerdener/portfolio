@@ -16,7 +16,7 @@ export default function Waxwing() {
           metadata="Eureka Software • Lead Designer • 2022"
           title="Inventory management system"
           description="Waxwing is a custom internal tool to manage customer relationships (CRM), order management (OMS), and staff activity. The app is for Hase Petroleum Wax Company, a wax reseller for wax producers throughout North America. This app evolves the company's decade-long workflow of handwritten papers into a functional and organized digital database."
-          prototypeUrl="figma.com/proto/w72Xw17cWu46VIH12qobMq/Waxwing---HP-Wax?page-id=0%3A1&node-id=77%3A8053&viewport=38%2C3579%2C0.29&scaling=min-zoom&starting-point-node-id=77%3A8053"
+          prototypeUrl="https://www.figma.com/proto/w72Xw17cWu46VIH12qobMq/Waxwing---HP-Wax?page-id=0%3A1&node-id=77-8053&viewport=38%2C3579%2C0.29&scaling=min-zoom&starting-point-node-id=77%3A8053"
           problem="The company currently relies on manual paper-based methods to manage its inventory and orders, resulting in time-consuming processes and an increased risk of errors. Moreover, the documentation of orders lacks consistency among employees, making it challenging to refer to past orders or seamlessly handle orders between team members."
           proposal="Design a custom order management tool for a wholesale wax company that meets and builds on the company's current order management process. This app also needs to allow for flexibility to extend functionality as the company and processes evolve."
         />

@@ -123,7 +123,7 @@ export default function BTRES() {
                 "I designed the logo and brand mark for the company's marketing, website, and product.",
             },
           ]}
-          description="By operationalizing word-of-mouth, we achieved immediate improvements in acquisition costs and cross-team alignment."
+          description="The dynamic gauge interface provides real-time performance data, enhancing user experience and vehicle monitoring."
         />
 
         <CaseStudySkills

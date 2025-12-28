@@ -16,7 +16,7 @@ export default function MerchantReferrals() {
           metadata="Shopify • Lead Designer • 2022"
           title="Unlocking a new growth lever"
           description="As the Lead Designer, I spearheaded the end-to-end execution of Shopify’s Merchant Referral Program. I drove the design lifecycle from the initial MVP launch in the US and UK through to the global full-feature release, simultaneously conceptualizing the north-star incentive strategy and delivering the final production-ready interface."
-          prototypeUrl="figma.com/proto/I98Ec6IN7ng4dlrRw3vDgp/M2M?page-id=1868%3A20716&node-id=2091%3A22734&viewport=316%2C48%2C0.05&scaling=min-zoom&starting-point-node-id=2091%3A22734&show-proto-sidebar=1"
+          prototypeUrl="https://www.figma.com/proto/I98Ec6IN7ng4dlrRw3vDgp/Ref?page-id=1868%3A20716&node-id=2091-22734&viewport=316%2C48%2C0.05&scaling=min-zoom&starting-point-node-id=2091%3A22734&show-proto-sidebar=1"
           problem="The expenses associated with acquiring users through paid ads are excessively high, without necessarily yielding the highest quality leads. The payback period for paid ads is prolonged and frequently fails to achieve a successful return on investment, ultimately leading to a net loss for the company."
           proposal="Develop and implement an innovative growth strategy for Shopify that reduces dependence on costly paid advertisements and instead utilizes existing research data on user sign-ups, particularly through referrals. The primary objective is to create avenues to engage and activate users within the Shopify ecosystem by incorporating incentive mechanisms."
         />
@@ -330,15 +330,16 @@ export default function MerchantReferrals() {
         <CaseStudyImpact
           stats={[
             {
-              label: 'Lead to customer',
-              value: '+24%',
-              description: 'UX optimizations led to an increase in customer acquisition.',
+              label: 'Payback efficiency',
+              value: '+63%',
+              description:
+                'More efficient payback period for user acquisitions, from eight months down to three months.',
             },
             {
-              label: 'Cross-functional teams',
-              value: '6',
+              label: 'New users',
+              value: '+200k',
               description:
-                'Coordinated design across billing, retention, activation, plans & pricing, and core teams.',
+                'Estimated number of incremental new users brought in by full feature rollout.',
             },
           ]}
           description="By operationalizing word-of-mouth, we achieved immediate improvements in acquisition costs and cross-team alignment."

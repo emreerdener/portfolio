@@ -293,7 +293,7 @@ export default function Tarbox() {
                 'The site brings in higher organic traffic with better SEO performance, delivers a seamless user experience, and has significantly faster load times.',
             },
           ]}
-          description="By operationalizing word-of-mouth, we achieved immediate improvements in acquisition costs and cross-team alignment."
+          description="The redesigned website and marketing ecosystem led to a substantial increase in bookings, improved user engagement, and enhanced overall business performance."
         />
 
         <CaseStudySkills
