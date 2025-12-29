@@ -65,7 +65,7 @@ export default function CaseStudyHeader({
       <Blockquote p="xl" color="orange">
         <Stack>
           <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>The puzzle</Title>
+            <Title order={2}>Challenge</Title>
             <IconExclamationCircleFilled size={32} color="orange" />
           </Group>
           <Text size="xl">{problem}</Text>
@@ -75,7 +75,7 @@ export default function CaseStudyHeader({
       <Blockquote p="xl" color="green">
         <Stack>
           <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>The design proposal</Title>
+            <Title order={2}>Design proposal</Title>
             <IconCircleCheckFilled size={32} color="green" />
           </Group>
 

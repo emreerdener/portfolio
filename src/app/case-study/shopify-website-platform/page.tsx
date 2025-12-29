@@ -1,11 +1,10 @@
 'use client';
 
 import Script from 'next/script';
-import { Blockquote, Box, Card, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import { Blockquote, Box, Card, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
-import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function ShopifyWebsitePlatform() {
   return (
@@ -397,9 +396,6 @@ export default function ShopifyWebsitePlatform() {
             'Cross-functional leadership',
           ]}
         />
-
-        <MoreBanner />
-        <Space h="xl" />
       </Stack>
     </>
   );

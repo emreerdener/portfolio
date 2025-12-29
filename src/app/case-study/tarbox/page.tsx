@@ -1,23 +1,12 @@
 'use client';
 
-import {
-  Blockquote,
-  Card,
-  Center,
-  Image,
-  SimpleGrid,
-  Space,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Blockquote, Card, Center, Image, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import BedAnimation from '@/src/components/content/case-studies/components/tarbox/animations/BedAnimation';
 import CheersAnimation from '@/src/components/content/case-studies/components/tarbox/animations/CheersAnimation';
 import RingAnimation from '@/src/components/content/case-studies/components/tarbox/animations/RingAnimation';
-import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function Tarbox() {
   return (
@@ -316,9 +305,6 @@ export default function Tarbox() {
             'Cross-functional leadership',
           ]}
         />
-
-        <MoreBanner />
-        <Space h="xl" />
       </Stack>
     </>
   );

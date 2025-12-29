@@ -1,12 +1,11 @@
 'use client';
 
 import Script from 'next/script';
-import { Blockquote, Box, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import BunnyAnimation from '@/src/components/content/case-studies/components/tiny-tails/animation/BunnyAnimation';
-import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function TinyTails() {
   return (
@@ -422,9 +421,6 @@ export default function TinyTails() {
             'Cross-functional leadership',
           ]}
         />
-
-        <MoreBanner />
-        <Space h="xl" />
       </Stack>
     </>
   );

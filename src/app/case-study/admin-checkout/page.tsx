@@ -1,10 +1,9 @@
 'use client';
 
-import { Blockquote, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
-import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function AdminCheckout() {
   return (
@@ -274,9 +273,6 @@ export default function AdminCheckout() {
             'Cross-functional leadership',
           ]}
         />
-
-        <MoreBanner />
-        <Space h="xl" />
       </Stack>
     </>
   );

@@ -7,6 +7,8 @@ import MobileHeader from '@/src/components/layout/components/MobileHeader';
 import NavContent from '@/src/components/layout/components/NavContent';
 import { useScrollLock } from '@/src/components/layout/hooks/use-scroll-lock';
 import CaseStudyAside from './CaseStudyAside'; // The TOC component we created earlier
+
+import MoreCaseStudies from './MoreCaseStudies';
 import classes from '../../../layout/components/layout.module.css';
 
 export function CaseStudyShell({ children }: { children: React.ReactNode }) {
@@ -54,7 +56,9 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
       </AppShell.Navbar>
 
       <AppShell.Main className={classes.main}>
-        <Stack align="center">{children}</Stack>
+        <Stack align="center">
+          {children} <MoreCaseStudies />
+        </Stack>
       </AppShell.Main>
 
       <AppShell.Aside className={classes.aside}>

@@ -1,10 +1,9 @@
 'use client';
 
-import { Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import { Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
-import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function BTRES() {
   return (
@@ -140,9 +139,6 @@ export default function BTRES() {
             'Cross-functional leadership',
           ]}
         />
-
-        <MoreBanner />
-        <Space h="xl" />
       </Stack>
     </>
   );
