@@ -14,6 +14,30 @@ export const metadata = {
   icons: {
     icon: '/images/favicons/favicon.svg',
   },
+  openGraph: {
+    title: 'Emre Erdener',
+    description:
+      'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',
+    url: 'https://emreerdener.com',
+    siteName: 'Emre Erdener',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-image-c.png',
+        width: 1200,
+        height: 630,
+        alt: 'Emre Erdener Product Designer Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Emre Erdener',
+    description:
+      'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',
+    images: ['/images/og-image-c.png'],
+  },
 };
 
 export default function RootLayout({ children }: { children: any }) {

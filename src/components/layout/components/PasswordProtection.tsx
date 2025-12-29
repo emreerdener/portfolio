@@ -113,7 +113,7 @@ export function PasswordProtection({ children }: { children: React.ReactNode }) 
                     size="lg"
                     radius="md"
                     error={error}
-                    leftSection={<IconLock size={16} />}
+                    leftSection={<IconLock size={20} />}
                   />
 
                   <Button fullWidth size="lg" type="submit">
