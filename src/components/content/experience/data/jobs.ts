@@ -13,7 +13,7 @@ export const JOBS: Job[] = [
     company: 'Vivint',
     date: '2024 - present',
     location: 'Remote',
-    logoSrc: '/images/logos/experience/vivint.jpg',
+    logoSrc: '/images/logos/experience/vivint.svg',
     bullets: [
       'Lead design strategy and execution across 4+ product initiatives, directly collaborating with C-suite executives and cross-functional teams to align design vision with business objectives.',
       'Spearheaded the Energy Intelligence UX design for Vivint and NRG platforms, transforming complex energy data into intuitive interfaces.',
