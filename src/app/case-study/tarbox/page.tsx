@@ -26,7 +26,7 @@ export default function Tarbox() {
         <CaseStudyHeader
           coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/tarbox-cover.jpg"
           coverAlt="Tarbox cover image"
-          metadata="Tarbox • Lead Designer • 2021"
+          metadata="Squire Tarbox Inn • Lead Designer • 2021"
           title="Redefining the booking experience"
           description="A boutique inn, surrounded by 12 acres of pastoral farmland, heritage woods, and a tranquil salt marsh. Built in 1763 and restored in 2018, the historic property is a peaceful retreat. Fifteen minutes from Wiscasset and the Boothbay region, in midcoast Maine. Rest, unwind, and explore our favorite local spots in Maine."
           websiteUrl="https://www.squiretarboxinn.com/"

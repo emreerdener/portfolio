@@ -361,6 +361,7 @@ export default function TinyTails() {
               width: '100%',
               maxWidth: '1000px',
               borderRadius: 'var(--mantine-radius-lg',
+              border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}
           >

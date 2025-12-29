@@ -1,6 +1,7 @@
 'use client';
 
-import { Blockquote, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import Script from 'next/script';
+import { Blockquote, Box, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
@@ -325,6 +326,43 @@ export default function MerchantReferrals() {
             alt="Shopify Merchant Referral Program tweet image"
             maw={650}
           />
+        </Center>
+
+        <Center py="xl">
+          <Box
+            style={{
+              width: '100%',
+              maxWidth: '1000px',
+              borderRadius: 'var(--mantine-radius-lg',
+              border: '1px solid var(--app-shell-border-color)',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Load Wistia Scripts */}
+            <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
+            <Script
+              src="https://fast.wistia.com/embed/w159dbv5h3.js"
+              strategy="lazyOnload"
+              type="module"
+            />
+
+            {/* Render Styles and Player using dangerouslySetInnerHTML to avoid JSX errors with custom elements */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                <style>
+                  wistia-player[media-id='w159dbv5h3']:not(:defined) {
+                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/w159dbv5h3/swatch');
+                    display: block;
+                    filter: blur(5px);
+                    padding-top: 56.25%;
+                  }
+                </style>
+                <wistia-player media-id="w159dbv5h3" aspect="1.7777777777777777"></wistia-player>
+              `,
+              }}
+            />
+          </Box>
         </Center>
 
         <CaseStudyImpact

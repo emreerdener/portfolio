@@ -13,7 +13,7 @@ export default function AdminCheckout() {
         <CaseStudyHeader
           coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/admin-cover.png"
           coverAlt="Shopify admin cover image"
-          metadata="Admin Checkout • Lead Designer • 2022"
+          metadata="Shopify • Lead Designer • 2022"
           title="Shopify Admin Checkout"
           description="The checkout flow for choosing a plan in the Shopify admin required a redesign to accommodate changes in the product and the onboarding process for new users. Furthermore, several user experience enhancements were necessary to be implemented as fixes to further enhance the lead-to-customer acquisition ratio."
           prototypeUrl="https://www.figma.com/proto/Rn46dLpFj8y2f4p2f3MZP9/Checkout?page-id=770%3A46788&node-id=770-49412&viewport=-5703%2C-1216%2C0.14&scaling=min-zoom&starting-point-node-id=770%3A49412&show-proto-sidebar=1"
