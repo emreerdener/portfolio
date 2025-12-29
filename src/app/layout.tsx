@@ -8,18 +8,18 @@ import { PasswordProtection } from '../components/layout/components/PasswordProt
 import { Shell } from '../components/layout/components/Shell';
 
 export const metadata = {
-  title: 'Emre Erdener',
+  title: 'Emre Erdener, Product Designer',
   description:
     'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',
   icons: {
     icon: '/images/favicons/favicon.svg',
   },
   openGraph: {
-    title: 'Emre Erdener',
+    title: 'Emre Erdener, Product Designer',
     description:
       'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',
     url: 'https://www.emre.design',
-    siteName: 'Emre Erdener',
+    siteName: 'Emre Erdener, Product Designer',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -27,13 +27,13 @@ export const metadata = {
         url: '/images/og-image-c.png',
         width: 1200,
         height: 630,
-        alt: 'Emre Erdener Product Designer Portfolio',
+        alt: 'Emre Erdener Product Designer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Emre Erdener',
+    title: 'Emre Erdener, Product Designer',
     description:
       'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',
     images: ['/images/og-image-c.png'],
