@@ -1,6 +1,16 @@
 'use client';
 
-import { Blockquote, Card, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import {
+  Blockquote,
+  Card,
+  Center,
+  Image,
+  SimpleGrid,
+  Space,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
@@ -113,15 +123,11 @@ export default function Tarbox() {
         </Center>
 
         <Card withBorder radius="lg" style={{ background: 'white' }}>
-          <RingAnimation />
-        </Card>
-
-        <Card withBorder radius="lg" style={{ background: 'white' }}>
-          <BedAnimation />
-        </Card>
-
-        <Card withBorder radius="lg" style={{ background: 'white' }}>
-          <CheersAnimation />
+          <SimpleGrid cols={{ base: 1, xs: 3 }}>
+            <RingAnimation />
+            <BedAnimation />
+            <CheersAnimation />
+          </SimpleGrid>
         </Card>
 
         <Center>

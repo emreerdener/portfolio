@@ -176,7 +176,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     categories: ['Redesign'],
     platforms: ['Mobile', 'IoT'],
     date: '2023-11-01',
-    featured: true,
+    featured: false,
     projectType: 'Client',
   },
 ];
