@@ -1,6 +1,7 @@
 'use client';
 
-import { Center, Image, Space, Stack, Text, Title } from '@mantine/core';
+import Script from 'next/script';
+import { Box, Center, Image, Space, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
@@ -236,6 +237,44 @@ export default function Waxwing() {
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/carriers.png"
             alt="Waxwing carriers screen image"
           />
+        </Center>
+
+        {/* Video */}
+        <Center>
+          <Box
+            style={{
+              width: '100%',
+              maxWidth: '1000px',
+              borderRadius: 'var(--mantine-radius-lg',
+              border: '1px solid var(--app-shell-border-color)',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Load Wistia Scripts */}
+            <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
+            <Script
+              src="https://fast.wistia.com/embed/12qyvr8n03.js"
+              strategy="lazyOnload"
+              type="module"
+            />
+
+            {/* Render Styles and Player using dangerouslySetInnerHTML to avoid JSX errors with custom elements */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                <style>
+                  wistia-player[media-id='12qyvr8n03']:not(:defined) {
+                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/12qyvr8n03/swatch');
+                    display: block;
+                    filter: blur(5px);
+                    padding-top: 56.25%;
+                  }
+                </style>
+                <wistia-player media-id="12qyvr8n03" aspect="1.7777777777777777"></wistia-player>
+              `,
+              }}
+            />
+          </Box>
         </Center>
 
         <CaseStudyImpact

@@ -157,7 +157,8 @@ export default function ShopifyShopApp() {
           </Text>
         </Blockquote>
 
-        <Center py="xl">
+        {/* Video */}
+        <Center>
           <Box
             style={{
               width: '100%',

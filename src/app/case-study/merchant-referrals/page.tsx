@@ -328,7 +328,8 @@ export default function MerchantReferrals() {
           />
         </Center>
 
-        <Center py="xl">
+        {/* Video */}
+        <Center>
           <Box
             style={{
               width: '100%',
