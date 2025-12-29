@@ -225,6 +225,7 @@ export default function ShopifyProductivityIncentives() {
               description: 'Tested worldwide for 3 weeks with a cooldown.',
             },
           ]}
+          description="Validating this strategy across 1.3M users established a scalable framework for driving merchant success and increasing long-term platform retention."
         />
 
         <CaseStudySkills

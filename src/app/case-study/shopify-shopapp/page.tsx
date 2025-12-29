@@ -208,6 +208,7 @@ export default function ShopifyShopApp() {
                 'Introduces a new feature that allows users better organization and greater customization of their accounts.',
             },
           ]}
+          description="Transforming static favorites into shareable, incentive-driven collections unlocked a scalable organic growth loop, empowering users to drive product discovery."
         />
 
         <CaseStudySkills
