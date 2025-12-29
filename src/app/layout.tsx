@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Emre Erdener',
     description:
       'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',
-    url: 'https://emreerdener.com',
+    url: 'https://www.emre.design',
     siteName: 'Emre Erdener',
     locale: 'en_US',
     type: 'website',
