@@ -22,7 +22,7 @@ export default function NavContent() {
     <>
       <Stack align="center">
         <Image
-          src="/images/profile-pic.png"
+          src="/images/puppies.jpg"
           alt="Profile picture"
           w={140}
           h={140}
