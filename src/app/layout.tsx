@@ -4,6 +4,7 @@ import './globals.css';
 
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 import { theme } from '../../theme';
+import { PasswordProtection } from '../components/layout/components/PasswordProtection';
 import { Shell } from '../components/layout/components/Shell';
 
 export const metadata = {
@@ -27,7 +28,9 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <Shell>{children}</Shell>
+          <PasswordProtection>
+            <Shell>{children}</Shell>
+          </PasswordProtection>
         </MantineProvider>
       </body>
     </html>
