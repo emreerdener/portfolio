@@ -300,10 +300,12 @@ export default function Waxwing() {
             'Product strategy',
             'Interaction design',
             'Visual design',
+            'Research & validation',
             '0 to 1',
             'Information architecture',
             'Prototyping',
             'Design systems',
+            'Cross-functional leadership',
           ]}
         />
       </Stack>

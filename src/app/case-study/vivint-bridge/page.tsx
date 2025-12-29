@@ -139,7 +139,7 @@ export default function VivintBridge() {
             'Interaction design',
             'Visual design',
             'Research & validation',
-            '0 to 1',
+            'Redesign',
             'Information architecture',
             'Prototyping',
             'Design systems',
