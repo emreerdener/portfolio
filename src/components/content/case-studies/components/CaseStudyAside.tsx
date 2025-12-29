@@ -1,9 +1,11 @@
 // src/components/layout/components/CaseStudyAside.tsx
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { ScrollArea, Stack, TableOfContents, Text } from '@mantine/core';
 
 export default function CaseStudyAside() {
+  const pathname = usePathname();
   return (
     <ScrollArea type="never" h="100%">
       <Stack gap="lg" px="lg" py="xl">
@@ -12,6 +14,7 @@ export default function CaseStudyAside() {
         </Text>
 
         <TableOfContents
+          key={pathname}
           variant="light"
           size="md"
           radius="md"
