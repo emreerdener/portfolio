@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { IconBrandLinkedin, IconLock, IconSend } from '@tabler/icons-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
@@ -27,6 +28,7 @@ const images = [
 ];
 
 export function PasswordProtection({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -47,7 +49,7 @@ export function PasswordProtection({ children }: { children: React.ReactNode }) 
   };
 
   useEffect(() => {
-    // Check session storage on mount to see if user already entered password
+    // Check session storage on mount
     const auth = sessionStorage.getItem('site_auth');
     if (auth === 'true') {
       setIsAuthenticated(true);
@@ -58,32 +60,28 @@ export function PasswordProtection({ children }: { children: React.ReactNode }) 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // CHANGE THIS STRING TO YOUR DESIRED PASSWORD
     const CORRECT_PASSWORD = 'bicycle';
 
     if (password === CORRECT_PASSWORD) {
       sessionStorage.setItem('site_auth', 'true');
       setIsAuthenticated(true);
       setError('');
+      router.push('/');
     } else {
       setError('Incorrect password');
     }
   };
 
-  // Prevent flash of content while checking auth status
   if (loading) {
     return null;
   }
 
-  // If authenticated, render the website
   if (isAuthenticated) {
     return <>{children}</>;
   }
 
-  // If not authenticated, render the Lock Screen
   return (
     <Grid gutter={0} h="100vh" m={0}>
-      {/* Left Side: Login Form */}
       <Grid.Col
         span={{ base: 12, md: 6 }}
         style={{
@@ -152,7 +150,6 @@ export function PasswordProtection({ children }: { children: React.ReactNode }) 
         </Center>
       </Grid.Col>
 
-      {/* Right Side: Full Height Carousel */}
       <Grid.Col span={{ base: 12, md: 6 }} visibleFrom="md" h="100vh">
         <Carousel
           withIndicators
