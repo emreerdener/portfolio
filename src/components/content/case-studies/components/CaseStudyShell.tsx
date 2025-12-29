@@ -53,7 +53,9 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
         </Stack>
       </AppShell.Navbar>
 
-      <AppShell.Main className={classes.main}>{children}</AppShell.Main>
+      <AppShell.Main className={classes.main}>
+        <Stack align="center">{children}</Stack>
+      </AppShell.Main>
 
       <AppShell.Aside className={classes.aside}>
         <CaseStudyAside />

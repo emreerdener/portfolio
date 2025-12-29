@@ -59,7 +59,7 @@ export default function CaseStudiesPage() {
           resetFilters={resetFilters}
         />
 
-        <Grid gutter={{ base: 'lg', xs: 'xl' }}>
+        <Grid gutter={{ base: 'lg', xs: 'xl', xl: '3rem' }}>
           {filteredProjects.map((project, index) => (
             <Grid.Col key={index} span={{ base: 12, md: 6 }}>
               <ProjectCard
