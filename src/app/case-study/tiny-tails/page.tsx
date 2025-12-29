@@ -14,7 +14,7 @@ export default function TinyTails() {
       <Stack gap="xl">
         <CaseStudyHeader
           coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/tiny-tails.jpg"
-          coverAlt="Tiny tails image"
+          coverAlt="Tiny Tails image"
           metadata="Tiny Tails to You • Consultant • 2017 - 2018"
           title="Delivering animal snuggles and delight"
           description="Tiny Tails to You is an interactive and ethical traveling petting zoo, serving Central Texas since 2010. Each experience is designed to engage the young in age and the young at heart! They travel to you to bring animal snuggles for all kinds of events."
