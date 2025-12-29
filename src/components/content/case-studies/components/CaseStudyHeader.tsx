@@ -1,7 +1,7 @@
 'use client';
 
 import { IconCircleCheckFilled, IconExclamationCircleFilled } from '@tabler/icons-react';
-import { Alert, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Blockquote, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 
 interface CaseStudyHeaderProps {
   coverImage: string;
@@ -46,7 +46,7 @@ export default function CaseStudyHeader({
             <Title order={1} fz="2.8rem" lh={1.1} fw={800}>
               {title}
             </Title>
-            <Text size="lg">{description}</Text>
+            <Text size="xl">{description}</Text>
           </Stack>
 
           {prototypeUrl && (
@@ -62,26 +62,26 @@ export default function CaseStudyHeader({
         </Stack>
       </Stack>
 
-      <Alert radius="lg" p="xl" color="red">
+      <Blockquote p="xl" color="orange">
         <Stack>
           <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>Problem</Title>
-            <IconExclamationCircleFilled size={32} color="red" />
+            <Title order={2}>The puzzle</Title>
+            <IconExclamationCircleFilled size={32} color="orange" />
           </Group>
-          <Text size="lg">{problem}</Text>
+          <Text size="xl">{problem}</Text>
         </Stack>
-      </Alert>
+      </Blockquote>
 
-      <Alert radius="lg" p="xl" color="green">
+      <Blockquote p="xl" color="green">
         <Stack>
           <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>Proposal</Title>
+            <Title order={2}>The design proposal</Title>
             <IconCircleCheckFilled size={32} color="green" />
           </Group>
 
           <Text size="xl">{proposal}</Text>
         </Stack>
-      </Alert>
+      </Blockquote>
     </Stack>
   );
 }
