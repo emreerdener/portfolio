@@ -38,45 +38,48 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    title: 'Merchant Referral Program',
-    company: 'Shopify',
-    coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png',
-    headerImage: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg',
-    coverAlt: 'Shopify Merchant Referral Program cover image',
-    logoSrc: '/images/logos/apps/shopify.svg',
-    href: '/case-study/merchant-referrals',
-    categories: ['0 to 1', 'Growth', 'SaaS', 'E-commerce'],
-    platforms: ['Web', 'Mobile'],
-    date: '2023-11-01',
+    title: 'Integrated Home Energy',
+    company: 'Vivint',
+    coverSrc:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/energy-insights-cover-c.png',
+    headerImage:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/header-image-c.png',
+    coverAlt: 'Vivint case study cover image',
+    logoSrc: '/images/logos/apps/vivint.svg',
+    href: '/case-study/vivint-energy',
+    categories: ['Redesign', '0 to 1', 'Design System'],
+    platforms: ['Mobile', 'IoT'],
+    date: '2025-11-01',
     featured: true,
     projectType: 'Client',
-    heading: 'Unlocking a new growth lever',
-    metadata: 'Shopify • Lead Designer • 2022',
+    heading: 'Energy Insights',
+    metadata: 'Vivint • Lead Designer • 2025',
     description:
-      'As the Lead Designer, I spearheaded the end-to-end execution of Shopify’s Merchant Referral Program. I drove the design lifecycle from the initial MVP launch in the US and UK through to the global full-feature release, simultaneously conceptualizing the north-star incentive strategy and delivering the final production-ready interface.',
+      "I led the design for 'Energy Insights,' a top-priority initiative transforming the Vivint experience by integrating comprehensive power management into the smart home. Evolving the product from an early MVP to mature v1.0 and v2.0 releases, I am now defining the v3.0 vision to fully embed energy intelligence across the core application.",
     prototypeUrl:
-      'https://www.figma.com/proto/I98Ec6IN7ng4dlrRw3vDgp/Ref?page-id=1868%3A20716&node-id=2091-22734&viewport=316%2C48%2C0.05&scaling=min-zoom&starting-point-node-id=2091%3A22734&show-proto-sidebar=1',
+      'https://www.figma.com/proto/RNv5yexqJNxAkEXlCS7g2G/Energy-Insights-Dec7?page-id=26564%3A23250&node-id=26603-80089&p=f&viewport=438%2C296%2C0.58&t=3MpoFTvoXW34Edpq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=26603%3A80089&show-proto-sidebar=1',
     problem:
-      'The expenses associated with acquiring users through paid ads are excessively high, without necessarily yielding the highest quality leads. The payback period for paid ads is prolonged and frequently fails to achieve a successful return on investment, ultimately leading to a net loss for the company.',
+      'While the MVP displayed raw data, it lacked a coherent vision for user value. The interface was dense and unintuitive, failing to translate complex power usage into actionable insights. Users could see their energy, but the design offered no clear path to manage it within their existing smart home flow.',
     proposal:
-      'Develop and implement an innovative growth strategy for Shopify that reduces dependence on costly paid advertisements and instead utilizes existing research data on user sign-ups, particularly through referrals. The primary objective is to create avenues to engage and activate users within the Shopify ecosystem by incorporating incentive mechanisms.',
+      'Redefine the product vision to focus on actionable intelligence rather than raw reporting. Overhaul the UX to prioritize clarity and context, creating a scalable framework where energy insights drive automation and behavioral changes throughout the entire Vivint experience.',
     statsDescription:
-      'By operationalizing word-of-mouth, we achieved immediate improvements in acquisition costs and cross-team alignment.',
+      'Replacing unreliable QR code scanning with automated mDNS connectivity eliminated critical user friction points, providing real-time visibility into firmware updates and cutting setup time by more than half.',
     stats: [
       {
-        label: 'Payback efficiency',
-        value: '+63%',
+        label: 'Feature adoption',
+        value: '+300%',
         description:
-          'More efficient payback period for user acquisitions, from eight months down to three months.',
+          'Increase in daily active users engaging with energy insights compared to the legacy MVP.',
       },
       {
-        label: 'New users',
-        value: '+200k',
+        label: 'User retention',
+        value: '+20%',
         description:
-          'Estimated number of incremental new users brought in by full feature rollout.',
+          'Energy monitoring became a primary driver for daily app opens, second only to security.',
       },
     ],
   },
+
   {
     title: 'Inventory Management System',
     company: 'Eureka Software',
@@ -304,6 +307,46 @@ export const CASE_STUDIES: CaseStudy[] = [
         label: 'Efficiency gain',
         value: '+70%',
         description: 'Increase in order processing speed across the sales team.',
+      },
+    ],
+  },
+  {
+    title: 'Merchant Referral Program',
+    company: 'Shopify',
+    coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png',
+    headerImage: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg',
+    coverAlt: 'Shopify Merchant Referral Program cover image',
+    logoSrc: '/images/logos/apps/shopify.svg',
+    href: '/case-study/merchant-referrals',
+    categories: ['0 to 1', 'Growth', 'SaaS', 'E-commerce'],
+    platforms: ['Web', 'Mobile'],
+    date: '2023-11-01',
+    featured: true,
+    projectType: 'Client',
+    heading: 'Unlocking a new growth lever',
+    metadata: 'Shopify • Lead Designer • 2022',
+    description:
+      'As the Lead Designer, I spearheaded the end-to-end execution of Shopify’s Merchant Referral Program. I drove the design lifecycle from the initial MVP launch in the US and UK through to the global full-feature release, simultaneously conceptualizing the north-star incentive strategy and delivering the final production-ready interface.',
+    prototypeUrl:
+      'https://www.figma.com/proto/I98Ec6IN7ng4dlrRw3vDgp/Ref?page-id=1868%3A20716&node-id=2091-22734&viewport=316%2C48%2C0.05&scaling=min-zoom&starting-point-node-id=2091%3A22734&show-proto-sidebar=1',
+    problem:
+      'The expenses associated with acquiring users through paid ads are excessively high, without necessarily yielding the highest quality leads. The payback period for paid ads is prolonged and frequently fails to achieve a successful return on investment, ultimately leading to a net loss for the company.',
+    proposal:
+      'Develop and implement an innovative growth strategy for Shopify that reduces dependence on costly paid advertisements and instead utilizes existing research data on user sign-ups, particularly through referrals. The primary objective is to create avenues to engage and activate users within the Shopify ecosystem by incorporating incentive mechanisms.',
+    statsDescription:
+      'By operationalizing word-of-mouth, we achieved immediate improvements in acquisition costs and cross-team alignment.',
+    stats: [
+      {
+        label: 'Payback efficiency',
+        value: '+63%',
+        description:
+          'More efficient payback period for user acquisitions, from eight months down to three months.',
+      },
+      {
+        label: 'New users',
+        value: '+200k',
+        description:
+          'Estimated number of incremental new users brought in by full feature rollout.',
       },
     ],
   },
