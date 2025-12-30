@@ -201,6 +201,24 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/19.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/20.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/14.png"
             alt="2.0 components"
             radius="lg"
@@ -211,15 +229,6 @@ export default function VivintEnergy() {
         <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/15.png"
-            alt="2.0 components"
-            radius="lg"
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
-        </Center>
-
-        <Center>
-          <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/16.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
@@ -246,24 +255,6 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/19.png"
-            alt="2.0 components"
-            radius="lg"
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
-        </Center>
-
-        <Center>
-          <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/20.png"
-            alt="2.0 components"
-            radius="lg"
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
-        </Center>
-
-        <Center>
-          <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/21.png"
             alt="2.0 components"
             radius="lg"
@@ -274,6 +265,46 @@ export default function VivintEnergy() {
         <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/22.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Stack py="xl">
+          <Title order={2}>Introducing: Energy profile</Title>
+          <Text size="xl">
+            To improve model fidelity, we introduced the Home Energy Profile, enabling users to
+            fine-tune their data by inputting specific device details, such as EV charging habits.
+            This feature marked a significant technical milestone: it established the first reverse
+            data pipeline from Vivint back to NRG. This bi-directional flow allowed user inputs to
+            retrospectively update historical disaggregation models, resulting in significantly more
+            accurate insights."
+          </Text>
+        </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/16.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/Energy%20profile-c.png"
+            alt="2.0 components"
+            radius="lg"
+            p="sm"
+            style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/energy-profile-ba-c.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
