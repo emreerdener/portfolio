@@ -57,7 +57,7 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/woman-on-phone.jpg"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/woman-on-phone-1.jpg"
             alt="A woman in her house looking at her phone"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
@@ -65,15 +65,32 @@ export default function VivintEnergy() {
         </Center>
 
         <Stack py="xl">
-          <Title order={2}>A rigid foundation</Title>
+          <Title order={2}>Initial direction</Title>
           <Text size="xl">
             When I joined the project, the initial MVP had been established as a proof-of-concept.
             While it succeeded in displaying raw data, the design suffered from a lack of strategic
-            direction and a rigid, heavy interface. It functioned more like a complex spreadsheet
-            than a consumer-facing smart home feature, utilizing a dense visual style that
-            monopolized screen real estate.
+            direction. It functioned more like a complex spreadsheet than a consumer-facing smart
+            home feature, utilizing a spread out visual style that monopolized screen real estate.
           </Text>
         </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/mvp-features-c.png"
+            alt="MVP components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Card withBorder radius="lg" style={{ background: 'white' }}>
+          <Center>
+            <Image
+              src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/initial-designs-mockup-c.png"
+              alt="MVP to 1.0 product designs"
+            />
+          </Center>
+        </Card>
 
         <Stack py="xl">
           <Title order={2}>The "bloat" problem</Title>
