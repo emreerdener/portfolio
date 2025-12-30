@@ -38,7 +38,7 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    title: 'Integrated Home Energy',
+    title: 'Smart Home Energy Insights',
     company: 'Vivint',
     coverSrc:
       'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/energy-insights-cover-c.png',
@@ -52,7 +52,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2025-11-01',
     featured: true,
     projectType: 'Client',
-    heading: 'Energy Insights',
+    heading: 'Integrating energy into the smart home',
     metadata: 'Vivint • Lead Designer • 2025',
     description:
       "I led the design for 'Energy Insights,' a top-priority initiative transforming the Vivint experience by integrating comprehensive power management into the smart home. Evolving the product from an early MVP to mature v1.0 and v2.0 releases, I am now defining the v3.0 vision to fully embed energy intelligence across the core application.",
@@ -92,7 +92,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     platforms: ['Web'],
     date: '2023-11-01',
     projectType: 'Client',
-    heading: 'Inventory management system',
+    heading: 'Digitizing a decade of manual workflows',
     metadata: 'Eureka Software • Lead Designer • 2022',
     description:
       "Waxwing is a custom internal tool to manage customer relationships (CRM), order management (OMS), and staff activity. The app is for Hase Petroleum Wax Company, a wax reseller for wax producers throughout North America. This app evolves the company's decade-long workflow of handwritten papers into a functional and organized digital database.",
@@ -159,7 +159,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
-    title: 'Admin Checkout 2.0',
+    title: 'Payment & Checkout Redesign',
     company: 'Shopify',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/shopify-admin.png',
     headerImage:
@@ -172,7 +172,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: true,
     projectType: 'Client',
-    heading: 'Shopify Admin Checkout',
+    heading: 'Streamlining the admin checkout experience',
     metadata: 'Shopify • Lead Designer • 2022',
     description:
       'The checkout flow for choosing a plan in the Shopify admin required a redesign to accommodate changes in the product and the onboarding process for new users. Furthermore, several user experience enhancements were necessary to be implemented as fixes to further enhance the lead-to-customer acquisition ratio.',
@@ -211,7 +211,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: true,
     projectType: 'Client',
-    heading: 'Audi dyno display',
+    heading: 'Visualizing engine performance in real-time',
     metadata: 'BTRES • Lead Designer • 2019',
     description:
       "Multiple touchscreen gauge displays, auto logging, auto dyno, map switching, fault checking, and more for Audi cars. Built on the power of Dyno Spectrum, this system presents a dynamic interface for complete transparency on your car's performance, as well as data storage for all logs.",
@@ -248,7 +248,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: false,
     projectType: 'Concept',
-    heading: 'Simplify travel expenses',
+    heading: 'Streamlining shared travel expenses',
     metadata: 'Tripway • Design Proposal • 2023',
     description:
       "Tripway helps you track your travel expenses, split payments with friends, and gain insight into your travel spending patterns. Keep track of who owes what, how much you've paid for different trip and expense categories, and make payments to friends and family through your trusted payment service, like Venmo or PayPal.",
@@ -286,7 +286,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: true,
     projectType: 'Client',
-    heading: 'Animal Snuggles Delivered',
+    heading: '12x faster orders for a local favorite',
     metadata: 'Tiny Tails to You • Consultant • 2017 - 2018',
     description:
       'Tiny Tails to You is an interactive and ethical traveling petting zoo, serving Central Texas since 2010. Each experience is designed to engage the young in age and the young at heart! They travel to you to bring animal snuggles for all kinds of events.',
@@ -364,7 +364,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: false,
     projectType: 'Client',
-    heading: 'Optimizing pricing',
+    heading: 'Clarifying value for millions of merchants',
     metadata: 'Shopify • Lead Designer • 2022',
     description:
       "Shopify's pricing page had not been worked on since 2019, aside from a few minor color updates. The user experience of the page was not great, especially on mobile, and it was difficult to understand how one plan was differentiated from another. The research team outlined a number of improvements to be made, from social proof elements (like logos) to a better feature table. I led the design on this project.",
@@ -404,7 +404,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: false,
     projectType: 'Client',
-    heading: 'Shop App curator profiles',
+    heading: 'A new economy for product discovery',
     metadata: 'Shopify • Lead Designer • 2023',
     description:
       "Curator profiles are a new feature for the Shop App, which allow users to create collections of products from within Shopify's merchant ecosystem. This feature allows users to earn Shop Cash each time a purchase is made from their curated list. This feature will provide users with a more practical means of saving products and also create a growth intiative to attract more users to the app.",
@@ -479,7 +479,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: false,
     projectType: 'Client',
-    heading: 'Shopify.com website platform',
+    heading: 'A scalable custom CMS for international growth',
     metadata: 'Shopify • Lead Designer • 2023',
     description:
       "With the release of Hydrogen (Shopify's React-based framework), Shopify needed a content management system to empower their marketing teams to create, update, delete, manage, and experiment with pages across all international variations of the website. I lead the design for this project, to scope the functionality, and design the interface and user experience for Shopify's custom CMS.",
@@ -519,7 +519,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: false,
     projectType: 'Client',
-    heading: 'Incentivizing merchant activation',
+    heading: 'Driving first-time success through incentives',
     metadata: 'Shopify • Lead Designer • 2023',
     description:
       'As a means of encouraging new leads and free trial merchants to complete essential tasks that are known to enhance long-term productivity, we are providing a $50 app store credit incentive. Our goal is to increase the probability of merchants contributing to Gross Merchandise Volume (GMV) and to improve user retention. These tests will lay the foundation for productivity incentives across the Admin.',
@@ -557,7 +557,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2023-11-01',
     featured: false,
     projectType: 'Client',
-    heading: 'Connecting the Bridge',
+    heading: 'Seamless onboarding connectivity',
     metadata: 'Vivint • Lead Designer • 2025',
     description:
       "The bridge serves as a crucial communication hub, linking various Vivint products within the ecosystem. Despite its importance, the hardware was managed by a third-party company, restricting Vivint's capacity to update or customize the firmware. The design work focused on streamlining the user experience, enhancing functionality, and accelerating the integration process, resulting in a more seamless experience for users.",
