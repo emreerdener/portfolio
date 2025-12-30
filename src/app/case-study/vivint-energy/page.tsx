@@ -74,15 +74,6 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
-        <Center>
-          <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/mvp-features-c.png"
-            alt="MVP components"
-            radius="lg"
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
-        </Center>
-
         <Card withBorder radius="lg" style={{ background: 'white' }}>
           <Center>
             <Image
@@ -91,6 +82,15 @@ export default function VivintEnergy() {
             />
           </Center>
         </Card>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/mvp-features-c.png"
+            alt="MVP components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
 
         <Stack py="xl">
           <Title order={2}>The "bloat" problem</Title>
@@ -102,6 +102,15 @@ export default function VivintEnergy() {
             actively dig for data rather than having insights surfaced contextually.
           </Text>
         </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/1-intro.png"
+            alt="1.0 product designs"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
 
         <Stack py="xl">
           <Title order={2}>Market validation and stabilization</Title>
@@ -124,6 +133,42 @@ export default function VivintEnergy() {
           </Center>
         </Card>
 
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/bill-0-1.png"
+            alt="1.0 product designs"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/weekly-insights-0-1.png"
+            alt="1.0 product designs"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/disagg-0-1.png"
+            alt="1.0 product designs"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/charts-0-1.png"
+            alt="1.0 product designs"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
         <Stack py="xl">
           <Title order={2}>Learning from the launch</Title>
           <Text size="xl">
@@ -135,6 +180,15 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/11.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
         <Stack py="xl">
           <Title order={2}>Rebuilding the visual language</Title>
           <Text size="xl">
@@ -144,6 +198,115 @@ export default function VivintEnergy() {
             flexibility needed for compact widgets.
           </Text>
         </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/14.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/15.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/16.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/17.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/18.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/19.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/20.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/21.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/22.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Stack py="xl">
+          <Title order={2}>A single, intuitive metric</Title>
+          <Text size="xl">
+            Energy Score turns complex usage data into a clear 1–10 score, making performance easy
+            to understand at a glance. Abstract, universal format enables personalized nudges,
+            gamification, and progress tracking. Provides clear context and benchmarks, removing the
+            guesswork from interpreting raw kWh or dollar amounts.
+          </Text>
+        </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/12.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/13.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
 
         <Stack py="xl">
           <Title order={2}>Laying the groundwork for scale</Title>
@@ -155,6 +318,15 @@ export default function VivintEnergy() {
             the key enabler for the v2.0 modular strategy.
           </Text>
         </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/27.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
 
         <Stack py="xl">
           <Title order={2}>From dashboard to ecosystem</Title>
@@ -186,6 +358,23 @@ export default function VivintEnergy() {
             will proactively offer to adjust the thermostat or delay running major appliances.
           </Text>
         </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/23.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/24.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
 
         <Stack py="xl">
           <Title order={2}>A unified smart home</Title>
