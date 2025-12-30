@@ -38,6 +38,13 @@ export default function CaseStudyHeader({
 }: CaseStudyHeaderProps) {
   return (
     <Stack gap="xl">
+      <Image
+        src={coverImage}
+        alt={coverAlt}
+        radius="lg"
+        style={{ border: '1px solid var(--app-shell-border-color)' }}
+      />
+
       <Stack gap="xs" py="lg">
         <Stack align="flex-start" gap="lg">
           <Group justify="space-between">
@@ -65,18 +72,11 @@ export default function CaseStudyHeader({
         </Stack>
       </Stack>
 
-      <Image
-        src={coverImage}
-        alt={coverAlt}
-        radius="lg"
-        style={{ border: '1px solid var(--app-shell-border-color)' }}
-      />
+      <ChallengeProposal problem={problem} proposal={proposal} />
 
       {stats && stats.length > 0 && (
         <CaseStudyImpact stats={stats} description={statsDescription} />
       )}
-
-      <ChallengeProposal problem={problem} proposal={proposal} />
     </Stack>
   );
 }
