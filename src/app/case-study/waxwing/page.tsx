@@ -3,22 +3,29 @@
 import Script from 'next/script';
 import { Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function Waxwing() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/waxwing');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/cover.png"
-          coverAlt="Waxwing software cover image"
-          metadata="Eureka Software • Lead Designer • 2022"
-          title="Inventory management system"
-          description="Waxwing is a custom internal tool to manage customer relationships (CRM), order management (OMS), and staff activity. The app is for Hase Petroleum Wax Company, a wax reseller for wax producers throughout North America. This app evolves the company's decade-long workflow of handwritten papers into a functional and organized digital database."
-          prototypeUrl="https://www.figma.com/proto/w72Xw17cWu46VIH12qobMq/Waxwing---HP-Wax?page-id=0%3A1&node-id=77-8053&viewport=38%2C3579%2C0.29&scaling=min-zoom&starting-point-node-id=77%3A8053"
-          problem="The company currently relies on manual paper-based methods to manage its inventory and orders, resulting in time-consuming processes and an increased risk of errors. Moreover, the documentation of orders lacks consistency among employees, making it challenging to refer to past orders or seamlessly handle orders between team members."
-          proposal="Design a custom order management tool for a wholesale wax company that meets and builds on the company's current order management process. This app also needs to allow for flexibility to extend functionality as the company and processes evolve."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -275,24 +282,6 @@ export default function Waxwing() {
             />
           </Box>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Order Processing',
-              value: '-75%',
-              description:
-                'Reduction in time spent creating and filing new orders compared to the manual workflow.',
-            },
-            {
-              label: 'Data Retrieval',
-              value: 'Instant',
-              description:
-                'Shifted from searching physical files to instant, searchable digital records.',
-            },
-          ]}
-          description="Transforming a decade of paper trails into a streamlined digital workflow significantly reduced administrative overhead."
-        />
 
         <CaseStudySkills
           skills={[

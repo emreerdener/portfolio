@@ -3,23 +3,30 @@
 import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import BunnyAnimation from '@/src/components/content/case-studies/components/tiny-tails/animation/BunnyAnimation';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function TinyTails() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/tiny-tails');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/tiny-tails.jpg"
-          coverAlt="Tiny Tails image"
-          metadata="Tiny Tails to You • Consultant • 2017 - 2018"
-          title="Delivering animal snuggles and delight"
-          description="Tiny Tails to You is an interactive and ethical traveling petting zoo, serving Central Texas since 2010. Each experience is designed to engage the young in age and the young at heart! They travel to you to bring animal snuggles for all kinds of events."
-          websiteUrl="https://www.tinytailstoyou.com/"
-          problem="The process of handling orders proved to be excessively time-consuming and challenging. Customers faced difficulties in understanding which services to order, leading to further delays and back-and-forth communication before finalizing an order. Creating quotes consumed a significant amount of time for staff members, and customers would often retract their orders once the quote was provided. After orders were placed, there was a lack of effective tracking, inability to request customer feedback, and inadequate reporting on sales, performance, conversion rates, and other important metrics."
-          proposal="Redesign the brand, website, product offerings, and backend order management system in order to increase business efficiency and more clearly communicate with customers. Additionally, the business logic needs to allow for a more scalable and automated infrastructure."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -390,22 +397,6 @@ export default function TinyTails() {
             />
           </div>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Order velocity',
-              value: '12x',
-              description: 'Orders are now processed in minutes instead of hours.',
-            },
-            {
-              label: 'Efficiency gain',
-              value: '+70%',
-              description: 'Increase in order processing speed across the sales team.',
-            },
-          ]}
-          description="The redesigned website and marketing ecosystem led to a substantial increase in bookings, improved user engagement, and enhanced overall business performance."
-        />
 
         <CaseStudySkills
           skills={[

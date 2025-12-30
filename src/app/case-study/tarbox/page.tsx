@@ -2,25 +2,32 @@
 
 import { Blockquote, Card, Center, Image, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import BedAnimation from '@/src/components/content/case-studies/components/tarbox/animations/BedAnimation';
 import CheersAnimation from '@/src/components/content/case-studies/components/tarbox/animations/CheersAnimation';
 import RingAnimation from '@/src/components/content/case-studies/components/tarbox/animations/RingAnimation';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function Tarbox() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/tarbox');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/tarbox-cover.jpg"
-          coverAlt="Tarbox cover image"
-          metadata="Squire Tarbox Inn • Lead Designer • 2021"
-          title="Redefining the booking experience"
-          description="A boutique inn, surrounded by 12 acres of pastoral farmland, heritage woods, and a tranquil salt marsh. Built in 1763 and restored in 2018, the historic property is a peaceful retreat. Fifteen minutes from Wiscasset and the Boothbay region, in midcoast Maine. Rest, unwind, and explore our favorite local spots in Maine."
-          websiteUrl="https://www.squiretarboxinn.com/"
-          problem="The customer experience cannot be handled efficiently by a small team while maintaining an individual, personalized experience. The brand has no guidelines for content or design, and the company lacks marketing automation and content. Additionally, there is no reporting on marketing, business performance, or customer metadata."
-          proposal="Optimize the brand, business processes, and customer experience across all channels, as well as introduce a new brand, tech stack, and business logic to increase conversions and business efficiency."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -272,24 +279,6 @@ export default function Tarbox() {
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Faster loading speed',
-              value: '10X',
-              description:
-                'With a more efficient design, build, and optimized content, the page speed improved by more than 4 seconds on desktop and mobile.',
-            },
-            {
-              label: 'Increased bookings',
-              value: '300%',
-              description:
-                'The site brings in higher organic traffic with better SEO performance, delivers a seamless user experience, and has significantly faster load times.',
-            },
-          ]}
-          description="The redesigned website and marketing ecosystem led to a substantial increase in bookings, improved user engagement, and enhanced overall business performance."
-        />
 
         <CaseStudySkills
           skills={[

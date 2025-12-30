@@ -3,22 +3,29 @@
 import Script from 'next/script';
 import { Blockquote, Box, Card, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyWebsitePlatform() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/shopify-website-platform');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/cover.png"
-          coverAlt="Shopify website platform cover image"
-          metadata="Shopify • Lead Designer • 2023"
-          title="Shopify.com website platform"
-          description="With the release of Hydrogen (Shopify's React-based framework), Shopify needed a content management system to empower their marketing teams to create, update, delete, manage, and experiment with pages across all international variations of the website. I lead the design for this project, to scope the functionality, and design the interface and user experience for Shopify's custom CMS."
-          prototypeUrl="https://www.figma.com/proto/QHlzAOSDPpEMLNZOk7ZKN9/Website-Platform?page-id=21%3A18609&node-id=24-40335&viewport=463%2C983%2C0.03&scaling=contain&starting-point-node-id=24%3A40335&show-proto-sidebar=1"
-          problem="Shopifolk spend a considerable amount of time and resources creating and updating pages on the website. The process requires engineering support, is prone to errors, and can be slow. This is an inefficient use of resources and expensive for the company."
-          proposal="Design a scalable and no-code content management system for Shopify employees to build and launch pages without developer support. These pages need to be able to be translated and localized across international domains and content."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -363,24 +370,6 @@ export default function ShopifyWebsitePlatform() {
             />
           </Box>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Website pages',
-              value: '150,000+',
-              description:
-                'Primary and secondary pages built and maintained within this custom CMS.',
-            },
-            {
-              label: 'Annual cost savings',
-              value: '$45M',
-              description:
-                'Enabling teams to work autonomously on the website saves company resources.',
-            },
-          ]}
-          description="Empowering marketing teams to work autonomously eliminated engineering bottlenecks, resulting in massive operational efficiencies and annual cost savings."
-        />
 
         <CaseStudySkills
           skills={[

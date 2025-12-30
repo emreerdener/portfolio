@@ -15,9 +15,21 @@ import { Anchor, Image, NavLink, SimpleGrid, Stack, Title } from '@mantine/core'
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
-export default function NavContent() {
+interface NavContentProps {
+  onNavClick?: () => void;
+}
+
+export default function NavContent({ onNavClick }: NavContentProps) {
   const pathname = usePathname();
   const router = useRouter();
+
+  const handleNavClick = (path: string) => {
+    router.push(path);
+    if (onNavClick) {
+      onNavClick();
+    }
+  };
+
   return (
     <>
       <Stack align="center">
@@ -40,14 +52,14 @@ export default function NavContent() {
         </Stack>
         <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing={8}>
           <NavLink
-            onClick={() => router.push('/')}
+            onClick={() => handleNavClick('/')}
             label="Featured work"
             rightSection={pathname === '/' ? <IconStarFilled size={20} /> : <IconStar size={20} />}
             className={classes.navlink}
             active={pathname === '/'}
           />
           <NavLink
-            onClick={() => router.push('/case-studies')}
+            onClick={() => handleNavClick('/case-studies')}
             label="Case studies"
             rightSection={
               pathname === '/case-studies' ? <IconBookFilled size={20} /> : <IconBook size={20} />
@@ -56,7 +68,7 @@ export default function NavContent() {
             active={pathname === '/case-studies'}
           />
           <NavLink
-            onClick={() => router.push('/presentation')}
+            onClick={() => handleNavClick('/presentation')}
             label="Presentation"
             rightSection={
               pathname === '/presentation' ? (
@@ -69,7 +81,7 @@ export default function NavContent() {
             active={pathname === '/presentation'}
           />
           <NavLink
-            onClick={() => router.push('/other-work')}
+            onClick={() => handleNavClick('/other-work')}
             label="Other work"
             rightSection={
               pathname === '/other-work' ? <IconIconsFilled size={20} /> : <IconIcons size={20} />
@@ -78,7 +90,7 @@ export default function NavContent() {
             active={pathname === '/other-work'}
           />
           <NavLink
-            onClick={() => router.push('/profile')}
+            onClick={() => handleNavClick('/profile')}
             label="Profile"
             rightSection={
               pathname === '/profile' ? <IconUserFilled size={20} /> : <IconUser size={20} />

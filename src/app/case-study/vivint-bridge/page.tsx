@@ -2,22 +2,29 @@
 
 import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function VivintBridge() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/vivint-bridge');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/cover.jpg"
-          coverAlt="Vivint case study cover image"
-          metadata="Vivint • Lead Designer • 2025"
-          title="Connecting the Bridge"
-          prototypeUrl="https://www.figma.com/design/evA0SJLCpGKc5sUwhtVFnH/Bridge?node-id=167-1119&t=pnLicmh1OELVPWyl-1"
-          description="The bridge serves as a crucial communication hub, linking various Vivint products within the ecosystem. Despite its importance, the hardware was managed by a third-party company, restricting Vivint's capacity to update or customize the firmware. The design work focused on streamlining the user experience, enhancing functionality, and accelerating the integration process, resulting in a more seamless experience for users."
-          problem="Users find the bridge onboarding to be confusing, take longer than expected, and are often not able to successfully pair their bridge through the app."
-          proposal="Redesign bridge onboarding and troubleshooting for an improved UX that is faster, more reliable, and easier for users."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -114,22 +121,6 @@ export default function VivintBridge() {
           alt="Photo of the bridge device"
           radius="lg"
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
-        />
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'More efficient',
-              value: '2x',
-              description: 'Reduced the number of steps from 12 to 6.',
-            },
-            {
-              label: 'Faster setup time',
-              value: '+60%',
-              description: 'Faster average setup time: 10m → 4m',
-            },
-          ]}
-          description="Replacing unreliable QR code scanning with automated mDNS connectivity eliminated critical user friction points, providing real-time visibility into firmware updates and cutting setup time by more than half."
         />
 
         <CaseStudySkills

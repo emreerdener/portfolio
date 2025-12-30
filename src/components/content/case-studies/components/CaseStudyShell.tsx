@@ -51,7 +51,7 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
       <AppShell.Navbar className={classes.navbar}>
         <Stack gap={0} className={classes.navbarContainer}>
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <NavContent />
+          <NavContent onNavClick={close} />
         </Stack>
       </AppShell.Navbar>
 

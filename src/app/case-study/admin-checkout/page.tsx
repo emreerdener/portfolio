@@ -2,22 +2,29 @@
 
 import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function AdminCheckout() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/admin-checkout');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/admin-cover.png"
-          coverAlt="Shopify admin cover image"
-          metadata="Shopify • Lead Designer • 2022"
-          title="Shopify Admin Checkout"
-          description="The checkout flow for choosing a plan in the Shopify admin required a redesign to accommodate changes in the product and the onboarding process for new users. Furthermore, several user experience enhancements were necessary to be implemented as fixes to further enhance the lead-to-customer acquisition ratio."
-          prototypeUrl="https://www.figma.com/proto/Rn46dLpFj8y2f4p2f3MZP9/Checkout?page-id=770%3A46788&node-id=770-49412&viewport=-5703%2C-1216%2C0.14&scaling=min-zoom&starting-point-node-id=770%3A49412&show-proto-sidebar=1"
-          problem="The user interface is causing confusion and frustration among users, resulting in low conversion rates to paid customers. Users encounter difficulties understanding the specific plan they are signing up for. Internally, the payment components are outdated and do not accommodate all international payment methods across different regions. Each regional payment component is managed by a separate team, which is inefficient and difficult to maintain."
-          proposal="The objective is to enhance the user experience and improve the conversion rate of the Shopify admin checkout for both new and existing users managing their subscription accounts. To achieve this, a redesign of the checkout components is necessary to ensure they can be easily integrated across the platform, from sign up to failed billing to core settings. Additionally, this redesign will include user experience optimizations as fixes to further boost lead-to-customer acquisition rate."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -241,23 +248,6 @@ export default function AdminCheckout() {
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Lead to customer',
-              value: '+24%',
-              description: 'UX optimizations led to an increase in customer acquisition.',
-            },
-            {
-              label: 'Cross-functional teams',
-              value: '6',
-              description:
-                'Coordinated design across billing, retention, activation, plans & pricing, and core teams.',
-            },
-          ]}
-          description="By redesigning the checkout experience, we improved clarity and usability, resulting in higher conversion rates and better user satisfaction."
-        />
 
         <CaseStudySkills
           skills={[

@@ -3,22 +3,29 @@
 import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function MerchantReferrals() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/merchant-referrals');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg"
-          coverAlt="Shopify Merchant Referral Program cover image"
-          metadata="Shopify • Lead Designer • 2022"
-          title="Unlocking a new growth lever"
-          description="As the Lead Designer, I spearheaded the end-to-end execution of Shopify’s Merchant Referral Program. I drove the design lifecycle from the initial MVP launch in the US and UK through to the global full-feature release, simultaneously conceptualizing the north-star incentive strategy and delivering the final production-ready interface."
-          prototypeUrl="https://www.figma.com/proto/I98Ec6IN7ng4dlrRw3vDgp/Ref?page-id=1868%3A20716&node-id=2091-22734&viewport=316%2C48%2C0.05&scaling=min-zoom&starting-point-node-id=2091%3A22734&show-proto-sidebar=1"
-          problem="The expenses associated with acquiring users through paid ads are excessively high, without necessarily yielding the highest quality leads. The payback period for paid ads is prolonged and frequently fails to achieve a successful return on investment, ultimately leading to a net loss for the company."
-          proposal="Develop and implement an innovative growth strategy for Shopify that reduces dependence on costly paid advertisements and instead utilizes existing research data on user sign-ups, particularly through referrals. The primary objective is to create avenues to engage and activate users within the Shopify ecosystem by incorporating incentive mechanisms."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -364,24 +371,6 @@ export default function MerchantReferrals() {
             />
           </Box>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Payback efficiency',
-              value: '+63%',
-              description:
-                'More efficient payback period for user acquisitions, from eight months down to three months.',
-            },
-            {
-              label: 'New users',
-              value: '+200k',
-              description:
-                'Estimated number of incremental new users brought in by full feature rollout.',
-            },
-          ]}
-          description="By operationalizing word-of-mouth, we achieved immediate improvements in acquisition costs and cross-team alignment."
-        />
 
         <CaseStudySkills
           skills={[

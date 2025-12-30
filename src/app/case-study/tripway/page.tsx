@@ -3,27 +3,34 @@
 import Script from 'next/script';
 import { Blockquote, Box, Card, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import HippoBambooAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoBambooAnimation';
 import HippoBikeAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoBikeAnimation';
 import HippoChairAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoChairAnimation';
 import HippoGlideAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoGlideAnimation';
 import HippoLogoAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoLogoAnimation';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function Tripway() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/tripway');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/cover.jpg"
-          coverAlt="Tripway cover image"
-          metadata="Tripway • Design Proposal • 2023"
-          title="Simplify travel expenses"
-          description="Tripway helps you track your travel expenses, split payments with friends, and gain insight into your travel spending patterns. Keep track of who owes what, how much you've paid for different trip and expense categories, and make payments to friends and family through your trusted payment service, like Venmo or PayPal."
-          prototypeUrl="https://www.figma.com/proto/ru0w8LnUiE2P3uofc25ity/Tripway?page-id=0%3A1&node-id=386-16643&viewport=277%2C514%2C0.05&scaling=scale-down&starting-point-node-id=386%3A16643"
-          problem="It is difficult and time-consuming to track travel expenses with friends, and calculating expense splits can be tricky. If expenses are kept in an external document, it takes a lot of back and forth to sync payments, requests, etc. Additionally, there is not an easy way to identify spending patterns, view travel insights, and learn about your spending."
-          proposal="Design a mobile app to help users track and split travel spending. This app needs to have a defined data structure and a seamless user experience. Along with the app there needs to be a brand, custom assets and animations, and a frontend marketing website."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -260,22 +267,6 @@ export default function Tripway() {
             />
           </Box>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Complete design',
-              description:
-                'Fully designed and prototyped app, from sign up and getting started, to tracking payments and splitting expenses.',
-            },
-            {
-              label: 'Brand & marketing',
-              description:
-                'Complete brand and website design, from logo and brand guidelines, to animations and copy.',
-            },
-          ]}
-          description="This comprehensive design proposal resolves the friction of group travel finance, delivering a cohesive brand and product ecosystem that transforms complex expense splitting into an intuitive and stress-free experience."
-        />
 
         <CaseStudySkills
           skills={[

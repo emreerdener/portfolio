@@ -15,19 +15,19 @@ interface CaseStudyImpactProps {
 
 export default function CaseStudyImpact({ stats, description }: CaseStudyImpactProps) {
   return (
-    <Stack gap="lg">
+    <Stack gap="lg" py="lg">
       <Stack gap="xs">
-        <Title order={2}>Impact</Title>
+        <Title order={2}>Impact & outcomes</Title>
         <Text c="dimmed" size="lg">
           {description || 'Key performance indicators and outcomes achieved through this project.'}
         </Text>
       </Stack>
 
-      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
+      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
         {stats.map((stat, index) => (
           <Paper key={index} radius="lg" p="xl" withBorder shadow="sm">
             <Stack gap="sm">
-              <Text fw={600} tt="uppercase" c="dimmed" size="sm">
+              <Text fw={600} tt="uppercase" size="sm">
                 {stat.label}
               </Text>
 

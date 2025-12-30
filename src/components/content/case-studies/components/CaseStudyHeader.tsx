@@ -1,8 +1,14 @@
 'use client';
 
-import { IconCircleCheckFilled, IconExclamationCircleFilled } from '@tabler/icons-react';
-import { Blockquote, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Button, Group, Image, Stack, Text, Title } from '@mantine/core';
+import CaseStudyImpact from './CaseStudyImpact';
+import ChallengeProposal from './ChallengeProposal';
 
+interface Stat {
+  label: string;
+  value?: string;
+  description: string;
+}
 interface CaseStudyHeaderProps {
   coverImage: string;
   coverAlt: string;
@@ -13,6 +19,8 @@ interface CaseStudyHeaderProps {
   websiteUrl?: string;
   problem: string;
   proposal: string;
+  stats?: Stat[];
+  statsDescription?: string;
 }
 
 export default function CaseStudyHeader({
@@ -25,16 +33,11 @@ export default function CaseStudyHeader({
   websiteUrl,
   problem,
   proposal,
+  stats,
+  statsDescription,
 }: CaseStudyHeaderProps) {
   return (
     <Stack gap="xl">
-      <Image
-        src={coverImage}
-        alt={coverAlt}
-        radius="lg"
-        style={{ border: '1px solid var(--app-shell-border-color)' }}
-      />
-
       <Stack gap="xs" py="lg">
         <Stack align="flex-start" gap="lg">
           <Group justify="space-between">
@@ -62,26 +65,18 @@ export default function CaseStudyHeader({
         </Stack>
       </Stack>
 
-      <Blockquote p="xl" color="orange">
-        <Stack>
-          <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>Challenge</Title>
-            <IconExclamationCircleFilled size={32} color="orange" />
-          </Group>
-          <Text size="xl">{problem}</Text>
-        </Stack>
-      </Blockquote>
+      <Image
+        src={coverImage}
+        alt={coverAlt}
+        radius="lg"
+        style={{ border: '1px solid var(--app-shell-border-color)' }}
+      />
 
-      <Blockquote p="xl" color="green">
-        <Stack>
-          <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>Design proposal</Title>
-            <IconCircleCheckFilled size={32} color="green" />
-          </Group>
+      {stats && stats.length > 0 && (
+        <CaseStudyImpact stats={stats} description={statsDescription} />
+      )}
 
-          <Text size="xl">{proposal}</Text>
-        </Stack>
-      </Blockquote>
+      <ChallengeProposal problem={problem} proposal={proposal} />
     </Stack>
   );
 }

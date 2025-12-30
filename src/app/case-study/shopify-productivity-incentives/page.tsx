@@ -3,22 +3,29 @@
 import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyProductivityIncentives() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/shopify-productivity-incentives');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/cover.png"
-          coverAlt="Shopify productivity incentives cover image"
-          metadata="Shopify • Lead Designer • 2023"
-          title="Incentivizing merchant activation"
-          description="As a means of encouraging new leads and free trial merchants to complete essential tasks that are known to enhance long-term productivity, we are providing a $50 app store credit incentive. Our goal is to increase the probability of merchants contributing to Gross Merchandise Volume (GMV) and to improve user retention. These tests will lay the foundation for productivity incentives across the Admin."
-          prototypeUrl="https://www.figma.com/proto/H8MM9bvCbH9xtuVNqGABJX/Productivity-Incentives?page-id=1198%3A110524&type=design&node-id=1392-225359&viewport=-2031%2C239%2C0.13&scaling=min-zoom&starting-point-node-id=1392%3A225359&show-proto-sidebar=1"
-          problem="Merchants are struggling to achieve sustainable growth and are facing challenges in quickly realizing value on Shopify's platform. The process of generating sales can take a significant amount of time. We need to improve the ease of identifying different growth opportunities, as the current system does not facilitate this effectively."
-          proposal="Our aim was to evaluate the impact of productivity incentives on significant milestones within the admin's new user setup guide. The objective was to determine whether improving the completion rate of these milestones would lead to a more complete shop setup and therefore more successful merchants."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -210,22 +217,6 @@ export default function ShopifyProductivityIncentives() {
             />
           </Box>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Gross profit',
-              value: '$12.7M',
-              description: 'The estimated profit over 3 years.',
-            },
-            {
-              label: 'Userbase',
-              value: '1.3M users',
-              description: 'Tested worldwide for 3 weeks with a cooldown.',
-            },
-          ]}
-          description="Validating this strategy across 1.3M users established a scalable framework for driving merchant success and increasing long-term platform retention."
-        />
 
         <CaseStudySkills
           skills={[

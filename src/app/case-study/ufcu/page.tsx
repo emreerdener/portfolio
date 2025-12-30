@@ -3,22 +3,29 @@
 import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function UFCUBankingApp() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/ufcu');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/cover.png"
-          coverAlt="UFCU app cover image"
-          metadata="University Federal Credit Union • Design Proposal • 2023"
-          title="Redesigning mobile banking"
-          description="The University Federal Credit Union mobile app was released a few years ago, and while the functionality is okay, the user experience has a lot of room for improvement. In an effort to improve the app for myself and others, I completely redesigned the mobile app from the ground up. One of the goals of this redesign was to maintain the data, just display it better and design a cleaner, more streamlined user experience."
-          prototypeUrl="https://www.figma.com/proto/iCXwkVG4Qw3PiLMq5Djdmd/UFCU?page-id=3%3A186&node-id=90-3270&viewport=124%2C2421%2C0.33&scaling=scale-down&starting-point-node-id=90%3A3270&show-proto-sidebar=1"
-          problem="The user experience is confusing, difficult to use, and broken in certain areas of the product. The app is slow and the interface is not accessible, as the buttons are small and the text is challenging to read."
-          proposal="Redesign the mobile interface and user experience to deliver a comprehensive suite of financial tools for UFCU members. This redesign needs to maintain, improve, and add features, while also improving accessibility and usability."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -369,21 +376,6 @@ export default function UFCUBankingApp() {
             />
           </Box>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Accessibility improvements',
-              description:
-                'Through higher contrast ratios, larger font sizes, and a better information architecture, the app is much more accessible to all users, especially the visually impaired.',
-            },
-            {
-              label: 'A better user experience',
-              description:
-                'Consistency across all user interactions and the interface improves the user experience, from viewing account balances and transactions to making deposits.',
-            },
-          ]}
-        />
 
         <CaseStudySkills
           skills={[

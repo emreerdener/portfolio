@@ -2,22 +2,29 @@
 
 import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyPricing() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/shopify-pricing');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/cover.png"
-          coverAlt="Shopify pricing cover image"
-          metadata="Shopify • Lead Designer • 2022"
-          title="Optimizing pricing"
-          description="Shopify's pricing page had not been worked on since 2019, aside from a few minor color updates. The user experience of the page was not great, especially on mobile, and it was difficult to understand how one plan was differentiated from another. The research team outlined a number of improvements to be made, from social proof elements (like logos) to a better feature table. I led the design on this project."
-          prototypeUrl="https://www.figma.com/proto/JTl7erPq9ds06NOl3LDyEO/Shopify.com-pricing?page-id=2%3A4&node-id=186-18227&viewport=36%2C86%2C0.05&scaling=min-zoom&starting-point-node-id=186%3A18227&show-proto-sidebar=1"
-          problem="User research has revealed that users struggle to comprehend the unique value propositions and distinctions between each plan. Additionally, the interface is marked by confusion, featuring unexpected user interactions that have resulted in a decrease in sign-up conversions."
-          proposal="Redesign the pricing page on Shopify.com to improve the user experience, match the rebrand, increase conversions, and more clearly explain the pricing plans and feature gaps between the plans."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -208,24 +215,6 @@ export default function ShopifyPricing() {
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'Monthly page views',
-              value: '50m',
-              description:
-                'The pricing page is one of the most popular pages on the website with million of views.',
-            },
-            {
-              label: 'Conversion rate optimizations',
-              value: '40+',
-              description:
-                'Improvements to the information architecture and overall user experience.',
-            },
-          ]}
-          description="The strategic redesign clarified plan differentiation and streamlined the decision-making process, directly contributing to improved sign-up conversions and user confidence."
-        />
 
         <CaseStudySkills
           skills={[

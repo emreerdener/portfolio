@@ -3,22 +3,29 @@
 import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyShopApp() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/shopify-shopapp');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-shopapp/cover.png"
-          coverAlt="Shopify Shop app cover image"
-          metadata="Shopify • Lead Designer • 2023"
-          title="Shop App curator profiles"
-          description="Curator profiles are a new feature for the Shop App, which allow users to create collections of products from within Shopify's merchant ecosystem. This feature allows users to earn Shop Cash each time a purchase is made from their curated list. This feature will provide users with a more practical means of saving products and also create a growth intiative to attract more users to the app."
-          prototypeUrl="https://www.figma.com/proto/J8U5yHemWSFg0hqXKypImf/Big-Bets-Monetization?page-id=118%3A28036&type=design&node-id=120-19905&viewport=480%2C801%2C0.04&scaling=scale-down&starting-point-node-id=120%3A19905"
-          problem="Finding products on the Shop app poses a challenge, and the creation of curated lists by the Shop team requires a substantial amount of time and resources. Users are currently restricted to a single favorites list, and they lack the ability to share this list with their friends or social networks."
-          proposal="The objective behind curator profiles is to offer a practical function to users (both for reference and sharing), while simultaneously encouraging use of the Shop app. The anticipated outcome is a better shopping experience for all users, an increase in purchases made through the app, and a growth flywheel for Shop user acquisition."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
 
         <Image
@@ -193,22 +200,6 @@ export default function ShopifyShopApp() {
             />
           </Box>
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'New growth loop',
-              description:
-                'Creates a growth loop that incentivizes users to drive increased shopping within the Shop app.',
-            },
-            {
-              label: 'New feature',
-              description:
-                'Introduces a new feature that allows users better organization and greater customization of their accounts.',
-            },
-          ]}
-          description="Transforming static favorites into shareable, incentive-driven collections unlocked a scalable organic growth loop, empowering users to drive product discovery."
-        />
 
         <CaseStudySkills
           skills={[

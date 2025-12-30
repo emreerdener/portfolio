@@ -2,24 +2,30 @@
 
 import { Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
-import CaseStudyImpact from '@/src/components/content/case-studies/components/CaseStudyImpact';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function BTRES() {
+  const study = CASE_STUDIES.find((s) => s.href === '/case-study/btres');
+
+  if (!study) {
+    return null;
+  }
   return (
     <>
       <Stack gap="xl">
         <CaseStudyHeader
-          coverImage="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/gauges.png"
-          coverAlt="BTRES cover image"
-          metadata="BTRES • Lead Designer • 2019"
-          title="Audi dyno display"
-          description="Multiple touchscreen gauge displays, auto logging, auto dyno, map switching, fault checking, and more for Audi cars. Built on the power of Dyno Spectrum, this system presents a dynamic interface for complete transparency on your car's performance, as well as data storage for all logs."
-          websiteUrl="https://betterthan.shop/"
-          problem="There is not a clean and easy-to-read display for Audi engine performance. The current solutions require viewing the data after-the-fact, or not having one entirely."
-          proposal="Design an interface, dials, and meters for a touch panel to reflect engine performance for Audis. This UI needs to be implemented via CSS and some additional SVG graphics. Additionally, the company needs branding and a logo."
+          coverImage={study.headerImage}
+          coverAlt={study.coverAlt || study.title}
+          metadata={study.metadata || ''}
+          title={study.heading || study.title}
+          description={study.description || ''}
+          websiteUrl={study.websiteUrl}
+          problem={study.problem || ''}
+          proposal={study.proposal || ''}
+          stats={study.stats}
+          statsDescription={study.statsDescription}
         />
-
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/btres.png"
           alt="BTRES cover image"
@@ -108,22 +114,6 @@ export default function BTRES() {
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
-
-        <CaseStudyImpact
-          stats={[
-            {
-              label: 'User interface design',
-              description:
-                'Real-time KPIs on one screen with dynamic gauges, min and max, labels, graphs, and more.',
-            },
-            {
-              label: 'Brand identity',
-              description:
-                "I designed the logo and brand mark for the company's marketing, website, and product.",
-            },
-          ]}
-          description="The dynamic gauge interface provides real-time performance data, enhancing user experience and vehicle monitoring."
-        />
 
         <CaseStudySkills
           skills={[
