@@ -88,6 +88,13 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
         </Box>
       </Drawer>
 
+      {/* <SwipeableDrawer opened={tocOpened} onClose={closeToc} title="On this page">
+        <Box h="100%">
+          <CaseStudyAside onLinkClick={closeToc} hideTitle noPadding />
+          <Space h="xl" />
+        </Box>
+      </SwipeableDrawer> */}
+
       <Transition transition="fade" duration={100} mounted={opened}>
         {(styles) => (
           <Overlay
