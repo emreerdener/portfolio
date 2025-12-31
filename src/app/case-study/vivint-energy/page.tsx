@@ -1,6 +1,18 @@
 'use client';
 
-import { Blockquote, Card, Center, Image, Stack, Text, Title } from '@mantine/core';
+import { IconLeaf, IconShield, IconThumbUp } from '@tabler/icons-react';
+import {
+  Blockquote,
+  Button,
+  Card,
+  Center,
+  Image,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
@@ -93,7 +105,7 @@ export default function VivintEnergy() {
         </Center>
 
         <Stack py="xl">
-          <Title order={2}>The "bloat" problem</Title>
+          <Title order={2}>The modularity problem</Title>
           <Text size="xl">
             The legacy design was "heavy"—both visually and structurally. This density created a
             significant barrier to scalability; because the interface required so much space to
@@ -111,6 +123,71 @@ export default function VivintEnergy() {
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
+
+        <Paper p="xl" withBorder radius="lg">
+          <Stack gap="xl">
+            <Stack gap="xs">
+              <Title order={2}>Design principals</Title>
+              <Text size="xl">
+                To transform technical energy data into a seamless part of the smart home
+                experience, we established core design principles. These guide every decision,
+                ensuring the product moves beyond a utility bill and becomes a proactive,
+                value-driven feature for the everyday homeowner.
+              </Text>
+            </Stack>
+
+            {/* Principal cards */}
+            <SimpleGrid cols={{ base: 1, md: 3 }} spacing={{ base: 'md' }}>
+              <Card radius="lg" withBorder p="lg" shadow="xs">
+                <Stack gap="sm">
+                  <IconLeaf size={30} />
+                  {/* Text */}
+                  <Stack gap={4}>
+                    <Text fw="bold" size="xl">
+                      Approachable
+                    </Text>
+                    <Text c="dimmed" size="sm">
+                      Present energy information in an approachable and human way, offering visuals
+                      and explanations to users.
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Card>
+
+              <Card radius="lg" withBorder p="lg" shadow="xs">
+                <Stack gap="sm">
+                  <IconThumbUp size={30} />
+                  {/* Text */}
+                  <Stack gap={4}>
+                    <Text fw="bold" size="xl">
+                      Engaging
+                    </Text>
+                    <Text c="dimmed" size="sm">
+                      Give users engaging experiences around their energy usage, directly integrated
+                      into their Vivint smart home.
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Card>
+
+              <Card radius="lg" withBorder p="lg" shadow="xs">
+                <Stack gap="sm">
+                  <IconShield size={30} />
+                  {/* Text */}
+                  <Stack gap={4}>
+                    <Text fw="bold" size="xl">
+                      Trustworthy
+                    </Text>
+                    <Text c="dimmed" size="sm">
+                      Deliver reliable data on usage patterns, bill totals and estimates,
+                      disaggregation models, insights, and more.
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Card>
+            </SimpleGrid>
+          </Stack>
+        </Paper>
 
         <Stack py="xl">
           <Title order={2}>Market validation and stabilization</Title>
@@ -190,12 +267,12 @@ export default function VivintEnergy() {
         </Center>
 
         <Stack py="xl">
-          <Title order={2}>Rebuilding the visual language</Title>
+          <Title order={2}>From dashboard to ecosystem</Title>
           <Text size="xl">
-            As we approached the v2.0 redesign, it became clear that the company's existing design
-            system and color palette were insufficient for the "lightweight" and modular future we
-            envisioned. The legacy colors were too heavy, and the component library lacked the
-            flexibility needed for compact widgets.
+            For v2.0, I proposed and executed a complete redesign centered on modularity. We shifted
+            away from the monolithic dashboard approach to a flexible widget-based architecture.
+            This strategy focused on reducing the visual footprint of the feature while actually
+            increasing data fidelity—transforming complex graphs into "glanceable" insights.
           </Text>
         </Stack>
 
@@ -348,6 +425,17 @@ export default function VivintEnergy() {
             visualizations that remained legible even at small scales. This infrastructure work was
             the key enabler for the v2.0 modular strategy.
           </Text>
+          <Text size="xl">
+            As we approached the v2.0 redesign, it became clear that the company's existing design
+            system and color palette were insufficient for the "lightweight" and modular future we
+            envisioned. The legacy colors were too heavy, and the component library lacked the
+            flexibility needed for compact widgets.
+          </Text>
+          <Stack align="flex-start">
+            <Button variant="light" size="md">
+              View project
+            </Button>
+          </Stack>
         </Stack>
 
         <Center>
@@ -360,16 +448,6 @@ export default function VivintEnergy() {
         </Center>
 
         <Stack py="xl">
-          <Title order={2}>From dashboard to ecosystem</Title>
-          <Text size="xl">
-            For v2.0, I proposed and executed a complete redesign centered on modularity. We shifted
-            away from the monolithic dashboard approach to a flexible widget-based architecture.
-            This strategy focused on reducing the visual footprint of the feature while actually
-            increasing data fidelity—transforming complex graphs into "glanceable" insights.
-          </Text>
-        </Stack>
-
-        <Stack py="xl">
           <Title order={2}>Driving adoption through integration</Title>
           <Text size="xl">
             The redesign reduced the interface density by approximately 40%, allowing energy
@@ -378,10 +456,7 @@ export default function VivintEnergy() {
             high"—alongside security controls, we drove a massive increase in feature adoption and
             made energy awareness a passive, seamless part of the user's daily routine.
           </Text>
-        </Stack>
 
-        <Stack py="xl">
-          <Title order={2}>The intelligent energy operating system</Title>
           <Text size="xl">
             With a modular system in place, the vision for v3.0 moves from "observation" to
             "automation." The strategy is to embed energy intelligence into the operating system
@@ -392,7 +467,7 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/23.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/24-c.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
@@ -400,7 +475,7 @@ export default function VivintEnergy() {
         </Center>
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/24.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/25-c.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
@@ -417,6 +492,15 @@ export default function VivintEnergy() {
             the house doesn't just protect you; it powers itself intelligently.
           </Text>
         </Stack>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/house-c.png"
+            alt="A image of a home."
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
 
         <CaseStudySkills
           skills={[
