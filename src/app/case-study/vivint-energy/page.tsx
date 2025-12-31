@@ -9,6 +9,7 @@ import {
   Image,
   Paper,
   SimpleGrid,
+  Space,
   Stack,
   Text,
   Title,
@@ -68,10 +69,11 @@ export default function VivintEnergy() {
           </Text>
         </Blockquote>
 
+        {/* House Image */}
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/woman-on-phone-1.jpg"
-            alt="A woman in her house looking at her phone"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/house-c.png"
+            alt="A image of a home."
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
@@ -125,7 +127,10 @@ export default function VivintEnergy() {
           />
         </Center>
 
-        <Paper p="xl" withBorder radius="lg">
+        <Space h="xs" />
+
+        {/* Design Principals */}
+        <Blockquote p="xl" color="green">
           <Stack gap="xl">
             <Stack gap="xs">
               <Title order={2}>Design principals</Title>
@@ -138,8 +143,8 @@ export default function VivintEnergy() {
             </Stack>
 
             {/* Principal cards */}
-            <SimpleGrid cols={{ base: 1, md: 3 }} spacing={{ base: 'md' }}>
-              <Card radius="lg" withBorder p="lg" shadow="xs">
+            <SimpleGrid cols={{ base: 1, md: 3 }} spacing={{ base: 'md', lg: 'xl' }}>
+              <Paper radius="lg" withBorder p="lg" shadow="xs">
                 <Stack gap="sm">
                   <IconLeaf size={30} />
                   {/* Text */}
@@ -153,9 +158,9 @@ export default function VivintEnergy() {
                     </Text>
                   </Stack>
                 </Stack>
-              </Card>
+              </Paper>
 
-              <Card radius="lg" withBorder p="lg" shadow="xs">
+              <Paper radius="lg" withBorder p="lg" shadow="xs">
                 <Stack gap="sm">
                   <IconThumbUp size={30} />
                   {/* Text */}
@@ -169,9 +174,9 @@ export default function VivintEnergy() {
                     </Text>
                   </Stack>
                 </Stack>
-              </Card>
+              </Paper>
 
-              <Card radius="lg" withBorder p="lg" shadow="xs">
+              <Paper radius="lg" withBorder p="lg" shadow="xs">
                 <Stack gap="sm">
                   <IconShield size={30} />
                   {/* Text */}
@@ -185,10 +190,10 @@ export default function VivintEnergy() {
                     </Text>
                   </Stack>
                 </Stack>
-              </Card>
+              </Paper>
             </SimpleGrid>
           </Stack>
-        </Paper>
+        </Blockquote>
 
         <Stack py="xl">
           <Title order={2}>Market validation and stabilization</Title>
@@ -258,10 +263,11 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
+        {/* Woman photograph */}
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/11.png"
-            alt="2.0 components"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/woman-on-phone-1.jpg"
+            alt="A woman in her house looking at her phone"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
@@ -279,6 +285,31 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/11.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        {/* Energy spend */}
+        <Stack py="xl">
+          <Title order={2}>Clarifying cost with disaggregation</Title>
+          <Text size="xl">
+            In the MVP, cost data was presented in a large, abstract doughnut chart that took up
+            valuable screen real estate without offering specific answers. For v2.0, we pivoted to a
+            linear breakdown tied directly to the user's billing cycle.
+          </Text>
+          <Text size="xl">
+            We introduced trend indicators (green for savings, red for overage) to help users
+            instantly understand if they were on track. By structuring disaggregation as a list, we
+            clarified the relationship between specific appliances and the total bill, creating a
+            module flexible enough to live outside the Energy tab.
+          </Text>
+        </Stack>
+
+        <Center>
+          <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/19.png"
             alt="2.0 components"
             radius="lg"
@@ -288,12 +319,38 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/20.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/billing-cycle-comparisons.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/energy-spend-figma-c.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        {/* Energy insights */}
+        <Stack py="xl">
+          <Title order={2}>Contextual intelligence</Title>
+          <Text size="xl">
+            Raw data is often meaningless without context. We refactored the "Insights" section from
+            static numbers into a rich data display featuring rolling 7-day averages. This allows
+            users to see their usage and runtime in the context of their immediate history rather
+            than as isolated integers.
+          </Text>
+          <Text size="xl">
+            To drive engagement, we introduced social benchmarks and gamification. Cards like "Top
+            5% of neighbors" and "Efficiency streaks" utilize behavioral psychology to encourage
+            better energy habits, transforming the app from a utility monitor into a competitive
+            tool for efficiency.
+          </Text>
+        </Stack>
 
         <Center>
           <Image
@@ -306,12 +363,37 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/15.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/insights-evolution-c.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/energy-insights-c.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        {/* Usage charts */}
+        <Stack py="xl">
+          <Title order={2}>Granularity meets clarity</Title>
+          <Text size="xl">
+            The updated usage charts were designed to answer the "Why?" behind a bill. We added
+            granular controls, including billing cycle date ranges and toggles for weather data.
+            Users can now overlay temperature highs and lows onto their usage bars, revealing the
+            direct correlation between weather events and HVAC costs.
+          </Text>
+          <Text size="xl">
+            We also introduced historical comparisons, allowing users to benchmark their current
+            performance against the previous month or year. This richer data visualization helps
+            users distinguish between seasonal variances and actual behavior changes.
+          </Text>
+        </Stack>
 
         <Center>
           <Image
@@ -324,12 +406,37 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/18.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/charts-comparisons.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/charts-c.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        {/* Savings */}
+        <Stack py="xl">
+          <Title order={2}>Actionable savings & gamification</Title>
+          <Text size="xl">
+            User research indicated that the horizontal scrolling cards in the MVP hid valuable
+            information. For v2.0, we pivoted to a prioritized vertical list, making it easier for
+            users to scan for high-impact actions.
+          </Text>
+          <Text size="xl">
+            Crucially, we tied these actions directly to the Energy Score. By assigning point values
+            to specific behaviors—like running appliances off-peak or adjusting the thermostat—we
+            transformed passive tips into a gamified checklist that provides immediate positive
+            feedback.
+          </Text>
+        </Stack>
 
         <Center>
           <Image
@@ -342,7 +449,16 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/22.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/savings-comparisons.png"
+            alt="2.0 components"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/savings-c.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
@@ -350,7 +466,7 @@ export default function VivintEnergy() {
         </Center>
 
         <Stack py="xl">
-          <Title order={2}>Introducing: Energy profile</Title>
+          <Title order={2}>Home Energy Profile</Title>
           <Text size="xl">
             To improve model fidelity, we introduced the Home Energy Profile, enabling users to
             fine-tune their data by inputting specific device details, such as EV charging habits.
@@ -372,17 +488,7 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/Energy%20profile-c.png"
-            alt="2.0 components"
-            radius="lg"
-            p="sm"
-            style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
-          />
-        </Center>
-
-        <Center>
-          <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/energy-profile-ba-c.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/energy-profile-figma-c.png"
             alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
@@ -474,14 +580,6 @@ export default function VivintEnergy() {
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
-        <Center>
-          <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/25-c.png"
-            alt="2.0 components"
-            radius="lg"
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
-        </Center>
 
         <Stack py="xl">
           <Title order={2}>A unified smart home</Title>
@@ -496,8 +594,8 @@ export default function VivintEnergy() {
 
         <Center>
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/house-c.png"
-            alt="A image of a home."
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/25-c.png"
+            alt="2.0 components"
             radius="lg"
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
