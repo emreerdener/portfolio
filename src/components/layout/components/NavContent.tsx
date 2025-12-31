@@ -6,12 +6,10 @@ import {
   IconIconsFilled,
   IconPlayerPlay,
   IconPlayerPlayFilled,
-  IconStar,
-  IconStarFilled,
   IconUser,
   IconUserFilled,
 } from '@tabler/icons-react';
-import { Anchor, Image, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
+import { Anchor, Image, NavLink, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
@@ -33,16 +31,21 @@ export default function NavContent({ onNavClick }: NavContentProps) {
   return (
     <>
       <Stack align="center">
-        <Image
-          src="/images/puppies.jpg"
-          alt="Profile picture"
-          w={140}
-          h={140}
-          radius="100%"
-          fit="cover"
-          className={classes.profilepic}
-        />
+        <Anchor onClick={() => handleNavClick('/')}>
+          <Image
+            src="/images/puppies.jpg"
+            alt="Profile picture"
+            w={140}
+            h={140}
+            radius="100%"
+            fit="cover"
+            className={classes.profilepic}
+          />
+        </Anchor>
         <Stack gap={0} align="center">
+          <Text c="dimmed" size="sm">
+            Design Engineer
+          </Text>
           <Title order={2} ta="center">
             Emre Erdener
           </Title>
@@ -50,13 +53,16 @@ export default function NavContent({ onNavClick }: NavContentProps) {
             erdener.emre@gmail.com
           </Anchor>
         </Stack>
+
         <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing={8}>
           <NavLink
-            onClick={() => handleNavClick('/')}
-            label="Featured work"
-            rightSection={pathname === '/' ? <IconStarFilled size={20} /> : <IconStar size={20} />}
+            onClick={() => handleNavClick('/profile')}
+            label="Profile"
+            rightSection={
+              pathname === '/profile' ? <IconUserFilled size={20} /> : <IconUser size={20} />
+            }
             className={classes.navlink}
-            active={pathname === '/'}
+            active={pathname === '/profile'}
           />
           <NavLink
             onClick={() => handleNavClick('/case-studies')}
@@ -88,15 +94,6 @@ export default function NavContent({ onNavClick }: NavContentProps) {
             }
             className={classes.navlink}
             active={pathname === '/other-work'}
-          />
-          <NavLink
-            onClick={() => handleNavClick('/profile')}
-            label="Profile"
-            rightSection={
-              pathname === '/profile' ? <IconUserFilled size={20} /> : <IconUser size={20} />
-            }
-            className={classes.navlink}
-            active={pathname === '/profile'}
           />
         </SimpleGrid>
         <Stack maw={260} w="100%">

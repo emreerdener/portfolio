@@ -1,11 +1,11 @@
 'use client';
 
 import { Card, Image, Space, Stack } from '@mantine/core';
+import MoreCaseStudies from '@/src/components/content/case-studies/components/MoreCaseStudies';
 import GiraffesAnimation from '@/src/components/content/other-work/components/animations/GiraffesAnimation';
 import PolarBearAnimation from '@/src/components/content/other-work/components/animations/PolarBearAnimation';
 import TurtleAnimation from '@/src/components/content/other-work/components/animations/TurtleAnimation';
 import HealthCarousel from '@/src/components/content/other-work/components/HealthCarousel';
-import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function page() {
   return (
@@ -60,7 +60,7 @@ export default function page() {
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
-        <MoreBanner />
+        <MoreCaseStudies />
 
         <Space h="xl" />
       </Stack>

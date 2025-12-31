@@ -20,6 +20,7 @@ export interface CaseStudy {
     | 'Growth'
     | 'SaaS'
     | 'E-commerce'
+    | 'Featured'
   )[];
   platforms: ('Web' | 'Mobile' | 'IoT')[];
   date: string;
@@ -47,7 +48,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Vivint case study cover image',
     logoSrc: '/images/logos/apps/vivint.svg',
     href: '/case-study/vivint-energy',
-    categories: ['Redesign', '0 to 1', 'Design System'],
+    categories: ['Redesign', '0 to 1', 'Design System', 'Featured'],
     platforms: ['Mobile', 'IoT'],
     date: '2025-11-01',
     featured: true,
@@ -131,6 +132,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     categories: ['0 to 1', 'SaaS', 'E-commerce'],
     platforms: ['Web'],
     date: '2023-11-01',
+    featured: false,
     projectType: 'Client',
     heading: 'Digitizing a decade of manual workflows',
     metadata: 'Eureka Software • Lead Designer • 2022',
@@ -167,7 +169,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Tarbox cover image',
     logoSrc: '/images/logos/apps/tarbox.svg',
     href: '/case-study/tarbox',
-    categories: ['Marketing', 'Redesign'],
+    categories: ['Marketing', 'Redesign', 'Featured'],
     platforms: ['Web', 'IoT'],
     date: '2023-11-01',
     featured: true,
@@ -208,7 +210,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Shopify admin cover image',
     logoSrc: '/images/logos/apps/shopify.svg',
     href: '/case-study/admin-checkout',
-    categories: ['0 to 1', 'SaaS', 'E-commerce'],
+    categories: ['0 to 1', 'SaaS', 'E-commerce', 'Featured'],
     platforms: ['Web', 'Mobile'],
     date: '2023-11-01',
     featured: true,
@@ -247,7 +249,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'BTRES cover image',
     logoSrc: '/images/logos/apps/btres.svg',
     href: '/case-study/btres',
-    categories: ['0 to 1'],
+    categories: ['0 to 1', 'Featured'],
     platforms: ['IoT'],
     date: '2023-11-01',
     featured: true,
@@ -323,7 +325,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Tiny Tails image',
     logoSrc: '/images/logos/apps/tinytails.svg',
     href: '/case-study/tiny-tails',
-    categories: ['0 to 1', 'Marketing', 'Growth'],
+    categories: ['0 to 1', 'Marketing', 'Growth', 'Featured'],
     platforms: ['Web'],
     date: '2023-11-01',
     featured: true,
@@ -360,7 +362,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Shopify Merchant Referral Program cover image',
     logoSrc: '/images/logos/apps/shopify.svg',
     href: '/case-study/merchant-referrals',
-    categories: ['0 to 1', 'Growth', 'SaaS', 'E-commerce'],
+    categories: ['0 to 1', 'Growth', 'SaaS', 'E-commerce', 'Featured'],
     platforms: ['Web', 'Mobile'],
     date: '2023-11-01',
     featured: true,

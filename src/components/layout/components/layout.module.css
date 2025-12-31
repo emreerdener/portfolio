@@ -52,6 +52,10 @@
 
 .profilepic {
   border: 1px solid var(--app-shell-border-color);
+  transition: 300ms ease all;
+}
+.profilepic:hover {
+  border-color: var(--mantine-color-orange-6);
 }
 
 .aside {
