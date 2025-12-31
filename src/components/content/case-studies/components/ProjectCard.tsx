@@ -43,7 +43,7 @@ export default function ProjectCard({ title, company, coverSrc, logoSrc, href }:
             <Image src={logoSrc} alt={`${company} logo`} w={56} h={56} radius={12} />
             <Stack gap={3}>
               {/* Details */}
-              <Text size="sm" c="dimmed" lineClamp={1}>
+              <Text size="md" c="dimmed" lineClamp={1}>
                 {company}
               </Text>
               <Title order={4} lineClamp={1} lts={-0.5}>
