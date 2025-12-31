@@ -16,6 +16,7 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import MobileHeader from '@/src/components/layout/components/MobileHeader';
 import NavContent from '@/src/components/layout/components/NavContent';
+import { SwipeableDrawer } from '@/src/components/layout/components/SwipeableDrawer';
 import { useScrollLock } from '@/src/components/layout/hooks/use-scroll-lock';
 import CaseStudyAside from './CaseStudyAside';
 import MoreCaseStudies from './MoreCaseStudies';
@@ -72,7 +73,7 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
       </Box>
 
       {/* Mobile TOC Drawer */}
-      <Drawer
+      {/* <Drawer
         opened={tocOpened}
         onClose={closeToc}
         title="On this page"
@@ -86,14 +87,14 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
           <CaseStudyAside onLinkClick={closeToc} hideTitle noPadding />
           <Space h="xl" />
         </Box>
-      </Drawer>
+      </Drawer> */}
 
-      {/* <SwipeableDrawer opened={tocOpened} onClose={closeToc} title="On this page">
+      <SwipeableDrawer opened={tocOpened} onClose={closeToc} title="On this page">
         <Box h="100%">
           <CaseStudyAside onLinkClick={closeToc} hideTitle noPadding />
           <Space h="xl" />
         </Box>
-      </SwipeableDrawer> */}
+      </SwipeableDrawer>
 
       <Transition transition="fade" duration={100} mounted={opened}>
         {(styles) => (
