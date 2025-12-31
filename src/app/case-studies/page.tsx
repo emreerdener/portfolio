@@ -2,6 +2,7 @@
 
 import { IconSearch } from '@tabler/icons-react';
 import { Button, Grid, Space, Stack, Text, Title } from '@mantine/core';
+import { FadeIn } from '@/src/components/animations/FadeIn';
 import ProjectCard from '@/src/components/content/case-studies/components/ProjectCard';
 import ProjectFilters from '@/src/components/content/case-studies/components/ProjectFilters';
 import { useProjectFilters } from '@/src/components/content/case-studies/hooks/use-project-filters';
@@ -62,13 +63,15 @@ export default function CaseStudiesPage() {
         <Grid gutter={{ base: 'xl', xl: '3rem' }}>
           {filteredProjects.map((project, index) => (
             <Grid.Col key={index} span={{ base: 12, md: 6 }}>
-              <ProjectCard
-                title={project.title}
-                company={project.company}
-                coverSrc={project.coverSrc}
-                logoSrc={project.logoSrc}
-                href={project.href}
-              />
+              <FadeIn key={project.id} delay={index * 0.05}>
+                <ProjectCard
+                  title={project.title}
+                  company={project.company}
+                  coverSrc={project.coverSrc}
+                  logoSrc={project.logoSrc}
+                  href={project.href}
+                />
+              </FadeIn>
             </Grid.Col>
           ))}
 

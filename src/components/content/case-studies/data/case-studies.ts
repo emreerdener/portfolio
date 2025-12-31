@@ -5,6 +5,7 @@ export interface Stat {
 }
 
 export interface CaseStudy {
+  id: string; // Added ID property
   title: string;
   company: string;
   coverSrc: string; // Used for Profile/Project Card
@@ -39,6 +40,7 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
+    id: 'vivint-energy',
     title: 'Smart Home Energy Insights',
     company: 'Vivint',
     coverSrc:
@@ -81,6 +83,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'vivint-design-system',
     title: 'Summit Design System',
     company: 'Vivint',
     coverSrc:
@@ -122,6 +125,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'waxwing',
     title: 'Inventory Management System',
     company: 'Eureka Software',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/waxwing.png',
@@ -151,7 +155,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         label: 'Order Processing',
         value: '-75%',
         description:
-          'Reduction in time spent creating and filing new orders compared to the manual workflow.',
+          'Reduction in time-to-ship for new features due to reusable components and standardized tokens.',
       },
       {
         label: 'Annual Volume',
@@ -162,6 +166,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'tarbox',
     title: 'Booking Platform Redesign',
     company: 'The Squire Tarbox Inn',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/tarbox.jpg',
@@ -201,6 +206,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'admin-checkout',
     title: 'Payment & Checkout Redesign',
     company: 'Shopify',
     coverSrc:
@@ -242,6 +248,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'btres',
     title: 'Audi Dyno Display',
     company: 'BTRES',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/btres.png',
@@ -279,6 +286,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'tripway',
     title: 'Simplify Travel Expenses',
     company: 'Tripway',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/tripway.png',
@@ -317,6 +325,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'tiny-tails',
     title: 'Animal Snuggles Delivered',
     company: 'Tiny Tails to You',
     coverSrc:
@@ -355,6 +364,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'merchant-referrals',
     title: 'Merchant Referral Program',
     company: 'Shopify',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png',
@@ -395,6 +405,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'shopify-pricing',
     title: 'Shopify Pricing',
     company: 'Shopify',
     coverSrc:
@@ -435,6 +446,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'shopify-shopapp',
     title: 'Shop Curator Profiles',
     company: 'Shopify',
     coverSrc:
@@ -474,6 +486,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'ufcu',
     title: 'Mobile Banking App',
     company: 'University Federal Credit Union',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/ufcu-cover.png',
@@ -510,6 +523,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'shopify-website-platform',
     title: 'Internal Website Platform',
     company: 'Shopify',
     coverSrc:
@@ -549,6 +563,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'shopify-productivity-incentives',
     title: 'Productivity Incentives',
     company: 'Shopify',
     coverSrc:
@@ -589,6 +604,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    id: 'vivint-bridge',
     title: 'Optimizing Bridge Onboarding',
     company: 'Vivint',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/bridge.jpg',
