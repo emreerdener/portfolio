@@ -201,7 +201,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     title: 'Payment & Checkout Redesign',
     company: 'Shopify',
-    coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/shopify-admin.png',
+    coverSrc:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/shopify-cover-redesign-c.png',
     headerImage:
       'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/admin-cover.png',
     coverAlt: 'Shopify admin cover image',
@@ -322,7 +323,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     logoSrc: '/images/logos/apps/tinytails.svg',
     href: '/case-study/tiny-tails',
     categories: ['0 to 1', 'Marketing', 'Growth'],
-    platforms: ['Web', 'IoT'],
+    platforms: ['Web'],
     date: '2023-11-01',
     featured: true,
     projectType: 'Client',

@@ -28,8 +28,8 @@ export default function AdminCheckout() {
         />
 
         <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/shopify-admin.png"
-          alt="Shopify admin cover image"
+          src={study.coverSrc}
+          alt="Shopify case study cover image"
           radius="lg"
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
