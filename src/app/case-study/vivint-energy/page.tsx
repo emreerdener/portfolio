@@ -432,7 +432,7 @@ export default function VivintEnergy() {
             flexibility needed for compact widgets.
           </Text>
           <Stack align="flex-start">
-            <Button variant="light" size="md">
+            <Button variant="light" size="md" component="a" href="/case-study/vivint-design-system">
               View project
             </Button>
           </Stack>
