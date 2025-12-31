@@ -27,17 +27,17 @@ export default function CaseStudiesLayout({ children }: { children: React.ReactN
         <Group justify="space-between">
           <Button
             onClick={() => router.push('/case-studies')}
-            variant="light"
+            variant="default"
             size="md"
             leftSection={<IconArrowLeft size={24} />}
             aria-label="All case studies"
           >
-            Case studies
+            All
           </Button>
 
           <Button
             onClick={handleNextCaseStudy}
-            variant="outline"
+            variant="light"
             size="md"
             rightSection={<IconArrowRight size={24} />}
             aria-label="Next case study"
