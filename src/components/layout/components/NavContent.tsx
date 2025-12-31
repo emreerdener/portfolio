@@ -33,7 +33,7 @@ export default function NavContent({ onNavClick }: NavContentProps) {
       <Stack align="center">
         <Anchor onClick={() => handleNavClick('/')}>
           <Image
-            src="/images/puppies.jpg"
+            src="/images/avatar.svg"
             alt="Profile picture"
             w={140}
             h={140}

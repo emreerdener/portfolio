@@ -8,6 +8,7 @@ const images = [
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/amos.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/sisters.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/cat.jpg',
+  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/puppies.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/bike.jpg',
 ];
 
