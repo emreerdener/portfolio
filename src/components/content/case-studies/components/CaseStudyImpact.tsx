@@ -18,7 +18,7 @@ export default function CaseStudyImpact({ stats, description }: CaseStudyImpactP
     <Stack gap="lg" py="lg">
       <Stack gap="xs">
         <Title order={2}>Impact & outcomes</Title>
-        <Text c="dimmed" size="lg">
+        <Text size="xl">
           {description || 'Key performance indicators and outcomes achieved through this project.'}
         </Text>
       </Stack>
