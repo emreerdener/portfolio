@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { IconCaretDownFilled, IconTag, IconX } from '@tabler/icons-react';
 import {
   Avatar,
@@ -40,22 +39,18 @@ export default function UnifiedFilter({
     onDropdownOpen: () => combobox.updateSelectedOptionIndex('active'),
   });
 
-  const [search, setSearch] = useState('');
-
+  // Removed search state to restrict typing
   const hasActiveFilters = selectedCompanies.length > 0 || selectedCategories.length > 0;
 
   const handleClear = () => {
     setSelectedCompanies([]);
     setSelectedCategories([]);
-    setSearch('');
   };
 
   const handleValueSelect = (val: string) => {
-    setSearch('');
     const [type, value] = val.split(':');
 
     if (type === 'company') {
-      // We only need to add, since selection hides it from the list
       setSelectedCompanies((current) => [...current, value]);
     } else if (type === 'category') {
       setSelectedCategories((current) => [...current, value]);
@@ -70,12 +65,9 @@ export default function UnifiedFilter({
 
   // --- Render Options ---
 
+  // Removed search filtering logic
   const companyOptions = clients
-    .filter(
-      (item) =>
-        item.name.toLowerCase().includes(search.trim().toLowerCase()) &&
-        !selectedCompanies.includes(item.name) // <--- Hide selected
-    )
+    .filter((item) => !selectedCompanies.includes(item.name))
     .map((item) => (
       <Combobox.Option value={`company:${item.name}`} key={`company:${item.name}`}>
         <Group gap="sm" wrap="nowrap">
@@ -88,11 +80,7 @@ export default function UnifiedFilter({
     ));
 
   const categoryOptions = categories
-    .filter(
-      (item) =>
-        item.toLowerCase().includes(search.trim().toLowerCase()) &&
-        !selectedCategories.includes(item) // <--- Hide selected
-    )
+    .filter((item) => !selectedCategories.includes(item))
     .map((item) => (
       <Combobox.Option value={`category:${item}`} key={`category:${item}`}>
         <Group gap="sm">
@@ -156,18 +144,16 @@ export default function UnifiedFilter({
               <PillsInput.Field
                 onFocus={() => combobox.openDropdown()}
                 onBlur={() => combobox.closeDropdown()}
-                value={search}
+                value="" /* Force empty value */
+                readOnly /* Prevent typing and keyboard popup */
+                pointer /* Show pointer cursor */
                 placeholder={
                   companyPills.length + categoryPills.length === 0
                     ? 'Filter by client or category...'
                     : ''
                 }
-                onChange={(event) => {
-                  combobox.updateSelectedOptionIndex();
-                  setSearch(event.currentTarget.value);
-                }}
                 onKeyDown={(event) => {
-                  if (event.key === 'Backspace' && search.length === 0) {
+                  if (event.key === 'Backspace') {
                     event.preventDefault();
                     if (selectedCategories.length > 0) {
                       handleRemoveCategory(selectedCategories[selectedCategories.length - 1]);
