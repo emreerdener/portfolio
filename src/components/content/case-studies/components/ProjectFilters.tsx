@@ -7,7 +7,7 @@ import {
   IconDeviceMobile,
   IconX,
 } from '@tabler/icons-react';
-import { ActionIcon, Box, Button, Drawer, Group, Select, Stack } from '@mantine/core';
+import { ActionIcon, Box, Button, Drawer, Group, Indicator, Select, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import UnifiedFilter, { ClientFilterOption } from './UnifiedFilter';
 import classes from './case-studies.module.css';
@@ -119,22 +119,36 @@ export default function ProjectFilters({
       </Drawer>
 
       {/* Mobile: Filter Button Trigger */}
-      <ActionIcon
+      <Box
         hiddenFrom="sm"
-        onClick={open}
-        size={56}
-        radius="lg"
-        variant="default"
         pos="fixed"
         top={20}
         right={20}
         style={{
           zIndex: 100,
-          boxShadow: 'var(--mantine-shadow-xs)',
         }}
       >
-        <IconAdjustmentsHorizontal size={26} />
-      </ActionIcon>
+        <Indicator
+          disabled={!hasActiveFilters}
+          position="top-end"
+          offset={4}
+          withBorder
+          color="orange"
+          size={16}
+        >
+          <ActionIcon
+            onClick={open}
+            size={56}
+            radius="md"
+            variant="default"
+            style={{
+              boxShadow: 'var(--mantine-shadow-xs)',
+            }}
+          >
+            <IconAdjustmentsHorizontal size={28} />
+          </ActionIcon>
+        </Indicator>
+      </Box>
 
       {/* --- Main Bar --- */}
       <Group
@@ -165,9 +179,24 @@ export default function ProjectFilters({
           })}
         </Group>
 
-        <ActionIcon hiddenFrom="md" onClick={open} size={50} radius="md" variant="default">
-          <IconAdjustmentsHorizontal size={26} />
-        </ActionIcon>
+        {/* Tablet/Smaller Desktop Trigger */}
+        <Indicator
+          hiddenFrom="md"
+          disabled={!hasActiveFilters}
+          position="top-end"
+          offset={4}
+          size={12}
+        >
+          <ActionIcon
+            onClick={open}
+            size={50}
+            radius="md"
+            variant="default"
+            // hiddenFrom="md" prop moved to Indicator/Parent to ensure the dot hides too
+          >
+            <IconAdjustmentsHorizontal size={26} />
+          </ActionIcon>
+        </Indicator>
 
         {/* Unified Filter on Desktop (Takes up remaining space) */}
         <Box visibleFrom="md" style={{ flexGrow: 1, minWidth: '250px' }}>

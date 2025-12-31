@@ -30,8 +30,8 @@ export default function MerchantReferrals() {
         />
 
         <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png"
-          alt="Shopify Merchant Referral Program cover image"
+          src={study.coverSrc}
+          alt="Case study cover image"
           radius="lg"
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />

@@ -31,8 +31,8 @@ export default function TinyTails() {
         />
 
         <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/hedgehog.png"
-          alt="Tiny Tails cover image"
+          src={study.coverSrc}
+          alt="Case study cover image"
           radius="lg"
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
@@ -265,23 +265,48 @@ export default function TinyTails() {
           />
         </Center>
 
-        <Center>
-          <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/hedgehog-held.jpg"
-            alt="A hedgehog held in hands"
-            radius="lg"
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
-        </Center>
-
         <Stack py="xl">
           <Stack align="center">
             <Box w="100%" maw={400}>
               <BunnyAnimation />
             </Box>
           </Stack>
+          <Title order={2}>A unified brand experience</Title>
+          <Text size="xl">
+            The brand identity was crafted to be seamless across both digital and physical
+            touchpoints. The playful illustrations, warm color palette, and friendly tone of voice
+            on the website set a specific expectation for the customer: a service that is
+            professional, safe, and delightfully fun.
+          </Text>
+          <Text size="xl">
+            This experience is carried through to the event itself, where staff uniforms, signage,
+            and even the animal handling mats reflect the same visual language. By aligning the
+            digital user experience with the in-person service, we created a cohesive brand
+            narrative that builds trust and makes the entire process—from booking to the party—feel
+            effortless and distinct.
+          </Text>
+        </Stack>
 
-          <Title order={2}>The experience</Title>
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/2-hedgehog-mat-c.jpg"
+            alt="A hedgehog on a mat"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Center>
+          <Image
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/party-bunny.jpg"
+            alt="Party bunny"
+            radius="lg"
+            style={{ border: '1px solid var(--app-shell-border-color)' }}
+          />
+        </Center>
+
+        <Stack py="xl">
+          <Title order={2}>The web experience</Title>
           <Text size="xl">
             The website was designed to showcase an organized, clean, and simple experience. The
             goal is to translate the ease, simplicity, and clarity of the user experience all the
@@ -297,22 +322,6 @@ export default function TinyTails() {
             into a single, optimizable, and trackable funnel.
           </Text>
         </Stack>
-
-        <Blockquote>
-          <Text size="xl">
-            As a customer, you are not just getting a "petting zoo," you are getting the Tiny Tails
-            to You Experience.
-          </Text>
-        </Blockquote>
-
-        <Center>
-          <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/party-bunny.jpg"
-            alt="Party bunny"
-            radius="lg"
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
-        </Center>
 
         <Center>
           <Image
@@ -344,6 +353,22 @@ export default function TinyTails() {
           />
         </Center>
 
+        <Stack py="xl">
+          <Title order={2}>The foundation for growth</Title>
+          <Text size="xl">
+            The transformation of Tiny Tails to You went far beyond a visual refresh. By automating
+            the core of their logistics and sales pipeline, the owners, Chelsea and Joe, were able
+            to shift their focus from repetitive administrative tasks to business development and
+            team culture.
+          </Text>
+          <Text size="xl">
+            The streamlined workflow significantly reduced stress for their staff, fostering a
+            happier work environment and allowing them to deliver a higher quality of service.
+            Ultimately, these changes provided the foundation for sustainable growth, proving that
+            powerful design and technology can be a game-changer for small businesses.
+          </Text>
+        </Stack>
+
         <Center>
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/baskets.jpg"
@@ -362,7 +387,7 @@ export default function TinyTails() {
           />
         </Center>
 
-        <Center py="xl">
+        <Center>
           <div
             style={{
               width: '100%',

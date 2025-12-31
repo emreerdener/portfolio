@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { IconCaretDownFilled, IconCategory2, IconX } from '@tabler/icons-react';
+import { IconCaretDownFilled, IconTag, IconX } from '@tabler/icons-react';
 import {
   Avatar,
   Combobox,
@@ -79,8 +79,8 @@ export default function UnifiedFilter({
     .map((item) => (
       <Combobox.Option value={`company:${item.name}`} key={`company:${item.name}`}>
         <Group gap="sm" wrap="nowrap">
-          <Avatar src={item.logoSrc} size="xs" radius="sm" />
-          <Text size="sm" lineClamp={1}>
+          <Avatar src={item.logoSrc} size="sm" radius="sm" />
+          <Text size="md" lineClamp={1}>
             {item.name}
           </Text>
         </Group>
@@ -96,8 +96,8 @@ export default function UnifiedFilter({
     .map((item) => (
       <Combobox.Option value={`category:${item}`} key={`category:${item}`}>
         <Group gap="sm">
-          <IconCategory2 size={16} style={{ opacity: 0.5 }} />
-          <Text size="sm" lineClamp={1}>
+          <IconTag size={20} style={{ opacity: 0.5 }} />
+          <Text size="md" lineClamp={1}>
             {item}
           </Text>
         </Group>

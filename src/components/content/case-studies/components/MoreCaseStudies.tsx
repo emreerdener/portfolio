@@ -29,7 +29,7 @@ export default function MoreCaseStudies() {
 
   return (
     <Stack gap="xl" py="xl" style={{ borderTop: '1px solid var(--app-shell-border-color)' }}>
-      <Title order={2}>More work</Title>
+      <Title order={2}>More of my work</Title>
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={{ base: 'md', sm: 'xl' }}>
         {randomStudies.map((study) => (
           <ProjectCard

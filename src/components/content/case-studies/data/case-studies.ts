@@ -317,7 +317,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     title: 'Animal Snuggles Delivered',
     company: 'Tiny Tails to You',
-    coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/tiny-tails-cover.png',
+    coverSrc:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/5eaef88dcd11467c4c7b1c37_Tiny%2BTails%2Bto%2BYou-1.jpg',
     headerImage: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/tiny-tails.jpg',
     coverAlt: 'Tiny Tails image',
     logoSrc: '/images/logos/apps/tinytails.svg',
