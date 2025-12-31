@@ -34,7 +34,7 @@ export default function NavContent({ onNavClick }: NavContentProps) {
         <Anchor onClick={() => handleNavClick('/')}>
           <Image
             src="/images/avatar.svg"
-            alt="Profile picture"
+            alt="Profile picture illustration"
             w={140}
             h={140}
             radius="100%"
