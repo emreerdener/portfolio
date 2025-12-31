@@ -143,7 +143,7 @@ export default function VivintEnergy() {
             </Stack>
 
             {/* Principal cards */}
-            <SimpleGrid cols={{ base: 1, md: 3 }} spacing={{ base: 'md', lg: 'xl' }}>
+            <SimpleGrid cols={{ base: 1, md: 3 }} spacing={{ base: 'xl', md: 'md', lg: 'xl' }}>
               <Paper radius="lg" withBorder p="lg" shadow="xs">
                 <Stack gap="sm">
                   <IconLeaf size={30} />

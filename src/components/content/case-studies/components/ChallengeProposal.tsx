@@ -22,7 +22,7 @@ export default function ChallengeProposal({ problem, proposal }: ChallengePropos
       <Blockquote p="xl" color="green">
         <Stack>
           <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>Design proposal</Title>
+            <Title order={2}>Proposal</Title>
             <IconCircleCheckFilled size={32} color="green" />
           </Group>
 

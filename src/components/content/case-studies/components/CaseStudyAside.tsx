@@ -1,17 +1,24 @@
-// src/components/layout/components/CaseStudyAside.tsx
 'use client';
 
 import { usePathname } from 'next/navigation';
 import { ScrollArea, Stack, TableOfContents, Text } from '@mantine/core';
 
-export default function CaseStudyAside() {
+interface CaseStudyAsideProps {
+  onLinkClick?: () => void;
+  hideTitle?: boolean;
+  noPadding?: boolean;
+}
+
+export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: CaseStudyAsideProps) {
   const pathname = usePathname();
   return (
     <ScrollArea type="never" h="100%">
-      <Stack gap="lg" px="lg" py="xl">
-        <Text fw={700} fz={14} tt="uppercase" c="dimmed" lh={1}>
-          On this page
-        </Text>
+      <Stack gap="lg" px={noPadding ? 0 : 'lg'} py={noPadding ? 0 : 'xl'}>
+        {hideTitle ? null : (
+          <Text fw={700} fz={14} tt="uppercase" c="dimmed" lh={1}>
+            On this page
+          </Text>
+        )}
 
         <TableOfContents
           key={pathname}
@@ -32,6 +39,9 @@ export default function CaseStudyAside() {
                 top: offsetPosition,
                 behavior: 'smooth',
               });
+
+              // Close the drawer if the prop is provided
+              onLinkClick?.();
             },
             children: data.value,
             style: {
