@@ -43,7 +43,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverSrc:
       'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/energy-insights-cover-c.png',
     headerImage:
-      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/header-image-c.png',
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/energy-insights%20cover-2-c.png',
     coverAlt: 'Vivint case study cover image',
     logoSrc: '/images/logos/apps/vivint.svg',
     href: '/case-study/vivint-energy',
@@ -152,10 +152,10 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Reduction in time spent creating and filing new orders compared to the manual workflow.',
       },
       {
-        label: 'Data Retrieval',
-        value: 'Instant',
+        label: 'Annual Volume',
+        value: '$4.5M+',
         description:
-          'Shifted from searching physical files to instant, searchable digital records.',
+          'Total value of inventory and orders managed digitally, streamlining operations for the 30-person team.',
       },
     ],
   },

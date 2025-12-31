@@ -1,5 +1,6 @@
 'use client';
 
+import { IconBrandFigma } from '@tabler/icons-react';
 import { Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyImpact from './CaseStudyImpact';
 import ChallengeProposal from './ChallengeProposal';
@@ -38,14 +39,7 @@ export default function CaseStudyHeader({
 }: CaseStudyHeaderProps) {
   return (
     <Stack gap="xl">
-      <Image
-        src={coverImage}
-        alt={coverAlt}
-        radius="lg"
-        style={{ border: '1px solid var(--app-shell-border-color)' }}
-      />
-
-      <Stack gap="xs" py="lg">
+      <Stack gap="xs" pb="lg">
         <Stack align="flex-start" gap="lg">
           <Group justify="space-between">
             <Text size="lg" c="dimmed">
@@ -60,7 +54,13 @@ export default function CaseStudyHeader({
           </Stack>
 
           {prototypeUrl && (
-            <Button size="md" component="a" href={prototypeUrl} target="_blank">
+            <Button
+              size="md"
+              component="a"
+              href={prototypeUrl}
+              target="_blank"
+              leftSection={<IconBrandFigma size={20} />}
+            >
               View prototype
             </Button>
           )}
@@ -71,6 +71,13 @@ export default function CaseStudyHeader({
           )}
         </Stack>
       </Stack>
+
+      <Image
+        src={coverImage}
+        alt={coverAlt}
+        radius="lg"
+        style={{ border: '1px solid var(--app-shell-border-color)' }}
+      />
 
       <ChallengeProposal problem={problem} proposal={proposal} />
 
