@@ -21,6 +21,7 @@ export default function VivintBridge() {
           title={study.heading || study.title}
           description={study.description || ''}
           websiteUrl={study.websiteUrl}
+          prototypeUrl={study.prototypeUrl}
           problem={study.problem || ''}
           proposal={study.proposal || ''}
           stats={study.stats}
