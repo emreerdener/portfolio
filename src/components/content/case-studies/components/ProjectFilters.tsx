@@ -5,18 +5,33 @@ import {
   IconCpu,
   IconDeviceDesktop,
   IconDeviceMobile,
+  IconTag,
   IconX,
 } from '@tabler/icons-react';
-import { ActionIcon, Box, Button, Drawer, Group, Indicator, Select, Stack } from '@mantine/core';
+import {
+  ActionIcon,
+  Avatar,
+  Box,
+  Button,
+  Checkbox,
+  Divider,
+  Drawer,
+  Group,
+  Indicator,
+  ScrollArea,
+  Stack,
+  Text,
+  UnstyledButton,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import UnifiedFilter, { ClientFilterOption } from './UnifiedFilter';
 import classes from './case-studies.module.css';
 
 // Map platform strings to specific icons
 const PLATFORM_ICONS: Record<string, React.ReactNode> = {
-  Web: <IconDeviceDesktop size={18} />,
-  Mobile: <IconDeviceMobile size={18} />,
-  IoT: <IconCpu size={18} />,
+  Web: <IconDeviceDesktop size={20} />,
+  Mobile: <IconDeviceMobile size={20} />,
+  IoT: <IconCpu size={20} />,
 };
 
 interface ProjectFiltersProps {
@@ -25,6 +40,7 @@ interface ProjectFiltersProps {
   categories: string[];
   platforms: string[];
   resetFilters: () => void;
+  resultCount: number;
 
   // State
   selectedCompanies: string[];
@@ -35,9 +51,6 @@ interface ProjectFiltersProps {
 
   selectedPlatform: string | null;
   setSelectedPlatform: (val: string | null) => void;
-
-  sortOrder: string | null;
-  setSortOrder: (val: string | null) => void;
 }
 
 export default function ProjectFilters({
@@ -50,17 +63,16 @@ export default function ProjectFilters({
   setSelectedCategories,
   selectedPlatform,
   setSelectedPlatform,
-  sortOrder,
-  setSortOrder,
   resetFilters,
+  resultCount,
 }: ProjectFiltersProps) {
   const [opened, { open, close }] = useDisclosure(false);
 
   const hasActiveFilters =
     selectedCompanies.length > 0 || selectedCategories.length > 0 || selectedPlatform !== null;
 
-  // Common unified filter instance to reuse in Drawer and Desktop
-  const filterInput = (
+  // Common unified filter instance for Desktop
+  const desktopFilterInput = (
     <UnifiedFilter
       clients={clients}
       categories={categories}
@@ -71,50 +83,188 @@ export default function ProjectFilters({
     />
   );
 
+  // Helper component for mobile list rows
+  const MobileFilterRow = ({
+    label,
+    icon,
+    checked,
+    onChange,
+  }: {
+    label: string;
+    icon?: React.ReactNode;
+    checked: boolean;
+    onChange: () => void;
+  }) => (
+    <UnstyledButton onClick={onChange} py="sm" style={{ width: '100%' }}>
+      <Group justify="space-between" wrap="nowrap" w="100%">
+        <Group gap="md" wrap="nowrap">
+          {icon && (
+            <Box
+              style={{
+                width: 24,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                opacity: 0.7,
+              }}
+            >
+              {icon}
+            </Box>
+          )}
+          <Text size="md" fw={500}>
+            {label}
+          </Text>
+        </Group>
+        <Checkbox
+          checked={checked}
+          onChange={() => {}} // Event handled by parent button
+          tabIndex={-1}
+          size="md"
+          aria-hidden
+          style={{ cursor: 'pointer' }}
+        />
+      </Group>
+    </UnstyledButton>
+  );
+
   return (
     <>
       {/* --- Mobile Filter Drawer --- */}
       <Drawer
         opened={opened}
         onClose={close}
-        title="Case study filters"
+        title="Filter case studies"
         padding="lg"
-        size="lg"
+        size="xl"
         position="bottom"
         radius="lg"
+        styles={{
+          content: {
+            borderRadius: 'var(--mantine-radius-lg) var(--mantine-radius-lg) 0 0',
+            display: 'flex',
+            flexDirection: 'column',
+          },
+          body: {
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden', // Ensure ScrollArea handles the scroll
+            paddingBottom: 0,
+          },
+        }}
       >
-        <Stack gap="md">
-          {/* Replaced separate inputs with unified filter */}
-          {filterInput}
+        <Stack gap={0} h="100%" style={{ overflow: 'hidden' }}>
+          {/* Scrollable List of Filters */}
+          <ScrollArea flex={1} type="scroll" scrollbars="y" offsetScrollbars>
+            <Stack gap="xl" pb="xl">
+              {/* Platform Section */}
+              <Box>
+                <Text size="xs" fw={700} c="dimmed" tt="uppercase" mb="xs">
+                  Platform
+                </Text>
+                <Stack gap={0}>
+                  {platforms.map((platform) => {
+                    const isSelected = selectedPlatform === platform;
+                    return (
+                      <MobileFilterRow
+                        key={platform}
+                        label={platform}
+                        icon={PLATFORM_ICONS[platform]}
+                        checked={isSelected}
+                        onChange={() => setSelectedPlatform(isSelected ? null : platform)}
+                      />
+                    );
+                  })}
+                </Stack>
+              </Box>
 
-          <Select
-            size="lg"
-            radius="md"
-            placeholder="Filter by platform"
-            data={platforms}
-            value={selectedPlatform}
-            onChange={setSelectedPlatform}
-            clearable
-          />
+              <Divider />
 
-          <Select
-            size="lg"
-            radius="md"
-            placeholder="Sort by"
-            data={['Recent', 'Featured']}
-            value={sortOrder}
-            onChange={setSortOrder}
-          />
+              {/* Categories Section */}
+              <Box>
+                <Text size="xs" fw={700} c="dimmed" tt="uppercase" mb="xs">
+                  Categories
+                </Text>
+                <Stack gap={0}>
+                  {categories.map((category) => {
+                    const isSelected = selectedCategories.includes(category);
+                    return (
+                      <MobileFilterRow
+                        key={category}
+                        label={category}
+                        icon={<IconTag size={20} />}
+                        checked={isSelected}
+                        onChange={() => {
+                          if (isSelected) {
+                            setSelectedCategories((prev) => prev.filter((c) => c !== category));
+                          } else {
+                            setSelectedCategories((prev) => [...prev, category]);
+                          }
+                        }}
+                      />
+                    );
+                  })}
+                </Stack>
+              </Box>
 
-          <Button size="lg" fullWidth onClick={close} mt="md">
-            Apply filters
-          </Button>
+              <Divider />
 
-          {hasActiveFilters && (
-            <Button variant="default" onClick={resetFilters} size="lg">
-              Clear all filters
+              {/* Clients Section */}
+              <Box>
+                <Text size="xs" fw={700} c="dimmed" tt="uppercase" mb="xs">
+                  Clients
+                </Text>
+                <Stack gap={0}>
+                  {clients.map((client) => {
+                    const isSelected = selectedCompanies.includes(client.name);
+                    return (
+                      <MobileFilterRow
+                        key={client.name}
+                        label={client.name}
+                        icon={<Avatar src={client.logoSrc} size={24} radius="xl" />}
+                        checked={isSelected}
+                        onChange={() => {
+                          if (isSelected) {
+                            setSelectedCompanies((prev) => prev.filter((c) => c !== client.name));
+                          } else {
+                            setSelectedCompanies((prev) => [...prev, client.name]);
+                          }
+                        }}
+                      />
+                    );
+                  })}
+                </Stack>
+              </Box>
+            </Stack>
+          </ScrollArea>
+
+          {/* Fixed Footer Buttons */}
+          <Box
+            pt="md"
+            pb="md"
+            style={{
+              borderTop: '1px solid var(--mantine-color-default-border)',
+              backgroundColor: 'var(--mantine-color-body)',
+            }}
+          >
+            <Button
+              size="lg"
+              fullWidth
+              onClick={close}
+              mb={hasActiveFilters ? 'sm' : 0}
+              disabled={resultCount === 0}
+            >
+              {resultCount === 0
+                ? 'No case studies'
+                : `Show ${resultCount} case stud${resultCount === 1 ? 'y' : 'ies'}`}
             </Button>
-          )}
+
+            {hasActiveFilters && (
+              <Button variant="transparent" c="dimmed" size="md" fullWidth onClick={resetFilters}>
+                Clear all
+              </Button>
+            )}
+          </Box>
         </Stack>
       </Drawer>
 
@@ -150,7 +300,7 @@ export default function ProjectFilters({
         </Indicator>
       </Box>
 
-      {/* --- Main Bar --- */}
+      {/* --- Main Bar (Desktop) --- */}
       <Group
         justify="space-between"
         align="flex-start"
@@ -187,20 +337,14 @@ export default function ProjectFilters({
           offset={4}
           size={12}
         >
-          <ActionIcon
-            onClick={open}
-            size={50}
-            radius="md"
-            variant="default"
-            // hiddenFrom="md" prop moved to Indicator/Parent to ensure the dot hides too
-          >
+          <ActionIcon onClick={open} size={50} radius="md" variant="default">
             <IconAdjustmentsHorizontal size={26} />
           </ActionIcon>
         </Indicator>
 
         {/* Unified Filter on Desktop (Takes up remaining space) */}
         <Box visibleFrom="md" style={{ flexGrow: 1, minWidth: '250px' }}>
-          {filterInput}
+          {desktopFilterInput}
         </Box>
       </Group>
     </>

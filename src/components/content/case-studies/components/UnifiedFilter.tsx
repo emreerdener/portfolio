@@ -149,7 +149,7 @@ export default function UnifiedFilter({
                 pointer /* Show pointer cursor */
                 placeholder={
                   companyPills.length + categoryPills.length === 0
-                    ? 'Filter by client or category...'
+                    ? 'Filter by category or client...'
                     : ''
                 }
                 onKeyDown={(event) => {

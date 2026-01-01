@@ -36,8 +36,6 @@ export default function CaseStudiesPage() {
     setSelectedCategories,
     selectedPlatform,
     setSelectedPlatform,
-    sortOrder,
-    setSortOrder,
     filteredProjects,
     resetFilters,
   } = useProjectFilters(CASE_STUDIES);
@@ -55,9 +53,8 @@ export default function CaseStudiesPage() {
           setSelectedCategories={setSelectedCategories}
           selectedPlatform={selectedPlatform}
           setSelectedPlatform={setSelectedPlatform}
-          sortOrder={sortOrder}
-          setSortOrder={setSortOrder}
           resetFilters={resetFilters}
+          resultCount={filteredProjects.length}
         />
 
         <Grid gutter={{ base: 'xl', xl: '3rem' }}>

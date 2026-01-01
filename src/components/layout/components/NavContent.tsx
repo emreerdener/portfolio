@@ -33,11 +33,11 @@ export default function NavContent({ onNavClick }: NavContentProps) {
       <Stack align="center">
         <Stack gap={0} align="center">
           <Anchor onClick={() => handleNavClick('/')} c="gray" underline="hover">
-            <Title order={2} ta="center">
+            <Title order={2} ta="center" fz={30}>
               Emre Erdener
             </Title>
           </Anchor>
-          <Anchor href="mailto: erdener.emre@gmail.com" td="none" size="sm" ta="center">
+          <Anchor href="mailto: erdener.emre@gmail.com" td="none" fz={16} ta="center">
             erdener.emre@gmail.com
           </Anchor>
         </Stack>

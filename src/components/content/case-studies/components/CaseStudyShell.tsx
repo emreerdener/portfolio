@@ -79,8 +79,13 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
         padding="md"
         size="lg"
         position="bottom"
-        radius="lg"
         hiddenFrom="xl"
+        radius="lg"
+        styles={{
+          content: {
+            borderRadius: 'var(--mantine-radius-lg) var(--mantine-radius-lg) 0 0',
+          },
+        }}
       >
         <Box h="100%">
           <CaseStudyAside onLinkClick={closeToc} hideTitle noPadding />
