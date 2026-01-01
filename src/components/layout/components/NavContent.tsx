@@ -32,7 +32,11 @@ export default function NavContent({ onNavClick }: NavContentProps) {
     <>
       <Stack align="center">
         <Stack gap={0} align="center">
-          <Anchor onClick={() => handleNavClick('/')} c="gray" underline="hover">
+          <Anchor
+            onClick={() => handleNavClick('/')}
+            underline="hover"
+            style={{ color: 'var(--mantine-color-text)' }}
+          >
             <Title order={2} ta="center" fz={30}>
               Emre Erdener
             </Title>
