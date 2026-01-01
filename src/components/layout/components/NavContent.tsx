@@ -9,7 +9,7 @@ import {
   IconUser,
   IconUserFilled,
 } from '@tabler/icons-react';
-import { Anchor, Image, NavLink, SimpleGrid, Stack, Text, Title } from '@mantine/core';
+import { Anchor, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
@@ -31,24 +31,12 @@ export default function NavContent({ onNavClick }: NavContentProps) {
   return (
     <>
       <Stack align="center">
-        <Anchor onClick={() => handleNavClick('/')}>
-          <Image
-            src="/images/emre.svg"
-            alt="Profile picture illustration"
-            w={140}
-            h={140}
-            radius="100%"
-            fit="cover"
-            className={classes.profilepic}
-          />
-        </Anchor>
         <Stack gap={0} align="center">
-          <Text c="dimmed" size="sm">
-            Design Engineer
-          </Text>
-          <Title order={2} ta="center">
-            Emre Erdener
-          </Title>
+          <Anchor onClick={() => handleNavClick('/')} c="gray" underline="hover">
+            <Title order={2} ta="center">
+              Emre Erdener
+            </Title>
+          </Anchor>
           <Anchor href="mailto: erdener.emre@gmail.com" td="none" size="sm" ta="center">
             erdener.emre@gmail.com
           </Anchor>
