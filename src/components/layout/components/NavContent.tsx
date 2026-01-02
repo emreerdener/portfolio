@@ -46,7 +46,7 @@ export default function NavContent({ onNavClick }: NavContentProps) {
           </Anchor>
         </Stack>
 
-        <SimpleGrid maw={260} w="100%" cols={{ base: 1 }} spacing={8}>
+        <SimpleGrid maw={236} w="100%" cols={{ base: 1 }} spacing={8}>
           <NavLink
             onClick={() => handleNavClick('/profile')}
             label="Profile"
@@ -88,7 +88,7 @@ export default function NavContent({ onNavClick }: NavContentProps) {
             active={pathname === '/other-work'}
           />
         </SimpleGrid>
-        <Stack maw={260} w="100%">
+        <Stack maw={236} w="100%">
           <ThemeSwitch />
         </Stack>
       </Stack>

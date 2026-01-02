@@ -98,17 +98,18 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2025-11-01',
     featured: false,
     projectType: 'Client',
-    heading: 'Rebuilding a design system',
+    heading: 'A new design foundation for Vivint',
     metadata: 'Vivint • Lead Designer • 2025',
     description:
-      "To enable the strategic vision of the new Energy experience, I identified that the legacy design infrastructure was insufficient. I spearheaded the complete recreation of Vivint's design system and color logic. This overhaul established a modern, token-based architecture that streamlined design-to-dev handoff and ensured visual consistency across the entire smart home ecosystem.",
-    prototypeUrl: '',
+      "I identified that the legacy design infrastructure was insufficient. I spearheaded the complete recreation of Vivint's design system and color logic. This overhaul established a modern, token-based architecture that streamlined design-to-dev handoff and ensured visual consistency across the entire smart home ecosystem.",
+    prototypeUrl:
+      'https://www.figma.com/proto/ZFmIiptt4FtG78VUvRiIWV/Summit-Design-System?page-id=6207%3A33885&node-id=6580-72359&p=f&viewport=263%2C50%2C0.06&t=TwAh5vpeLQrrYAE5-1&scaling=contain&content-scaling=fixed&starting-point-node-id=6580%3A72359',
     problem:
-      "The legacy design system was rigid, fragmented, and visually heavy. It lacked the flexibility required for modern data visualization and modular widgets. Inconsistencies between design files and production code created significant 'UI debt,' slowing down feature development and making it nearly impossible to scale new products like Energy Insights effectively.",
+      "For four years, the design system had been a chaotic, disorganized effort. It was a 'Frankenstein' of legacy files and broken components that were difficult to maintain and inconsistent. A team member had struggled to get it working, resulting in a system that was hard to use and riddled with technical debt.",
     proposal:
-      'Architect and build a comprehensive new design system based on atomic design principles. I introduced a semantic color palette, responsive typography tokens, and a library of accessible, modular components. This system was designed to be platform-agnostic, ensuring a unified experience across iOS, Android, and IoT hub displays.',
+      'I stepped in to completely overhaul the infrastructure. I organized the Figma files, rebuilt every single component from the ground up, and cleaned up props to clarify usability. Furthermore, I re-architected the color system to support a company rebrand, enabling fully tokenized Light and Dark modes.',
     statsDescription:
-      'Establishing a shared language between design and engineering eliminated redundant work, accelerated feature delivery, and ensured 100% consistency across the new Energy product suite.',
+      'Transforming a fragmented legacy library into a robust, tokenized system accelerated design velocity and ensured visual consistency across the entire product ecosystem.',
     stats: [
       {
         label: 'Development Velocity',
