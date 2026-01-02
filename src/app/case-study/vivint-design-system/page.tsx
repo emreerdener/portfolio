@@ -3,6 +3,7 @@
 import { Blockquote, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import DesignSystemCarousel from '@/src/components/content/case-studies/components/vivint-design-system/DesignSystemCarousel';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function VivintEnergy() {
@@ -67,13 +68,6 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
-        <Blockquote>
-          <Text size="xl">
-            Small details compounded the chaos. Simple disconnects, like labeling 'gray' as 'grey,'
-            actively hindered the team's ability to find and use core styles.
-          </Text>
-        </Blockquote>
-
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/legacy%20components-c.png"
           alt="Vivint original design system"
@@ -110,6 +104,13 @@ export default function VivintEnergy() {
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/button-props-c.png"
+          alt="Vivint original design system"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
         <Stack py="xl">
           <Title order={2}>System architecture & the UI kit</Title>
           <Text size="xl">
@@ -126,6 +127,11 @@ export default function VivintEnergy() {
             practical way to be involved without compromising the integrity of the core library.
           </Text>
         </Stack>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/title-cards-c.png"
+          alt="Vivint original design system"
+        />
 
         <Blockquote>
           <Text size="xl">
@@ -145,8 +151,14 @@ export default function VivintEnergy() {
             Orange3 (dark)—rather than semantic needs. This often resulted in broken contrast ratios
             in dark mode and forced designers to guess which hex code to use, leading to
             inconsistent implementation. To make matters worse, these colors weren't tokenized
-            within the components, meaning every color update broke the entire library.
+            within the components, meaning every color update broke the entire library. Small
+            details compounded the chaos. Simple disconnects, like labeling 'gray' as 'grey,'
+            actively hindered the team's ability to find and use core styles.
           </Text>
+        </Stack>
+
+        <Stack py="xl">
+          <Title order={2}>The Designer experience</Title>
           <Text size="xl">
             I pivoted the strategy to focus on the designer experience first. I interviewed
             engineering teams to understand their handoff pain points, but ultimately decided that
@@ -154,7 +166,9 @@ export default function VivintEnergy() {
             introduced a semantic "Role-based" architecture. We moved away from raw hex names to
             semantic roles (e.g., Action, Critical, Success) and "Application" tokens that designers
             could easily recognize. This decoupled the specific color values from their usage,
-            allowing us to tweak themes without breaking the system.
+            allowing us to tweak themes without breaking the system. The goal is to create a
+            customizable, scalable, and maintainable system that empowers our teams to build
+            consistent, beautiful, and accessible products and experiences.
           </Text>
         </Stack>
 
@@ -164,13 +178,6 @@ export default function VivintEnergy() {
           radius="lg"
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
-
-        <Blockquote>
-          <Text size="xl">
-            The goal is to create a customizable, scalable, and maintainable system that empowers
-            our teams to build consistent, beautiful, and accessible products and experiences.
-          </Text>
-        </Blockquote>
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/color/cake-intro.png"
@@ -283,6 +290,8 @@ export default function VivintEnergy() {
             rigorous work done to fix the system was clearly communicated and easy to follow.
           </Text>
         </Stack>
+
+        <DesignSystemCarousel />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/color/documentation.png"
