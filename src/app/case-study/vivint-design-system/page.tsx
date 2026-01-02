@@ -157,6 +157,13 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/color/color-changes.png"
+          alt="Vivint original design system"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
         <Stack py="xl">
           <Title order={2}>The Designer experience</Title>
           <Text size="xl">
@@ -171,13 +178,6 @@ export default function VivintEnergy() {
             consistent, beautiful, and accessible products and experiences.
           </Text>
         </Stack>
-
-        <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/color/color-changes.png"
-          alt="Vivint original design system"
-          radius="lg"
-          style={{ border: '1px solid var(--app-shell-border-color)' }}
-        />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/color/cake-intro.png"
@@ -270,9 +270,9 @@ export default function VivintEnergy() {
           <Text size="xl">
             Summit was architected to be platform-agnostic. By leveraging primitive tokens and
             flexible component definitions, we extended the system to support not just iOS and
-            Android, but also the embedded Linux environments of our IoT devices. Now, whether a
-            user is adjusting the temperature on their wall or disarming their system from the
-            Panel, the interaction patterns and visual language remain seamless and familiar.
+            Android, but also the embedded environments of our IoT devices. Now, whether a user is
+            adjusting the temperature on their wall or disarming their system from the Panel, the
+            interaction patterns and visual language remain seamless and familiar.
           </Text>
         </Stack>
 
@@ -291,14 +291,21 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
-        <DesignSystemCarousel />
-
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/color/documentation.png"
           alt="Vivint original design system"
           radius="lg"
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/guidelines-c.png"
+          alt="Vivint original design system"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <DesignSystemCarousel />
 
         <Stack py="xl">
           <Title order={2}>A new level of velocity</Title>
@@ -315,7 +322,7 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
-        <Blockquote>
+        <Blockquote color="green">
           <Text size="xl">
             In the span of just two months, I took a system that had been floundering for four years
             and transformed it into a stable, scalable product.

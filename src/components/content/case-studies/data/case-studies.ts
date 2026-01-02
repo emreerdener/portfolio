@@ -118,10 +118,10 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Reduction in time-to-ship for new features due to reusable components and standardized tokens.',
       },
       {
-        label: 'System Coverage',
-        value: '100%',
+        label: 'Optimized components',
+        value: '50+',
         description:
-          'Complete adoption of the new color and typography system across the Energy Insights vertical.',
+          'A comprehensive suite of fully documented, accessible atomic elements ready for cross-platform use.',
       },
     ],
   },
