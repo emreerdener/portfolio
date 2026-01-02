@@ -221,7 +221,7 @@ export default function ProjectFilters({
                       <MobileFilterRow
                         key={client.name}
                         label={client.name}
-                        icon={<Avatar src={client.logoSrc} size={24} radius="xl" />}
+                        icon={<Avatar src={client.logoSrc} size={24} radius={4} />}
                         checked={isSelected}
                         onChange={() => {
                           if (isSelected) {

@@ -17,7 +17,7 @@ export default function HomePage() {
               key={project.title}
               span={{ base: 12, md: index === 0 || index === 5 ? 12 : 6 }}
             >
-              <FadeIn key={project.id} delay={index * 0.05}>
+              <FadeIn key={project.id} delay={index * 0.02}>
                 <ProjectCard
                   title={project.title}
                   company={project.company}

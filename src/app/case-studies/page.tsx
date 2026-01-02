@@ -60,7 +60,7 @@ export default function CaseStudiesPage() {
         <Grid gutter={{ base: 'xl', xl: '3rem' }}>
           {filteredProjects.map((project, index) => (
             <Grid.Col key={index} span={{ base: 12, md: 6 }}>
-              <FadeIn key={project.id} delay={index * 0.05}>
+              <FadeIn key={project.id} delay={index * 0.02}>
                 <ProjectCard
                   title={project.title}
                   company={project.company}

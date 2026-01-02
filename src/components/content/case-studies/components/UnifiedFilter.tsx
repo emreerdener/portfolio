@@ -71,7 +71,7 @@ export default function UnifiedFilter({
     .map((item) => (
       <Combobox.Option value={`company:${item.name}`} key={`company:${item.name}`}>
         <Group gap="sm" wrap="nowrap">
-          <Avatar src={item.logoSrc} size="sm" radius="sm" />
+          <Avatar src={item.logoSrc} size="sm" radius={4} />
           <Text size="md" lineClamp={1}>
             {item.name}
           </Text>

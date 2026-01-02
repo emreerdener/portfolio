@@ -48,13 +48,6 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
-        <Blockquote>
-          <Text size="xl">
-            Small details compounded the chaos. Simple disconnects, like labeling 'gray' as 'grey,'
-            actively hindered the team's ability to find and use core styles.
-          </Text>
-        </Blockquote>
-
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/Original%20Design%20System-c.png"
           alt="Vivint original design system"
@@ -73,6 +66,13 @@ export default function VivintEnergy() {
             designers struggled with a unified UI experience that felt disjointed and sloppy.
           </Text>
         </Stack>
+
+        <Blockquote>
+          <Text size="xl">
+            Small details compounded the chaos. Simple disconnects, like labeling 'gray' as 'grey,'
+            actively hindered the team's ability to find and use core styles.
+          </Text>
+        </Blockquote>
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/legacy%20components-c.png"
@@ -97,6 +97,13 @@ export default function VivintEnergy() {
         </Stack>
 
         <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/new-design-system-figma-c.png"
+          alt="Vivint original design system"
+          radius="sm"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/Buttons-c.png"
           alt="Vivint original design system"
           radius="lg"
@@ -119,6 +126,16 @@ export default function VivintEnergy() {
             practical way to be involved without compromising the integrity of the core library.
           </Text>
         </Stack>
+
+        <Blockquote>
+          <Text size="xl">
+            I introduced the name 'Summit' as a symbolic nod to reaching the peak of the previous
+            'Olympus' era. Practically, this rebrand was essential for discoverability; with so many
+            deprecated 'Olympus' versions cluttering Figma, a simple 'v5' release would have been
+            lost in the noise. 'Summit' created a clear, searchable distinction for the new source
+            of truth.
+          </Text>
+        </Blockquote>
 
         <Stack py="xl">
           <Title order={2}>Rearchitecting colors</Title>
@@ -236,6 +253,23 @@ export default function VivintEnergy() {
         />
 
         <Stack py="xl">
+          <Title order={2}>Unifying the ecosystem</Title>
+          <Text size="xl">
+            The legacy system had a critical blind spot: it was built exclusively for mobile apps,
+            leaving Vivint's physical hardware interfaces—like the Smart Hub Panel and Thermostat—
+            stranded with divergent designs. This fragmentation broke the continuity of the user
+            experience as they moved from their phone to their wall.
+          </Text>
+          <Text size="xl">
+            Summit was architected to be platform-agnostic. By leveraging primitive tokens and
+            flexible component definitions, we extended the system to support not just iOS and
+            Android, but also the embedded Linux environments of our IoT devices. Now, whether a
+            user is adjusting the temperature on their wall or disarming their system from the
+            Panel, the interaction patterns and visual language remain seamless and familiar.
+          </Text>
+        </Stack>
+
+        <Stack py="xl">
           <Title order={2}>Documentation & catalog</Title>
           <Text size="xl">
             To ensure long-term adoption, I moved away from the chaotic sticker sheet and built a
@@ -249,13 +283,6 @@ export default function VivintEnergy() {
             rigorous work done to fix the system was clearly communicated and easy to follow.
           </Text>
         </Stack>
-
-        <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/new-design-system-figma-c.png"
-          alt="Vivint original design system"
-          radius="sm"
-          style={{ border: '1px solid var(--app-shell-border-color)' }}
-        />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/color/documentation.png"
