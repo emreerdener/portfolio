@@ -643,4 +643,46 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
   },
+  {
+    id: 'vivint-smart-lighting',
+    title: 'Smart Lighting',
+    company: 'Vivint',
+    coverSrc:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/house-night.jpg',
+    headerImage:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/woman.jpg',
+    coverAlt: 'Vivint case study cover image',
+    logoSrc: '/images/logos/apps/vivint.svg',
+    href: '/case-study/vivint-smart-lighting',
+    categories: ['Redesign', '0 to 1', 'Growth', 'Redesign'],
+    platforms: ['Mobile', 'IoT'],
+    date: '2023-11-01',
+    featured: false,
+    projectType: 'Client',
+    heading: 'Seamless onboarding connectivity',
+    metadata: 'Vivint • Lead Designer • 2025',
+    description:
+      'Smart lighting was an emerging product category at Vivint. I joined the smart lighting product team to design innovative features, improve the user adoption rate, resolve key usability issues, and contribute to shaping the product roadmap.',
+    prototypeUrl:
+      'https://www.figma.com/proto/H5RTWZoA7hkQtudmcXuymL/Smart-Lighting-2025-12-18?page-id=5621%3A184612&node-id=5621-186319&p=f&viewport=225%2C995%2C0.07&t=Gmjwa6x5CXT2bRyZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5621%3A186319&show-proto-sidebar=1',
+    problem:
+      'Users faced challenges when pairing lighting hardware across devices, including bulbs, switches, and the bridge. Many user experiences were initially designed as MVPs, with features and requirements added later, leading to a fragmented and confusing experience. Without a clear north star to guide the team, work was often approached as isolated “one-offs,” hindering progress toward a cohesive product vision.',
+    proposal:
+      'Redesign the onboarding experiences to streamline, simplify, and improve clarity for users, addressing pain points that hinder adoption. In addition, design a north star for lighting products and features to create a unified vision and guide development. This work involves aligning cross-functional teams, defining long-term goals, and prioritizing high-impact features to shape a strategic and actionable product roadmap.',
+    statsDescription: '',
+    stats: [
+      {
+        label: 'Onboarding success rate',
+        value: '+69%',
+        description:
+          'Redesigned onboarding UX resulted in a 95% onboarding success rate, up from 56%.',
+      },
+      {
+        label: 'Monthly engagement',
+        value: '+150k',
+        description:
+          'Increased monthly active engagement with lighting by over 110,000 sessions a month.',
+      },
+    ],
+  },
 ];

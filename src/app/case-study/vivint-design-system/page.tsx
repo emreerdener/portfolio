@@ -276,6 +276,13 @@ export default function VivintEnergy() {
           </Text>
         </Stack>
 
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-design-system/panel-photo-c.jpg"
+          alt="Vivint original design system"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
         <Stack py="xl">
           <Title order={2}>Documentation & catalog</Title>
           <Text size="xl">
