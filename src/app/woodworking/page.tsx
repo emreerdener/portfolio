@@ -5,18 +5,18 @@ import { FadeIn } from '@/src/components/animations/FadeIn';
 import MoreCaseStudies from '@/src/components/content/case-studies/components/MoreCaseStudies';
 
 const IMAGES = [
-  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-cover.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-trace.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-cut.jpg',
-  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-stain.jpg',
+  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-cover.jpg',
+  //   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-stain.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-final1.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bee-final-light.jpg',
-  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/lines-grass.jpg',
+  //   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/lines-grass.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/lines-couch.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/elephant-trace.jpg',
-  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/elephant-cut.jpg',
+  //   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/elephant-cut.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/elephant-final.jpg',
-  'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/buffalo-raw.jpg',
+  //   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/buffalo-raw.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/buffalo-final.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/thunder-bird.jpg',
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/woodworking/bass.jpg',
