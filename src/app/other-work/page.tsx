@@ -7,7 +7,7 @@ import PolarBearAnimation from '@/src/components/content/other-work/components/a
 import TurtleAnimation from '@/src/components/content/other-work/components/animations/TurtleAnimation';
 import HealthCarousel from '@/src/components/content/other-work/components/HealthCarousel';
 
-export default function page() {
+export default function OtherWork() {
   return (
     <>
       <Stack gap="xl">

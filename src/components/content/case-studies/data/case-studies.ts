@@ -136,7 +136,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/waxwing',
     categories: ['0 to 1', 'SaaS', 'E-commerce'],
     platforms: ['Web'],
-    date: '2023-11-01',
+    date: '2022-11-01',
     featured: false,
     projectType: 'Client',
     heading: 'Digitizing a decade of manual workflows',
@@ -177,7 +177,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/tarbox',
     categories: ['Marketing', 'Redesign', 'Featured'],
     platforms: ['Web', 'IoT'],
-    date: '2023-11-01',
+    date: '2021-11-01',
     featured: true,
     projectType: 'Client',
     heading: 'Redefining the booking experience',
@@ -219,7 +219,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/admin-checkout',
     categories: ['0 to 1', 'SaaS', 'E-commerce', 'Featured'],
     platforms: ['Web', 'Mobile'],
-    date: '2023-11-01',
+    date: '2022-11-01',
     featured: true,
     projectType: 'Client',
     heading: 'Streamlining the admin checkout experience',
@@ -259,7 +259,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/btres',
     categories: ['0 to 1', 'Featured'],
     platforms: ['IoT'],
-    date: '2023-11-01',
+    date: '2019-11-01',
     featured: true,
     projectType: 'Client',
     heading: 'Visualizing engine performance in real-time',
@@ -337,7 +337,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/tiny-tails',
     categories: ['0 to 1', 'Marketing', 'Growth', 'Featured'],
     platforms: ['Web'],
-    date: '2023-11-01',
+    date: '2018-11-01',
     featured: true,
     projectType: 'Client',
     heading: '12x faster orders for a local favorite',
@@ -379,7 +379,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featured: true,
     projectType: 'Client',
     heading: 'Unlocking a new growth lever',
-    metadata: 'Shopify • Lead Designer • 2022',
+    metadata: 'Shopify • Lead Designer • 2023',
     description:
       'As the Lead Designer, I spearheaded the end-to-end execution of Shopify’s Merchant Referral Program. I drove the design lifecycle from the initial MVP launch in the US and UK through to the global full-feature release, simultaneously conceptualizing the north-star incentive strategy and delivering the final production-ready interface.',
     prototypeUrl:
@@ -417,7 +417,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/shopify-pricing',
     categories: ['Redesign', 'Marketing', 'Growth', 'E-commerce'],
     platforms: ['Web'],
-    date: '2023-11-01',
+    date: '2022-11-01',
     featured: false,
     projectType: 'Client',
     heading: 'Clarifying value for millions of merchants',
@@ -615,7 +615,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/vivint-bridge',
     categories: ['Redesign'],
     platforms: ['Mobile', 'IoT'],
-    date: '2023-11-01',
+    date: '2025-11-01',
     featured: false,
     projectType: 'Client',
     heading: 'Seamless onboarding connectivity',
@@ -656,7 +656,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   //   href: '/case-study/vivint-smart-lighting',
   //   categories: ['Redesign', '0 to 1', 'Growth', 'Redesign'],
   //   platforms: ['Mobile', 'IoT'],
-  //   date: '2023-11-01',
+  //   date: '2025-11-01',
   //   featured: false,
   //   projectType: 'Client',
   //   heading: 'Seamless onboarding connectivity',
@@ -669,6 +669,48 @@ export const CASE_STUDIES: CaseStudy[] = [
   //     'Users faced challenges when pairing lighting hardware across devices, including bulbs, switches, and the bridge. Many user experiences were initially designed as MVPs, with features and requirements added later, leading to a fragmented and confusing experience. Without a clear north star to guide the team, work was often approached as isolated “one-offs,” hindering progress toward a cohesive product vision.',
   //   proposal:
   //     'Redesign the onboarding experiences to streamline, simplify, and improve clarity for users, addressing pain points that hinder adoption. In addition, design a north star for lighting products and features to create a unified vision and guide development. This work involves aligning cross-functional teams, defining long-term goals, and prioritizing high-impact features to shape a strategic and actionable product roadmap.',
+  //   statsDescription: '',
+  //   stats: [
+  //     {
+  //       label: 'Onboarding success rate',
+  //       value: '+69%',
+  //       description:
+  //         'Redesigned onboarding UX resulted in a 95% onboarding success rate, up from 56%.',
+  //     },
+  //     {
+  //       label: 'Monthly engagement',
+  //       value: '+150k',
+  //       description:
+  //         'Increased monthly active engagement with lighting by over 110,000 sessions a month.',
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 'rehear-score',
+  //   title: 'Redesigning Audio',
+  //   company: 'Eureka Software',
+  //   coverSrc:
+  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/house-night.jpg',
+  //   headerImage:
+  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/woman.jpg',
+  //   coverAlt: 'RehearScore case study cover image',
+  //   logoSrc: '/images/logos/apps/eureka.svg',
+  //   href: '/case-study/rehearscore',
+  //   categories: ['Redesign', '0 to 1', 'Redesign', 'Design System'],
+  //   platforms: ['Mobile'],
+  //   date: '2025-11-01',
+  //   featured: false,
+  //   projectType: 'Client',
+  //   heading: 'Professional-grade rehearsal experience',
+  //   metadata: 'Eureka Software • Lead Designer • 2025',
+  //   description:
+  //     'Run rehearsals straight from your mobile device using a virtual accompanist that plays every note of your show’s score.',
+  //   prototypeUrl:
+  //     'https://www.figma.com/proto/HtKSKVc4GaAlahXvpFBKaM/App-Design?page-id=0%3A1&node-id=1-3545&viewport=7802%2C950%2C0.32&t=iTYnOAvdOQxNyhjA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3545',
+  //   problem:
+  //     "Current user feedback indicates that the app is fundamentally unreliable, failing to deliver on its core promise as a stable rehearsal tool. Critical usability issues—such as a broken onboarding process for new users, audio playback being incorrectly tied to the phone's ringer, and playback stopping when the screen locks—have resulted in a frustrating and inaccessible experience.",
+  //   proposal:
+  //     'Deliver a comprehensive redesign and technical overhaul of the application. The objective is to resolve these foundational flaws and transform the app from a source of user frustration into an indispensable, reliable rehearsal partner for performers.',
   //   statsDescription: '',
   //   stats: [
   //     {

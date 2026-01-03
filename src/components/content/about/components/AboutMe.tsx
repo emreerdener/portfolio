@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { IconBrandLinkedin, IconFile } from '@tabler/icons-react';
 import {
+  Anchor,
   Button,
   Group,
   MantineSize,
@@ -17,6 +19,7 @@ const funFacts = [
   { emoji: '🎲', text: 'Playing backgammon' },
   { emoji: '🇹🇷', text: 'Named after a Sufi mystic & poet from the 13th century' },
   { emoji: '🚲', text: 'Riding my bicycle' },
+  { emoji: '🪵', text: 'Crafting wooden sculptures', link: '/woodworking' },
 ];
 
 interface AboutMeProps {
@@ -54,9 +57,26 @@ export default function AboutMe({
               <Text fz={emojiSize} lh={1}>
                 {item.emoji}
               </Text>
-              <Text fz={funFactSize} fw={500} lh={1.4}>
-                {item.text}
-              </Text>
+              {item.link ? (
+                <Anchor
+                  component={Link}
+                  href={item.link}
+                  fz={funFactSize}
+                  fw={500}
+                  lh={1.4}
+                  c="var(--mantine-color-text)"
+                  style={{
+                    textDecoration: 'underline',
+                    textDecorationColor: 'var(--mantine-color-dimmed)',
+                  }}
+                >
+                  {item.text}
+                </Anchor>
+              ) : (
+                <Text fz={funFactSize} fw={500} lh={1.4}>
+                  {item.text}
+                </Text>
+              )}
             </Group>
           ))}
         </SimpleGrid>
