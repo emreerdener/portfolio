@@ -11,12 +11,14 @@ export const JOBS: Job[] = [
   {
     role: 'Senior UX Designer',
     company: 'Vivint',
-    date: '2024 - present',
+    date: '2024 - Present',
     location: 'Remote',
     logoSrc: '/images/logos/experience/vivint.svg',
     bullets: [
-      'Lead design strategy and execution across 4+ product initiatives, directly collaborating with C-suite executives and cross-functional teams to align design vision with business objectives.',
+      'Lead design strategy and execution across 5+ product initiatives, directly collaborating with C-suite executives and cross-functional teams to align design vision with business objectives.',
+      'Architected and rebuilt the entire design system from scratch in just two months, resolving four years of technical debt and unifying the UI across mobile and IoT hardware interfaces.',
       'Spearheaded the Energy Intelligence UX design for Vivint and NRG platforms, transforming complex energy data into intuitive interfaces.',
+      'Redesigned the onboarding UX and product experience for Smart Locks, significantly reducing the number of customer support tickets and optimizing the overall UX.',
       'Designed the UX for smart lighting controls, as well as introducing new lighting features like color controls, lighting groups, and onboarding optimizations.',
       'Completely redesigned critical bridge device setup process, resolving multiple technical issues while improving efficiency by 45% and reducing average setup time by 1:45 minutes, directly impacting customer satisfaction scores.',
     ],

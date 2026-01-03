@@ -38,7 +38,7 @@ export default function ExperienceBlock({
           />
         )}
 
-        <Stack gap={6}>
+        <Stack gap={4}>
           <Text size="sm" fw={500} lh={1}>
             {company}
           </Text>
@@ -46,13 +46,13 @@ export default function ExperienceBlock({
             {role}
           </Title>
           <Group gap={6} wrap="nowrap" align="center">
-            <Text size="xs" c="dimmed">
+            <Text size="sm" c="dimmed">
               {date}
             </Text>
-            <Text size="xs" c="dimmed">
+            <Text size="sm" c="dimmed">
               •
             </Text>
-            <Text size="xs" c="dimmed">
+            <Text size="sm" c="dimmed">
               {location}
             </Text>
           </Group>
