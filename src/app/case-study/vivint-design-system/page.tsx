@@ -1,6 +1,7 @@
 'use client';
 
-import { Blockquote, Image, Stack, Text, Title } from '@mantine/core';
+import Link from 'next/link';
+import { Blockquote, Button, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import DesignSystemCarousel from '@/src/components/content/case-studies/components/vivint-design-system/DesignSystemCarousel';
@@ -327,12 +328,27 @@ export default function VivintEnergy() {
             and engineering but also unlocked a new level of velocity, empowering the entire team to
             build with speed, consistency, and confidence.
           </Text>
+          <Text size="xl">
+            This foundation was immediately put to the test—and proved its value—by enabling the
+            rapid design and development of the new Energy experience.
+          </Text>
+          <Stack align="flex-start">
+            <Button
+              component={Link}
+              href="/case-study/vivint-energy"
+              variant="light"
+              size="md"
+              radius="md"
+            >
+              Energy Case Study
+            </Button>
+          </Stack>
         </Stack>
 
         <Blockquote color="green">
           <Text size="xl">
-            In the span of just two months, I took a system that had been floundering for four years
-            and transformed it into a stable, scalable product.
+            In the span of two months, I took a system that had been floundering for four years and
+            transformed it into a stable, scalable product for every Vivint product team.
           </Text>
         </Blockquote>
 

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { IconLeaf, IconShield, IconThumbUp } from '@tabler/icons-react';
 import {
   Blockquote,
@@ -539,8 +540,13 @@ export default function VivintEnergy() {
             flexibility needed for compact widgets.
           </Text>
           <Stack align="flex-start">
-            <Button variant="light" size="md" component="a" href="/case-study/vivint-design-system">
-              View project
+            <Button
+              variant="light"
+              size="md"
+              component={Link}
+              href="/case-study/vivint-design-system"
+            >
+              Design System Case Study
             </Button>
           </Stack>
         </Stack>

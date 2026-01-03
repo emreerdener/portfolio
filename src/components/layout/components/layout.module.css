@@ -32,6 +32,14 @@
   box-shadow: var(--mantine-shadow-xs);
 }
 
+.navName {
+  color: var(--mantine-color-text);
+  transition: color 300ms ease;
+}
+.navName:hover {
+  color: var(--mantine-color-orange-5);
+}
+
 .navlink {
   border-radius: var(--mantine-radius-md);
   align-items: center;
