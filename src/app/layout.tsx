@@ -10,6 +10,17 @@ export const metadata = {
   title: 'Emre Erdener, Product Designer',
   description:
     'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: '/images/favicons/favicon.svg',
   },
