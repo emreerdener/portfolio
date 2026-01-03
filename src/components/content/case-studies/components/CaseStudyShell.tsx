@@ -22,8 +22,7 @@ import MoreCaseStudies from './MoreCaseStudies';
 import classes from '../../../layout/components/layout.module.css';
 
 export function CaseStudyShell({ children }: { children: React.ReactNode }) {
-  const [opened, { toggle }] = useDisclosure();
-  // State for the TOC Drawer
+  const [opened, { toggle, close }] = useDisclosure();
   const [tocOpened, { open: openToc, close: closeToc }] = useDisclosure(false);
   const [_scrollLocked, setScrollLocked] = useScrollLock();
 
