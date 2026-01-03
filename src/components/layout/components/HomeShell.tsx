@@ -11,7 +11,7 @@ import NavContent from './NavContent';
 import classes from './layout.module.css';
 
 export function HomeShell({ children }: { children: React.ReactNode }) {
-  const [opened, { toggle }] = useDisclosure();
+  const [opened, { toggle, close }] = useDisclosure();
   const [_scrollLocked, setScrollLocked] = useScrollLock();
   const pathname = usePathname();
 
