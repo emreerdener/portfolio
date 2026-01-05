@@ -615,7 +615,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/vivint-bridge',
     categories: ['Redesign'],
     platforms: ['Mobile', 'IoT'],
-    date: '2025-11-01',
+    date: '2025-10-01',
     featured: false,
     projectType: 'Client',
     heading: 'Seamless onboarding connectivity',
@@ -685,46 +685,47 @@ export const CASE_STUDIES: CaseStudy[] = [
   //     },
   //   ],
   // },
-  // {
-  //   id: 'rehear-score',
-  //   title: 'Redesigning Audio',
-  //   company: 'Eureka Software',
-  //   coverSrc:
-  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/house-night.jpg',
-  //   headerImage:
-  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/woman.jpg',
-  //   coverAlt: 'RehearScore case study cover image',
-  //   logoSrc: '/images/logos/apps/eureka.svg',
-  //   href: '/case-study/rehearscore',
-  //   categories: ['Redesign', '0 to 1', 'Redesign', 'Design System'],
-  //   platforms: ['Mobile'],
-  //   date: '2025-11-01',
-  //   featured: false,
-  //   projectType: 'Client',
-  //   heading: 'Professional-grade rehearsal experience',
-  //   metadata: 'Eureka Software • Lead Designer • 2025',
-  //   description:
-  //     'Run rehearsals straight from your mobile device using a virtual accompanist that plays every note of your show’s score.',
-  //   prototypeUrl:
-  //     'https://www.figma.com/proto/HtKSKVc4GaAlahXvpFBKaM/App-Design?page-id=0%3A1&node-id=1-3545&viewport=7802%2C950%2C0.32&t=iTYnOAvdOQxNyhjA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3545',
-  //   problem:
-  //     "Current user feedback indicates that the app is fundamentally unreliable, failing to deliver on its core promise as a stable rehearsal tool. Critical usability issues—such as a broken onboarding process for new users, audio playback being incorrectly tied to the phone's ringer, and playback stopping when the screen locks—have resulted in a frustrating and inaccessible experience.",
-  //   proposal:
-  //     'Deliver a comprehensive redesign and technical overhaul of the application. The objective is to resolve these foundational flaws and transform the app from a source of user frustration into an indispensable, reliable rehearsal partner for performers.',
-  //   statsDescription: '',
-  //   stats: [
-  //     {
-  //       label: 'Onboarding success rate',
-  //       value: '+69%',
-  //       description:
-  //         'Redesigned onboarding UX resulted in a 95% onboarding success rate, up from 56%.',
-  //     },
-  //     {
-  //       label: 'Monthly engagement',
-  //       value: '+150k',
-  //       description:
-  //         'Increased monthly active engagement with lighting by over 110,000 sessions a month.',
-  //     },
-  //   ],
-  // },
+  {
+    id: 'rehear-score',
+    title: 'The Virtual Accompanist',
+    company: 'Eureka Software',
+    coverSrc:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearscore-header-c.png',
+    headerImage:
+      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearscore%20cover-c.png',
+    coverAlt: 'RehearScore case study cover image',
+    logoSrc: '/images/logos/apps/eureka.svg',
+    href: '/case-study/rehearscore',
+    categories: ['Redesign', '0 to 1', 'Design System'],
+    platforms: ['Mobile'],
+    date: '2025-11-01',
+    featured: false,
+    projectType: 'Client',
+    heading: 'Orchestrating a better experience',
+    metadata: 'Eureka Software • Lead Designer • 2025',
+    description:
+      "RehearScore acts as a virtual accompanist, playing every note of a show's score on mobile. I led a ground-up redesign to address critical instability, transforming a frustration-prone utility into a professional-grade tool. We streamlined onboarding by removing account barriers, unified the score and playback interfaces, and built a robust player with granular audio controls.",
+    prototypeUrl:
+      'https://www.figma.com/proto/HtKSKVc4GaAlahXvpFBKaM/App-Design?page-id=0%3A1&node-id=1-3545&viewport=7802%2C950%2C0.32&t=iTYnOAvdOQxNyhjA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3545',
+    problem:
+      'Feedback revealed the app was fundamentally unreliable, failing to deliver on its promise as a stable rehearsal tool. Critical usability issues—such as a broken onboarding flow, audio playback incorrectly tied to the ringer switch, and playback cutting out when the screen locked—created a frustrating and inaccessible experience for performers.',
+    proposal:
+      'Execute a comprehensive redesign and technical overhaul. The objective was to resolve foundational flaws while modernizing the architecture. We aimed to simplify access by replacing user accounts with "show codes" and creating a synthesized interface that unifies playback and score editing into a single, intuitive surface.',
+    statsDescription:
+      'By resolving critical stability issues and streamlining the user experience, we restored user trust and significantly increased platform engagement.',
+    stats: [
+      {
+        label: 'Setup steps',
+        value: '12 → 3',
+        description:
+          'Streamlined the onboarding flow by replacing user accounts with direct access codes.',
+      },
+      {
+        label: 'Accessibility',
+        value: '100%',
+        description:
+          'Achieved full WCAG 2.1 AA compliance, ensuring an inclusive experience for all performers.',
+      },
+    ],
+  },
 ];
