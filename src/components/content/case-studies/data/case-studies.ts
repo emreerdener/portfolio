@@ -659,16 +659,16 @@ export const CASE_STUDIES: CaseStudy[] = [
   //   date: '2025-11-01',
   //   featured: false,
   //   projectType: 'Client',
-  //   heading: 'Seamless onboarding connectivity',
+  //   heading: 'Scaling the lighting ecosystem',
   //   metadata: 'Vivint • Lead Designer • 2025',
   //   description:
-  //     'Smart lighting was an emerging product category at Vivint. I joined the smart lighting product team to design innovative features, improve the user adoption rate, resolve key usability issues, and contribute to shaping the product roadmap.',
+  //     'Led the end-to-end design evolution of Vivint’s lighting category. I transformed a disjointed MVP into a core driver of engagement by unifying hardware interactions, resolving critical friction points, and defining a scalable North Star vision for the product roadmap.',
   //   prototypeUrl:
   //     'https://www.figma.com/proto/H5RTWZoA7hkQtudmcXuymL/Smart-Lighting-2025-12-18?page-id=5621%3A184612&node-id=5621-186319&p=f&viewport=225%2C995%2C0.07&t=Gmjwa6x5CXT2bRyZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5621%3A186319&show-proto-sidebar=1',
   //   problem:
-  //     'Users faced challenges when pairing lighting hardware across devices, including bulbs, switches, and the bridge. Many user experiences were initially designed as MVPs, with features and requirements added later, leading to a fragmented and confusing experience. Without a clear north star to guide the team, work was often approached as isolated “one-offs,” hindering progress toward a cohesive product vision.',
+  //     'The initial product suffered from technical fragmentation, where isolated "one-off" features created a confusing experience across bulbs, switches, and bridges. High friction in hardware pairing was stifling adoption, and the lack of a unified strategy hindered the team’s ability to scale the category.',
   //   proposal:
-  //     'Redesign the onboarding experiences to streamline, simplify, and improve clarity for users, addressing pain points that hinder adoption. In addition, design a north star for lighting products and features to create a unified vision and guide development. This work involves aligning cross-functional teams, defining long-term goals, and prioritizing high-impact features to shape a strategic and actionable product roadmap.',
+  //     'Operationalize a strategic overhaul focused on adoption and stability. I aligned cross-functional teams around a new North Star vision, streamlining complex hardware onboarding and establishing a consistent interaction model to guide future development.',
   //   statsDescription: '',
   //   stats: [
   //     {
@@ -687,10 +687,9 @@ export const CASE_STUDIES: CaseStudy[] = [
   // },
   {
     id: 'rehear-score',
-    title: 'The Virtual Accompanist',
+    title: 'Mobile Rehearsal Platform',
     company: 'Eureka Software',
-    coverSrc:
-      'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearscore-header-c.png',
+    coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/phones.png',
     headerImage:
       'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearscore%20cover-c.png',
     coverAlt: 'RehearScore case study cover image',
@@ -701,16 +700,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     date: '2025-11-01',
     featured: false,
     projectType: 'Client',
-    heading: 'Orchestrating a better experience',
+    heading: 'Restoring user trust',
     metadata: 'Eureka Software • Lead Designer • 2025',
     description:
-      "RehearScore acts as a virtual accompanist, playing every note of a show's score on mobile. I led a ground-up redesign to address critical instability, transforming a frustration-prone utility into a professional-grade tool. We streamlined onboarding by removing account barriers, unified the score and playback interfaces, and built a robust player with granular audio controls.",
+      'Directed the complete overhaul of a critical rehearsal tool for professional performers. I transformed a legacy application plagued by instability into a modern, accessible product, streamlining the architecture to prioritize high-stakes reliability and workflow efficiency.',
     prototypeUrl:
       'https://www.figma.com/proto/HtKSKVc4GaAlahXvpFBKaM/App-Design?page-id=0%3A1&node-id=1-3545&viewport=7802%2C950%2C0.32&t=iTYnOAvdOQxNyhjA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3545',
     problem:
-      'Feedback revealed the app was fundamentally unreliable, failing to deliver on its promise as a stable rehearsal tool. Critical usability issues—such as a broken onboarding flow, audio playback incorrectly tied to the ringer switch, and playback cutting out when the screen locked—created a frustrating and inaccessible experience for performers.',
+      'The legacy application was fundamentally unreliable, with critical failures in audio playback and onboarding driving high churn. The interface was outdated and inaccessible (non-compliant), failing to meet the rigorous demands of professional rehearsal environments.',
     proposal:
-      'Execute a comprehensive redesign and technical overhaul. The objective was to resolve foundational flaws while modernizing the architecture. We aimed to simplify access by replacing user accounts with "show codes" and creating a synthesized interface that unifies playback and score editing into a single, intuitive surface.',
+      'Champion a "reliability-first" redesign to modernize the architecture. I replaced account-gated friction with a seamless access-code model and synthesized separate tools into a single, intuitive interface, prioritizing WCAG compliance to ensure accessibility for all performers.',
     statsDescription:
       'By resolving critical stability issues and streamlining the user experience, we restored user trust and significantly increased platform engagement.',
     stats: [

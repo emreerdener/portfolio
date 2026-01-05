@@ -200,17 +200,26 @@ export default function BTRES() {
             a single, rhythmic card that highlights the current beat line-by-line, helping users
             stay in sync without needing to count manually.
           </Text>
+        </Stack>
 
-          <Blockquote>
-            <Text size="xl">
-              The legacy app's mixing controls were buried in a confusing bottom navigation bar that
-              mimicked global navigation. I surfaced these controls into dedicated 'Track Cards' for
-              Vocals, Drums, and Piano. This modular UI puts volume sliders, mute toggles, and a new
-              'Isolate' button directly on the canvas—eliminating the need for users to tediously
-              mute every other track just to hear their own part.
-            </Text>
-          </Blockquote>
+        <Blockquote>
+          <Text size="xl">
+            The legacy app's mixing controls were buried in a confusing bottom navigation bar that
+            mimicked global navigation. I surfaced these controls into dedicated 'Track Cards' for
+            Vocals, Drums, and Piano. This modular UI puts volume sliders, mute toggles, and a new
+            'Isolate' button directly on the canvas—eliminating the need for users to tediously mute
+            every other track just to hear their own part.
+          </Text>
+        </Blockquote>
 
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearscore-header-c.png"
+          alt="RehearScore UI mockup"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Stack py="xl">
           <Text size="xl">
             In a fast-paced rehearsal, reading small text is challenging, so we replaced error-prone
             manual inputs with accessible bottom sheets for Tempo and Transposition. These provide
@@ -330,22 +339,14 @@ export default function BTRES() {
           alt="RehearScore user stories"
         />
 
-        <Stack py="xl">
-          <Title order={2}>The outcome</Title>
+        <Blockquote>
           <Text size="xl">
             The redesign successfully stabilized the product, resolving the critical audio and login
             issues that plagued the legacy version. By delivering a modern, professional-grade
             interface, we restored trust with the user base and provided performers with a reliable
             tool they can confidently use on stage and in the studio.
           </Text>
-        </Stack>
-
-        <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/phones.png"
-          alt="RehearScore app phones mockup"
-          radius="lg"
-          style={{ border: '1px solid var(--app-shell-border-color)' }}
-        />
+        </Blockquote>
 
         <CaseStudySkills
           skills={[
