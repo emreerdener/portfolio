@@ -7,7 +7,11 @@ import MoreBanner from '@/src/components/layout/components/MoreBanner';
 import { CASE_STUDIES, CaseStudy } from '../data/case-studies';
 import ProjectCard from './ProjectCard';
 
-export default function MoreCaseStudies() {
+interface MoreCaseStudiesProps {
+  heading?: string;
+}
+
+export default function MoreCaseStudies({ heading = 'More of my work' }: MoreCaseStudiesProps) {
   const pathname = usePathname();
   const [randomStudies, setRandomStudies] = useState<CaseStudy[]>([]);
 
@@ -29,7 +33,7 @@ export default function MoreCaseStudies() {
 
   return (
     <Stack gap="xl" py="xl" style={{ borderTop: '1px solid var(--app-shell-border-color)' }}>
-      <Title order={2}>More of my work</Title>
+      <Title order={2}>{heading}</Title>
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={{ base: 'xl' }}>
         {randomStudies.map((study) => (
           <ProjectCard

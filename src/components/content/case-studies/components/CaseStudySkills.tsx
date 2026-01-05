@@ -23,7 +23,7 @@ export default function CaseStudySkills({ skills }: CaseStudySkillsProps) {
             variant="light"
             color="gray"
             radius="sm"
-            style={{ textTransform: 'none', fontWeight: 500 }}
+            style={{ textTransform: 'none', fontWeight: 500, color: 'var(--mantine-color-text)' }}
           >
             {skill}
           </Badge>

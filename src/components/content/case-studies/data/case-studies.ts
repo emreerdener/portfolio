@@ -643,48 +643,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
   },
-  // {
-  //   id: 'vivint-smart-lighting',
-  //   title: 'Smart Lighting',
-  //   company: 'Vivint',
-  //   coverSrc:
-  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/house-night.jpg',
-  //   headerImage:
-  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/woman.jpg',
-  //   coverAlt: 'Vivint case study cover image',
-  //   logoSrc: '/images/logos/apps/vivint.svg',
-  //   href: '/case-study/vivint-smart-lighting',
-  //   categories: ['Redesign', '0 to 1', 'Growth', 'Redesign'],
-  //   platforms: ['Mobile', 'IoT'],
-  //   date: '2025-11-01',
-  //   featured: false,
-  //   projectType: 'Client',
-  //   heading: 'Scaling the lighting ecosystem',
-  //   metadata: 'Vivint • Lead Designer • 2025',
-  //   description:
-  //     'Led the end-to-end design evolution of Vivint’s lighting category. I transformed a disjointed MVP into a core driver of engagement by unifying hardware interactions, resolving critical friction points, and defining a scalable North Star vision for the product roadmap.',
-  //   prototypeUrl:
-  //     'https://www.figma.com/proto/H5RTWZoA7hkQtudmcXuymL/Smart-Lighting-2025-12-18?page-id=5621%3A184612&node-id=5621-186319&p=f&viewport=225%2C995%2C0.07&t=Gmjwa6x5CXT2bRyZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5621%3A186319&show-proto-sidebar=1',
-  //   problem:
-  //     'The initial product suffered from technical fragmentation, where isolated "one-off" features created a confusing experience across bulbs, switches, and bridges. High friction in hardware pairing was stifling adoption, and the lack of a unified strategy hindered the team’s ability to scale the category.',
-  //   proposal:
-  //     'Operationalize a strategic overhaul focused on adoption and stability. I aligned cross-functional teams around a new North Star vision, streamlining complex hardware onboarding and establishing a consistent interaction model to guide future development.',
-  //   statsDescription: '',
-  //   stats: [
-  //     {
-  //       label: 'Onboarding success rate',
-  //       value: '+69%',
-  //       description:
-  //         'Redesigned onboarding UX resulted in a 95% onboarding success rate, up from 56%.',
-  //     },
-  //     {
-  //       label: 'Monthly engagement',
-  //       value: '+150k',
-  //       description:
-  //         'Increased monthly active engagement with lighting by over 110,000 sessions a month.',
-  //     },
-  //   ],
-  // },
   {
     id: 'rehear-score',
     title: 'Mobile Rehearsal Platform',
@@ -727,4 +685,46 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
   },
+  // {
+  //   id: 'vivint-smart-lighting',
+  //   title: 'Smart Lighting',
+  //   company: 'Vivint',
+  //   coverSrc:
+  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/house-night.jpg',
+  //   headerImage:
+  //     'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/woman.jpg',
+  //   coverAlt: 'Vivint case study cover image',
+  //   logoSrc: '/images/logos/apps/vivint.svg',
+  //   href: '/case-study/vivint-smart-lighting',
+  //   categories: ['Redesign', '0 to 1', 'Growth', 'Redesign'],
+  //   platforms: ['Mobile', 'IoT'],
+  //   date: '2025-11-01',
+  //   featured: false,
+  //   projectType: 'Client',
+  //   heading: 'Scaling the lighting ecosystem',
+  //   metadata: 'Vivint • Lead Designer • 2025',
+  //   description:
+  //     'Led the end-to-end design evolution of Vivint’s lighting category. I transformed a disjointed MVP into a core driver of engagement by unifying hardware interactions, resolving critical friction points, and defining a scalable North Star vision for the product roadmap.',
+  //   prototypeUrl:
+  //     'https://www.figma.com/proto/H5RTWZoA7hkQtudmcXuymL/Smart-Lighting-2025-12-18?page-id=5621%3A184612&node-id=5621-186319&p=f&viewport=225%2C995%2C0.07&t=Gmjwa6x5CXT2bRyZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5621%3A186319&show-proto-sidebar=1',
+  //   problem:
+  //     'The initial product suffered from technical fragmentation, where isolated "one-off" features created a confusing experience across bulbs, switches, and bridges. High friction in hardware pairing was stifling adoption, and the lack of a unified strategy hindered the team’s ability to scale the category.',
+  //   proposal:
+  //     'Operationalize a strategic overhaul focused on adoption and stability. I aligned cross-functional teams around a new North Star vision, streamlining complex hardware onboarding and establishing a consistent interaction model to guide future development.',
+  //   statsDescription: '',
+  //   stats: [
+  //     {
+  //       label: 'Onboarding success rate',
+  //       value: '+69%',
+  //       description:
+  //         'Redesigned onboarding UX resulted in a 95% onboarding success rate, up from 56%.',
+  //     },
+  //     {
+  //       label: 'Monthly engagement',
+  //       value: '+150k',
+  //       description:
+  //         'Increased monthly active engagement with lighting by over 110,000 sessions a month.',
+  //     },
+  //   ],
+  // },
 ];

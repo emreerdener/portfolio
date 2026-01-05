@@ -3,6 +3,7 @@ import { Box, Divider, Grid, Paper, Space, Stack } from '@mantine/core';
 import MoreBanner from '../../../layout/components/MoreBanner';
 import Education from '../../experience/components/Education';
 import Experience from '../../experience/components/Experience';
+import TechnicalSkills from '../../experience/components/TechnicalSkills';
 import AboutImageCarousel from './AboutImageCarousel';
 import AboutMe from './AboutMe';
 import classes from './about.module.css';
@@ -30,6 +31,8 @@ export default function AboutLayout() {
         <Experience defaultExpanded listSize="lg" />
         <Divider />
         <Education />
+        <Divider />
+        <TechnicalSkills />
       </Paper>
 
       <MoreBanner />
