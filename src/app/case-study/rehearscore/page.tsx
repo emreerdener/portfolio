@@ -50,13 +50,50 @@ export default function BTRES() {
             validating our design direction, ensuring that every new interface decision supported
             the professional workflows performers relied on.
           </Text>
+        </Stack>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/3.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/4.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Blockquote>
           <Text size="xl">
             The audit also exposed fundamental UX issues we needed to resolve, such as ambiguous
             iconography and poor accessibility. We expanded the scope to include WCAG 2.1 AA
             compliance and specific "quality of life" features, such as a new "Playlist Mode" for
             uninterrupted run-throughs and clearer error messaging for login failures.
           </Text>
-        </Stack>
+        </Blockquote>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/16.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/17.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/18.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/control-c.png"
@@ -76,6 +113,34 @@ export default function BTRES() {
             songs—significantly reducing the number of screens required to get started.
           </Text>
         </Stack>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/19.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/20.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/21.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/22.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/get-started/start-before-after-c.png"
@@ -107,6 +172,20 @@ export default function BTRES() {
         </Stack>
 
         <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/23.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/24.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/samples/samples-before-after.png"
           alt="RehearScore samples before and after"
           radius="lg"
@@ -134,6 +213,20 @@ export default function BTRES() {
             without leaving the dashboard.
           </Text>
         </Stack>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/25.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/26.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/shows/Shows%20before-after-c.png"
@@ -202,6 +295,13 @@ export default function BTRES() {
           </Text>
         </Stack>
 
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/30.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
         <Blockquote>
           <Text size="xl">
             The legacy app's mixing controls were buried in a confusing bottom navigation bar that
@@ -236,6 +336,27 @@ export default function BTRES() {
             measure numbers.
           </Text>
         </Stack>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/31.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/32.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/33.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearse/rehearse-figma.png"
