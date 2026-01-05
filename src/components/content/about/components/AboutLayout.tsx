@@ -27,7 +27,7 @@ export default function AboutLayout() {
       </Grid>
 
       <Paper radius="lg" withBorder shadow="sm">
-        <Experience defaultExpanded />
+        <Experience defaultExpanded listSize="lg" />
         <Divider />
         <Education />
       </Paper>

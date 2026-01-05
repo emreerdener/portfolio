@@ -43,7 +43,7 @@ export const JOBS: Job[] = [
     role: 'Senior Product Designer',
     company: 'Mello Studio',
     date: '2016 - 2021',
-    location: '🇺🇸 Austin, TX',
+    location: 'Austin, TX',
     logoSrc: '/images/logos/experience/mello.jpg',
     bullets: [
       'Product, web, and marketing design for startups and enterprise clients.',
@@ -57,7 +57,7 @@ export const JOBS: Job[] = [
     role: 'Product Designer',
     company: 'Justuno',
     date: '2018 - 2020',
-    location: '🇺🇸 Austin, TX',
+    location: 'Austin, TX',
     logoSrc: '/images/logos/experience/justuno.png',
     bullets: [
       'Conceptualized product, usability, and design based on requirements gathered during interviews with key stakeholders and users.',

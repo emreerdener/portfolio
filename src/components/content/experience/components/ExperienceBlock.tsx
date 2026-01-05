@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Group, Image, List, Spoiler, Stack, Text, Title } from '@mantine/core';
+import { Box, Group, Image, List, MantineSize, Spoiler, Stack, Text, Title } from '@mantine/core';
 
 interface ExperienceBlockProps {
   role: string;
@@ -9,6 +9,7 @@ interface ExperienceBlockProps {
   bullets?: string[];
   logoSrc?: string;
   defaultExpanded?: boolean;
+  listSize?: MantineSize;
 }
 
 export default function ExperienceBlock({
@@ -19,6 +20,7 @@ export default function ExperienceBlock({
   bullets = [],
   logoSrc,
   defaultExpanded = false,
+  listSize = 'sm',
 }: ExperienceBlockProps) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   // 2. Define the height at which the content is cut off
@@ -80,7 +82,7 @@ export default function ExperienceBlock({
               },
             }}
           >
-            <List spacing={6} size="sm" center={false}>
+            <List spacing={6} size={listSize} center={false}>
               {bullets.map((item, index) => (
                 <List.Item key={index} style={{ lineHeight: 1.4, opacity: 0.85 }}>
                   {item}

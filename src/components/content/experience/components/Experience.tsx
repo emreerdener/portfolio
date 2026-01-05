@@ -1,14 +1,15 @@
 import { IconDownload } from '@tabler/icons-react';
-import { Button, Group, Stack, Title } from '@mantine/core';
+import { Button, Group, MantineSize, Stack, Title } from '@mantine/core';
 import { JOBS } from '@/src/components/content/experience/data/jobs';
 import ExperienceBlock from './ExperienceBlock';
 import classes from './experience.module.css';
 
 interface ExperienceProps {
   defaultExpanded?: boolean;
+  listSize?: MantineSize;
 }
 
-export default function Experience({ defaultExpanded = false }: ExperienceProps) {
+export default function Experience({ defaultExpanded = false, listSize }: ExperienceProps) {
   return (
     <Stack gap="xl" className={classes.experienceWrapper}>
       {/* Experience */}
@@ -30,7 +31,12 @@ export default function Experience({ defaultExpanded = false }: ExperienceProps)
       </Group>
       <Stack gap="xl">
         {JOBS.map((job, index) => (
-          <ExperienceBlock key={index} {...job} defaultExpanded={defaultExpanded} />
+          <ExperienceBlock
+            key={index}
+            {...job}
+            defaultExpanded={defaultExpanded}
+            listSize={listSize}
+          />
         ))}
       </Stack>
     </Stack>
