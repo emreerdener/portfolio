@@ -58,6 +58,13 @@ export default function VivintSmartLighting() {
           </Text>
         </Stack>
 
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/kitchen.jpg"
+          alt="Vivint original design system"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+
         <Stack py="xl">
           <Title order={2}>User Research & Insights</Title>
           <Text size="xl">
@@ -75,6 +82,13 @@ export default function VivintSmartLighting() {
             like "Replacing an existing smart bulb" vs. "Installing a fresh system."
           </Text>
         </Stack>
+
+        <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/house-night-2.jpg"
+          alt="Vivint original design system"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
 
         <Stack py="xl">
           <Title order={2}>Beta Testing & Validation</Title>
@@ -94,20 +108,7 @@ export default function VivintSmartLighting() {
           </Text>
         </Stack>
 
-        <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/kitchen.jpg"
-          alt="Vivint original design system"
-          radius="lg"
-          style={{ border: '1px solid var(--app-shell-border-color)' }}
-        />
-
-        <Image
-          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-smart-lighting/photos/house-night-2.jpg"
-          alt="Vivint original design system"
-          radius="lg"
-          style={{ border: '1px solid var(--app-shell-border-color)' }}
-        />
-
+        {/* Video */}
         <Center>
           <div
             style={{

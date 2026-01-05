@@ -688,12 +688,12 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'rehear-score',
     title: 'Mobile Rehearsal Platform',
-    company: 'Eureka Software',
+    company: 'Music Theatre International',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/phones.png',
     headerImage:
       'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearscore%20cover-c.png',
     coverAlt: 'RehearScore case study cover image',
-    logoSrc: '/images/logos/apps/eureka.svg',
+    logoSrc: '/images/logos/apps/rehearscore.svg',
     href: '/case-study/rehearscore',
     categories: ['Redesign', '0 to 1', 'Design System'],
     platforms: ['Mobile'],
