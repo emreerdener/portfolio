@@ -701,7 +701,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featured: false,
     projectType: 'Client',
     heading: 'Restoring user trust',
-    metadata: 'Eureka Software • Lead Designer • 2025',
+    metadata: 'Music Theatre International • Lead Designer • 2026',
     description:
       'Directed the complete overhaul of a critical rehearsal tool for professional performers. I transformed a legacy application plagued by instability into a modern, accessible product, streamlining the architecture to prioritize high-stakes reliability and workflow efficiency.',
     prototypeUrl:
