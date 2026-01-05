@@ -296,6 +296,12 @@ export default function BTRES() {
         </Stack>
 
         <Image
+          src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/playback-slide-c.png"
+          alt="RehearScore designs"
+          radius="lg"
+          style={{ border: '1px solid var(--app-shell-border-color)' }}
+        />
+        <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/slides/30.png"
           alt="RehearScore designs"
           radius="lg"

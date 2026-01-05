@@ -41,9 +41,10 @@ export default function AboutMe({
         <Title order={1} fz={titleSize}>
           Hello, I'm Emre
         </Title>
-        <Text c="dimmed" fz={bodySize} lh={1.3}>
-          I am an interdisciplinary designer, helping businesses conceptualize and build software,
-          systems, experiences, websites, and brands.
+        <Text c="dimmed" fz={bodySize}>
+          I am an interdisciplinary product designer with frontend engineering experience. I have 8+
+          years of experience leading product strategy, end-to-end execution, and user research,
+          bridging the gap between stakeholders, design, and engineering.
         </Text>
       </Stack>
 
