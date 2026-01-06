@@ -5,6 +5,7 @@ import {
   IconCpu,
   IconDeviceDesktop,
   IconDeviceMobile,
+  IconFilter2,
   IconTag,
   IconX,
 } from '@tabler/icons-react';
@@ -135,7 +136,7 @@ export default function ProjectFilters({
         onClose={close}
         title="Filter case studies"
         padding="lg"
-        size="xl"
+        size="96vh"
         position="bottom"
         radius="lg"
         styles={{
@@ -295,7 +296,7 @@ export default function ProjectFilters({
               boxShadow: 'var(--mantine-shadow-xs)',
             }}
           >
-            <IconAdjustmentsHorizontal size={28} />
+            <IconFilter2 size={28} />
           </ActionIcon>
         </Indicator>
       </Box>
