@@ -136,7 +136,7 @@ export default function ProjectFilters({
         onClose={close}
         title="Filter case studies"
         padding="lg"
-        size="96vh"
+        size="90vh"
         position="bottom"
         radius="lg"
         styles={{
@@ -181,7 +181,7 @@ export default function ProjectFilters({
 
               <Divider />
 
-              {/* Categories Section */}
+              {/* Categories */}
               <Box>
                 <Text size="xs" fw={700} c="dimmed" tt="uppercase" mb="xs">
                   Categories
