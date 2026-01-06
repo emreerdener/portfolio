@@ -136,7 +136,7 @@ export default function ProjectFilters({
         onClose={close}
         title="Filter case studies"
         padding="lg"
-        size="90vh"
+        size="85vh"
         position="bottom"
         radius="lg"
         styles={{
