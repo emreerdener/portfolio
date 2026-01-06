@@ -33,7 +33,7 @@ const IMAGES = [
 export default function Woodworking() {
   return (
     <Stack gap="xl">
-      <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing="lg">
+      <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing="xl">
         {IMAGES.map((src, index) => (
           <FadeIn key={src} delay={index * 0.02}>
             <AspectRatio
