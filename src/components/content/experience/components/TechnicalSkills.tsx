@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge, Group, Stack, Text, Title } from '@mantine/core';
 
 export default function TechnicalSkills() {
@@ -7,48 +6,52 @@ export default function TechnicalSkills() {
       category: 'Design & Strategy',
       skills: [
         'Product Strategy',
+        'Growth Design',
+        'Data-Driven Design',
         'User Research',
         'Interaction Design',
         'Visual Design',
         'Information Architecture',
-        'Wireframing',
         'Rapid Prototyping',
-        'Usability Testing',
-        'Journey Mapping',
-        'Motion Design',
+        'Service Design',
       ],
     },
     {
-      category: 'Engineering & Development',
+      category: 'Leadership & Ops',
       skills: [
-        'Full-Stack Development',
-        'React',
-        'Next.js',
-        'Node.js',
+        'Design Leadership',
+        'Stakeholder Management',
+        'Mentorship',
+        'Design Operations (DesignOps)',
+        'Cross-functional Collaboration',
+      ],
+    },
+    {
+      category: 'Engineering',
+      skills: [
+        'React / Next.js',
         'TypeScript',
-        'JavaScript (ES6+)',
-        'HTML5',
-        'CSS3',
-        'Git/GitHub',
-        'CI/CD Workflows',
+        'Node.js',
+        'Jest / Testing Library',
+        'Storybook',
+        'Git / CI/CD',
+        'HTML5 / CSS3',
+        'IoT / Hardware Integration',
       ],
     },
     {
       category: 'Design Systems',
       skills: [
-        'Atomic Design',
+        'System Architecture',
         'Token Architecture',
         'Component Library Management',
-        'Accessibility Standards (WCAG)',
+        'Accessibility (WCAG 2.1)',
+        'Documentation',
       ],
     },
     {
       category: 'Tools',
-      skills: [
-        'Figma',
-        'Sketch',
-        'Adobe Creative Suite (XD, Photoshop, Illustrator, AfterEffects)',
-      ],
+      skills: ['Figma', 'Sketch', 'Adobe Creative Suite', 'Amplitude/Mixpanel'],
     },
   ];
 

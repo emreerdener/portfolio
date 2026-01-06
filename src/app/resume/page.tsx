@@ -10,13 +10,13 @@ export default function ResumePage() {
   return (
     <Container size="lg" p={0}>
       <Stack>
-        <Stack gap="xs" p="xl">
+        <Stack gap="xs" px="xl">
           <Title order={1}>Emre Erdener</Title>
           <Text size="xl">Lead Product Designer & Frontend Engineer</Text>
           <Text c="dimmed">erdener.emre@gmail.com • 512-740-3719 • Austin, TX</Text>
         </Stack>
 
-        <Stack px="xl" pb="lg">
+        <Stack px="xl" pb="xl">
           <Text>
             I am an interdisciplinary product designer with full-stack engineering experience. I
             have over 8 years of experience leading product strategy, end-to-end execution, and user
@@ -28,15 +28,15 @@ export default function ResumePage() {
 
         <Divider />
 
-        <TechnicalSkills />
-
-        <Divider />
-
         <Experience defaultExpanded listSize="lg" />
 
         <Divider />
 
         <Education />
+
+        <Divider />
+
+        <TechnicalSkills />
 
         <Space h="xl" />
       </Stack>
