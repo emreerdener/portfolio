@@ -18,11 +18,11 @@ export default function ResumePage() {
 
         <Stack px="xl" pb="xl">
           <Text>
-            I am an interdisciplinary product designer with full-stack engineering experience. I
-            have over 8 years of experience leading product strategy, end-to-end execution, and user
-            research, bridging the gap between stakeholders, design, and engineering. I have a
-            proven track record of spearheading major product initiatives to deliver impactful
-            business results.
+            I am an interdisciplinary product designer and frontend engineer. I have 8+ years of
+            experience leading design, strategy, end-to-end execution, and user research, bridging
+            the gap between stakeholders, engineering, and users. I have a proven track record of
+            leading major product initiatives and integrating AI-driven solutions to deliver
+            impactful business results.
           </Text>
         </Stack>
 

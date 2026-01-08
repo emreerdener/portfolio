@@ -3,6 +3,18 @@ import { Badge, Group, Stack, Text, Title } from '@mantine/core';
 export default function TechnicalSkills() {
   const TECHNICAL_SKILLS = [
     {
+      category: 'AI & Emerging Tech',
+      skills: [
+        'Generative AI',
+        'LLM Integration',
+        'AI-Driven UX',
+        'Prompt Engineering',
+        'Predictive Analytics',
+        'Voice UI (VUI)',
+        'IoT Design',
+      ],
+    },
+    {
       category: 'Design & Strategy',
       skills: [
         'Product Strategy',
@@ -12,7 +24,11 @@ export default function TechnicalSkills() {
         'Interaction Design',
         'Visual Design',
         'Information Architecture',
+        'Wireframing',
         'Rapid Prototyping',
+        'Usability Testing',
+        'Journey Mapping',
+        'Motion Design',
         'Service Design',
       ],
     },
@@ -29,29 +45,39 @@ export default function TechnicalSkills() {
     {
       category: 'Engineering',
       skills: [
-        'React / Next.js',
+        'Full-Stack Development',
+        'React',
+        'Next.js',
         'TypeScript',
         'Node.js',
-        'Jest / Testing Library',
+        'JavaScript (ES6+)',
+        'Jest',
+        'React Testing Library',
         'Storybook',
-        'Git / CI/CD',
+        'Git/GitHub',
+        'CI/CD Workflows',
         'HTML5 / CSS3',
-        'IoT / Hardware Integration',
       ],
     },
     {
       category: 'Design Systems',
       skills: [
         'System Architecture',
+        'Atomic Design',
         'Token Architecture',
         'Component Library Management',
-        'Accessibility (WCAG 2.1)',
+        'Accessibility Standards (WCAG)',
         'Documentation',
       ],
     },
     {
       category: 'Tools',
-      skills: ['Figma', 'Sketch', 'Adobe Creative Suite', 'Amplitude/Mixpanel'],
+      skills: [
+        'Figma',
+        'Sketch',
+        'Adobe Creative Suite (XD, Photoshop, Illustrator, AfterEffects)',
+        'Amplitude/Mixpanel',
+      ],
     },
   ];
 

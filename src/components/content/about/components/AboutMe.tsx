@@ -42,9 +42,9 @@ export default function AboutMe({
           Hello, I'm Emre
         </Title>
         <Text c="dimmed" fz={bodySize}>
-          I am an interdisciplinary product designer with frontend engineering experience. I have 8+
-          years of experience leading product strategy, end-to-end execution, and user research,
-          bridging the gap between stakeholders, design, and engineering.
+          I am an interdisciplinary product designer and frontend engineer. I have 8+ years of
+          experience leading design, strategy, end-to-end execution, and user research, bridging the
+          gap between stakeholders, engineering, and users.
         </Text>
       </Stack>
 

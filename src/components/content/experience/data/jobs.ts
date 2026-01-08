@@ -17,7 +17,7 @@ export const JOBS: Job[] = [
     bullets: [
       'Lead design strategy and execution across 5+ product initiatives, collaborating directly with C-suite executives and cross-functional teams to align design vision with business objectives.',
       'Architected and rebuilt the entire design system from scratch in two months, resolving four years of technical debt and accelerating development velocity by 2x.',
-      'Spearheaded the Energy Intelligence UX design for Vivint and NRG platforms, transforming complex energy data into intuitive interfaces.',
+      'Spearheaded the AI-powered Energy Intelligence UX design for Vivint and NRG platforms, transforming complex predictive data into intuitive interfaces.',
       'Redesigned the onboarding UX for Smart Locks and Smart Lighting, significantly reducing customer support ticket volume and optimizing user success rates.',
       'Completely redesigned the critical bridge device setup process, improving efficiency by 45% and reducing average setup time by nearly 2 minutes.',
       'Mentor junior designers, providing ongoing feedback and guidance through weekly critiques and team rituals.',
