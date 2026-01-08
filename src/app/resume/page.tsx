@@ -12,7 +12,7 @@ export default function ResumePage() {
       <Stack>
         <Stack gap="xs" px="xl">
           <Title order={1}>Emre Erdener</Title>
-          <Text size="xl">Lead Product Designer & Frontend Engineer</Text>
+          <Text size="xl">Staff Product Designer & Frontend Engineer</Text>
           <Text c="dimmed">erdener.emre@gmail.com • 512-740-3719 • Austin, TX</Text>
         </Stack>
 
