@@ -23,7 +23,7 @@ export default function MoreCaseStudies({ heading = 'More of my work' }: MoreCas
     const shuffled = [...otherStudies].sort(() => 0.5 - Math.random());
 
     // 3. Pick the first 2 items
-    setRandomStudies(shuffled.slice(0, 2));
+    setRandomStudies(shuffled.slice(0, 4));
   }, [pathname]);
 
   // Don't render anything until the random selection is ready
