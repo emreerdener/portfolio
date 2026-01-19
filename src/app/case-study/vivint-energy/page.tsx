@@ -51,7 +51,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>A strategic pivot</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             As a critical strategic initiative to merge smart home automation with energy
             management, I led the design evolution of "Energy Insights." This project represented a
             fundamental shift in Vivint's product strategy: transforming energy data from a passive
@@ -62,7 +62,7 @@ export default function VivintEnergy() {
         </Stack>
 
         <Blockquote>
-          <Text size="xl">
+          <Text fz="xl">
             The goal was not just to display graphs, but to deeply weave energy intelligence and
             power management into the core app experience and broader ecosystem strategy. By
             evolving the product architecture, we moved energy monitoring from a niche utility to a
@@ -82,7 +82,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Initial direction</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             When I joined the project, the initial MVP had been established as a proof-of-concept.
             While it succeeded in displaying raw data, the design suffered from a lack of strategic
             direction. It functioned more like a complex spreadsheet than a consumer-facing smart
@@ -110,7 +110,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>The modularity problem</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The legacy design was "heavy"—both visually and structurally. This density created a
             significant barrier to scalability; because the interface required so much space to
             display simple metrics, it was impossible to integrate these insights modularly into
@@ -135,7 +135,7 @@ export default function VivintEnergy() {
           <Stack gap="xl">
             <Stack gap="xs">
               <Title order={2}>Design principals</Title>
-              <Text size="xl">
+              <Text fz={{ base: 'md', md: 'xl' }}>
                 To transform technical energy data into a seamless part of the smart home
                 experience, we established core design principles. These guide every decision,
                 ensuring the product moves beyond a utility bill and becomes a proactive,
@@ -198,7 +198,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Market validation and stabilization</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The immediate priority for v1.0 was to stabilize the user experience and ship a usable
             product to validate the market hypothesis. I focused on resolving "low-hanging fruit"
             usability issues within the existing constraints of the MVP codebase. This release was
@@ -255,7 +255,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Learning from the launch</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Following the v1.0 release, user feedback highlighted a critical friction point: users
             found the raw data (kWh, voltage, amperage) confusing and actionable only in retrospect.
             They wanted to know how to save money, not just what they spent. These insights,
@@ -276,7 +276,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>From dashboard to ecosystem</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             For v2.0, I proposed and executed a complete redesign centered on modularity. We shifted
             away from the monolithic dashboard approach to a flexible widget-based architecture.
             This strategy focused on reducing the visual footprint of the feature while actually
@@ -296,12 +296,12 @@ export default function VivintEnergy() {
         {/* Energy spend */}
         <Stack py="xl">
           <Title order={2}>Clarifying cost with disaggregation</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             In the MVP, cost data was presented in a large, abstract doughnut chart that took up
             valuable screen real estate without offering specific answers. For v2.0, we pivoted to a
             linear breakdown tied directly to the user's billing cycle.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We introduced trend indicators (green for savings, red for overage) to help users
             instantly understand if they were on track. By structuring disaggregation as a list, we
             clarified the relationship between specific appliances and the total bill, creating a
@@ -339,13 +339,13 @@ export default function VivintEnergy() {
         {/* Energy insights */}
         <Stack py="xl">
           <Title order={2}>Contextual intelligence</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Raw data is often meaningless without context. We refactored the "Insights" section from
             static numbers into a rich data display featuring rolling 7-day averages. This allows
             users to see their usage and runtime in the context of their immediate history rather
             than as isolated integers.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To drive engagement, we introduced social benchmarks and gamification. Cards like "Top
             5% of neighbors" and "Efficiency streaks" utilize behavioral psychology to encourage
             better energy habits, transforming the app from a utility monitor into a competitive
@@ -383,13 +383,13 @@ export default function VivintEnergy() {
         {/* Usage charts */}
         <Stack py="xl">
           <Title order={2}>Granularity meets clarity</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The updated usage charts were designed to answer the "Why?" behind a bill. We added
             granular controls, including billing cycle date ranges and toggles for weather data.
             Users can now overlay temperature highs and lows onto their usage bars, revealing the
             direct correlation between weather events and HVAC costs.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We also introduced historical comparisons, allowing users to benchmark their current
             performance against the previous month or year. This richer data visualization helps
             users distinguish between seasonal variances and actual behavior changes.
@@ -426,12 +426,12 @@ export default function VivintEnergy() {
         {/* Savings */}
         <Stack py="xl">
           <Title order={2}>Actionable savings & gamification</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             User research indicated that the horizontal scrolling cards in the MVP hid valuable
             information. For v2.0, we pivoted to a prioritized vertical list, making it easier for
             users to scan for high-impact actions.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Crucially, we tied these actions directly to the Energy Score. By assigning point values
             to specific behaviors—like running appliances off-peak or adjusting the thermostat—we
             transformed passive tips into a gamified checklist that provides immediate positive
@@ -468,7 +468,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Home Energy Profile</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To improve model fidelity, we introduced the Home Energy Profile, enabling users to
             fine-tune their data by inputting specific device details, such as EV charging habits.
             This feature marked a significant technical milestone: it established the first reverse
@@ -498,7 +498,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>A single, intuitive metric</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Energy Score turns complex usage data into a clear 1–10 score, making performance easy
             to understand at a glance. Abstract, universal format enables personalized nudges,
             gamification, and progress tracking. Provides clear context and benchmarks, removing the
@@ -526,14 +526,14 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Laying the groundwork for scale</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To unblock the energy project, I spearheaded a parallel initiative to completely
             recreate the company's design system and color logic. By establishing a new, accessible,
             and flexible foundation, we unlocked the ability to design high-fidelity data
             visualizations that remained legible even at small scales. This infrastructure work was
             the key enabler for the v2.0 modular strategy.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             As we approached the v2.0 redesign, it became clear that the company's existing design
             system and color palette were insufficient for the "lightweight" and modular future we
             envisioned. The legacy colors were too heavy, and the component library lacked the
@@ -562,7 +562,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Driving adoption through integration</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The redesign reduced the interface density by approximately 40%, allowing energy
             components to leave the "Energy Tab" and live on the high-traffic Home Screen. By
             surfacing simplified status updates—such as "Solar producing" or "Grid usage
@@ -570,7 +570,7 @@ export default function VivintEnergy() {
             made energy awareness a passive, seamless part of the user's daily routine.
           </Text>
 
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             With a modular system in place, the vision for v3.0 moves from "observation" to
             "automation." The strategy is to embed energy intelligence into the operating system
             layer of the home. Instead of just showing users that energy rates are high, the system
@@ -589,7 +589,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>A unified smart home</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The ultimate vision connects the dots between disparate hardware. In v3.0, energy data
             becomes a trigger for security and comfort workflows—using solar production data to
             optimize cooling, or battery levels to determine security camera recording quality

@@ -18,7 +18,7 @@ export default function CaseStudyImpact({ stats, description }: CaseStudyImpactP
     <Stack gap="lg" py="lg">
       <Stack gap="xs">
         <Title order={2}>Impact & outcomes</Title>
-        <Text size="xl">
+        <Text fz={{ base: 'md', md: 'xl' }}>
           {description || 'Key performance indicators and outcomes achieved through this project.'}
         </Text>
       </Stack>
@@ -32,12 +32,12 @@ export default function CaseStudyImpact({ stats, description }: CaseStudyImpactP
               </Text>
 
               {stat.value && (
-                <Text fz={rem(48)} fw={800} lh={1}>
+                <Text fz={{ base: rem(38), md: rem(48) }} fw={800} lh={1}>
                   {stat.value}
                 </Text>
               )}
 
-              <Text size="lg" c="dimmed" lh={1.4}>
+              <Text fz={{ base: 'md', md: 'lg' }} c="dimmed" lh={1.4}>
                 {stat.description}
               </Text>
             </Stack>

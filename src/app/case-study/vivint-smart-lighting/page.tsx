@@ -37,12 +37,12 @@ export default function VivintSmartLighting() {
 
         <Stack py="xl">
           <Title order={2}>Overview</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Smart lighting is often complicated to install and difficult to manage. Vivint's new
             smart lighting solution solves the hardware problem with a unique "cover plate" switch
             that goes over existing toggles, and Zigbee-enabled bulbs.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             My challenge was to redesign the digital experience to match this simplicity. This
             involved creating intuitive onboarding flows for both the smart bulbs and the switches,
             as well as redesigning the control interfaces within the Vivint app.
@@ -51,7 +51,7 @@ export default function VivintSmartLighting() {
 
         <Stack py="xl">
           <Title order={2}>Key Goals</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Simplify the pairing process for multi-component lighting systems. Create a unified
             onboarding flow for bulbs, bridges, and switches. Validate the new UX through rigorous
             beta testing and user feedback cycles.
@@ -67,7 +67,7 @@ export default function VivintSmartLighting() {
 
         <Stack py="xl">
           <Title order={2}>User Research & Insights</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We kicked off the project with deep user research to understand how people mentally
             model their home lighting. We found that users think in terms of "Rooms" and "Fixtures"
             rather than individual bulbs or switches.
@@ -76,7 +76,7 @@ export default function VivintSmartLighting() {
 
         <Stack py="xl">
           <Title order={2}>Defining User Stories</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To ensure we covered all edge cases, we mapped out detailed user stories for both the
             Lights (bulbs) and the Switches. This helped us identify friction points in scenarios
             like "Replacing an existing smart bulb" vs. "Installing a fresh system."
@@ -92,7 +92,7 @@ export default function VivintSmartLighting() {
 
         <Stack py="xl">
           <Title order={2}>Beta Testing & Validation</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We ran several beta programs to validate our design direction. Beta 1 focused heavily on
             the installation experience ("Post Install"). We collected qualitative feedback via PDF
             reports and surveys to iterate on the flow.
@@ -101,7 +101,7 @@ export default function VivintSmartLighting() {
 
         <Stack py="xl">
           <Title order={2}>Final Outcomes</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The redesign significantly improved the installation success rate. By grouping devices
             into logical "Rooms" during setup and providing clear visual guidance for the physical
             switch installation, we reduced confusion and improved user satisfaction.

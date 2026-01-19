@@ -40,7 +40,7 @@ export default function Tarbox() {
 
         <Stack py="xl">
           <Title order={2}>Refining the brand</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The Squire Tarbox brand had a promising start, but required clearer direction and
             guidelines for style and implementation. To initiate the project, I began by organizing
             all of their existing brand assets to gain an understanding of how they present
@@ -80,7 +80,7 @@ export default function Tarbox() {
 
         <Stack py="xl">
           <Title order={2}>Components & architecture</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Outlining the core component blocks is a critical part of setting up the information
             architecture. The three primary products of the Squire Tarbox are: inn reservations,
             weddings, and private events. Setting up the information architecture around these
@@ -138,7 +138,7 @@ export default function Tarbox() {
 
         <Stack py="xl">
           <Title order={2}>Marketing ecosystem</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             A successful customer experience is one that not only works seamlessly, but delights the
             customer in the process. With the Squire Tarbox's small operational team, the attention
             and nurturing that improves a customer's experience is difficult to attain at scale. A
@@ -166,7 +166,7 @@ export default function Tarbox() {
 
         <Stack py="xl">
           <Title order={2}>The guest experience</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The objective is to represent the products and services with a consistent high level of
             quality from the first point a customer interacts with the brand, all the way through to
             payment and checkout, and on into getting feedback and reviews. With the website as the
@@ -217,7 +217,7 @@ export default function Tarbox() {
 
         <Stack py="xl">
           <Title order={2}>Improved performance</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Rebuilding and redesigning the Squire Tarbox website was a critical part of their
             success. The primary goals I focused on achieving were to improve the usability and
             accessibility of the site on desktop and mobile, offer clearer navigation and richer
@@ -238,7 +238,7 @@ export default function Tarbox() {
 
         <Stack py="xl">
           <Title order={2}>Detailed metrics</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Clean, reliable, and automatically updated data is enormously valuable to every
             business, from customer profile information to order information. All inquiry and order
             data is automatically synced with a custom database, to track ROI on advertising

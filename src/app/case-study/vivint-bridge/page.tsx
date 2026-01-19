@@ -37,7 +37,7 @@ export default function VivintBridge() {
 
         <Stack py="xl">
           <Title order={2}>Key challenges</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Through extensive beta testing, user feedback, QA audits, and in-house evaluations, our
             team uncovered significant issues impacting device setup success rates and onboarding
             times. Our challenge was magnified by the bridge hardware being manufactured by an
@@ -49,7 +49,7 @@ export default function VivintBridge() {
         </Stack>
 
         <Blockquote>
-          <Text size="xl">
+          <Text fz="xl">
             The primary issue was the bridge connection method (scan a QR code or manually enter the
             local MAC address), which created a significant blind spot—our app had no visibility
             into the bridge status or firmware updates.
@@ -68,7 +68,7 @@ export default function VivintBridge() {
 
         <Stack py="xl">
           <Title order={2}>OTA firmware updates</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The most severe consequence of the legacy bridge connection protocols are when bridge
             required over-the-air (OTA) firmware updates. These could take up to 15 minutes to
             complete, yet the app couldn't detect this activity or communicate it to users. This
@@ -93,7 +93,7 @@ export default function VivintBridge() {
 
         <Stack py="xl">
           <Title order={2}>Moving from QR codes to mDNS</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The breakthrough came when we replaced QR code scanning with mDNS connectivity. By
             leveraging mDNS to automatically discover devices on the same network, we eliminated the
             entire QR scanning process—resulting in fewer steps and significantly faster

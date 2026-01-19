@@ -39,13 +39,13 @@ export default function TinyTails() {
 
         <Stack py="xl">
           <Title order={2}>Refining a growing business</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The scope of this project began with considering how the business could become more
             streamlined to open in a new city the following year. This lead to designing an
             automated ordering process, while maintaining manual control of important aspects of the
             order.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Designing a seamless customer experience necessitated considering every detail of the
             customer's experience, from initial interest to purchase. This experience needed to
             coordinate equally as seamlessly with the operations and administration team.
@@ -100,13 +100,13 @@ export default function TinyTails() {
 
         <Stack py="xl">
           <Title order={2}>Simplified services</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Each service was defined by the number of people interacting with the animals. This
             informed how many animals and staff were needed. A large group of people required a
             larger number of animals, to ensure the safety of the animals and respect not
             over-handling them. This, in turn, required more staff members to run the event.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             One of the biggest challenges Tiny Tails to You faced was bargain shoppers. Unlike other
             services, where customers can shop sizes and prices, Tiny Tails to You events have a
             size requirement. Part of their time was spent explaining to customers why they had to
@@ -145,7 +145,7 @@ export default function TinyTails() {
 
         <Stack py="xl">
           <Title order={2}>The lead form</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             On average, customers were spending upwards of thirty minutes filling out the
             reservation form on their website. Thirty minutes is an absurdly long time to spend
             ordering a luxury / playful service. We needed a way to reduce the time for each
@@ -164,14 +164,14 @@ export default function TinyTails() {
             />
           </Center>
 
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The lead form submits the information to their CRM database, and passes the information
             to hidden fields on the "Experience" form. This way customers are seamlessly brought
             into the more complicated experience form, and if they bounce or abandon the experience
             form, Tiny Tails to You is still able to capture their information and put that lead
             into a sales funnel.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Once implemented, the average time customers spent on their forms went down by over 68%
             percent. The average time spent on the lead form is around 90 seconds, and the
             reservation form is just under 7-8 minutes. The experience form also presents customers
@@ -199,13 +199,13 @@ export default function TinyTails() {
 
         <Stack py="xl">
           <Title order={2}>Automated efficiency</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Automation is a key part of running a business at any scale. With clean, organized, and
             structured data we were able to setup automated marketing emails, automated service and
             transactional messages, weather alerts, feedback requests, dynamic invoice creation and
             sends, reminders, internal company alerts, and more.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Staff are able to process customer orders significantly faster, with the average
             processing time becoming 12 times faster, from almost an hour per customer to just under
             5 minutes per customer.
@@ -241,7 +241,7 @@ export default function TinyTails() {
 
         <Stack py="xl">
           <Title order={2}>Analytics</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             With every customer data point, interaction, and touchpoint saved in a database, we are
             able to build custom reporting to analyze the data and get insights on customer behavior
             and business performance. This has allowed Tiny Tails to You to understand their target
@@ -249,7 +249,7 @@ export default function TinyTails() {
             efforts, and more.
           </Text>
 
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The analytics is fully customizable through Airtable, allowing staff to build new
             insight reports, or update their dashboard as the company evolves and grows.
           </Text>
@@ -272,13 +272,13 @@ export default function TinyTails() {
             </Box>
           </Stack>
           <Title order={2}>A unified brand experience</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The brand identity was crafted to be seamless across both digital and physical
             touchpoints. The playful illustrations, warm color palette, and friendly tone of voice
             on the website set a specific expectation for the customer: a service that is
             professional, safe, and delightfully fun.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             This experience is carried through to the event itself, where staff uniforms, signage,
             and even the animal handling mats reflect the same visual language. By aligning the
             digital user experience with the in-person service, we created a cohesive brand
@@ -307,14 +307,14 @@ export default function TinyTails() {
 
         <Stack py="xl">
           <Title order={2}>The web experience</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The website was designed to showcase an organized, clean, and simple experience. The
             goal is to translate the ease, simplicity, and clarity of the user experience all the
             way through to the event. Every event is highly organized and efficient, while also
             being adorable, fun, and engaging.
           </Text>
 
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             At its core, the purpose of the website is to get customers to fill out the Availability
             (lead) form. With that in mind, every page converts the visitor to this form. The
             evolving reasons for why they should complete the form range from checking availability,
@@ -355,13 +355,13 @@ export default function TinyTails() {
 
         <Stack py="xl">
           <Title order={2}>The foundation for growth</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The transformation of Tiny Tails to You went far beyond a visual refresh. By automating
             the core of their logistics and sales pipeline, the owners, Chelsea and Joe, were able
             to shift their focus from repetitive administrative tasks to business development and
             team culture.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The streamlined workflow significantly reduced stress for their staff, fostering a
             happier work environment and allowing them to deliver a higher quality of service.
             Ultimately, these changes provided the foundation for sustainable growth, proving that

@@ -36,7 +36,7 @@ export default function ShopifyPricing() {
 
         <Stack py="xl">
           <Title order={2}>Legacy design</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The legacy (current) design had not been worked on in nearly two years. The plans did
             not present the monthly/yearly discounts, high-level plan differentiation, and some of
             the features were vague and incorrect in the feature table. The CTA's were not prominent
@@ -56,7 +56,7 @@ export default function ShopifyPricing() {
 
         <Stack py="xl">
           <Title order={2}>2012 to 2020</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The evolution of Shopify's pricing page is interesting to analyze. The plan names
             themselves changed over time, as well as the price points. The layout of the page
             changed as well. Originally the plans were displayed in vertical cards, later replaced
@@ -78,7 +78,7 @@ export default function ShopifyPricing() {
 
         <Stack py="xl">
           <Title order={2}>User research & competitor analysis</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The research team interviewed a number of users, leads, and volunteers across industries
             and demographics. One of the research questions was what each participant's expectation
             of a pricing page was, and what they wanted to get from this page. The majority expected
@@ -89,7 +89,7 @@ export default function ShopifyPricing() {
             familiar with industry terms we are accustomed to here in the United States, so
             including some definitions of some key terms would be helpful.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I did a review of a number of competitors pricing pages, from Zapier to Airtable to
             Mailchimp, etc. The monthly/yearly toggle (with discounts), feature table, column
             layout, CTA's in each plan card, and FAQ design and components were consistent across
@@ -108,7 +108,7 @@ export default function ShopifyPricing() {
 
         <Stack py="xl">
           <Title order={2}>Conversion rate optimizations</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             In order to validate certain user interface directions we ran several CRO tests with the
             United States audience. These tests included changing the "start your free trial" button
             to including an email field, adding credit card rates to the plan cards, adding a CTA to
@@ -136,13 +136,13 @@ export default function ShopifyPricing() {
 
         <Stack py="xl">
           <Title order={2}>Redesign</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The audience for this page is vast, spanning casual shoppers, new leads, competitors,
             and even current paying customers looking to see if they should upgrade or downgrade. We
             needed to do a better job explaining what was included in each plan, and how these
             different features influenced the price.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Following up on the CRO experiments, the redesign introduced credit card rates in the
             plan cards, free trial CTA's for each plan, a "compare plan" button to navigate the user
             halfway down the page to the feature table, the main features for each plan (in each
@@ -150,7 +150,7 @@ export default function ShopifyPricing() {
             rates, more prominent plan cards, social proof logo garden, a recommended badge, a more
             bold headline, and a better user experience on both desktop and mobile.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Shopify Plus was made as a full-width section on the page, further differentiating that
             plan from the others (since it's at a significantly higher price point), as well as
             featuring it more boldly and prominently.
@@ -177,7 +177,7 @@ export default function ShopifyPricing() {
 
         <Stack py="xl">
           <Title order={2}>Rebrand design updates</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The layout of the pricing page was explored and validated with the existing (legacy)
             branding, so the rebrand was a simple matter of "reskinning" the pricing page components
             with the new style. In general the new brand is bigger and more bold, so heavier font

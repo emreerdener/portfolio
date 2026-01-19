@@ -37,13 +37,13 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>Auditing the legacy app</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The project directive was strict: deliver a complete technical rewrite that preserves
             all existing functionality while modernizing the codebase. To ensure zero feature
             regression, I conducted a comprehensive visual audit, cataloging every screen, error
             state, and interaction flow of the legacy application.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I translated this audit into a robust set of user stories that served as our "source of
             truth." These stories defined the functional requirements for complex features like vamp
             creation, track mixing, and tempo adjustment. This documentation was critical for
@@ -104,7 +104,7 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>Removing barriers to entry</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The previous design relied on confusing UI patterns, such as a static arrow pointing to
             a generic plus button, which left new users unsure of how to begin. To streamline access
             and reduce data liability, we removed user accounts entirely in favor of a direct 'Show
@@ -161,7 +161,7 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>Richer, clutter-free sampling</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Previously, sample songs were permanently injected into a user's library, creating
             unnecessary clutter. I introduced a dedicated samples page accessible directly from the
             'Get Started' screen, allowing users to explore the app's capabilities without polluting
@@ -204,7 +204,7 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>A unified repertoire hub</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The shows dashboard is the performer's home base. I moved away from dense lists to
             spacious, information-rich cards that display key details—like song count and
             duration—at a glance. To handle growing libraries, I introduced a dedicated search bar
@@ -247,18 +247,18 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>A visual command center</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I transformed the show dashboard into a rich, visual hub. A high-fidelity cover image
             and key metadata now ground the experience, while song lists have been upgraded to
             detailed cards featuring audio waveforms. This allows users to visually identify tracks
             instantly and see the "shape" of the music before they even press play.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We also refactored member management to align with strict privacy standards. By removing
             personal user data requirements, we created a seamless, account-free invite system that
             maintains security without the friction of traditional sign-up flows.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Finally, the activity log was reimagined from a dense text list into a structured,
             searchable UI. The new design uses intuitive icons to visualize specific changes—like
             vamps or cuts—at a glance, turning a static list of edits into a powerful version
@@ -285,7 +285,7 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>The reimagined rehearsal studio</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To declutter the interface, I bifurcated the core experience into two distinct hubs:
             'Rehearse' and 'Score.' In the focused 'Rehearse' view, I replaced the static playback
             bar with a dynamic audio waveform, giving performers a visual map of the song's dynamics
@@ -326,7 +326,7 @@ export default function BTRES() {
         />
 
         <Stack py="xl">
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             In a fast-paced rehearsal, reading small text is challenging, so we replaced error-prone
             manual inputs with accessible bottom sheets for Tempo and Transposition. These provide
             ample space for sliders and validation, while the interface itself now communicates
@@ -334,7 +334,7 @@ export default function BTRES() {
             modified tempo, while a dynamic piano graphic provides a concrete visual reference for
             key changes, removing the need to mentally calculate semi-tones.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Finally, I overhauled the looping experience to be both visual and semantic. Users can
             now set loops by dragging a yellow container directly over the audio waveform or by
             selecting specific song sections (e.g., 'Up where they walk') by name. This flexibility
@@ -413,7 +413,7 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>A unified table of contents</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             In the legacy app, the 'Score' view was an isolated environment that shifted abruptly
             from the app's standard dark mode to a blinding white editing UI. Worse, this view was
             gated behind permissions, meaning only editors could see the song's structure. I
@@ -423,7 +423,7 @@ export default function BTRES() {
             to see the song's progression and jump to specific sections effortlessly, regardless of
             their permission level.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We also resolved critical logic and usability flaws. The legacy app used confusing
             metaphors—like a 'sun' icon to indicate status changes—and allowed impossible states,
             such as placing multiple 'Attacca' (immediate transition) markers anywhere in the stack.
@@ -431,7 +431,7 @@ export default function BTRES() {
             switch at the bottom of the list. We also introduced powerful filters, making it easy to
             sort through markers, vamps, and cuts without getting lost in the data.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The redesign synthesizes these features into a single, intuitive interface that adapts
             to the user. While everyone has access to the navigation timeline, only those with edit
             permissions see the 'Add' button for inserting elements like markers, vamps, or repeats.

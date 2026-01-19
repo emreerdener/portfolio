@@ -15,7 +15,7 @@ export default function ChallengeProposal({ problem, proposal }: ChallengePropos
             <Title order={2}>Challenge</Title>
             <IconExclamationCircleFilled size={32} color="orange" />
           </Group>
-          <Text size="xl">{problem}</Text>
+          <Text fz={{ base: 'md', md: 'xl' }}>{problem}</Text>
         </Stack>
       </Blockquote>
 
@@ -26,7 +26,7 @@ export default function ChallengeProposal({ problem, proposal }: ChallengePropos
             <IconCircleCheckFilled size={32} color="green" />
           </Group>
 
-          <Text size="xl">{proposal}</Text>
+          <Text fz={{ base: 'md', md: 'xl' }}>{proposal}</Text>
         </Stack>
       </Blockquote>
     </Stack>

@@ -38,7 +38,7 @@ export default function ShopifyWebsitePlatform() {
 
         <Stack py="xl">
           <Title order={2}>Product roadmap and MVP</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             One of the interesting challenges in this project has been finding the balance between
             limitation and power. On the one hand we want to empower users across the company to
             manage pages on the website, but on the other hand we want to limit them in such a way
@@ -97,7 +97,7 @@ export default function ShopifyWebsitePlatform() {
 
         <Stack py="xl">
           <Title order={2}>The initial design</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The initial design was explored by two designers for several months prior to me joining
             the team. To get a sense of the project, the design decisions, and the interface, I
             redesigned the product. While doing this, I updated some design elements and prototyped
@@ -120,7 +120,7 @@ export default function ShopifyWebsitePlatform() {
 
         <Stack py="xl">
           <Title order={2}>Asset library</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Including an asset library is part of the initial release of the CMS product, to allow
             users to store and manage their assets. Until the asset library is built into the CMS,
             all image components within a page section are individual file uploads. Once the asset
@@ -179,7 +179,7 @@ export default function ShopifyWebsitePlatform() {
 
         <Stack py="xl">
           <Title order={2}>Pages in the CMS</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Individual pages are created within the CMS on Shopify's Hydrogen React-based framework,
             and managed through GitHub. The CMS is the user interface between page level components,
             page settings, and Github pull requests. Pages are designed using page sections. These
@@ -242,7 +242,7 @@ export default function ShopifyWebsitePlatform() {
 
         <Stack py="xl">
           <Title order={2}>Localization</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             One of the main features that led to designing and building a custom CMS with Shopify
             was the need to create pages for the brochure site, translate, and customize each page
             for localized content across all regions and markets around the world. Localized pages
@@ -265,7 +265,7 @@ export default function ShopifyWebsitePlatform() {
 
         <Stack py="xl">
           <Title order={2}>CMS collections and items</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             CMS collections contain a library of CMS items, to organize and manage content. This
             allows teams to create content that can be used across website pages, and be updated
             across the board. CMS items are then dynamically added to page templates, and

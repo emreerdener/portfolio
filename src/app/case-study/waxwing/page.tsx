@@ -37,7 +37,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>User stories</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Given the variable and unique nature of the company's products (bulk wax), it was
             especially important to understand the client's users, their needs, and business
             workflows. The company's three primary user personas are Admin staff, Sales staff, and
@@ -58,7 +58,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>Design system</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The design system uses Google's Material 3 design system, with some customizations like
             color, typography, and grid spacing. Starting with a predefined design system allows the
             development team a much faster development cycle, since most of the components are
@@ -86,7 +86,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>Information architecture</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The product was designed so that "Orders" are the central pillar, supported by several
             different data types. For example, customer records, products, carriers, and suppliers
             all compile into what fills out an order. In other words, these data types are the
@@ -108,7 +108,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>Security and access control</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             This product is an internal tool, so users should not be able to sign up without having
             to request access from a system admin. Because of this, users are presented with a login
             screen where they can either log in or request access. Requesting access sends account
@@ -127,7 +127,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>Dashboard</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The home dashboard gives a quick snapshot of the account, with big stats for total
             orders, total sales, and average order value. Line graphs for customer orders and
             purchase orders can be filtered by dates. A recent orders table displays 10 of the most
@@ -145,7 +145,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>Settings</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Settings opens as a nearly fullscreen modal, which allows users to update account
             settings without needing to leave where they were in the app. Within settings is a
             user's individual profile page (and all of their connected orders), staff user accounts,
@@ -163,7 +163,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>Orders</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Orders are the centralizing content element in the app. All data sources ladder up to an
             order. Orders can be found from the orders overview page, which is a table of order
             records that users can search, sort, and filter. New orders can be created from the
@@ -207,7 +207,7 @@ export default function Waxwing() {
 
         <Stack py="xl">
           <Title order={2}>Data sources</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Products, customers, suppliers, and carriers are the data sources that comprise orders.
             Each data source has it's own "profile" page, where users can manage the information
             associated with that record. For example, products include product data like SKU, name,

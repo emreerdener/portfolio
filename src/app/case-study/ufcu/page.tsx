@@ -38,7 +38,7 @@ export default function UFCUBankingApp() {
 
         <Stack py="xl">
           <Title order={2}>Lightweight design system</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Defining color tokens, typography styles, and components is key to iterating and
             managing a design file as it scales. For example, if a color needs to change, you can
             simply update the base color token and all instances where that token was used are
@@ -77,7 +77,7 @@ export default function UFCUBankingApp() {
 
         <Stack py="xl">
           <Title order={2}>Redesigning the mobile experience</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The mobile app needed a range of important updates to the user interface and the user
             experience. Certain areas of the product left the user with no way to navigate back once
             there, buttons and links were way too small to easily use on a mobile device, the layout
@@ -105,7 +105,7 @@ export default function UFCUBankingApp() {
 
         <Stack py="xl">
           <Title order={2}>Login and Express View</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The improvements to the login page are to make the interface more accessible, by
             increasing the size and space for all of the interactive elements on the page, as well
             as presenting a clearer visual language to the user. Other improvements are to
@@ -114,7 +114,7 @@ export default function UFCUBankingApp() {
             include a more accessible phone link in the top navigation, and give the user access to
             Express View.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Express View is a quick snapshot of a user's account balances and recent transactions,
             without needing to log in. In the previous app design, Express View opens once the app
             is launched--if the user leaves Express View there is no way back to this view without
@@ -155,7 +155,7 @@ export default function UFCUBankingApp() {
 
         <Stack py="xl">
           <Title order={2}>Main menu and settings</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The order of the menu items in the main nav have been rearranged to position higher
             priority elements at the top (like contact info), and the interface takes up the full
             screen width, allowing more room for icons, labels, and interactions. Settings has been
@@ -222,7 +222,7 @@ export default function UFCUBankingApp() {
 
         <Stack py="xl">
           <Title order={2}>Accounts</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The redesign focused on bringing clarity to account balances and transactions. This was
             accomplished by increasing the size of the account balance number and improving the
             layout to more easily parse the information. Transactions are now grouped by date, which
@@ -255,7 +255,7 @@ export default function UFCUBankingApp() {
 
         <Stack py="xl">
           <Title order={2}>Transfers and deposits</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Transfers and deposits in the original app started with a modal that was not optimized
             for mobile: the buttons were too close together and the cancel button was difficult to
             tap. Additionally, users were not able to see a history of the transfers or deposits
@@ -310,7 +310,7 @@ export default function UFCUBankingApp() {
 
         <Stack py="xl">
           <Title order={2}>Spending and activity</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The activity section has been completely redesigned to be integrated into the product.
             The previous app was designed where transactions in the Account section were not managed
             the same as from the "Money Manager" section. The two remained separated, which meant

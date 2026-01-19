@@ -43,7 +43,7 @@ export default function Tripway() {
 
         <Stack py="xl">
           <Title order={2}>Actionable data</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Mapping out the relation between data points, what inputs are necessary, and how data is
             stored was an important step in setting up the conceptual foundation of the user
             interface. This provided a way to put a view on the data, which streamlined the product
@@ -63,7 +63,7 @@ export default function Tripway() {
 
         <Stack py="xl">
           <Title order={2}>Conceptual framework</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Mapping out the database schema defines different ways the product is organized. For
             example, the Trips table lists each trip record that expenses are linked with. When
             considering the layout of the user interface, Trips is represented as its own section. A
@@ -88,7 +88,7 @@ export default function Tripway() {
 
         <Stack py="xl">
           <Title order={2}>Designing the interface</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I started this project working directly in Figma. I began with the trips page,
             representing all of the data points available for that page. These included: the trip
             name, description, location, category tags, the dates, the expense total, which profiles
@@ -113,7 +113,7 @@ export default function Tripway() {
 
         <Stack py="xl">
           <Title order={2}>Interactions & prototype</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Interactions were carefully chosen based on the visual input from the user interface.
             Pages that push in from the right side can be closed by swiping from the left side, tabs
             pan the corresponding way, fly up menus close down, etc. More importantly are the
@@ -133,7 +133,7 @@ export default function Tripway() {
 
         <Stack py="xl">
           <Title order={2}>User testing</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I conducted a series of user tests with the prototype to get some feedback on the user
             experience and learn more about the app's potential users. The main test asked users to
             sign in and pay for an expense request. This required users to navigate through the app,
@@ -160,7 +160,7 @@ export default function Tripway() {
 
         <Stack py="xl">
           <Title order={2}>Creating a travel brand</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The project was originally called "Trippo" which is the inspiration for the hippo
             graphics and animations. The logo mark is a hippo face and a suitcase (easier to see in
             the animation below). Due to trademarks the project had to be renamed to Tripway. The

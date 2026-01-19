@@ -37,7 +37,7 @@ export default function AdminCheckout() {
 
         <Stack py="xl">
           <Title order={2}>UX goals</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The main focus of this project was to enhance the user experience by revamping the user
             interface. The objective was to provide users with a clearer understanding of the plan
             options they were choosing. The existing interface lacked a confirmation prompt for
@@ -58,7 +58,7 @@ export default function AdminCheckout() {
 
         <Stack py="xl">
           <Title order={2}>Billing cycle</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The legacy checkout experience had a billing cycle component that offered options
             ranging from monthly to three-year billing cycles, causing cognitive overload and
             decision fatigue for new users signing up for a plan. There was a "Recommended" badge on
@@ -84,7 +84,7 @@ export default function AdminCheckout() {
         </Center>
 
         <Stack py="xl">
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Less than 1% of users interacted with the longer billing cycles, guiding a redesign that
             reduced decision fatigue and improved checkout conversions. The "Recommended" badge was
             replaced with a discount percentage badge, and the component now has a default, active,
@@ -102,7 +102,7 @@ export default function AdminCheckout() {
 
         <Stack py="xl">
           <Title order={2}>Optimizing payment methods</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The primary improvement made to the payment method was to bring the credit card input
             form inline, instead of launching within a modal. With the new inclusion of the business
             address in the checkout flow, we can now introduce a shortcut in the credit card form,
@@ -122,7 +122,7 @@ export default function AdminCheckout() {
         </Center>
 
         <Stack py="xl">
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Each payment type requires it's own user flow, from adding a credit card (and the
             technical and security considerations), to integrating an oauth to connect PayPal, to
             connecting the UPI payment method (in India) as an async connection, to connecting ACH
@@ -155,7 +155,7 @@ export default function AdminCheckout() {
 
         <Stack py="xl">
           <Title order={2}>Summary card</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The plan summary card requires several improvements. Firstly, the total amount to be
             charged is redundantly displayed at the top and bottom of the card, which should be
             addressed. Furthermore, the phrase "Good Shopify discounts" is unclear and does not
@@ -174,7 +174,7 @@ export default function AdminCheckout() {
         </Center>
 
         <Stack py="xl">
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To resolve these issues, the redesign involves the removal of redundant and unnecessary
             information, including the toggle component, subtotal, and alert messages. The
             typography treatment has been updated to ensure consistency with the design system.
@@ -194,7 +194,7 @@ export default function AdminCheckout() {
 
         <Stack py="xl">
           <Title order={2}>Checkout review</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The redesigned checkout experience is now more efficient, streamlined, and consistent
             across all user interactions and components. Immediate validation for each input form
             has been implemented through a step-by-step process, making the information architecture
@@ -229,7 +229,7 @@ export default function AdminCheckout() {
 
         <Stack py="xl">
           <Title order={2}>Sequencing release phases and experiments</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Phase 1 is an immediate release to ship fixes to the outdated user experience. Although
             the billing cycle component was identified as problematic, it was deprioritized to phase
             two to expedite development. In phase 2, the new billing cycle and summary card

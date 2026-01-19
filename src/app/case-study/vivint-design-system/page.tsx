@@ -39,7 +39,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>A fractured foundation</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             For four years, the design system had been trapped in a cycle of incomplete iterations.
             It was a "Frankenstein" creation—cobbled together from legacy files, half-baked new
             elements, and disjointed styles. The organization was chaotic; instead of a structured
@@ -58,7 +58,7 @@ export default function VivintEnergy() {
         />
 
         <Stack py="xl">
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The implementation itself was a major risk. Components were unreliable and
             inconsistent—primary and secondary buttons were built as separate components rather than
             variants, meaning that swapping between them destroyed existing text and overrides.
@@ -76,13 +76,13 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>The atomic rebuild</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I stepped in to stabilize the foundation, starting by rebuilding every single component
             from scratch. This was a "clean slate" approach that allowed me to strip away years of
             bloated references and buried layers. I standardized the architecture, implementing
             consistent spacing tokens, color tokens, and refined styles across the board.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Crucially, I fixed the logic of the components themselves. Props became consistent and
             intuitive, and variant switching was non-destructive—preserving values when a designer
             toggled between states. By simplifying the component construction, I made the system
@@ -114,13 +114,13 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>System architecture & the UI kit</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To solve the bloating issue, I restructured the entire ecosystem. The previous approach
             attempted to cram every possible layout into the core system, resulting in an unwieldy
             mess. I introduced a clear separation of concerns: an Atomic Design System for core
             elements (buttons, badges, inputs) and a separate UI Kit for complex, composed patterns.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             This shift clarified the contribution model. The Atomic System was locked down,
             requiring a formal proposal to update, ensuring stability. The UI Kit, however, was open
             for contribution, inviting designers from across the company to add patterns and share
@@ -135,7 +135,7 @@ export default function VivintEnergy() {
         />
 
         <Blockquote>
-          <Text size="xl">
+          <Text fz="xl">
             I introduced the name 'Summit' as a symbolic nod to reaching the peak of the previous
             'Olympus' era. Practically, this rebrand was essential for discoverability; with so many
             deprecated 'Olympus' versions cluttering Figma, a simple 'v5' release would have been
@@ -146,7 +146,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Rearchitecting colors</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             After stabilizing the components, I tackled the most fractured part of the system:
             color. The legacy color model was based on rigid inverses—Orange1 (light) mapped to
             Orange3 (dark)—rather than semantic needs. This often resulted in broken contrast ratios
@@ -167,7 +167,7 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>The Designer experience</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I pivoted the strategy to focus on the designer experience first. I interviewed
             engineering teams to understand their handoff pain points, but ultimately decided that
             if the tool wasn't usable for designers, it would never reach engineers correctly. I
@@ -224,12 +224,12 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Smart tokens & dark mode</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The new color system unlocked significant efficiency gains. Previously, "Dark Mode" was
             handled by creating duplicate variants for every component, doubling the maintenance
             burden. With semantic tokens, I defined the light/dark mappings at the variable level.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             I also implemented "Token Scoping," ensuring that text color tokens only appeared in the
             text property panel, and background tokens only in the fill panel. This significantly
             reduced clutter and cognitive load. Now, switching between light and dark modes happens
@@ -262,13 +262,13 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Unifying the ecosystem</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The legacy system had a critical blind spot: it was built exclusively for mobile apps,
             leaving Vivint's physical hardware interfaces—like the Smart Hub Panel and Thermostat—
             stranded with divergent designs. This fragmentation broke the continuity of the user
             experience as they moved from their phone to their wall.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Summit was architected to be platform-agnostic. By leveraging primitive tokens and
             flexible component definitions, we extended the system to support not just iOS and
             Android, but also the embedded environments of our IoT devices. Now, whether a user is
@@ -286,13 +286,13 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>Documentation & catalog</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             To ensure long-term adoption, I moved away from the chaotic sticker sheet and built a
             web-like prototype catalog. Every atomic component was given its own dedicated page
             containing the component itself, a quick overview of its use cases, specific "Do's and
             Don'ts," and accessibility guidelines.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             This resource became the single source of truth for both designers and engineers. It
             bridged the gap between the visual tool and the code implementation, ensuring that the
             rigorous work done to fix the system was clearly communicated and easy to follow.
@@ -317,18 +317,18 @@ export default function VivintEnergy() {
 
         <Stack py="xl">
           <Title order={2}>A new level of velocity</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             This overhaul did more than just clean up files; it fundamentally changed how the team
             operates. We moved from a culture of hesitation—where the system was viewed as a
             liability—to one where it is a trusted strategic asset.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             By eliminating the massive technical and visual debt that had accumulated, I established
             a reliable backbone for the product. This shift not only restored trust between design
             and engineering but also unlocked a new level of velocity, empowering the entire team to
             build with speed, consistency, and confidence.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             This foundation was immediately put to the test—and proved its value—by enabling the
             rapid design and development of the new Energy experience.
           </Text>
@@ -346,7 +346,7 @@ export default function VivintEnergy() {
         </Stack>
 
         <Blockquote color="green">
-          <Text size="xl">
+          <Text fz="xl">
             In the span of two months, I took a system that had been floundering for four years and
             transformed it into a stable, scalable product for every Vivint product team.
           </Text>

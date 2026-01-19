@@ -38,7 +38,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Activating a new growth lever</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The aim of the Shopify merchant referral program is to leverage an existing referral
             user behavior and activate a new growth channel for Shopify. Our research showed that
             organic referrals already accounted for around 29% of new merchant signups, with 59% of
@@ -59,7 +59,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Referrers and referees</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             By considering the likely users of the referral program, we gained valuable insights
             that guided our product thinking. We focused on the primary user groups in Shopify's
             admin, identified from preexisting research and reasonable assumptions. These user
@@ -110,7 +110,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Experimentation</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The objective of phase 1 was to validate the investment into a full backend
             infrastructure and product with minimal development resources. The experiment ran for
             approximately 7 weeks in the US and UK for all users, where they were assigned a variant
@@ -138,7 +138,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Initial admin entry points</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             As a growth product, careful consideration must be given to its positioning within the
             overall user experience. It should enhance the core experience and avoid disrupting it.
             Initially, we considered integrating the program into the admin settings, but ultimately
@@ -160,7 +160,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Incentive variants</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We conducted tests to determine which incentive variant generated more referral
             engagement, in addition to testing user interest in the program. Variant A offered a
             $200 reward for a referral, while variant B offered a $100 reward. We also planned to
@@ -187,7 +187,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Gauging user interest</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The primary objective of the project's first phase was to confirm the users' interest in
             a merchant referral program. Prior research had shown that users were already informally
             referring to Shopify, but there was no concrete data on the extent of this referral
@@ -210,7 +210,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Phase 2</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The second phase aimed to refine the user experience, add new features, and increase
             user engagement and conversion rates. The primary objective was to integrate the sharing
             experience (copying and sharing the referral link) into the native product and create an
@@ -229,7 +229,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Share sheet</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             An important and notable improvement in phase 2 was the introduction of a share sheet or
             modal directly in the admin. Previously, to generate a merchant's unique referral link,
             a user was required to leave the admin and go to a landing page with URL parameters.
@@ -259,7 +259,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>Services Internal</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The initial experiment (phase 1) was conducted with several manual and time-consuming
             (and potentially error prone) tasks, like compiling email lists, tracking referred
             accounts, etc. This process could not be scaled well or efficiently. Once the program
@@ -281,7 +281,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>North star</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The north star of the merchant referral program explored the need for a centralized
             incentive platform. Referrals are a conceptual currency, with rewards changing from a
             store level to a user level. User level rewards meant creating a "Rewards and Invites"
@@ -310,7 +310,7 @@ export default function MerchantReferrals() {
 
         <Stack py="xl">
           <Title order={2}>100% release</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The merchant referral program has been successfully launched to all users on Shopify,
             and is an effective new growth lever. The user acquisition cost is considerably less
             (compared to paid ads) and users brought in through a referral are much more likely to

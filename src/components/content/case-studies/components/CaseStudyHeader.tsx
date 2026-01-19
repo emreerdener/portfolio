@@ -47,10 +47,10 @@ export default function CaseStudyHeader({
             </Text>
           </Group>
           <Stack>
-            <Title order={1} fz="2.8rem" lh={1.1} fw={800}>
+            <Title order={1} fz={{ base: '2.2rem', md: '2.8rem' }} lh={1.1} fw={800}>
               {title}
             </Title>
-            <Text size="xl">{description}</Text>
+            <Text fz={{ base: 'md', md: 'xl' }}>{description}</Text>
           </Stack>
 
           {prototypeUrl && (

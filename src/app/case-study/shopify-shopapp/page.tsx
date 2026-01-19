@@ -38,7 +38,7 @@ export default function ShopifyShopApp() {
 
         <Stack py="xl">
           <Title order={2}>Key user groups</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             We have identified four primary user groups that this feature will primarily cater to:
             individuals (personal), groups, friends, and influencers. Individual users will utilize
             this feature to create a personalized log of products they wish to keep track of for
@@ -61,7 +61,7 @@ export default function ShopifyShopApp() {
 
         <Stack py="xl">
           <Title order={2}>Profiles</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             In the Shop app, curator profiles refer to public profiles available to all users who
             participate. These profiles can be made either private or public, allowing users to
             share their lists or profiles on social media. This provides Shop users with the option
@@ -81,7 +81,7 @@ export default function ShopifyShopApp() {
 
         <Stack py="xl">
           <Title order={2}>Collections</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             In the Shop app, collections refer to saved product lists. Currently, users can only add
             products to a single "Favorites" list by selecting the "favorite" option on a product.
             However, with the introduction of the collection feature, users can create multiple
@@ -110,7 +110,7 @@ export default function ShopifyShopApp() {
 
         <Stack py="xl">
           <Title order={2}>Introducing the feature</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Curator profiles and creating collections can be introduced to the user in two ways. The
             first is through a new option in their account: Curator profile. This will prompt the
             user to create their curator profile and afterwards create a collection. The second is
@@ -141,14 +141,14 @@ export default function ShopifyShopApp() {
 
         <Stack py="xl">
           <Title order={2}>Opportunities</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The curator profiles feature in the Shop app aims to provide several advantages.
             Firstly, it offers a user-generated approach to help more users navigate and discover
             products within the Shop app. Currently, the process of creating a Collab collection
             with an influencer or celebrity can be arduous and time-consuming, which the curator
             profiles feature can alleviate.
           </Text>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Secondly, users can create public or private collection lists and profiles, expanding
             upon the "favorites" functionality and allowing users to organize and curate specific
             product lists. Publicly shared collection lists can drive more users to the Shop app. To

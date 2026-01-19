@@ -11,7 +11,7 @@ export default function CaseStudySkills({ skills }: CaseStudySkillsProps) {
     <Stack gap="lg" py="xl">
       <Stack gap="xs">
         <Title order={2}>Skills & competencies</Title>
-        <Text c="dimmed" size="lg">
+        <Text c="dimmed" fz={{ base: 'md', md: 'lg' }}>
           Key areas of expertise and methodologies applied during this project.
         </Text>
       </Stack>

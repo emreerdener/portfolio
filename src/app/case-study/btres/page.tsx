@@ -37,7 +37,7 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>Branding</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             Designing the branding began with the company's name "better than." They were looking
             for a logo and a brand mark to include as a badge on the gauge dashboard. "Resolutions"
             was added to the company name, which resulted in the "Res" in the final logo. Red was
@@ -74,7 +74,7 @@ export default function BTRES() {
 
         <Stack py="xl">
           <Title order={2}>Animations and style</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The dials were designed as stackable shapes with linear and radial gradients. The layers
             could be rendered as CSS with CSS animations to give motion to the gauge displays. CSS
             styling was key because the unit was capable of hosting it's own CSS, without needing to

@@ -38,7 +38,7 @@ export default function ShopifyProductivityIncentives() {
 
         <Stack py="xl">
           <Title order={2}>User journey</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The user journey for early-stage merchants on Shopify begins when they sign up or log in
             to the Admin. Incentives are presented to the merchant within the Setup Guide on an
             individual task. Currently, we are offering $50 App Store credit as part of the initial
@@ -108,7 +108,7 @@ export default function ShopifyProductivityIncentives() {
 
         <Stack py="xl">
           <Title order={2}>Key milestones</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             When new users sign up for a Shopify store, they are presented with the initial Setup
             Guide, which will include our incentives. However, users will only receive a maximum of
             one incentive at a time. The tasks featured in the Setup Guide have been selected
@@ -126,7 +126,7 @@ export default function ShopifyProductivityIncentives() {
 
         <Stack py="xl">
           <Title order={2}>User experience</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             For each task featured in the Setup Guide, the incentive user experience adheres to a
             similar pattern. A small badge displaying the incentive offer (e.g., "Get $50 credit")
             is displayed on the task. Users can view additional details about the incentive by
@@ -157,7 +157,7 @@ export default function ShopifyProductivityIncentives() {
 
         <Stack py="xl">
           <Title order={2}>Incentive guidelines</Title>
-          <Text size="xl">
+          <Text fz={{ base: 'md', md: 'xl' }}>
             The current project serves as the cornerstone for the future of incentives in the Admin.
             The UI design has been thoughtfully crafted to facilitate the use of a flexible
             "incentive" feature across numerous surfaces and components. This UX reintroduces links
