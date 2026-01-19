@@ -16,7 +16,7 @@ export default function AboutLayout() {
           <Box className={classes.aboutWrapper}>
             <AboutMe
               titleSize={{ base: '2.5rem', sm: '3.5rem' }}
-              bodySize="1.4rem"
+              bodySize={{ base: 'lg', md: '1.4rem' }}
               emojiSize="1.8rem"
               funFactSize="lg"
             />
