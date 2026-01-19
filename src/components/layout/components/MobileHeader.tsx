@@ -32,7 +32,7 @@ export default function MobileHeader({ opened, toggle }: MobileHeaderProps) {
               Emre Erdener
             </Title>
             <Text size="xs" c="dimmed">
-              erdener.emre@gmail.com
+              hello@emre.design
             </Text>
           </Stack>
         </Group>

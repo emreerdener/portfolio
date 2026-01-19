@@ -26,7 +26,7 @@ export function HomeShell({ children }: { children: React.ReactNode }) {
     <AppShell
       layout="alt"
       header={{ height: 76 }}
-      navbar={{ width: 268, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+      navbar={{ width: 248, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       aside={{
         width: 480, // Fixed width for Home Profile
         breakpoint: 'xl',

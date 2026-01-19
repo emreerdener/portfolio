@@ -1,12 +1,12 @@
 import { IconDownload } from '@tabler/icons-react';
-import { Button, Group, MantineSize, Stack, Title } from '@mantine/core';
+import { Button, Group, MantineSize, Stack, StyleProp, Title } from '@mantine/core';
 import { JOBS } from '@/src/components/content/experience/data/jobs';
 import ExperienceBlock from './ExperienceBlock';
 import classes from './experience.module.css';
 
 interface ExperienceProps {
   defaultExpanded?: boolean;
-  listSize?: MantineSize;
+  listSize?: StyleProp<MantineSize>;
 }
 
 export default function Experience({ defaultExpanded = false, listSize }: ExperienceProps) {

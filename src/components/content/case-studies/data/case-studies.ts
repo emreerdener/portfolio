@@ -52,11 +52,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/vivint-energy',
     categories: ['Redesign', '0 to 1', 'Design System', 'Featured'],
     platforms: ['Mobile', 'IoT'],
-    date: '2025-11-01',
+    date: '2026-01-01',
     featured: true,
     projectType: 'Client',
     heading: 'Integrating energy into the smart home',
-    metadata: 'Vivint • Lead Designer • 2025',
+    metadata: 'Vivint • Lead Designer • 2026',
     description:
       "I led the design for 'Energy Insights,' a top-priority initiative transforming the Vivint experience by integrating comprehensive power management into the smart home. Evolving the product from an early MVP to mature v1.0 and v2.0 releases, I am now defining the v3.0 vision to fully embed energy intelligence across the core application.",
     prototypeUrl:
@@ -95,11 +95,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/vivint-design-system',
     categories: ['Redesign', '0 to 1', 'Design System'],
     platforms: ['Mobile', 'IoT'],
-    date: '2025-11-01',
+    date: '2026-01-01',
     featured: true,
     projectType: 'Client',
     heading: 'A new design foundation for Vivint',
-    metadata: 'Vivint • Lead Designer • 2025',
+    metadata: 'Vivint • Lead Designer • 2026',
     description:
       "I identified that the legacy design infrastructure was insufficient. I spearheaded the complete recreation of Vivint's design system and color logic. This overhaul established a modern, token-based architecture that streamlined design-to-dev handoff and ensured visual consistency across the entire smart home ecosystem.",
     prototypeUrl:

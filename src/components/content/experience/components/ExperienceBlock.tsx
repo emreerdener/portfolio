@@ -1,5 +1,16 @@
 import { useState } from 'react';
-import { Box, Group, Image, List, MantineSize, Spoiler, Stack, Text, Title } from '@mantine/core';
+import {
+  Box,
+  Group,
+  Image,
+  List,
+  MantineSize,
+  Spoiler,
+  Stack,
+  StyleProp,
+  Text,
+  Title,
+} from '@mantine/core';
 
 interface ExperienceBlockProps {
   role: string;
@@ -9,7 +20,7 @@ interface ExperienceBlockProps {
   bullets?: string[];
   logoSrc?: string;
   defaultExpanded?: boolean;
-  listSize?: MantineSize;
+  listSize?: StyleProp<MantineSize>;
 }
 
 export default function ExperienceBlock({
@@ -82,7 +93,7 @@ export default function ExperienceBlock({
               },
             }}
           >
-            <List spacing={6} size={listSize} center={false}>
+            <List spacing={6} fz={listSize} center={false}>
               {bullets.map((item, index) => (
                 <List.Item key={index} style={{ lineHeight: 1.4, opacity: 0.85 }}>
                   {item}

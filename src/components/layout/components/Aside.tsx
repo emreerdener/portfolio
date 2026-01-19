@@ -13,7 +13,7 @@ export default function Aside() {
           <AboutMe />
         </Stack>
         <Divider />
-        <Experience />
+        <Experience listSize="sm" />
         <Divider />
         <Education />
         <Space h="xl" />
