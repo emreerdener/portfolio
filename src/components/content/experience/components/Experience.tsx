@@ -1,6 +1,8 @@
 import { IconDownload } from '@tabler/icons-react';
 import { Button, Group, MantineSize, Stack, StyleProp, Title } from '@mantine/core';
 import { JOBS } from '@/src/components/content/experience/data/jobs';
+import { FadeInUp } from '../../../animations/FadeInUp';
+import { StaggerContainer } from '../../../animations/StaggerContainer';
 import ExperienceBlock from './ExperienceBlock';
 import classes from './experience.module.css';
 
@@ -29,16 +31,15 @@ export default function Experience({ defaultExpanded = false, listSize }: Experi
           Download PDF
         </Button>
       </Group>
-      <Stack gap="xl">
-        {JOBS.map((job, index) => (
-          <ExperienceBlock
-            key={index}
-            {...job}
-            defaultExpanded={defaultExpanded}
-            listSize={listSize}
-          />
-        ))}
-      </Stack>
+      <StaggerContainer>
+        <Stack gap="xl">
+          {JOBS.map((job, index) => (
+            <FadeInUp key={index}>
+              <ExperienceBlock {...job} defaultExpanded={defaultExpanded} listSize={listSize} />
+            </FadeInUp>
+          ))}
+        </Stack>
+      </StaggerContainer>
     </Stack>
   );
 }

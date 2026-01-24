@@ -1,4 +1,6 @@
 import { Badge, Group, Stack, Text, Title } from '@mantine/core';
+import { FadeInUp } from '../../../animations/FadeInUp';
+import { StaggerContainer } from '../../../animations/StaggerContainer';
 
 export default function TechnicalSkills() {
   const TECHNICAL_SKILLS = [
@@ -86,33 +88,37 @@ export default function TechnicalSkills() {
       <Title order={4} size="sm" c="dimmed" tt="uppercase" mb="sm">
         Technical Skills
       </Title>
-      <Stack gap="lg">
-        {TECHNICAL_SKILLS.map((group) => (
-          <Stack key={group.category} gap="xs">
-            <Text size="sm" fw={500} c="dimmed">
-              {group.category}
-            </Text>
-            <Group gap="xs">
-              {group.skills.map((skill) => (
-                <Badge
-                  key={skill}
-                  variant="light"
-                  color="gray"
-                  radius="sm"
-                  size="lg"
-                  style={{
-                    textTransform: 'none',
-                    fontWeight: 500,
-                    color: 'var(--mantine-color-text)',
-                  }}
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </Group>
-          </Stack>
-        ))}
-      </Stack>
+      <StaggerContainer>
+        <Stack gap="lg">
+          {TECHNICAL_SKILLS.map((group) => (
+            <FadeInUp key={group.category}>
+              <Stack gap="xs">
+                <Text size="sm" fw={500} c="dimmed">
+                  {group.category}
+                </Text>
+                <Group gap="xs">
+                  {group.skills.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="light"
+                      color="gray"
+                      radius="sm"
+                      size="lg"
+                      style={{
+                        textTransform: 'none',
+                        fontWeight: 500,
+                        color: 'var(--mantine-color-text)',
+                      }}
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </Group>
+              </Stack>
+            </FadeInUp>
+          ))}
+        </Stack>
+      </StaggerContainer>
     </Stack>
   );
 }
