@@ -78,7 +78,7 @@ export default function CaseStudyStickyBanner({
                 href={websiteUrl}
                 target="_blank"
                 variant="default"
-                size="xs"
+                size="sm"
                 radius="xl"
                 rightSection={<IconExternalLink size={14} />}
               >
