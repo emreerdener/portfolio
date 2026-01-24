@@ -68,12 +68,12 @@ export default function CaseStudyHeader({
                 target="_blank"
                 leftSection={<IconBrandFigma size={20} />}
               >
-                View prototype
+                Prototype
               </Button>
             )}
             {websiteUrl && (
               <Button size="md" component="a" href={websiteUrl} target="_blank">
-                View website
+                Website
               </Button>
             )}
 
@@ -92,11 +92,7 @@ export default function CaseStudyHeader({
                 onClick={toggleAudio}
                 disabled={!duration}
               >
-                {isPlaying
-                  ? 'Pause audio'
-                  : duration
-                    ? `Listen to case study (${duration})`
-                    : 'Loading audio...'}
+                {isPlaying ? 'Pause' : duration ? `Listen (${duration})` : 'Loading...'}
               </Button>
             )}
           </Group>
