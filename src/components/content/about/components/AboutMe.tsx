@@ -5,6 +5,7 @@ import {
   Button,
   Group,
   MantineSize,
+  Paper,
   SimpleGrid,
   Stack,
   StyleProp,
@@ -12,14 +13,16 @@ import {
   Title,
 } from '@mantine/core';
 
-// Data array for easy management
 const funFacts = [
-  { emoji: '👯', text: 'A twin' },
-  { emoji: '🦒', text: 'Taller than a baby giraffe: 6\'8" (2m)' },
-  { emoji: '🎲', text: 'Playing backgammon' },
-  { emoji: '🇹🇷', text: 'Named after a Sufi mystic & poet from the 13th century' },
-  { emoji: '🚲', text: 'Riding my bicycle' },
-  { emoji: '🪵', text: 'Crafting wooden sculptures', link: '/woodworking' },
+  { emoji: '👯', text: 'I have a twin sister' },
+  { emoji: '🦒', text: `I am taller than a baby giraffe: 6'8" (~2 meters)` },
+  { emoji: '🎲', text: 'I enjoy playing backgammon' },
+  {
+    emoji: '🇹🇷',
+    text: 'I am half Turkish, named after a Sufi mystic and poet from the 13th century',
+  },
+  { emoji: '🚲', text: 'I enjoy riding my titanium gravel bike' },
+  { emoji: '🪵', text: 'I enjoy crafting wooden sculptures', link: '/woodworking' },
 ];
 
 interface AboutMeProps {
@@ -27,17 +30,20 @@ interface AboutMeProps {
   bodySize?: StyleProp<MantineSize | (string & {}) | number>;
   emojiSize?: StyleProp<MantineSize | (string & {}) | number>;
   funFactSize?: StyleProp<MantineSize | (string & {}) | number>;
+  paddingTop?: StyleProp<MantineSize | (string & {}) | number>;
 }
 
 export default function AboutMe({
   titleSize,
   bodySize = 'lg',
-  emojiSize = '1.4rem',
+  emojiSize = '1.5rem',
   funFactSize = 'sm',
+  paddingTop = { base: 0, lg: 'lg' },
 }: AboutMeProps) {
   return (
     <Stack gap="xl">
-      <Stack gap="xs">
+      {/* Text */}
+      <Stack gap="xs" pt={paddingTop}>
         <Title order={1} fz={titleSize}>
           Hello, I'm Emre
         </Title>
@@ -48,40 +54,7 @@ export default function AboutMe({
         </Text>
       </Stack>
 
-      <Stack gap="md">
-        <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
-          I'm also...
-        </Title>
-        <SimpleGrid cols={{ base: 1 }} spacing="md">
-          {funFacts.map((item, index) => (
-            <Group wrap="nowrap" gap="xs" key={index}>
-              <Text fz={emojiSize} lh={1}>
-                {item.emoji}
-              </Text>
-              {item.link ? (
-                <Anchor
-                  component={Link}
-                  href={item.link}
-                  fz={funFactSize}
-                  fw={500}
-                  lh={1.4}
-                  c="var(--mantine-color-text)"
-                  style={{
-                    textDecoration: 'underline',
-                    textDecorationColor: 'var(--mantine-color-dimmed)',
-                  }}
-                >
-                  {item.text}
-                </Anchor>
-              ) : (
-                <Text fz={funFactSize} fw={500} lh={1.4}>
-                  {item.text}
-                </Text>
-              )}
-            </Group>
-          ))}
-        </SimpleGrid>
-      </Stack>
+      {/* Buttons */}
       <Group gap="lg">
         <Button
           component="a"
@@ -103,6 +76,44 @@ export default function AboutMe({
           LinkedIn
         </Button>
       </Group>
+
+      {/* Fun facts */}
+      <Paper withBorder radius="lg" p="lg">
+        <Stack gap="lg">
+          <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
+            Fun facts
+          </Title>
+          <SimpleGrid cols={{ base: 1 }} spacing="lg">
+            {funFacts.map((item, index) => (
+              <Group wrap="nowrap" gap="md" key={index}>
+                <Text fz={emojiSize} lh={1}>
+                  {item.emoji}
+                </Text>
+                {item.link ? (
+                  <Anchor
+                    component={Link}
+                    href={item.link}
+                    fz={funFactSize}
+                    fw={400}
+                    lh={1.4}
+                    c="var(--mantine-color-text)"
+                    style={{
+                      textDecoration: 'underline',
+                      textDecorationColor: 'var(--mantine-color-dimmed)',
+                    }}
+                  >
+                    {item.text}
+                  </Anchor>
+                ) : (
+                  <Text fz={funFactSize} fw={400} lh={1.4}>
+                    {item.text}
+                  </Text>
+                )}
+              </Group>
+            ))}
+          </SimpleGrid>
+        </Stack>
+      </Paper>
     </Stack>
   );
 }

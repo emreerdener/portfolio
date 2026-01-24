@@ -23,28 +23,31 @@ export default function AboutImageCarousel() {
     }
   };
   return (
-    <AspectRatio ratio={16 / 15}>
-      <Carousel
-        withIndicators={false}
-        withControls={false}
-        height="100%"
-        plugins={[autoplay.current, fade.current]}
-        getEmblaApi={setEmbla}
-        style={{
-          cursor: 'pointer',
-          border: '1px solid var(--app-shell-border-color)',
-          borderRadius: 'var(--mantine-radius-lg)',
-          overflow: 'hidden',
-        }}
-        onClick={handleNext}
-        emblaOptions={{ loop: true, duration: 100 }}
-      >
-        {images.map((src, index) => (
-          <Carousel.Slide key={index}>
-            <Image src={src} alt={`About me slide ${index + 1}`} w="100%" h="100%" fit="cover" />
-          </Carousel.Slide>
-        ))}
-      </Carousel>
-    </AspectRatio>
+    <Carousel
+      withIndicators={false}
+      withControls={false}
+      h="100%"
+      plugins={[autoplay.current, fade.current]}
+      getEmblaApi={setEmbla}
+      style={{
+        cursor: 'pointer',
+        border: '1px solid var(--app-shell-border-color)',
+        borderRadius: 'var(--mantine-radius-lg)',
+        overflow: 'hidden',
+      }}
+      styles={{
+        viewport: { height: '100%' },
+        container: { height: '100%' },
+        slide: { height: '100%' },
+      }}
+      onClick={handleNext}
+      emblaOptions={{ loop: true, duration: 100 }}
+    >
+      {images.map((src, index) => (
+        <Carousel.Slide key={index} h="100%">
+          <Image src={src} alt={`About me slide ${index + 1}`} w="100%" h="100%" fit="cover" />
+        </Carousel.Slide>
+      ))}
+    </Carousel>
   );
 }
