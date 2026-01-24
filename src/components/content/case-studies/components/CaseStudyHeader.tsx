@@ -1,7 +1,8 @@
 'use client';
 
-import { IconBrandFigma } from '@tabler/icons-react';
+import { IconBrandFigma, IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
 import { Button, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { useCaseStudyAudio } from '../context/CaseStudyAudioContext';
 import CaseStudyImpact from './CaseStudyImpact';
 import ChallengeProposal from './ChallengeProposal';
 
@@ -11,6 +12,7 @@ interface Stat {
   description: string;
 }
 interface CaseStudyHeaderProps {
+  id: string;
   coverImage: string;
   coverAlt: string;
   metadata: string;
@@ -25,6 +27,7 @@ interface CaseStudyHeaderProps {
 }
 
 export default function CaseStudyHeader({
+  id,
   coverImage,
   coverAlt,
   metadata,
@@ -37,6 +40,9 @@ export default function CaseStudyHeader({
   stats,
   statsDescription,
 }: CaseStudyHeaderProps) {
+  // Audio State from Context
+  const { isPlaying, duration, toggleAudio, hasAudio } = useCaseStudyAudio();
+
   return (
     <Stack gap="xl">
       <Stack gap="xs" pb="lg">
@@ -53,22 +59,47 @@ export default function CaseStudyHeader({
             <Text fz={{ base: 'md', md: 'xl' }}>{description}</Text>
           </Stack>
 
-          {prototypeUrl && (
-            <Button
-              size="md"
-              component="a"
-              href={prototypeUrl}
-              target="_blank"
-              leftSection={<IconBrandFigma size={20} />}
-            >
-              View prototype
-            </Button>
-          )}
-          {websiteUrl && (
-            <Button size="md" component="a" href={websiteUrl} target="_blank">
-              View website
-            </Button>
-          )}
+          <Group>
+            {prototypeUrl && (
+              <Button
+                size="md"
+                component="a"
+                href={prototypeUrl}
+                target="_blank"
+                leftSection={<IconBrandFigma size={20} />}
+              >
+                View prototype
+              </Button>
+            )}
+            {websiteUrl && (
+              <Button size="md" component="a" href={websiteUrl} target="_blank">
+                View website
+              </Button>
+            )}
+
+            {/* Audio Player Button */}
+            {hasAudio && (
+              <Button
+                variant="default"
+                size="md"
+                leftSection={
+                  isPlaying ? (
+                    <IconPlayerPauseFilled size={20} />
+                  ) : (
+                    <IconPlayerPlayFilled size={20} />
+                  )
+                }
+                onClick={toggleAudio}
+                disabled={!duration}
+              >
+                {isPlaying
+                  ? 'Pause audio'
+                  : duration
+                    ? `Listen to case study (${duration})`
+                    : 'Loading audio...'}
+              </Button>
+            )}
+          </Group>
         </Stack>
       </Stack>
 

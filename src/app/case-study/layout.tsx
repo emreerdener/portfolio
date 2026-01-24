@@ -4,6 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import { Button, Group, Stack } from '@mantine/core';
 import CaseStudyStickyBanner from '@/src/components/content/case-studies/components/StickyBanner';
+import { CaseStudyAudioProvider } from '@/src/components/content/case-studies/context/CaseStudyAudioContext';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function CaseStudiesLayout({ children }: { children: React.ReactNode }) {
@@ -22,7 +23,7 @@ export default function CaseStudiesLayout({ children }: { children: React.ReactN
   };
 
   return (
-    <>
+    <CaseStudyAudioProvider caseStudyId={study?.id}>
       <Stack gap="xl" maw={1000}>
         <Group justify="space-between">
           <Button
@@ -51,6 +52,6 @@ export default function CaseStudiesLayout({ children }: { children: React.ReactN
       {study && (
         <CaseStudyStickyBanner prototypeUrl={study.prototypeUrl} websiteUrl={study.websiteUrl} />
       )}
-    </>
+    </CaseStudyAudioProvider>
   );
 }

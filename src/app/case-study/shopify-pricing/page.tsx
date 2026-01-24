@@ -15,6 +15,7 @@ export default function ShopifyPricing() {
     <>
       <Stack gap="xl">
         <CaseStudyHeader
+          id={study.id}
           coverImage={study.headerImage}
           coverAlt={study.coverAlt || study.title}
           metadata={study.metadata || ''}

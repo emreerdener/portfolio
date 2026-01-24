@@ -1,8 +1,14 @@
 'use client';
 
-import { IconBrandFigma, IconExternalLink } from '@tabler/icons-react';
+import {
+  IconBrandFigma,
+  IconExternalLink,
+  IconPlayerPauseFilled,
+  IconPlayerPlayFilled,
+} from '@tabler/icons-react';
 import { Button, Group, rem, Transition } from '@mantine/core';
 import { useWindowScroll } from '@mantine/hooks';
+import { useCaseStudyAudio } from '../context/CaseStudyAudioContext';
 
 interface CaseStudyStickyBannerProps {
   prototypeUrl?: string;
@@ -14,7 +20,8 @@ export default function CaseStudyStickyBanner({
   websiteUrl,
 }: CaseStudyStickyBannerProps) {
   const [scroll] = useWindowScroll();
-  const show = scroll.y > 800 && (!!prototypeUrl || !!websiteUrl);
+  const { isPlaying, toggleAudio, hasAudio } = useCaseStudyAudio();
+  const show = scroll.y > 800 && (!!prototypeUrl || !!websiteUrl || hasAudio);
 
   return (
     <div
@@ -31,7 +38,25 @@ export default function CaseStudyStickyBanner({
     >
       <Transition transition="slide-up" mounted={show} duration={300}>
         {(transitionStyles) => (
-          <Group gap="md" style={{ ...transitionStyles, pointerEvents: 'auto' }}>
+          <Group gap="xs" style={{ ...transitionStyles, pointerEvents: 'auto' }}>
+            {hasAudio && (
+              <Button
+                variant="default"
+                size="sm"
+                radius="xl"
+                leftSection={
+                  isPlaying ? (
+                    <IconPlayerPauseFilled size={16} />
+                  ) : (
+                    <IconPlayerPlayFilled size={16} />
+                  )
+                }
+                onClick={toggleAudio}
+                style={{ boxShadow: 'var(--mantine-shadow-md)' }}
+              >
+                {isPlaying ? 'Pause' : 'Listen'}
+              </Button>
+            )}
             {prototypeUrl && (
               <Button
                 component="a"
@@ -40,11 +65,11 @@ export default function CaseStudyStickyBanner({
                 variant="default"
                 size="sm"
                 radius="xl"
-                leftSection={prototypeUrl ? <IconBrandFigma size={16} /> : null}
+                leftSection={<IconBrandFigma size={16} />}
                 rightSection={websiteUrl ? <IconExternalLink size={14} /> : null}
                 style={{ boxShadow: 'var(--mantine-shadow-md)' }}
               >
-                View prototype
+                Prototype
               </Button>
             )}
             {websiteUrl && (
@@ -57,7 +82,7 @@ export default function CaseStudyStickyBanner({
                 radius="xl"
                 rightSection={<IconExternalLink size={14} />}
               >
-                View website
+                Website
               </Button>
             )}
           </Group>
