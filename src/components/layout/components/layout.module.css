@@ -88,7 +88,19 @@
     padding-right: var(--mantine-spacing-lg);
   }
   .navbar {
-    padding-right: var(--mantine-spacing-xl);
+    padding-top: var(--mantine-spacing-xl) !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .navbarContainer {
+    width: 100%;
+    max-width: 280px;
   }
   .bannerLayout,
   .bannerHeader {
