@@ -10,14 +10,15 @@ export default function ResumePage() {
   return (
     <Container size="lg" p={0}>
       <Stack>
-        <Stack gap="xs" px="xl">
+        <Stack gap="xs">
           <Title order={1}>Emre Erdener</Title>
-          <Text size="xl">Staff Product Designer & Frontend Engineer</Text>
-          <Text c="dimmed">erdener.emre@gmail.com • 512-740-3719 • Austin, TX</Text>
+          <Text size="xl" fw={600}>
+            Staff Product Designer
+          </Text>
         </Stack>
 
-        <Stack px="xl" pb="xl">
-          <Text>
+        <Stack pb="xl">
+          <Text size="lg">
             I am an interdisciplinary product designer and frontend engineer. I have 8+ years of
             experience leading design, strategy, end-to-end execution, and user research, bridging
             the gap between stakeholders, engineering, and users. I have a proven track record of

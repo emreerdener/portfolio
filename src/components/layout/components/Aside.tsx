@@ -10,7 +10,7 @@ export default function Aside() {
       <Stack gap={0}>
         <Stack gap="xl" p="xl">
           <AboutImageCarousel />
-          <AboutMe paddingTop={0} />
+          <AboutMe paddingTop={0} padding="lg" />
         </Stack>
         <Divider />
         <Experience listSize="sm" />

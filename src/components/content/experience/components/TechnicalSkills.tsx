@@ -84,7 +84,7 @@ export default function TechnicalSkills() {
   ];
 
   return (
-    <Stack p="xl">
+    <Stack p={{ base: 'lg', lg: 'xl' }}>
       <Title order={4} size="sm" c="dimmed" tt="uppercase" mb="sm">
         Technical Skills
       </Title>

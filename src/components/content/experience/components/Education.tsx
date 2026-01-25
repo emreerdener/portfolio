@@ -16,7 +16,7 @@ const education = [
 
 export default function Education() {
   return (
-    <Stack gap="xl" p="xl">
+    <Stack gap="xl" p={{ base: 'lg', lg: 'xl' }}>
       <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
         Education
       </Title>

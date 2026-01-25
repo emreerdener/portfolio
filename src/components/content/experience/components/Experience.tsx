@@ -13,7 +13,7 @@ interface ExperienceProps {
 
 export default function Experience({ defaultExpanded = false, listSize }: ExperienceProps) {
   return (
-    <Stack gap="xl" className={classes.experienceWrapper}>
+    <Stack gap="xl" p={{ base: 'lg', lg: 'xl' }}>
       {/* Experience */}
       <Group justify="space-between" w="100%">
         <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
