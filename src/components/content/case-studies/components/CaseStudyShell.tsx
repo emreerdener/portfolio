@@ -11,6 +11,7 @@ import {
   Overlay,
   Space,
   Stack,
+  Tooltip,
   Transition,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -56,18 +57,20 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
           zIndex: 100,
         }}
       >
-        <ActionIcon
-          onClick={openToc}
-          size={56}
-          radius="md"
-          variant="default"
-          aria-label="Table of contents"
-          style={{
-            boxShadow: 'var(--mantine-shadow-xs)',
-          }}
-        >
-          <IconBook size={28} />
-        </ActionIcon>
+        <Tooltip label="Table of contents" position="left">
+          <ActionIcon
+            onClick={openToc}
+            size={56}
+            radius="md"
+            variant="default"
+            aria-label="Table of contents"
+            // style={{
+            //   boxShadow: 'var(--mantine-shadow-xs)',
+            // }}
+          >
+            <IconBook size={28} />
+          </ActionIcon>
+        </Tooltip>
       </Box>
 
       {/* Mobile TOC Drawer */}
