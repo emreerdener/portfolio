@@ -1,8 +1,9 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { ScrollArea, Stack, TableOfContents, Text } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
+import { IconArrowUp } from '@tabler/icons-react';
+import { Button, ScrollArea, Stack, TableOfContents, Text, Transition } from '@mantine/core';
+import { useMediaQuery, useWindowScroll } from '@mantine/hooks';
 
 interface CaseStudyAsideProps {
   onLinkClick?: () => void;
@@ -13,6 +14,7 @@ interface CaseStudyAsideProps {
 export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: CaseStudyAsideProps) {
   const pathname = usePathname();
   const isMobile = useMediaQuery('(max-width: 48em)');
+  const [scroll, scrollTo] = useWindowScroll();
 
   return (
     <ScrollArea type="never" h="100%">
@@ -59,6 +61,28 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
             },
           })}
         />
+
+        <Transition
+          mounted={scroll.y > 100}
+          transition="slide-up"
+          duration={200}
+          timingFunction="ease"
+        >
+          {(styles) => (
+            <Button
+              style={styles}
+              onClick={() => {
+                scrollTo({ y: 0 });
+                onLinkClick?.();
+              }}
+              variant="light"
+              rightSection={<IconArrowUp size={16} />}
+              size="md"
+            >
+              Scroll to top
+            </Button>
+          )}
+        </Transition>
       </Stack>
     </ScrollArea>
   );
