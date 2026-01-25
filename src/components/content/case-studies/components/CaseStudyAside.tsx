@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { ScrollArea, Stack, TableOfContents, Text } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 
 interface CaseStudyAsideProps {
   onLinkClick?: () => void;
@@ -11,6 +12,8 @@ interface CaseStudyAsideProps {
 
 export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: CaseStudyAsideProps) {
   const pathname = usePathname();
+  const isMobile = useMediaQuery('(max-width: 48em)');
+
   return (
     <ScrollArea type="never" h="100%">
       <Stack gap="lg" px={noPadding ? 0 : 'lg'} py={noPadding ? 0 : 'xl'}>
@@ -31,7 +34,8 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
           getControlProps={({ active, data }) => ({
             onClick: () => {
               const element = data.getNode();
-              const headerOffset = 40;
+              // Mobile navigation is 76px height, so we need more offset
+              const headerOffset = isMobile ? 96 : 40;
               const elementPosition = element.getBoundingClientRect().top;
               const offsetPosition = elementPosition + window.scrollY - headerOffset;
 

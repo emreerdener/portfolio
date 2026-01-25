@@ -70,7 +70,7 @@ export default function CaseStudyStickyBanner({
 
             {hasAudio && (
               <Button
-                variant="default"
+                variant={isPlaying ? 'filled' : 'default'}
                 size="sm"
                 radius="xl"
                 leftSection={
