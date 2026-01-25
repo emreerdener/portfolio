@@ -35,7 +35,7 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
             onClick: () => {
               const element = data.getNode();
               // Mobile navigation is 76px height, so we need more offset
-              const headerOffset = isMobile ? 96 : 40;
+              const headerOffset = isMobile ? 112 : 40;
               const elementPosition = element.getBoundingClientRect().top;
               const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
