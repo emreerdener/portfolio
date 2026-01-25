@@ -104,7 +104,7 @@ export default function WaveformPlayer({}: WaveformPlayerProps) {
   }
 
   return (
-    <Paper radius="md" withBorder py="xs" px="sm" w="100%" my="lg">
+    <Paper radius="md" withBorder py="xs" px="sm" w="100%" my="sm">
       <Group align="center" gap="sm" w="100%">
         {/* Play/Pause Button */}
         <Tooltip label={`${isPlaying ? 'Pause' : 'Listen to case study'}`} position="right">

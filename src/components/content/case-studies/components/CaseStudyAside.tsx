@@ -16,7 +16,7 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
       <Stack gap="lg" px={noPadding ? 0 : 'lg'} py={noPadding ? 0 : 'xl'}>
         {hideTitle ? null : (
           <Text fw={700} fz={14} tt="uppercase" c="dimmed" lh={1}>
-            On this page
+            Table of contents
           </Text>
         )}
 

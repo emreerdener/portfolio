@@ -46,23 +46,21 @@ export default function CaseStudyHeader({
     : undefined;
   return (
     <Stack gap="xl">
-      <Stack gap="xs" pb="lg">
-        <Stack align="flex-start" gap="lg">
-          <Group justify="space-between">
-            <Text size="lg" c="dimmed">
-              {metadata}
-            </Text>
-          </Group>
+      {/* Text and audio player*/}
+      <Stack align="flex-start" gap="lg">
+        <Text size="lg" c="dimmed">
+          {metadata}
+        </Text>
 
-          <Stack>
-            <Title order={1} fz={{ base: '2.2rem', md: '2.8rem' }} lh={1.1} fw={800}>
-              {title}
-            </Title>
-            <Text fz={{ base: 'md', md: 'xl' }}>{description}</Text>
-          </Stack>
-
-          {audioSrc && <WaveformPlayer />}
+        {/* Text */}
+        <Stack>
+          <Title order={1} fz={{ base: '2.2rem', md: '2.8rem' }} lh={1.1} fw={800}>
+            {title}
+          </Title>
+          <Text fz={{ base: 'md', md: 'xl' }}>{description}</Text>
         </Stack>
+
+        {audioSrc && <WaveformPlayer />}
       </Stack>
 
       <Image
