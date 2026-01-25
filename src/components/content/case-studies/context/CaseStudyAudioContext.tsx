@@ -4,11 +4,11 @@ import React, { createContext, useContext, useEffect, useRef, useState } from 'r
 
 interface AudioContextType {
   isPlaying: boolean;
-  duration: string | null;
   toggleAudio: () => void;
   audioError: boolean;
   hasAudio: boolean;
   audioRef: React.RefObject<HTMLAudioElement | null>;
+  caseStudyId?: string;
 }
 
 const CaseStudyAudioContext = createContext<AudioContextType | null>(null);
@@ -29,14 +29,12 @@ interface CaseStudyAudioProviderProps {
 export function CaseStudyAudioProvider({ caseStudyId, children }: CaseStudyAudioProviderProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [duration, setDuration] = useState<string | null>(null);
   const [audioError, setAudioError] = useState(false);
 
   // Reset state when case study changes
   useEffect(() => {
     setIsPlaying(false);
     setAudioError(false);
-    setDuration(null);
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -63,38 +61,26 @@ export function CaseStudyAudioProvider({ caseStudyId, children }: CaseStudyAudio
     }
   };
 
-  const formatTime = (seconds: number) => {
-    if (!seconds) return '0:00';
-    const m = Math.floor(seconds / 60);
-    const s = Math.floor(seconds % 60);
-    return `${m}:${s.toString().padStart(2, '0')}`;
-  };
-
   return (
     <CaseStudyAudioContext.Provider
       value={{
         isPlaying,
-        duration,
         toggleAudio,
         audioError,
         hasAudio: !!caseStudyId && !audioError,
         audioRef,
+        caseStudyId,
       }}
     >
       {caseStudyId && (
         <audio
+          key={caseStudyId}
           ref={audioRef}
           src={audioSrc}
           preload="metadata"
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
           onEnded={() => setIsPlaying(false)}
-          onLoadedMetadata={(e) => {
-            const seconds = e.currentTarget.duration;
-            if (seconds !== Infinity) {
-              setDuration(formatTime(seconds));
-            }
-          }}
           onError={() => {
             console.warn(`Audio missing for ${caseStudyId}`);
             setAudioError(true);

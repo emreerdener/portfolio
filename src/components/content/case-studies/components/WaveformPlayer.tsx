@@ -9,7 +9,9 @@ import {
   Group,
   Loader,
   Paper,
+  Stack,
   Text,
+  Title,
   Tooltip,
   useComputedColorScheme,
 } from '@mantine/core';
@@ -20,21 +22,14 @@ interface WaveformPlayerProps {
 }
 
 export default function WaveformPlayer({}: WaveformPlayerProps) {
-  const { isPlaying, toggleAudio, hasAudio, audioRef, audioError, duration } = useCaseStudyAudio();
+  const { isPlaying, toggleAudio, hasAudio, audioRef, audioError, caseStudyId } =
+    useCaseStudyAudio();
   const containerRef = useRef<HTMLDivElement>(null);
   const wavesurfer = useRef<WaveSurfer | null>(null);
   const [isReady, setIsReady] = useState(false);
-  const [currentTime, setCurrentTime] = useState('0:00');
 
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
   const activeWaveColor = computedColorScheme === 'dark' ? '#424242' : '#dee2e6';
-
-  // Format helper: 125 -> 2:05
-  const formatTime = (seconds: number) => {
-    const m = Math.floor(seconds / 60);
-    const s = Math.floor(seconds % 60);
-    return `${m}:${s.toString().padStart(2, '0')}`;
-  };
 
   // Update wave color when theme changes
   useEffect(() => {
@@ -67,19 +62,14 @@ export default function WaveformPlayer({}: WaveformPlayerProps) {
       setIsReady(true);
     });
 
-    wavesurfer.current.on('audioprocess', (currentTime) => {
-      setCurrentTime(formatTime(currentTime));
-    });
-
     wavesurfer.current.on('error', (err) => {
       console.error('WaveSurfer error:', err);
     });
 
-    // 3. Cleanup on Unmount
     return () => {
       wavesurfer.current?.destroy();
     };
-  }, [audioRef, hasAudio]);
+  }, [audioRef, hasAudio, caseStudyId]);
 
   if (audioError) {
     return (
@@ -102,53 +92,53 @@ export default function WaveformPlayer({}: WaveformPlayerProps) {
   }
 
   return (
-    <Paper radius="md" withBorder py="xs" px="sm" w="100%" my="sm">
-      <Group align="center" gap="sm" w="100%">
-        {/* Play/Pause Button */}
-        <Tooltip label={`${isPlaying ? 'Pause' : 'Listen to case study'}`} position="right">
-          <ActionIcon
-            size="lg"
-            radius="md"
-            variant="outline"
-            disabled={!isReady}
-            onClick={toggleAudio} // Use context toggle
-            style={{ flexShrink: 0 }}
-            w={42}
-            h={42}
-          >
-            {isReady ? (
-              isPlaying ? (
-                <IconPlayerPauseFilled size={18} />
-              ) : (
-                <IconPlayerPlayFilled size={18} />
-              )
-            ) : (
-              <Loader size="xs" color="white" />
-            )}
-          </ActionIcon>
-        </Tooltip>
-        {/* Waveform Container */}
-        <Box style={{ flex: 1, position: 'relative', height: '40px' }} w="100%">
-          {/* The actual waveform canvas gets injected here */}
-          <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
-
-          {/* Fallback loading text if slow */}
-          {!isReady && (
-            <Text
-              size="sm"
-              c="dimmed"
-              style={{ position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)' }}
+    <Stack w="100%" gap={0} pt="sm">
+      <Title order={4} size="sm" c="dimmed" tt="uppercase">
+        Listen to case study
+      </Title>
+      <Paper radius="md" withBorder py="xs" px="sm" w="100%" my="sm">
+        <Group align="center" gap="sm" w="100%">
+          {/* Play/Pause Button */}
+          <Tooltip label={`${isPlaying ? 'Pause' : 'Listen to case study'}`} position="right">
+            <ActionIcon
+              size="lg"
+              radius="md"
+              variant="outline"
+              disabled={!isReady}
+              onClick={toggleAudio} // Use context toggle
+              style={{ flexShrink: 0 }}
+              w={42}
+              h={42}
             >
-              Loading case study audio...
-            </Text>
-          )}
-        </Box>
+              {isReady ? (
+                isPlaying ? (
+                  <IconPlayerPauseFilled size={18} />
+                ) : (
+                  <IconPlayerPlayFilled size={18} />
+                )
+              ) : (
+                <Loader size="xs" color="white" />
+              )}
+            </ActionIcon>
+          </Tooltip>
+          {/* Waveform Container */}
+          <Box style={{ flex: 1, position: 'relative', height: '40px' }} w="100%">
+            {/* The actual waveform canvas gets injected here */}
+            <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
 
-        {/* Time Display */}
-        <Text size="xs" c="dimmed" variant="text" style={{ fontVariantNumeric: 'tabular-nums' }}>
-          {currentTime} / {duration || '0:00'}
-        </Text>
-      </Group>
-    </Paper>
+            {/* Fallback loading text if slow */}
+            {!isReady && (
+              <Text
+                size="sm"
+                c="dimmed"
+                style={{ position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)' }}
+              >
+                Loading case study audio...
+              </Text>
+            )}
+          </Box>
+        </Group>
+      </Paper>
+    </Stack>
   );
 }
