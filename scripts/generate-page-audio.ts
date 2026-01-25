@@ -1,43 +1,38 @@
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
-import OpenAI from 'openai';
+import { ElevenLabsClient } from 'elevenlabs';
 import { CASE_STUDIES } from '../src/components/content/case-studies/data/case-studies';
 
-// Load environment variables (tries .env first, then .env.local)
 dotenv.config();
-if (!process.env.OPENAI_API_KEY) {
+if (!process.env.ELEVENLABS_API_KEY) {
   dotenv.config({ path: '.env.local' });
 }
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+const client = new ElevenLabsClient({
+  apiKey: process.env.ELEVENLABS_API_KEY,
 });
 
-// Helper to clean scraped text
+const VOICE_ID = process.env.ELEVENLABS_VOICE_ID || 'NNl6r8mD7vthiJatiJt1';
+
 function cleanText(text: string) {
   return text
-    .replace(/<[^>]*>?/gm, '') // Remove HTML tags
-    .replace(/\{.*\}/gm, '') // Remove dynamic JS like {study.title}
-    .replace(/&quot;/g, '"') // Fix quotes
+    .replace(/<[^>]*>?/gm, '')
+    .replace(/\{.*\}/gm, '')
+    .replace(/&quot;/g, '"')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
-    .replace(/\s+/g, ' ') // Collapse whitespace
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
-// Helper to split long text into safe chunks (<4096 chars)
 function splitTextIntoChunks(text: string, maxLength: number = 4000): string[] {
   if (text.length <= maxLength) return [text];
-
   const chunks: string[] = [];
   let currentChunk = '';
-
-  // Split by sentence endings (.?!) followed by space
   const sentences = text.match(/[^.!?]+[.!?]+(\s+|$)/g) || [text];
 
   for (const sentence of sentences) {
-    // If adding the next sentence exceeds the limit, push the current chunk and start a new one
     if ((currentChunk + sentence).length > maxLength) {
       if (currentChunk) chunks.push(currentChunk.trim());
       currentChunk = sentence;
@@ -46,18 +41,33 @@ function splitTextIntoChunks(text: string, maxLength: number = 4000): string[] {
     }
   }
   if (currentChunk) chunks.push(currentChunk.trim());
-
   return chunks;
+}
+
+async function streamToBuffer(stream: NodeJS.ReadableStream): Promise<Buffer> {
+  const chunks: Buffer[] = [];
+  for await (const chunk of stream) {
+    chunks.push(Buffer.from(chunk));
+  }
+  return Buffer.concat(chunks);
 }
 
 async function generateAudio() {
   const outputDir = path.join(process.cwd(), 'public/audio-temp');
+  if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
+  console.log(`🚀 Starting batch generation for ${CASE_STUDIES.length} case studies...`);
 
   for (const study of CASE_STUDIES) {
+    const fileName = `${study.id}.mp3`;
+    const filePath = path.join(outputDir, fileName);
+
+    // 🔴 SKIP LOGIC: If file exists, don't pay to generate it again
+    if (fs.existsSync(filePath)) {
+      console.log(`⏭️  Skipping ${study.id} (Already exists)`);
+      continue;
+    }
+
     const pagePath = path.join(process.cwd(), `src/app${study.href}/page.tsx`);
 
     if (!fs.existsSync(pagePath)) {
@@ -68,8 +78,6 @@ async function generateAudio() {
     console.log(`🎙️ Processing: ${study.title}...`);
 
     const fileContent = fs.readFileSync(pagePath, 'utf-8');
-
-    // Scrape content
     const contentMatches = fileContent.matchAll(/<(Title|Text|Blockquote)[^>]*>([\s\S]*?)<\/\1>/g);
 
     let bodyText = '';
@@ -80,41 +88,51 @@ async function generateAudio() {
       }
     }
 
+    const statsScript = study.stats
+      ? study.stats
+          .map((s) => {
+            const val = s.value ? `${s.value} ` : '';
+            return `${val}${s.label}. ${s.description}.`;
+          })
+          .join(' ')
+      : '';
+
+    const impactSection = study.statsDescription
+      ? `Impact and outcomes. ${study.statsDescription}`
+      : '';
+
     const fullScript = `
-      Case Study: ${study.title}.
-      Overview. ${study.description}
+      ${study.title}.
+      ${study.metadata || ''}.
+      ${study.heading || ''}.
+      ${study.description}
       The Problem. ${study.problem}
       The Proposal. ${study.proposal}
-      Deep Dive. ${bodyText}
+      ${impactSection}
+      ${statsScript}
+      ${bodyText}
     `.trim();
 
-    // 1. Split text if it's too long
     const textChunks = splitTextIntoChunks(fullScript);
     const audioBuffers: Buffer[] = [];
 
     try {
-      // 2. Generate audio for each chunk
       for (let i = 0; i < textChunks.length; i++) {
-        if (textChunks.length > 1) {
-          process.stdout.write(`   ↳ Part ${i + 1}/${textChunks.length}... `);
-        }
+        process.stdout.write(`   ↳ Part ${i + 1}/${textChunks.length}... `);
 
-        const mp3 = await openai.audio.speech.create({
-          model: 'tts-1',
-          voice: 'alloy',
-          input: textChunks[i],
+        const audioStream = await client.textToSpeech.convert(VOICE_ID, {
+          text: textChunks[i],
+          model_id: 'eleven_turbo_v2_5',
+          output_format: 'mp3_44100_128',
         });
 
-        const buffer = Buffer.from(await mp3.arrayBuffer());
+        const buffer = await streamToBuffer(audioStream);
         audioBuffers.push(buffer);
-
-        if (textChunks.length > 1) console.log('Done.');
+        console.log('Done.');
       }
 
-      // 3. Combine buffers and save
       const finalBuffer = Buffer.concat(audioBuffers);
-      const fileName = `${study.id}.mp3`;
-      await fs.promises.writeFile(path.join(outputDir, fileName), finalBuffer);
+      await fs.promises.writeFile(filePath, finalBuffer); // Save to filePath
       console.log(`✅ Generated: ${fileName}`);
     } catch (error) {
       console.error(`❌ Failed ${study.id}:`, error);

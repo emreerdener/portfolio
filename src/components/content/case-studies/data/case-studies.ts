@@ -58,7 +58,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heading: 'Integrating energy into the smart home',
     metadata: 'Vivint • Lead Designer • 2026',
     description:
-      "I led the design for 'Energy Insights,' a top-priority initiative transforming the Vivint experience by integrating comprehensive power management into the smart home. Evolving the product from an early MVP to mature v1.0 and v2.0 releases, I am now defining the v3.0 vision to fully embed energy intelligence across the core application.",
+      'I led the design for Energy Insights, a top-priority initiative transforming the Vivint experience by integrating comprehensive power management into the smart home. Evolving the product from an early MVP to mature version 1 and version 2 releases, I am now defining the version 3 vision to fully embed energy intelligence across the core application.',
     prototypeUrl:
       'https://www.figma.com/proto/RNv5yexqJNxAkEXlCS7g2G/Energy-Insights-Dec7?page-id=26564%3A23250&node-id=26603-80089&p=f&viewport=438%2C296%2C0.58&t=3MpoFTvoXW34Edpq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=26603%3A80089&show-proto-sidebar=1',
     problem:
@@ -101,7 +101,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heading: 'A new design foundation for Vivint',
     metadata: 'Vivint • Lead Designer • 2026',
     description:
-      "I identified that the legacy design infrastructure was insufficient. I spearheaded the complete recreation of Vivint's design system and color logic. This overhaul established a modern, token-based architecture that streamlined design-to-dev handoff and ensured visual consistency across the entire smart home ecosystem.",
+      "I identified that the legacy design infrastructure was insufficient. I spearheaded the complete re-creation of Vivint's design system and color logic. This overhaul established a modern, token-based architecture that streamlined design-to-dev handoff and ensured visual consistency across the entire smart home ecosystem.",
     prototypeUrl:
       'https://www.figma.com/proto/ZFmIiptt4FtG78VUvRiIWV/Summit-Design-System?page-id=6207%3A33885&node-id=6580-72359&p=f&viewport=263%2C50%2C0.06&t=TwAh5vpeLQrrYAE5-1&scaling=contain&content-scaling=fixed&starting-point-node-id=6580%3A72359',
     problem:
@@ -148,7 +148,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem:
       'The company currently relies on manual paper-based methods to manage its inventory and orders, resulting in time-consuming processes and an increased risk of errors. Moreover, the documentation of orders lacks consistency among employees, making it challenging to refer to past orders or seamlessly handle orders between team members.',
     proposal:
-      "Design a custom order management tool for a wholesale wax company that meets and builds on the company's current order management process. This app also needs to allow for flexibility to extend functionality as the company and processes evolve.",
+      "I designed a custom order management tool for a wholesale wax company that meets and builds on the company's current order management process. This app also needs to allow for flexibility to extend functionality as the company and processes evolve.",
     statsDescription:
       'Transforming a decade of paper trails into a streamlined digital workflow significantly reduced administrative overhead.',
     stats: [
@@ -265,7 +265,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heading: 'Visualizing engine performance in real-time',
     metadata: 'BTRES • Lead Designer • 2019',
     description:
-      "Multiple touchscreen gauge displays, auto logging, auto dyno, map switching, fault checking, and more for Audi cars. Built on the power of Dyno Spectrum, this system presents a dynamic interface for complete transparency on your car's performance, as well as data storage for all logs.",
+      "I designed multiple touchscreen gauge displays, auto logging, auto dyno, map switching, fault checking, and more for Audi cars. Built on the power of Dyno Spectrum, this system presents a dynamic interface for complete transparency on your car's performance, as well as data storage for all logs.",
     websiteUrl: 'https://betterthan.shop/',
     problem:
       'There is not a clean and easy-to-read display for Audi engine performance. The current solutions require viewing the data after-the-fact, or not having one entirely.',
@@ -464,7 +464,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heading: 'A new economy for product discovery',
     metadata: 'Shopify • Lead Designer • 2023',
     description:
-      "Curator profiles are a new feature for the Shop App, which allow users to create collections of products from within Shopify's merchant ecosystem. This feature allows users to earn Shop Cash each time a purchase is made from their curated list. This feature will provide users with a more practical means of saving products and also create a growth intiative to attract more users to the app.",
+      "Curator profiles are a new feature I designed for the Shop App, which allow users to create collections of products from within Shopify's merchant ecosystem. This feature allows users to earn Shop Cash each time a purchase is made from their curated list. This feature will provide users with a more practical means of saving products and also create a growth intiative to attract more users to the app.",
     prototypeUrl:
       'https://www.figma.com/proto/J8U5yHemWSFg0hqXKypImf/Big-Bets-Monetization?page-id=118%3A28036&type=design&node-id=120-19905&viewport=480%2C801%2C0.04&scaling=scale-down&starting-point-node-id=120%3A19905',
     problem:
@@ -661,7 +661,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heading: 'Restoring user trust',
     metadata: 'Music Theatre International • Lead Designer • 2025',
     description:
-      'Directed the complete overhaul of a critical rehearsal tool for professional performers. I transformed a legacy application plagued by instability into a modern, accessible product, streamlining the architecture to prioritize high-stakes reliability and workflow efficiency.',
+      'I led the redesign of a rehearsal tool that professional performers rely on. When we started, the app was outdated and struggling with stability. My team and I rebuilt it into a modern, accessible product—focusing entirely on reliability, so performers could trust the technology when the stakes were high.',
     prototypeUrl:
       'https://www.figma.com/proto/HtKSKVc4GaAlahXvpFBKaM/App-Design?page-id=0%3A1&node-id=1-3545&viewport=7802%2C950%2C0.32&t=iTYnOAvdOQxNyhjA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3545',
     problem:

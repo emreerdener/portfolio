@@ -138,8 +138,8 @@ export default function VivintEnergy() {
               <Title order={2}>Design principals</Title>
               <Text fz={{ base: 'md', md: 'xl' }}>
                 To transform technical energy data into a seamless part of the smart home
-                experience, we established core design principles. These guide every decision,
-                ensuring the product moves beyond a utility bill and becomes a proactive,
+                experience, the team and I established core design principles. These guide every
+                decision, ensuring the product moves beyond a utility bill and becomes a proactive,
                 value-driven feature for the everyday homeowner.
               </Text>
             </Stack>
