@@ -20,12 +20,11 @@ interface WaveformPlayerProps {
 }
 
 export default function WaveformPlayer({}: WaveformPlayerProps) {
-  const { isPlaying, toggleAudio, hasAudio, audioRef, audioError } = useCaseStudyAudio();
+  const { isPlaying, toggleAudio, hasAudio, audioRef, audioError, duration } = useCaseStudyAudio();
   const containerRef = useRef<HTMLDivElement>(null);
   const wavesurfer = useRef<WaveSurfer | null>(null);
   const [isReady, setIsReady] = useState(false);
   const [currentTime, setCurrentTime] = useState('0:00');
-  const [totalDuration, setTotalDuration] = useState('0:00');
 
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
   const activeWaveColor = computedColorScheme === 'dark' ? '#424242' : '#dee2e6';
@@ -64,9 +63,8 @@ export default function WaveformPlayer({}: WaveformPlayerProps) {
     });
 
     // 2. Event Listeners
-    wavesurfer.current.on('ready', (duration) => {
+    wavesurfer.current.on('ready', () => {
       setIsReady(true);
-      setTotalDuration(formatTime(duration));
     });
 
     wavesurfer.current.on('audioprocess', (currentTime) => {
@@ -148,7 +146,7 @@ export default function WaveformPlayer({}: WaveformPlayerProps) {
 
         {/* Time Display */}
         <Text size="xs" c="dimmed" variant="text" style={{ fontVariantNumeric: 'tabular-nums' }}>
-          {currentTime} / {totalDuration}
+          {currentTime} / {duration || '0:00'}
         </Text>
       </Group>
     </Paper>
