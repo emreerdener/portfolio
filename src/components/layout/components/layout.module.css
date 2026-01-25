@@ -89,6 +89,7 @@
   }
   .navbar {
     padding-top: var(--mantine-spacing-xl) !important;
+    padding-right: var(--mantine-spacing-xl) !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column;
