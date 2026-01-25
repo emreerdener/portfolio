@@ -57,7 +57,7 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
               paddingBottom: 8,
               marginBottom: 4,
               letterSpacing: '-0.5px',
-              fontWeight: active ? 700 : 400,
+              fontWeight: active ? 600 : 500,
             },
           })}
         />

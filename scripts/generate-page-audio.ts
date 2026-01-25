@@ -26,7 +26,7 @@ function cleanText(text: string) {
     .trim();
 }
 
-function splitTextIntoChunks(text: string, maxLength: number = 4000): string[] {
+function splitTextIntoChunks(text: string, maxLength: number = 35000): string[] {
   if (text.length <= maxLength) return [text];
   const chunks: string[] = [];
   let currentChunk = '';
@@ -111,7 +111,10 @@ async function generateAudio() {
       ${impactSection}
       ${statsScript}
       ${bodyText}
-    `.trim();
+    `
+      .trim()
+      .replace(/\bLead /g, 'Leed ')
+      .replace(/\blead /g, 'leed ');
 
     const textChunks = splitTextIntoChunks(fullScript);
     const audioBuffers: Buffer[] = [];
@@ -124,6 +127,12 @@ async function generateAudio() {
           text: textChunks[i],
           model_id: 'eleven_turbo_v2_5',
           output_format: 'mp3_44100_128',
+          voice_settings: {
+            stability: 0.5,
+            similarity_boost: 0.75,
+            style: 0,
+            use_speaker_boost: true,
+          },
         });
 
         const buffer = await streamToBuffer(audioStream);
