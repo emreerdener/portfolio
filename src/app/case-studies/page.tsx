@@ -1,11 +1,13 @@
 'use client';
 
 import { IconSearch } from '@tabler/icons-react';
-import { Button, Grid, Space, Stack, Text, Title } from '@mantine/core';
+import Lottie from 'lottie-react';
+import { Box, Button, Grid, Space, Stack, Text, Title } from '@mantine/core';
 import { FadeIn } from '@/src/components/animations/FadeIn';
 import ProjectCard from '@/src/components/content/case-studies/components/ProjectCard';
 import ProjectFilters from '@/src/components/content/case-studies/components/ProjectFilters';
 import { useProjectFilters } from '@/src/components/content/case-studies/hooks/use-project-filters';
+import { PolarBear } from '@/src/components/content/other-work/components/animations/data/polar-bear';
 import { CASE_STUDIES } from '../../components/content/case-studies/data/case-studies';
 
 // Constant data for filter dropdowns (derived from full dataset)
@@ -76,9 +78,7 @@ export default function CaseStudiesPage() {
           {filteredProjects.length === 0 && (
             <Grid.Col span={12}>
               <Stack align="center" py={60} gap="md">
-                <IconSearch size={32} />
-
-                <Title order={3}>No projects found</Title>
+                <Title order={2}>No projects found</Title>
                 <Text c="dimmed" ta="center" maw={420}>
                   We couldn&apos;t find any case studies matching your current filters. Try
                   adjusting your search criteria.
@@ -86,6 +86,10 @@ export default function CaseStudiesPage() {
                 <Button variant="light" size="md" onClick={resetFilters}>
                   Clear all filters
                 </Button>
+
+                <Box w="100%" maw={500}>
+                  <Lottie animationData={PolarBear} loop autoplay />
+                </Box>
               </Stack>
             </Grid.Col>
           )}
