@@ -1,10 +1,10 @@
 'use client';
 
-import { IconBrandFigma, IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
+import { IconBrandFigma } from '@tabler/icons-react';
 import { Button, Group, Image, Stack, Text, Title } from '@mantine/core';
-import { useCaseStudyAudio } from '../context/CaseStudyAudioContext';
 import CaseStudyImpact from './CaseStudyImpact';
 import ChallengeProposal from './ChallengeProposal';
+import WaveformPlayer from './WaveformPlayer';
 
 interface Stat {
   label: string;
@@ -33,16 +33,17 @@ export default function CaseStudyHeader({
   metadata,
   title,
   description,
-  prototypeUrl,
-  websiteUrl,
   problem,
   proposal,
   stats,
   statsDescription,
 }: CaseStudyHeaderProps) {
-  // Audio State from Context
-  const { isPlaying, duration, toggleAudio, hasAudio } = useCaseStudyAudio();
-
+  const rawAudioSrc = id
+    ? `https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/audio/${id}.mp3`
+    : undefined;
+  const audioSrc = rawAudioSrc
+    ? `/api/proxy-audio?url=${encodeURIComponent(rawAudioSrc)}`
+    : undefined;
   return (
     <Stack gap="xl">
       <Stack gap="xs" pb="lg">
@@ -52,6 +53,7 @@ export default function CaseStudyHeader({
               {metadata}
             </Text>
           </Group>
+
           <Stack>
             <Title order={1} fz={{ base: '2.2rem', md: '2.8rem' }} lh={1.1} fw={800}>
               {title}
@@ -59,43 +61,7 @@ export default function CaseStudyHeader({
             <Text fz={{ base: 'md', md: 'xl' }}>{description}</Text>
           </Stack>
 
-          <Group>
-            {prototypeUrl && (
-              <Button
-                size="md"
-                component="a"
-                href={prototypeUrl}
-                target="_blank"
-                leftSection={<IconBrandFigma size={20} />}
-              >
-                Prototype
-              </Button>
-            )}
-            {websiteUrl && (
-              <Button size="md" component="a" href={websiteUrl} target="_blank">
-                Website
-              </Button>
-            )}
-
-            {/* Audio Player Button */}
-            {hasAudio && (
-              <Button
-                variant="default"
-                size="md"
-                leftSection={
-                  isPlaying ? (
-                    <IconPlayerPauseFilled size={20} />
-                  ) : (
-                    <IconPlayerPlayFilled size={20} />
-                  )
-                }
-                onClick={toggleAudio}
-                disabled={!duration}
-              >
-                {isPlaying ? 'Pause' : duration ? `Listen (${duration})` : 'Loading...'}
-              </Button>
-            )}
-          </Group>
+          {audioSrc && <WaveformPlayer />}
         </Stack>
       </Stack>
 

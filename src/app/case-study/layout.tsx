@@ -1,8 +1,13 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
-import { Button, Group, Stack } from '@mantine/core';
+import {
+  IconArrowLeft,
+  IconArrowRight,
+  IconBrandFigma,
+  IconExternalLink,
+} from '@tabler/icons-react';
+import { ActionIcon, Button, Group, Stack, Tooltip } from '@mantine/core';
 import CaseStudyStickyBanner from '@/src/components/content/case-studies/components/StickyBanner';
 import { CaseStudyAudioProvider } from '@/src/components/content/case-studies/context/CaseStudyAudioContext';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
@@ -26,25 +31,54 @@ export default function CaseStudiesLayout({ children }: { children: React.ReactN
     <CaseStudyAudioProvider caseStudyId={study?.id}>
       <Stack gap="xl" maw={1000}>
         <Group justify="space-between">
-          <Button
-            onClick={() => router.push('/case-studies')}
-            variant="default"
-            size="md"
-            leftSection={<IconArrowLeft size={24} />}
-            aria-label="All case studies"
-          >
-            All
-          </Button>
+          <Group>
+            <Tooltip label="All case studies" position="right">
+              <ActionIcon
+                onClick={() => router.push('/case-studies')}
+                variant="default"
+                size={42} // Matching the height of standard md Button
+                radius="md" // Matching the radius of standard md Button
+                aria-label="All case studies"
+              >
+                <IconArrowLeft size={24} />
+              </ActionIcon>
+            </Tooltip>
 
-          <Button
-            onClick={handleNextCaseStudy}
-            variant="light"
-            size="md"
-            rightSection={<IconArrowRight size={24} />}
-            aria-label="Next case study"
-          >
-            Next
-          </Button>
+            <Tooltip label="Next case study" position="right">
+              <ActionIcon
+                onClick={handleNextCaseStudy}
+                variant="default"
+                size={42}
+                radius="md"
+                aria-label="Next case study"
+              >
+                <IconArrowRight size={24} />
+              </ActionIcon>
+            </Tooltip>
+          </Group>
+
+          {study?.prototypeUrl && (
+            <Button
+              size="md"
+              component="a"
+              href={study.prototypeUrl}
+              target="_blank"
+              leftSection={<IconBrandFigma size={20} />}
+            >
+              Prototype
+            </Button>
+          )}
+          {study?.websiteUrl && (
+            <Button
+              size="md"
+              component="a"
+              href={study.websiteUrl}
+              target="_blank"
+              rightSection={<IconExternalLink size={20} />}
+            >
+              Website
+            </Button>
+          )}
         </Group>
         {children}
       </Stack>

@@ -8,6 +8,7 @@ interface AudioContextType {
   toggleAudio: () => void;
   audioError: boolean;
   hasAudio: boolean;
+  audioRef: React.RefObject<HTMLAudioElement | null>;
 }
 
 const CaseStudyAudioContext = createContext<AudioContextType | null>(null);
@@ -45,7 +46,9 @@ export function CaseStudyAudioProvider({ caseStudyId, children }: CaseStudyAudio
   }, [caseStudyId]);
 
   const audioSrc = caseStudyId
-    ? `https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/audio/${caseStudyId}.mp3`
+    ? `/api/proxy-audio?url=${encodeURIComponent(
+        `https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/audio/${caseStudyId}.mp3`
+      )}`
     : undefined;
 
   const toggleAudio = () => {
@@ -75,6 +78,7 @@ export function CaseStudyAudioProvider({ caseStudyId, children }: CaseStudyAudio
         toggleAudio,
         audioError,
         hasAudio: !!caseStudyId && !audioError,
+        audioRef,
       }}
     >
       {caseStudyId && (

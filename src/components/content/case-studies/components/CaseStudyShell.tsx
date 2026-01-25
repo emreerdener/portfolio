@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { IconList } from '@tabler/icons-react';
+import { IconBook } from '@tabler/icons-react';
 import {
   ActionIcon,
   AppShell,
@@ -66,7 +66,7 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
             boxShadow: 'var(--mantine-shadow-xs)',
           }}
         >
-          <IconList size={28} />
+          <IconBook size={28} />
         </ActionIcon>
       </Box>
 
@@ -74,7 +74,7 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
       <Drawer
         opened={tocOpened}
         onClose={closeToc}
-        title="On this page"
+        title="Table of contents"
         padding="md"
         size="lg"
         position="bottom"

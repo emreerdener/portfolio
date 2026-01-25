@@ -6202,6 +6202,7 @@ __metadata:
     tsx: "npm:^4.21.0"
     typescript: "npm:5.9.3"
     typescript-eslint: "npm:^8.49.0"
+    wavesurfer.js: "npm:^7.12.1"
   languageName: unknown
   linkType: soft
 
@@ -8834,6 +8835,13 @@ __metadata:
   dependencies:
     makeerror: "npm:1.0.12"
   checksum: 10c0/a17e037bccd3ca8a25a80cb850903facdfed0de4864bd8728f1782370715d679fa72e0a0f5da7c1c1379365159901e5935f35be531229da53bbfc0efdabdb48e
+  languageName: node
+  linkType: hard
+
+"wavesurfer.js@npm:^7.12.1":
+  version: 7.12.1
+  resolution: "wavesurfer.js@npm:7.12.1"
+  checksum: 10c0/976d754cc05cc137e1c7d179d90eca185aadef303b421d26d1155a84d4cea5769a68aca2e9a71488683ea77af31abeab51ab9e6e4bf0fcc6374fbe388ddcb9fe
   languageName: node
   linkType: hard
 

@@ -21,7 +21,7 @@ export default function CaseStudyStickyBanner({
 }: CaseStudyStickyBannerProps) {
   const [scroll] = useWindowScroll();
   const { isPlaying, toggleAudio, hasAudio } = useCaseStudyAudio();
-  const show = scroll.y > 800 && (!!prototypeUrl || !!websiteUrl || hasAudio);
+  const show = scroll.y > 300 && (!!prototypeUrl || !!websiteUrl || hasAudio);
 
   return (
     <div
@@ -39,24 +39,6 @@ export default function CaseStudyStickyBanner({
       <Transition transition="slide-up" mounted={show} duration={300}>
         {(transitionStyles) => (
           <Group gap="xs" style={{ ...transitionStyles, pointerEvents: 'auto' }}>
-            {hasAudio && (
-              <Button
-                variant="default"
-                size="sm"
-                radius="xl"
-                leftSection={
-                  isPlaying ? (
-                    <IconPlayerPauseFilled size={16} />
-                  ) : (
-                    <IconPlayerPlayFilled size={16} />
-                  )
-                }
-                onClick={toggleAudio}
-                style={{ boxShadow: 'var(--mantine-shadow-md)' }}
-              >
-                {isPlaying ? 'Pause' : 'Listen'}
-              </Button>
-            )}
             {prototypeUrl && (
               <Button
                 component="a"
@@ -83,6 +65,25 @@ export default function CaseStudyStickyBanner({
                 rightSection={<IconExternalLink size={14} />}
               >
                 Website
+              </Button>
+            )}
+
+            {hasAudio && (
+              <Button
+                variant="default"
+                size="sm"
+                radius="xl"
+                leftSection={
+                  isPlaying ? (
+                    <IconPlayerPauseFilled size={16} />
+                  ) : (
+                    <IconPlayerPlayFilled size={16} />
+                  )
+                }
+                onClick={toggleAudio}
+                style={{ boxShadow: 'var(--mantine-shadow-md)' }}
+              >
+                {isPlaying ? 'Pause' : 'Listen'}
               </Button>
             )}
           </Group>

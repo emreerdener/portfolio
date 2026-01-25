@@ -12,7 +12,7 @@ export default function ChallengeProposal({ problem, proposal }: ChallengePropos
       <Blockquote p="xl" color="orange">
         <Stack>
           <Group justify="space-between" wrap="nowrap">
-            <Title order={2}>Challenge</Title>
+            <Title order={2}>Problem</Title>
             <IconExclamationCircleFilled size={32} color="orange" />
           </Group>
           <Text fz={{ base: 'md', md: 'xl' }}>{problem}</Text>
