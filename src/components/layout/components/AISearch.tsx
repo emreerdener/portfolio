@@ -44,7 +44,6 @@ const SEARCH_SUGGESTIONS_GROUPED = [
     items: [
       'Show me your work on Design Systems and Component Libraries',
       'How do you bridge the gap between design and engineering?',
-      'Tell me about the technical stack used for this portfolio',
     ],
   },
   {
@@ -62,6 +61,18 @@ const SEARCH_SUGGESTIONS_GROUPED = [
   },
 ];
 
+const LOADING_MESSAGES = [
+  'Analyzing portfolio...',
+  'Searching relevant experience...',
+  'Digging into case studies...',
+  'Writing analysis...',
+  'Reviewing design systems...',
+  'Polishing the pixels...',
+  'Auditing UX flows...',
+  'Curating artifacts...',
+  'Outlining an answer...',
+];
+
 const TinyScrollArea = (props: any) => <ScrollArea.Autosize scrollbarSize={0} {...props} />;
 
 export default function AISearch() {
@@ -70,6 +81,10 @@ export default function AISearch() {
   const [query, setQuery] = useState('');
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Rotating messages state
+  const [activeMessages, setActiveMessages] = useState<string[]>([]);
+  const [messageIndex, setMessageIndex] = useState(0);
 
   // Drawer state
   const [opened, { open, close }] = useDisclosure(false);
@@ -120,28 +135,26 @@ export default function AISearch() {
     }
   };
 
-  // Rotating messages state
-  const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);
-  const loadingMessages = [
-    'Analyzing portfolio...',
-    'Searching relevant experience...',
-    'Digging into case studies...',
-    'Writing analysis...',
-    'Reviewing design systems...',
-    'Polishing the pixels...',
-    'Auditing user experience flows...',
-    'Curating relevant artifacts...',
-    'Outlining an answer...',
-  ];
-
   useEffect(() => {
     let interval: NodeJS.Timeout;
+
     if (loading) {
-      setLoadingMessageIndex(0);
+      const shuffle = (array: string[]) => [...array].sort(() => Math.random() - 0.5);
+      const shuffled = shuffle(LOADING_MESSAGES);
+      setActiveMessages(shuffled);
+      setMessageIndex(0);
+
       interval = setInterval(() => {
-        setLoadingMessageIndex((prev) => (prev + 1) % loadingMessages.length);
+        setMessageIndex((prev) => {
+          if (prev >= shuffled.length - 1) {
+            setActiveMessages(shuffle(LOADING_MESSAGES));
+            return 0;
+          }
+          return prev + 1;
+        });
       }, 3000);
     }
+
     return () => clearInterval(interval);
   }, [loading]);
 
@@ -167,8 +180,8 @@ export default function AISearch() {
               <Stack>
                 <Stack align="center" gap="md">
                   <Loader size="xl" type="dots" color="orange" />
-                  <Text size="lg" fw={500} c="dimmed">
-                    {loadingMessages[loadingMessageIndex]}
+                  <Text size="lg" fw={500} c="dimmed" ta="center">
+                    {activeMessages[messageIndex] || 'Analyzing portfolio...'}
                   </Text>
                 </Stack>
 
@@ -203,7 +216,6 @@ export default function AISearch() {
                 )}
 
                 {/* Internal Search Input */}
-
                 <Autocomplete
                   maxLength={200}
                   placeholder="Ask a follow-up question..."
