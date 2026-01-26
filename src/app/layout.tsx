@@ -8,6 +8,7 @@ import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/c
 import { theme } from '../../theme';
 import { Shell } from '../components/layout/components/Shell';
 import { AvatarProvider } from '../context/AvatarContext';
+import { SearchProvider } from '../context/SearchContext';
 
 export const metadata = {
   metadataBase: new URL('https://www.emre.design'),
@@ -69,7 +70,9 @@ export default function RootLayout({ children }: { children: any }) {
           <Analytics />
           <SpeedInsights />
           <AvatarProvider>
-            <Shell>{children}</Shell>
+            <SearchProvider>
+              <Shell>{children}</Shell>
+            </SearchProvider>
           </AvatarProvider>
         </MantineProvider>
       </body>

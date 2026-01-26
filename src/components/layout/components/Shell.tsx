@@ -2,16 +2,20 @@
 
 import { usePathname } from 'next/navigation';
 import { CaseStudyShell } from '../../content/case-studies/components/CaseStudyShell';
+import GlobalSearch from './ai-search/GlobalSearch';
 import { HomeShell } from './HomeShell';
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  // If the URL starts with /case-study/, render the CaseStudyShell
-  if (pathname?.startsWith('/case-study/')) {
-    return <CaseStudyShell>{children}</CaseStudyShell>;
-  }
-
-  // Otherwise, render the standard HomeShell
-  return <HomeShell>{children}</HomeShell>;
+  return (
+    <>
+      <GlobalSearch />
+      {pathname?.startsWith('/case-study/') ? (
+        <CaseStudyShell>{children}</CaseStudyShell>
+      ) : (
+        <HomeShell>{children}</HomeShell>
+      )}
+    </>
+  );
 }

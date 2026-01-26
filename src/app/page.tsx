@@ -4,7 +4,7 @@ import { Grid, Space, Stack } from '@mantine/core';
 import { FadeIn } from '../components/animations/FadeIn';
 import ProjectCard from '../components/content/case-studies/components/ProjectCard';
 import { CASE_STUDIES } from '../components/content/case-studies/data/case-studies';
-import AISearch from '../components/layout/components/AISearch';
+import HomeSearchInput from '../components/layout/components/ai-search/HomeSearchInput';
 import MoreBanner from '../components/layout/components/MoreBanner';
 
 export default function HomePage() {
@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Stack gap="xl" px={{ base: 0, lg: 'xl' }}>
         <FadeIn>
-          <AISearch />
+          <HomeSearchInput />
         </FadeIn>
 
         <Grid gutter={{ base: 32, xs: 48 }}>
