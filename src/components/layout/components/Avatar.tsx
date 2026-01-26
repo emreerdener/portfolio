@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Box, BoxProps } from '@mantine/core';
+import { useAvatarContext } from '../../../context/AvatarContext';
 
 export function Avatar(props: BoxProps & { onClick?: () => void }) {
+  const { headTransformRef } = useAvatarContext();
   const leftPupilRef = useRef<SVGCircleElement>(null);
   const rightPupilRef = useRef<SVGCircleElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -20,9 +22,11 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
         // Organic bobbing movement
         const rotate = Math.random() * 1.5 - 0.75; // Very subtle rotation
         const moveX = Math.random() * 4 - 2; // Slight side sway
-        const moveY = Math.random() * 12 - 6; // Gentle bobbing
+        const moveY = Math.random() * 12 - 8; // Gentle bobbing
 
-        headRef.current.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotate}deg) scale(1.02)`;
+        const newTransform = `translate(${moveX}px, ${moveY}px) rotate(${rotate}deg) scale(1.02)`;
+        headRef.current.style.transform = newTransform;
+        headTransformRef.current = newTransform;
       }
 
       const nextMove = Math.random() * 1000 + 2000; // 2-3 seconds
@@ -152,6 +156,7 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
             transformOrigin: '697px 697px',
             transition: 'transform 2s ease-in-out',
             willChange: 'transform',
+            transform: headTransformRef.current || 'scale(1.02)',
           }}
         >
           <path

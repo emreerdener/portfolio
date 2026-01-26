@@ -7,6 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 import { theme } from '../../theme';
 import { Shell } from '../components/layout/components/Shell';
+import { AvatarProvider } from '../context/AvatarContext';
 
 export const metadata = {
   metadataBase: new URL('https://www.emre.design'),
@@ -67,7 +68,9 @@ export default function RootLayout({ children }: { children: any }) {
         <MantineProvider theme={theme}>
           <Analytics />
           <SpeedInsights />
-          <Shell>{children}</Shell>
+          <AvatarProvider>
+            <Shell>{children}</Shell>
+          </AvatarProvider>
         </MantineProvider>
       </body>
     </html>

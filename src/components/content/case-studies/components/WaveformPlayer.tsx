@@ -99,14 +99,14 @@ export default function WaveformPlayer({}: WaveformPlayerProps) {
           Listen to case study
         </Title>
 
-        <HoverCard width={300} shadow="md" position="bottom-start">
+        <HoverCard width={320} shadow="md" position="right">
           <HoverCard.Target>
             <IconInfoCircle size={16} aria-label="Info" color="gray" />
           </HoverCard.Target>
           <HoverCard.Dropdown>
             <Text size="sm">
-              This audio is generated using AI. Listen to it to get a sense of my experience,
-              profile, and design work.
+              An AI-generated audio summary to improve accessibility and provide an alternative way
+              to consume this case study.
             </Text>
           </HoverCard.Dropdown>
         </HoverCard>
