@@ -16,7 +16,7 @@ import {
   Text,
   Tooltip,
 } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { Giraffes } from '../../content/other-work/components/animations/data/giraffes';
 import { AnalysisSection } from './ai-search/AnalysisSection';
 import { ContextSection } from './ai-search/ContextSection';
@@ -62,7 +62,7 @@ const SEARCH_SUGGESTIONS_GROUPED = [
   },
 ];
 
-const TinyScrollArea = (props: any) => <ScrollArea.Autosize scrollbarSize={5} {...props} />;
+const TinyScrollArea = (props: any) => <ScrollArea.Autosize scrollbarSize={0} {...props} />;
 
 export default function AISearch() {
   const router = useRouter();
@@ -73,6 +73,7 @@ export default function AISearch() {
 
   // Drawer state
   const [opened, { open, close }] = useDisclosure(false);
+  const isMobile = useMediaQuery('(max-width: 62em)');
   const [data, setData] = useState<SearchResponse | null>(null);
 
   const modalSuggestions = data?.followUpQuestions
@@ -150,11 +151,15 @@ export default function AISearch() {
         opened={opened}
         onClose={close}
         size="xl"
+        fullScreen={isMobile}
         radius="lg"
         centered
         title="Search results"
         scrollAreaComponent={TinyScrollArea}
         transitionProps={{ transition: 'fade', duration: 200 }}
+        styles={{
+          header: { top: -1 },
+        }}
       >
         <Container size="md" p={{ base: 0, md: 'sm' }} pb="xl">
           {loading ? (
@@ -266,7 +271,7 @@ export default function AISearch() {
             <Stack gap={0}>
               <Autocomplete
                 maxLength={200}
-                placeholder="Ask me anything about my work..."
+                placeholder="Ask about my work..."
                 value={query}
                 onChange={setQuery}
                 onKeyDown={handleKeyDown}
