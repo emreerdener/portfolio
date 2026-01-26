@@ -31,33 +31,47 @@ interface SearchResponse {
 
 const SEARCH_SUGGESTIONS_GROUPED = [
   {
-    group: 'Impact & experience',
+    group: 'Strategy & leadership',
     items: [
-      'What was your biggest impact at Shopify?',
-      'How did you lead design at Vivint?',
-      'Show me projects involving zero-to-one product growth',
-      'Tell me about your experience with Smart Home & Energy design',
+      'What is your approach to aligning design strategy with business goals?',
+      'How have you led cross-functional teams to deliver product outcomes?',
+      'What is your experience with zero-to-one product development?',
+      'How do you measure and communicate the business impact of design?',
     ],
   },
   {
-    group: 'Design & engineering',
+    group: 'Design engineering & systems',
     items: [
-      'Show me your work on Design Systems and Component Libraries',
-      'How do you bridge the gap between design and engineering?',
+      'How do you architect and scale design systems for large organizations?',
+      'What is your process for improving development velocity through design?',
+      'How do you handle technical debt and component governance at scale?',
+      'Describe your experience bridging the gap between design and code.',
     ],
   },
   {
-    group: 'Process & leadership',
+    group: 'Emerging tech & AI',
     items: [
-      'What is your philosophy on product design?',
-      'How do you balance user needs with business goals?',
-      'Tell me about your approach to rapid prototyping',
-      'Why should we hire a designer who can code?',
+      'How do you approach designing for AI-powered and agentic workflows?',
+      'What are your principles for establishing trust in automated systems?',
+      'How does your philosophy background influence your view on tech ethics?',
     ],
   },
   {
-    group: 'About me',
-    items: ['What do you do for fun?', 'What are some fun facts about you?'],
+    group: 'Specialized domain expertise',
+    items: [
+      'What are the challenges of designing for IoT and hardware ecosystems?',
+      'How do you design for complex, multi-sided e-commerce marketplaces?',
+      'How do you handle latency and connectivity constraints in product design?',
+      'Describe your approach to designing for highly regulated environments.',
+    ],
+  },
+  {
+    group: 'Professional profile',
+    items: [
+      'What are the core pillars of your design philosophy?',
+      'How do you mentor junior designers and foster a critique culture?',
+      'Summarize your professional background and key career milestones.',
+    ],
   },
 ];
 
@@ -93,7 +107,7 @@ export default function AISearch() {
 
   const modalSuggestions = data?.followUpQuestions
     ? [
-        { group: 'Suggested Follow-ups', items: data.followUpQuestions },
+        { group: 'Suggested follow-ups', items: data.followUpQuestions },
         ...SEARCH_SUGGESTIONS_GROUPED,
       ]
     : SEARCH_SUGGESTIONS_GROUPED;
