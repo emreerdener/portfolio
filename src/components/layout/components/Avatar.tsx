@@ -5,9 +5,11 @@ import { Box, BoxProps } from '@mantine/core';
 import { useAvatarContext } from '../../../context/AvatarContext';
 
 export function Avatar(props: BoxProps & { onClick?: () => void }) {
-  const { headTransformRef } = useAvatarContext();
+  const { headTransformRef, eyeTransformRef } = useAvatarContext();
   const leftPupilRef = useRef<SVGCircleElement>(null);
   const rightPupilRef = useRef<SVGCircleElement>(null);
+  const leftEyebrowRef = useRef<SVGPathElement>(null);
+  const rightEyebrowRef = useRef<SVGPathElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const smileRef = useRef<SVGPathElement>(null);
   const headRef = useRef<SVGGElement>(null);
@@ -36,6 +38,50 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
     triggerHeadMove();
     return () => clearTimeout(headTimeout);
   }, []);
+
+  // Eyebrow Idle Animation
+  useEffect(() => {
+    let browTimeout: ReturnType<typeof setTimeout>;
+
+    const moveBrows = () => {
+      const moveY = Math.random() * 2 - 1; // -1 to 1px
+      const transform = `translateY(${moveY}px)`;
+
+      if (leftEyebrowRef.current) leftEyebrowRef.current.style.transform = transform;
+      if (rightEyebrowRef.current) rightEyebrowRef.current.style.transform = transform;
+
+      browTimeout = setTimeout(moveBrows, Math.random() * 2000 + 2000);
+    };
+
+    moveBrows();
+    return () => clearTimeout(browTimeout);
+  }, []);
+
+  const handleAvatarClick = () => {
+    // Playful brow jump
+    const jump = 'translateY(-12px)';
+
+    [leftEyebrowRef.current, rightEyebrowRef.current].forEach((brow) => {
+      if (!brow) return;
+      brow.style.transition = 'transform 0.1s ease-out';
+      brow.style.transform = jump;
+    });
+
+    setTimeout(() => {
+      [leftEyebrowRef.current, rightEyebrowRef.current].forEach((brow) => {
+        if (!brow) return;
+        brow.style.transition = 'transform 0.2s ease-in';
+        brow.style.transform = 'translateY(0px)';
+
+        // Restore slow transition for idle
+        setTimeout(() => {
+          brow.style.transition = 'transform 1s ease-in-out';
+        }, 200);
+      });
+    }, 100);
+
+    props.onClick?.();
+  };
 
   useEffect(() => {
     let blinkTimeout: ReturnType<typeof setTimeout>;
@@ -123,7 +169,9 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
           moveY = (normY / dist) * maxMoveY;
         }
 
-        pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        const newTransform = `translate(${moveX}px, ${moveY}px)`;
+        pupil.style.transform = newTransform;
+        eyeTransformRef.current = newTransform;
       });
     };
 
@@ -135,7 +183,7 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
   }, []);
 
   return (
-    <Box {...props}>
+    <Box {...props} onClick={handleAvatarClick} style={{ ...props.style, cursor: 'pointer' }}>
       <svg
         ref={svgRef}
         viewBox="0 0 1394 1394"
@@ -279,12 +327,16 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
             strokeLinecap="round"
           />
           <path
+            ref={rightEyebrowRef}
             d="M853.43 533.654C822.232 525.714 762.55 539.748 753.621 543.777C744.691 547.807 739.886 573.799 767.956 568.527C821 558.563 833.242 559.399 859.12 563.947C884.032 568.325 928.185 587.825 928.669 568.916C929.154 550.008 892.427 543.578 853.43 533.654Z"
             fill="black"
+            style={{ transition: 'transform 1s ease-in-out', willChange: 'transform' }}
           />
           <path
+            ref={leftEyebrowRef}
             d="M546.103 538.876C575.93 529.097 634.452 539.544 643.305 543.033C652.158 546.522 658.115 572.169 630.657 568.58C578.769 561.797 566.951 563.36 542.108 569.439C518.193 575.29 476.396 597.375 474.979 578.538C473.563 559.702 508.821 551.1 546.103 538.876Z"
             fill="black"
+            style={{ transition: 'transform 1s ease-in-out', willChange: 'transform' }}
           />
           {/* Left Eye Group */}
           <g
@@ -304,7 +356,10 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
               cy="650.016"
               r="30"
               fill="#4D3C2C"
-              style={{ transition: 'transform 0.05s linear' }}
+              style={{
+                transition: 'transform 0.05s linear',
+                transform: eyeTransformRef.current || 'translate(0px, 0px)',
+              }}
             />
             <path
               d="M501 654C504.526 642.333 524.15 619 574.433 619C624.717 619 643.096 639.769 646 650.154"
@@ -332,7 +387,10 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
               cy="648.771"
               r="30"
               fill="#4D3C2C"
-              style={{ transition: 'transform 0.05s linear' }}
+              style={{
+                transition: 'transform 0.05s linear',
+                transform: eyeTransformRef.current || 'translate(0px, 0px)',
+              }}
             />
             <path
               d="M764 654C767.526 642.333 787.15 619 837.433 619C887.717 619 906.096 639.769 909 650.154"

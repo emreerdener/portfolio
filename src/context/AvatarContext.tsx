@@ -4,14 +4,20 @@ import { createContext, MutableRefObject, ReactNode, useContext, useRef } from '
 
 interface AvatarContextType {
   headTransformRef: MutableRefObject<string>;
+  eyeTransformRef: MutableRefObject<string>;
 }
 
 const AvatarContext = createContext<AvatarContextType | null>(null);
 
 export function AvatarProvider({ children }: { children: ReactNode }) {
   const headTransformRef = useRef<string>('');
+  const eyeTransformRef = useRef<string>('');
 
-  return <AvatarContext.Provider value={{ headTransformRef }}>{children}</AvatarContext.Provider>;
+  return (
+    <AvatarContext.Provider value={{ headTransformRef, eyeTransformRef }}>
+      {children}
+    </AvatarContext.Provider>
+  );
 }
 
 export function useAvatarContext() {
