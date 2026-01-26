@@ -9,6 +9,7 @@ import { theme } from '../../theme';
 import { Shell } from '../components/layout/components/Shell';
 
 export const metadata = {
+  metadataBase: new URL('https://www.emre.design'),
   title: 'Emre Erdener, Product Designer',
   description:
     'I am an interdisciplinary product designer helping businesses conceptualize, design, and build software, systems, experiences, websites, and brands.',

@@ -29,6 +29,7 @@ interface SearchResponse {
   summary: string;
   suggestedLinks: Array<{ label: string; url: string; excerpt?: string }>;
   followUpQuestions?: string[];
+  disableInput?: boolean;
 }
 
 const SEARCH_SUGGESTIONS_GROUPED = [
@@ -247,7 +248,7 @@ export default function AISearch() {
                 )}
 
                 <Stack>
-                  {data?.followUpQuestions && (
+                  {data?.followUpQuestions && data.followUpQuestions.length > 0 && (
                     <FadeInUp>
                       <FollowUpSection
                         questions={data.followUpQuestions}
@@ -256,35 +257,37 @@ export default function AISearch() {
                     </FadeInUp>
                   )}
 
-                  <FadeInUp>
-                    <Autocomplete
-                      maxLength={200}
-                      placeholder="Ask a follow-up question..."
-                      value={query}
-                      onChange={setQuery}
-                      onKeyDown={handleKeyDown}
-                      onOptionSubmit={(val) => {
-                        handleSearch(val);
-                      }}
-                      data={modalSuggestions}
-                      rightSection={
-                        <ActionIcon
-                          variant="transparent"
-                          size="lg"
-                          aria-label="Search"
-                          onClick={() => handleSearch()}
-                          loading={loading}
-                        >
-                          <IconArrowRight size={24} />
-                        </ActionIcon>
-                      }
-                      size="lg"
-                      radius="md"
-                      onFocus={() => setFocused(true)}
-                      onBlur={() => setFocused(false)}
-                      styles={autocompleteStyles}
-                    />
-                  </FadeInUp>
+                  {!data?.disableInput && (
+                    <FadeInUp>
+                      <Autocomplete
+                        maxLength={200}
+                        placeholder="Ask a follow-up question..."
+                        value={query}
+                        onChange={setQuery}
+                        onKeyDown={handleKeyDown}
+                        onOptionSubmit={(val) => {
+                          handleSearch(val);
+                        }}
+                        data={modalSuggestions}
+                        rightSection={
+                          <ActionIcon
+                            variant="transparent"
+                            size="lg"
+                            aria-label="Search"
+                            onClick={() => handleSearch()}
+                            loading={loading}
+                          >
+                            <IconArrowRight size={24} />
+                          </ActionIcon>
+                        }
+                        size="lg"
+                        radius="md"
+                        onFocus={() => setFocused(true)}
+                        onBlur={() => setFocused(false)}
+                        styles={autocompleteStyles}
+                      />
+                    </FadeInUp>
+                  )}
                 </Stack>
 
                 <FadeInUp>

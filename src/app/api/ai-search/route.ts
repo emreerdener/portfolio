@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { CASE_STUDIES } from '../../../components/content/case-studies/data/case-studies';
 import { getPortfolioContext } from '../../../utils/ai-search';
+import { logQueryToSheet } from '../../../utils/google-sheets';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -14,6 +15,9 @@ export async function POST(req: Request) {
     if (!query) {
       return NextResponse.json({ error: 'Query is required' }, { status: 400 });
     }
+
+    // Log query to Google Sheets asynchronously (ignoring errors to not block response)
+    await logQueryToSheet(query);
 
     const context = getPortfolioContext();
     const caseStudiesData = JSON.stringify(CASE_STUDIES);
@@ -89,6 +93,31 @@ ${context}
     return NextResponse.json(parsedContent);
   } catch (error: any) {
     console.error('AI Search Error:', error);
+
+    // Handle OpenAI Quota limits gracefully
+    if (error?.status === 429) {
+      // 1. Dynamic Fallback: Get top 3 featured case studies
+      const fallbackProjects = CASE_STUDIES.filter((study) => study.featured)
+        .slice(0, 4)
+        .map((study) => ({
+          label: study.title,
+          url: study.href,
+          excerpt: study.heading || study.metadata || 'View this case study',
+        }));
+
+      return NextResponse.json(
+        {
+          summary: `**I’m currently at capacity!** I'm a bit overloaded with requests right now. I’ve curated a few of Emre's standout projects for you to explore. These case studies highlight his impact on **Design Systems**, **0-to-1 Product Strategy**, and **Frontend Engineering** context.`,
+
+          suggestedLinks: fallbackProjects,
+
+          followUpQuestions: [],
+          disableInput: true,
+        },
+        { status: 200 } // Return 200 so the UI renders the message as a "result"
+      );
+    }
+
     return NextResponse.json(
       { error: error.message || 'An error occurred during search' },
       { status: 500 }
