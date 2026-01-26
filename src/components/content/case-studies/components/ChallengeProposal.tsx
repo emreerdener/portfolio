@@ -8,7 +8,7 @@ interface ChallengeProposalProps {
 
 export default function ChallengeProposal({ problem, proposal }: ChallengeProposalProps) {
   return (
-    <Stack gap="xl">
+    <Stack gap="xl" mt="md">
       <Blockquote p="xl" color="orange">
         <Stack>
           <Group justify="space-between" wrap="nowrap">

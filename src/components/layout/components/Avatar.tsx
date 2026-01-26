@@ -6,7 +6,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import { useAvatarContext } from '../../../context/AvatarContext';
 
 export function Avatar(props: BoxProps & { onClick?: () => void }) {
-  const { headTransformRef, eyeTransformRef } = useAvatarContext();
+  const { headTransformRef, eyeTransformRef, setHeadElement } = useAvatarContext();
   const leftPupilRef = useRef<SVGCircleElement>(null);
   const rightPupilRef = useRef<SVGCircleElement>(null);
   const leftEyebrowRef = useRef<SVGPathElement>(null);
@@ -16,29 +16,13 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
   const headRef = useRef<SVGGElement>(null);
   const [isBlinking, setIsBlinking] = useState(false);
 
-  // Organic Head Movement
+  // Register Head Element with Context for persistent animation
   useEffect(() => {
-    let headTimeout: ReturnType<typeof setTimeout>;
-
-    const triggerHeadMove = () => {
-      if (headRef.current) {
-        // Organic bobbing movement
-        const rotate = Math.random() * 1.5 - 0.75; // Very subtle rotation
-        const moveX = Math.random() * 4 - 2; // Slight side sway
-        const moveY = Math.random() * 12 - 8; // Gentle bobbing
-
-        const newTransform = `translate(${moveX}px, ${moveY}px) rotate(${rotate}deg) scale(1.02)`;
-        headRef.current.style.transform = newTransform;
-        headTransformRef.current = newTransform;
-      }
-
-      const nextMove = Math.random() * 1000 + 2000; // 2-3 seconds
-      headTimeout = setTimeout(triggerHeadMove, nextMove);
-    };
-
-    triggerHeadMove();
-    return () => clearTimeout(headTimeout);
-  }, []);
+    if (headRef.current) {
+      setHeadElement(headRef.current);
+    }
+    return () => setHeadElement(null);
+  }, [setHeadElement]);
 
   // Eyebrow Idle Animation
   useEffect(() => {

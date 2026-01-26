@@ -57,6 +57,7 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
               paddingBottom: 8,
               marginBottom: 4,
               letterSpacing: '-0.5px',
+              lineHeight: 1.2,
               fontWeight: active ? 600 : 500,
             },
           })}
@@ -76,7 +77,7 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
                 onLinkClick?.();
               }}
               variant="outline"
-              rightSection={<IconArrowUp size={16} />}
+              rightSection={<IconArrowUp size={20} />}
               size="md"
             >
               Scroll to top
