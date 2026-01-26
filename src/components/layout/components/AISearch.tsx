@@ -298,7 +298,7 @@ export default function AISearch() {
         </Container>
       </Modal>
 
-      <Stack align="center" my="lg">
+      <Stack align="center" mt="lg" mb={{ base: 'xs', lg: 'lg' }}>
         <Box pos="relative" w="100%">
           <Box
             pos="absolute"

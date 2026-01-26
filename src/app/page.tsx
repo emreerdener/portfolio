@@ -16,7 +16,7 @@ export default function HomePage() {
           <AISearch />
         </FadeIn>
 
-        <Grid gutter={{ base: 'lg', xs: 48 }}>
+        <Grid gutter={{ base: 32, xs: 48 }}>
           {featuredProjects.map((project, index) => (
             <Grid.Col
               key={project.title}
