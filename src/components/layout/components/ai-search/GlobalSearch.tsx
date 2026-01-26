@@ -148,11 +148,11 @@ export default function GlobalSearch() {
           <Box py="xl">
             <Stack gap="lg">
               <Title order={2} ta="center" mb="md">
-                Ask about my work or experience
+                Learn about my work and experience
               </Title>
               <Autocomplete
                 maxLength={200}
-                placeholder="Ask about my work..."
+                placeholder="What would you like to know?"
                 value={query}
                 onChange={setQuery}
                 onKeyDown={handleKeyDown}

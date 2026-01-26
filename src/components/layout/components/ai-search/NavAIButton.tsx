@@ -8,17 +8,7 @@ export default function NavAIButton() {
   const { openSpotlight } = useSearch();
 
   return (
-    <Button
-      variant="gradient"
-      gradient={{
-        deg: 135,
-        from: 'var(--mantine-color-orange-6)',
-        to: 'var(--mantine-color-orange-8)',
-      }}
-      size="sm"
-      leftSection={<IconSparkles2 size={24} />}
-      onClick={openSpotlight}
-    >
+    <Button size="sm" leftSection={<IconSparkles2 size={20} />} onClick={openSpotlight}>
       Ask AI
     </Button>
   );
