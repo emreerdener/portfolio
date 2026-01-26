@@ -12,7 +12,9 @@ export default function HomePage() {
   return (
     <>
       <Stack gap="xl" px={{ base: 0, lg: 'xl' }}>
-        <AISearch />
+        <FadeIn>
+          <AISearch />
+        </FadeIn>
 
         <Grid gutter={{ base: 'lg', xs: 48 }}>
           {featuredProjects.map((project, index) => (
