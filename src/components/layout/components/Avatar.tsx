@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Box, BoxProps } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { useAvatarContext } from '../../../context/AvatarContext';
 
 export function Avatar(props: BoxProps & { onClick?: () => void }) {
@@ -123,7 +124,20 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
     return () => clearTimeout(smileTimeout);
   }, []);
 
+  // Eye Tracking Logic
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   useEffect(() => {
+    if (isMobile) {
+      // Reset to center on mobile/tablet
+      const center = 'translate(0px, 0px)';
+      [leftPupilRef, rightPupilRef].forEach((ref) => {
+        if (ref.current) ref.current.style.transform = center;
+      });
+      eyeTransformRef.current = center;
+      return;
+    }
+
     const handleMouseMove = (event: MouseEvent) => {
       if (!svgRef.current) return;
 
@@ -180,7 +194,7 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <Box {...props} onClick={handleAvatarClick} style={{ ...props.style, cursor: 'pointer' }}>

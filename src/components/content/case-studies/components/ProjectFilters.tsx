@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  IconAdjustmentsHorizontal,
   IconCpu,
   IconDeviceDesktop,
   IconDeviceMobile,
@@ -339,7 +338,7 @@ export default function ProjectFilters({
           size={12}
         >
           <ActionIcon onClick={open} size={50} radius="md" variant="default">
-            <IconAdjustmentsHorizontal size={26} />
+            <IconFilter2 size={26} />
           </ActionIcon>
         </Indicator>
 
