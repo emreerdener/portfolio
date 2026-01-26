@@ -1,12 +1,11 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Lottie from 'lottie-react';
 import { Box, Button, Container, Stack, Text, Title } from '@mantine/core';
 import { PolarBear } from '../components/content/other-work/components/animations/data/polar-bear';
 
 export default function NotFound() {
-  const router = useRouter();
   return (
     <Container size="md" py={80}>
       <Stack align="center" gap="lg">
@@ -18,7 +17,7 @@ export default function NotFound() {
             The page you are looking for does not exist. It might have been moved or deleted.
           </Text>
         </Stack>
-        <Button onClick={() => router.push('/')} variant="outline" size="md">
+        <Button component={Link} href="/" variant="outline" size="md">
           Go back home
         </Button>
 

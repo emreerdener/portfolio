@@ -77,7 +77,7 @@ const SEARCH_SUGGESTIONS_GROUPED = [
 
 const LOADING_MESSAGES = [
   'Analyzing portfolio...',
-  'Searching relevant experience...',
+  'Searching experience...',
   'Digging into case studies...',
   'Writing analysis...',
   'Reviewing design systems...',
@@ -192,7 +192,7 @@ export default function AISearch() {
           {loading ? (
             <Center style={{ height: '70vh' }}>
               <Stack>
-                <Stack align="center" gap="md">
+                <Stack align="center" gap="xs">
                   <Loader size="xl" type="dots" color="orange" />
                   <Text size="lg" fw={500} c="dimmed" ta="center">
                     {activeMessages[messageIndex] || 'Analyzing portfolio...'}
