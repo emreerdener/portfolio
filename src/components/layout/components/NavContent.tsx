@@ -10,6 +10,7 @@ import {
   IconUserFilled,
 } from '@tabler/icons-react';
 import { Anchor, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
+import { Avatar } from './Avatar';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
 
@@ -32,6 +33,13 @@ export default function NavContent({ onNavClick }: NavContentProps) {
     <>
       <Stack align="center">
         <Stack gap={0} align="center">
+          <Avatar
+            w={160}
+            mb="sm"
+            onClick={() => handleNavClick('/')}
+            style={{ cursor: 'pointer' }}
+          />
+
           <Anchor onClick={() => handleNavClick('/')} underline="never" className={classes.navName}>
             <Title order={2} ta="center" fz={26}>
               Emre Erdener

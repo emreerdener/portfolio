@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
+import { IconInfoCircle, IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
 import WaveSurfer from 'wavesurfer.js';
 import {
   ActionIcon,
   Box,
   Group,
+  HoverCard,
   Loader,
   Paper,
   Stack,
@@ -93,9 +94,23 @@ export default function WaveformPlayer({}: WaveformPlayerProps) {
 
   return (
     <Stack w="100%" gap={0} pt="sm">
-      <Title order={4} size="sm" c="dimmed" tt="uppercase">
-        Listen to case study
-      </Title>
+      <Group wrap="nowrap" gap="xs">
+        <Title order={4} size="sm" c="dimmed" tt="uppercase">
+          Listen to case study
+        </Title>
+
+        <HoverCard width={300} shadow="md" position="bottom-start">
+          <HoverCard.Target>
+            <IconInfoCircle size={16} aria-label="Info" color="gray" />
+          </HoverCard.Target>
+          <HoverCard.Dropdown>
+            <Text size="sm">
+              This audio is generated using AI. Listen to it to get a sense of my experience,
+              profile, and design work.
+            </Text>
+          </HoverCard.Dropdown>
+        </HoverCard>
+      </Group>
       <Paper radius="md" withBorder py="xs" px="sm" w="100%" my="sm">
         <Group align="center" gap="sm" w="100%">
           {/* Play/Pause Button */}
