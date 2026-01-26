@@ -11,6 +11,7 @@ import {
   HoverCard,
   Loader,
   Modal,
+  ScrollArea,
   Stack,
   Text,
   Tooltip,
@@ -60,6 +61,8 @@ const SEARCH_SUGGESTIONS_GROUPED = [
     items: ['What do you do for fun?', 'What are some fun facts about you?'],
   },
 ];
+
+const TinyScrollArea = (props: any) => <ScrollArea.Autosize scrollbarSize={5} {...props} />;
 
 export default function AISearch() {
   const router = useRouter();
@@ -149,9 +152,11 @@ export default function AISearch() {
         size="xl"
         radius="lg"
         centered
+        title="Search results"
+        scrollAreaComponent={TinyScrollArea}
         transitionProps={{ transition: 'fade', duration: 200 }}
       >
-        <Container size="md" pb="xl">
+        <Container size="md" p={{ base: 0, md: 'sm' }} pb="xl">
           {loading ? (
             <Center style={{ height: '70vh' }}>
               <Stack>
