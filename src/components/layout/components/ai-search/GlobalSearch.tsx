@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { IconArrowRight, IconSearch } from '@tabler/icons-react';
+import { IconArrowRight, IconSparkles2 } from '@tabler/icons-react';
 import Lottie from 'lottie-react';
 import {
   ActionIcon,
@@ -12,10 +12,10 @@ import {
   Container,
   Loader,
   Modal,
-  rem,
   ScrollArea,
   Stack,
   Text,
+  Title,
   Tooltip,
 } from '@mantine/core';
 import { useHotkeys, useMediaQuery } from '@mantine/hooks';
@@ -120,7 +120,7 @@ export default function GlobalSearch() {
       fullScreen={isMobile}
       radius="lg"
       centered
-      title={!data && !loading ? 'AI Search' : 'Search results'}
+      title={!data && !loading ? 'AI search' : 'Search results'}
       scrollAreaComponent={TinyScrollArea}
       transitionProps={{ transition: 'fade', duration: 200 }}
       styles={{
@@ -147,9 +147,9 @@ export default function GlobalSearch() {
           // Initial "Spotlight" State
           <Box py="xl">
             <Stack gap="lg">
-              <Text size="lg" c="dimmed" ta="center" mb="md">
-                Ask me anything about my work, experience, or design philosophy.
-              </Text>
+              <Title order={2} ta="center" mb="md">
+                Ask about my work or experience
+              </Title>
               <Autocomplete
                 maxLength={200}
                 placeholder="Ask about my work..."
@@ -161,9 +161,7 @@ export default function GlobalSearch() {
                 size="xl"
                 radius="xl"
                 autoFocus
-                leftSection={
-                  <IconSearch style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
-                }
+                leftSection={<IconSparkles2 size={28} aria-label="AI search" color="orange" />}
                 rightSection={
                   <Tooltip label="Search" position="left">
                     <ActionIcon

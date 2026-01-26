@@ -10,6 +10,7 @@ import {
   IconUserFilled,
 } from '@tabler/icons-react';
 import { Anchor, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
+import NavAIButton from './ai-search/NavAIButton';
 import { Avatar } from './Avatar';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './layout.module.css';
@@ -93,6 +94,7 @@ export default function NavContent({ onNavClick }: NavContentProps) {
           />
         </SimpleGrid>
         <Stack maw={236} w="100%">
+          <NavAIButton />
           <ThemeSwitch />
         </Stack>
       </Stack>

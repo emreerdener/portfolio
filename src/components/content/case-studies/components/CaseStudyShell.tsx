@@ -110,9 +110,11 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
       </Transition>
 
       <AppShell.Navbar className={classes.navbar}>
-        <Stack gap={0} className={classes.navbarContainer}>
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <NavContent onNavClick={close} />
+        <Stack>
+          <Stack gap={0} className={classes.navbarContainer}>
+            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+            <NavContent onNavClick={close} />
+          </Stack>
         </Stack>
       </AppShell.Navbar>
 
