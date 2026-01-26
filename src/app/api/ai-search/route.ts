@@ -107,7 +107,7 @@ ${context}
 
       return NextResponse.json(
         {
-          summary: `**I’m currently at capacity!** I'm a bit overloaded with requests right now. I’ve curated a few of Emre's standout projects for you to explore. These case studies highlight his impact on **Design Systems**, **0-to-1 Product Strategy**, and **Frontend Engineering** context.`,
+          summary: `**I’m currently at capacity!** I'm a bit overloaded with requests right now. I’ve curated a few of Emre's standout projects for you to explore. These case studies highlight his impact and experience.`,
 
           suggestedLinks: fallbackProjects,
 
