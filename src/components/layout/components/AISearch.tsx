@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { IconArrowRight, IconSparkles2 } from '@tabler/icons-react';
 import Lottie from 'lottie-react';
@@ -17,6 +17,8 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
+import { FadeInUp } from '../../animations/FadeInUp';
+import { StaggerContainer } from '../../animations/StaggerContainer';
 import { Giraffes } from '../../content/other-work/components/animations/data/giraffes';
 import { AnalysisSection } from './ai-search/AnalysisSection';
 import { ContextSection } from './ai-search/ContextSection';
@@ -54,6 +56,7 @@ const SEARCH_SUGGESTIONS_GROUPED = [
       'How do you approach designing for AI-powered and agentic workflows?',
       'What are your principles for establishing trust in automated systems?',
       'How does your philosophy background influence your view on tech ethics?',
+      'How do you design for probabilistic rather than deterministic interfaces?',
     ],
   },
   {
@@ -62,7 +65,6 @@ const SEARCH_SUGGESTIONS_GROUPED = [
       'What are the challenges of designing for IoT and hardware ecosystems?',
       'How do you design for complex, multi-sided e-commerce marketplaces?',
       'How do you handle latency and connectivity constraints in product design?',
-      'Describe your approach to designing for highly regulated environments.',
     ],
   },
   {
@@ -87,6 +89,15 @@ const LOADING_MESSAGES = [
   'Outlining an answer...',
 ];
 
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 const TinyScrollArea = (props: any) => <ScrollArea.Autosize scrollbarSize={0} {...props} />;
 
 export default function AISearch() {
@@ -96,21 +107,24 @@ export default function AISearch() {
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Rotating messages state
   const [activeMessages, setActiveMessages] = useState<string[]>([]);
   const [messageIndex, setMessageIndex] = useState(0);
 
-  // Drawer state
   const [opened, { open, close }] = useDisclosure(false);
   const isMobile = useMediaQuery('(max-width: 62em)');
   const [data, setData] = useState<SearchResponse | null>(null);
 
+  const randomizedSuggestions = useMemo(() => {
+    const groupsWithShuffledItems = SEARCH_SUGGESTIONS_GROUPED.map((group) => ({
+      ...group,
+      items: shuffleArray(group.items),
+    }));
+    return shuffleArray(groupsWithShuffledItems);
+  }, []);
+
   const modalSuggestions = data?.followUpQuestions
-    ? [
-        { group: 'Suggested follow-ups', items: data.followUpQuestions },
-        ...SEARCH_SUGGESTIONS_GROUPED,
-      ]
-    : SEARCH_SUGGESTIONS_GROUPED;
+    ? [{ group: 'Suggested follow-ups', items: data.followUpQuestions }, ...randomizedSuggestions]
+    : randomizedSuggestions;
 
   const handleSearch = async (overrideQuery?: string) => {
     const searchQuery = overrideQuery || query;
@@ -172,6 +186,15 @@ export default function AISearch() {
     return () => clearInterval(interval);
   }, [loading]);
 
+  const autocompleteStyles = {
+    option: {
+      fontSize: 'var(--mantine-font-size-md)',
+    },
+    groupLabel: {
+      fontSize: 'var(--mantine-font-size-md)',
+    },
+  };
+
   return (
     <>
       <Modal
@@ -192,7 +215,7 @@ export default function AISearch() {
           {loading ? (
             <Center style={{ height: '70vh' }}>
               <Stack>
-                <Stack align="center" gap="xs">
+                <Stack align="center" gap={0}>
                   <Loader size="xl" type="dots" color="orange" />
                   <Text size="lg" fw={500} c="dimmed" ta="center">
                     {activeMessages[messageIndex] || 'Analyzing portfolio...'}
@@ -205,68 +228,76 @@ export default function AISearch() {
               </Stack>
             </Center>
           ) : (
-            <Stack gap="xl">
-              {/* Summary Section */}
-              <AnalysisSection summary={data?.summary || ''} query={submittedQuery} />
+            <StaggerContainer>
+              <Stack gap="xl">
+                <FadeInUp>
+                  <AnalysisSection summary={data?.summary || ''} query={submittedQuery} />
+                </FadeInUp>
 
-              {/* Suggested Links Section */}
-              {data?.suggestedLinks && (
-                <ContextSection
-                  links={data.suggestedLinks}
-                  onLinkClick={(url) => {
-                    router.push(url);
-                    close();
-                  }}
-                />
-              )}
-
-              <Stack>
-                {/* Follow-up Questions */}
-                {data?.followUpQuestions && (
-                  <FollowUpSection
-                    questions={data.followUpQuestions}
-                    onQuestionClick={(q) => handleSearch(q)}
-                  />
+                {data?.suggestedLinks && (
+                  <FadeInUp>
+                    <ContextSection
+                      links={data.suggestedLinks}
+                      onLinkClick={(url) => {
+                        router.push(url);
+                        close();
+                      }}
+                    />
+                  </FadeInUp>
                 )}
 
-                {/* Internal Search Input */}
-                <Autocomplete
-                  maxLength={200}
-                  placeholder="Ask a follow-up question..."
-                  value={query}
-                  onChange={setQuery}
-                  onKeyDown={handleKeyDown}
-                  onOptionSubmit={(val) => {
-                    handleSearch(val);
-                  }}
-                  data={modalSuggestions}
-                  rightSection={
-                    <ActionIcon
-                      variant="transparent"
-                      size="lg"
-                      aria-label="Search"
-                      onClick={() => handleSearch()}
-                      loading={loading}
-                    >
-                      <IconArrowRight size={24} />
-                    </ActionIcon>
-                  }
-                  size="lg"
-                  radius="md"
-                  onFocus={() => setFocused(true)}
-                  onBlur={() => setFocused(false)}
-                />
-              </Stack>
+                <Stack>
+                  {data?.followUpQuestions && (
+                    <FadeInUp>
+                      <FollowUpSection
+                        questions={data.followUpQuestions}
+                        onQuestionClick={(q) => handleSearch(q)}
+                      />
+                    </FadeInUp>
+                  )}
 
-              <MoreBanner />
-            </Stack>
+                  <FadeInUp>
+                    <Autocomplete
+                      maxLength={200}
+                      placeholder="Ask a follow-up question..."
+                      value={query}
+                      onChange={setQuery}
+                      onKeyDown={handleKeyDown}
+                      onOptionSubmit={(val) => {
+                        handleSearch(val);
+                      }}
+                      data={modalSuggestions}
+                      rightSection={
+                        <ActionIcon
+                          variant="transparent"
+                          size="lg"
+                          aria-label="Search"
+                          onClick={() => handleSearch()}
+                          loading={loading}
+                        >
+                          <IconArrowRight size={24} />
+                        </ActionIcon>
+                      }
+                      size="lg"
+                      radius="md"
+                      onFocus={() => setFocused(true)}
+                      onBlur={() => setFocused(false)}
+                      styles={autocompleteStyles}
+                    />
+                  </FadeInUp>
+                </Stack>
+
+                <FadeInUp>
+                  <MoreBanner />
+                </FadeInUp>
+              </Stack>
+            </StaggerContainer>
           )}
         </Container>
       </Modal>
 
       <Stack align="center" my="lg">
         <Box pos="relative" w="100%">
-          {/* 1. The Background Glow Layer (Blurry Cloud) */}
           <Box
             pos="absolute"
             inset={0}
@@ -281,7 +312,6 @@ export default function AISearch() {
             }}
           />
 
-          {/* 2. The "Border" Wrapper */}
           <Box
             style={{
               position: 'relative',
@@ -304,16 +334,14 @@ export default function AISearch() {
                 onOptionSubmit={(val) => {
                   handleSearch(val);
                 }}
-                data={SEARCH_SUGGESTIONS_GROUPED}
+                data={randomizedSuggestions}
                 leftSection={
                   <HoverCard width={230} shadow="md" position="bottom-start">
                     <HoverCard.Target>
                       <IconSparkles2 size={28} aria-label="AI search" color="orange" />
                     </HoverCard.Target>
                     <HoverCard.Dropdown>
-                      <Text size="sm">
-                        Search my experience, profile, and design work with AI.{' '}
-                      </Text>
+                      <Text size="sm">Search my experience, profile, and design work with AI.</Text>
                     </HoverCard.Dropdown>
                   </HoverCard>
                 }
@@ -336,6 +364,7 @@ export default function AISearch() {
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
                 styles={{
+                  ...autocompleteStyles,
                   root: { width: '100%' },
                   input: {
                     border: 'none',
