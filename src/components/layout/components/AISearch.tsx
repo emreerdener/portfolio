@@ -57,7 +57,6 @@ const SEARCH_SUGGESTIONS_GROUPED = [
       'How do you approach designing for AI-powered and agentic workflows?',
       'What are your principles for establishing trust in automated systems?',
       'How does your philosophy background influence your view on tech ethics?',
-      'How do you design for probabilistic rather than deterministic interfaces?',
     ],
   },
   {
