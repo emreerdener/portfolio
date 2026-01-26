@@ -26,7 +26,7 @@ function cleanText(text: string) {
     .trim();
 }
 
-function splitTextIntoChunks(text: string, maxLength: number = 35000): string[] {
+function splitTextIntoChunks(text: string, maxLength: number = 2500): string[] {
   if (text.length <= maxLength) return [text];
   const chunks: string[] = [];
   let currentChunk = '';

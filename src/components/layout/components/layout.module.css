@@ -75,6 +75,22 @@
   padding-right: var(--mantine-spacing-lg);
 }
 
+.interactiveCard {
+  transition: border-color 0.2s ease;
+  height: 100%;
+}
+.interactiveCard:hover {
+  border-color: var(--mantine-color-orange-5);
+}
+
+.markdownContent p {
+  margin-bottom: var(--mantine-spacing-md);
+}
+
+.markdownContent p:last-child {
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .main {
     padding-top: var(--mantine-spacing-xl) !important;

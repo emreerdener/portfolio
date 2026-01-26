@@ -8,10 +8,12 @@ import TechnicalSkills from '@/src/components/content/experience/components/Tech
 
 export default function ResumePage() {
   return (
-    <Container size="lg" p={0}>
+    <Container size="lg" p={0} py="xl">
       <Stack>
         <Stack gap="xs">
-          <Title order={1}>Emre Erdener</Title>
+          <Title order={1} fz="3rem">
+            Emre Erdener
+          </Title>
           <Text size="xl" fw={600}>
             Staff Product Designer
           </Text>

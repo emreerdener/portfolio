@@ -19,25 +19,32 @@ interface ProjectCardProps {
   coverSrc: string | StaticImageData;
   logoSrc?: string;
   href: string;
+  onClick?: (event: React.MouseEvent) => void;
 }
 
-export default function ProjectCard({ title, company, coverSrc, logoSrc, href }: ProjectCardProps) {
+export default function ProjectCard({
+  title,
+  company,
+  coverSrc,
+  logoSrc,
+  href,
+  onClick,
+}: ProjectCardProps) {
   const finalSrc = typeof coverSrc === 'string' ? coverSrc : coverSrc.src;
   return (
-    <UnstyledButton component={Link} href={href} aria-label="Go to case study">
+    <UnstyledButton component={Link} href={href} aria-label="Go to case study" onClick={onClick}>
       <Paper shadow="sm" radius="lg" withBorder style={{ overflow: 'hidden' }}>
         <AspectRatio ratio={16 / 10}>
-          <Image
-            src={finalSrc}
-            alt={`${title} project image`}
-            w="100%"
-            h="100%"
-            fit="cover"
-            style={{ borderBottom: '1px solid var(--app-shell-border-color)' }}
-          />
+          <Image src={finalSrc} alt={`${title} project image`} w="100%" h="100%" fit="cover" />
         </AspectRatio>
 
-        <Group p="sm" wrap="nowrap" gap="xs" justify="space-between">
+        <Group
+          p="sm"
+          wrap="nowrap"
+          gap="xs"
+          justify="space-between"
+          style={{ borderTop: '1px solid var(--app-shell-border-color)' }}
+        >
           {/* Left */}
           <Group wrap="nowrap">
             <Image src={logoSrc} alt={`${company} logo`} w={56} h={56} radius={12} />

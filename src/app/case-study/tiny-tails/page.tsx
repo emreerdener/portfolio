@@ -42,14 +42,13 @@ export default function TinyTails() {
           <Title order={2}>Refining a growing business</Title>
           <Text fz={{ base: 'md', md: 'xl' }}>
             The scope of this project began with considering how the business could become more
-            streamlined to open in a new city the following year. This lead to designing an
-            automated ordering process, while maintaining manual control of important aspects of the
-            order.
+            streamlined to open in a new city the following year. This led to designing an automated
+            ordering process, while maintaining manual control of important aspects of the order.
           </Text>
           <Text fz={{ base: 'md', md: 'xl' }}>
             Designing a seamless customer experience necessitated considering every detail of the
             customer's experience, from initial interest to purchase. This experience needed to
-            coordinate equally as seamlessly with the operations and administration team.
+            coordinate well with the operations and administration teams.
           </Text>
         </Stack>
 
@@ -111,7 +110,7 @@ export default function TinyTails() {
             One of the biggest challenges Tiny Tails to You faced was bargain shoppers. Unlike other
             services, where customers can shop sizes and prices, Tiny Tails to You events have a
             size requirement. Part of their time was spent explaining to customers why they had to
-            have a larger size for their event. This lead to frustrated customers and lost sales.
+            have a larger size for their event. This led to frustrated customers and lost sales.
           </Text>
         </Stack>
 

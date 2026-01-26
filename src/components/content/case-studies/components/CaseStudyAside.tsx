@@ -75,7 +75,7 @@ export default function CaseStudyAside({ onLinkClick, hideTitle, noPadding }: Ca
                 scrollTo({ y: 0 });
                 onLinkClick?.();
               }}
-              variant="light"
+              variant="outline"
               rightSection={<IconArrowUp size={16} />}
               size="md"
             >

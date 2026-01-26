@@ -57,7 +57,9 @@ export function HomeShell({ children }: { children: React.ReactNode }) {
           <NavContent onNavClick={close} />
         </Stack>
       </AppShell.Navbar>
+
       <AppShell.Main className={classes.main}>{children}</AppShell.Main>
+
       {!shouldHideAside && (
         <AppShell.Aside className={classes.aside}>
           <Aside />
