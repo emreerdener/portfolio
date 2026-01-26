@@ -2,6 +2,8 @@ import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 import { theme } from '../../theme';
 import { Shell } from '../components/layout/components/Shell';
@@ -62,6 +64,8 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
+          <Analytics />
+          <SpeedInsights />
           <Shell>{children}</Shell>
         </MantineProvider>
       </body>
