@@ -163,7 +163,7 @@ export default function GlobalSearch() {
               <Autocomplete
                 w="100%"
                 maxLength={200}
-                placeholder="What would you like to know?"
+                placeholder="Ask a question..."
                 value={query}
                 onChange={setQuery}
                 onKeyDown={handleKeyDown}
