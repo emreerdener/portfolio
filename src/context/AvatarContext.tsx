@@ -30,9 +30,9 @@ export function AvatarProvider({ children }: { children: ReactNode }) {
 
     const triggerHeadMove = () => {
       // Organic bobbing movement
-      const rotate = Math.random() * 1.5 - 0.75; // Very subtle rotation
-      const moveX = Math.random() * 4 - 2; // Slight side sway
-      const moveY = Math.random() * 12 - 8; // Gentle bobbing
+      const rotate = Math.random() * 1 - 0.5; // Increased rotation for more wiggle
+      const moveX = Math.random() * 10 - 5; // Increased side sway
+      const moveY = Math.random() * 20 - 10; // Increased bobbing
 
       const newTransform = `translate(${moveX}px, ${moveY}px) rotate(${rotate}deg) scale(1.02)`;
       headTransformRef.current = newTransform;
@@ -42,7 +42,7 @@ export function AvatarProvider({ children }: { children: ReactNode }) {
         headElementRef.current.style.transform = newTransform;
       }
 
-      const nextMove = Math.random() * 1000 + 2000; // 2-3 seconds
+      const nextMove = Math.random() * 500 + 1000; // 2-3 seconds
       headTimeout = setTimeout(triggerHeadMove, nextMove);
     };
 
