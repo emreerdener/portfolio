@@ -117,6 +117,7 @@
 
   .navbarContainer {
     width: 100%;
+    min-width: 280px;
     max-width: 280px;
   }
   .bannerLayout,
