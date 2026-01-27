@@ -121,7 +121,7 @@ export default function GlobalSearch() {
       fullScreen={isMobile}
       radius="lg"
       centered
-      title={!data && !loading ? '' : 'Search results'}
+      title={!data && !loading ? 'AI insights' : 'Search results'}
       scrollAreaComponent={TinyScrollArea}
       transitionProps={{ transition: 'fade', duration: 200 }}
       styles={{
@@ -154,10 +154,10 @@ export default function GlobalSearch() {
             <Stack gap="lg" align="center" w="100%">
               <Stack mb="md" gap="xs">
                 <Title order={1} ta="center" lh={1.2}>
-                  Learn about my work and experience
+                  Ask about my work and experience
                 </Title>
                 <Text size="lg" c="dimmed" ta="center">
-                  Answers are sourced from my portfolio case studies and resume.
+                  Answers are sourced from my case studies and resume.
                 </Text>
               </Stack>
               <Autocomplete
