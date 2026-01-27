@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { IconArrowRight } from '@tabler/icons-react';
+import { IconArrowRight, IconSparkles2 } from '@tabler/icons-react';
 import Lottie from 'lottie-react';
 import {
   ActionIcon,
@@ -10,6 +10,7 @@ import {
   Box,
   Center,
   Container,
+  HoverCard,
   Loader,
   Modal,
   ScrollArea,
@@ -120,11 +121,15 @@ export default function GlobalSearch() {
       fullScreen={isMobile}
       radius="lg"
       centered
-      title={!data && !loading ? 'AI search' : 'Search results'}
+      title={!data && !loading ? '' : 'Search results'}
       scrollAreaComponent={TinyScrollArea}
       transitionProps={{ transition: 'fade', duration: 200 }}
       styles={{
         header: { top: -1 },
+      }}
+      overlayProps={{
+        backgroundOpacity: 0.8,
+        blur: 6,
       }}
     >
       <Container size="md" p={{ base: 0, md: 'sm' }} pb="xl">
@@ -148,12 +153,11 @@ export default function GlobalSearch() {
           <Box py="xl">
             <Stack gap="lg" align="center" w="100%">
               <Stack mb="md" gap="xs">
-                <Title order={2} ta="center" lh={1.2}>
+                <Title order={1} ta="center" lh={1.2}>
                   Learn about my work and experience
                 </Title>
-                <Text size="md" c="dimmed" ta="center">
-                  Powered by ChatGPT. Answers are generated from the content of my portfolio and
-                  resume.
+                <Text size="lg" c="dimmed" ta="center">
+                  Answers are sourced from my portfolio case studies and resume.
                 </Text>
               </Stack>
               <Autocomplete
@@ -168,6 +172,16 @@ export default function GlobalSearch() {
                 size="xl"
                 radius="xl"
                 autoFocus
+                leftSection={
+                  <HoverCard width={230} shadow="md" position="bottom-start">
+                    <HoverCard.Target>
+                      <IconSparkles2 size={28} aria-label="AI search" color="orange" />
+                    </HoverCard.Target>
+                    <HoverCard.Dropdown>
+                      <Text size="sm">Search my experience, profile, and design work with AI.</Text>
+                    </HoverCard.Dropdown>
+                  </HoverCard>
+                }
                 rightSection={
                   <Tooltip label="Search" position="left">
                     <ActionIcon

@@ -8,7 +8,7 @@ export default function NavAIButton() {
   const { openSpotlight } = useSearch();
 
   return (
-    <Button size="md" leftSection={<IconSparkles2 size={24} />} onClick={openSpotlight}>
+    <Button size="md" rightSection={<IconSparkles2 size={24} />} onClick={openSpotlight}>
       AI insights
     </Button>
   );
