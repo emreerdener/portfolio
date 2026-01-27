@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { IconArrowRight, IconSparkles2 } from '@tabler/icons-react';
+import { IconArrowRight } from '@tabler/icons-react';
 import Lottie from 'lottie-react';
 import {
   ActionIcon,
@@ -146,11 +146,18 @@ export default function GlobalSearch() {
         ) : !data ? (
           // Initial "Spotlight" State
           <Box py="xl">
-            <Stack gap="lg">
-              <Title order={2} ta="center" mb="md">
-                Learn about my work and experience
-              </Title>
+            <Stack gap="lg" align="center" w="100%">
+              <Stack mb="md" gap="xs">
+                <Title order={2} ta="center" lh={1.2}>
+                  Learn about my work and experience
+                </Title>
+                <Text size="md" c="dimmed" ta="center">
+                  Powered by ChatGPT. Answers are generated from the content of my portfolio and
+                  resume.
+                </Text>
+              </Stack>
               <Autocomplete
+                w="100%"
                 maxLength={200}
                 placeholder="What would you like to know?"
                 value={query}
@@ -161,7 +168,6 @@ export default function GlobalSearch() {
                 size="xl"
                 radius="xl"
                 autoFocus
-                leftSection={<IconSparkles2 size={28} aria-label="AI search" color="orange" />}
                 rightSection={
                   <Tooltip label="Search" position="left">
                     <ActionIcon
@@ -176,9 +182,6 @@ export default function GlobalSearch() {
                   </Tooltip>
                 }
                 styles={{
-                  input: {
-                    fontSize: '1.1rem',
-                  },
                   ...autocompleteStyles,
                 }}
                 onFocus={() => setFocused(true)}
@@ -220,7 +223,7 @@ export default function GlobalSearch() {
                   <FadeInUp>
                     <Autocomplete
                       maxLength={200}
-                      placeholder="Ask a follow-up question..."
+                      placeholder="Ask your own question..."
                       value={query}
                       onChange={setQuery}
                       onKeyDown={handleKeyDown}
