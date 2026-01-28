@@ -10,8 +10,10 @@ import {
   Stack,
   Text,
   Title,
+  Tooltip,
   UnstyledButton,
 } from '@mantine/core';
+import classes from './ProjectCard.module.css';
 
 interface ProjectCardProps {
   title: string;
@@ -33,7 +35,13 @@ export default function ProjectCard({
   const finalSrc = typeof coverSrc === 'string' ? coverSrc : coverSrc.src;
   return (
     <UnstyledButton component={Link} href={href} aria-label="Go to case study" onClick={onClick}>
-      <Paper shadow="sm" radius="lg" withBorder style={{ overflow: 'hidden' }}>
+      <Paper
+        shadow="sm"
+        radius="lg"
+        withBorder
+        className={classes.card}
+        style={{ overflow: 'hidden' }}
+      >
         <AspectRatio ratio={16 / 10}>
           <Image src={finalSrc} alt={`${title} project image`} w="100%" h="100%" fit="cover" />
         </AspectRatio>
@@ -60,9 +68,11 @@ export default function ProjectCard({
           </Group>
 
           {/* Right */}
-          <ActionIcon visibleFrom="xs" component="div" variant="subtle" size={56}>
-            <IconArrowRight size={32} />
-          </ActionIcon>
+          <Tooltip label="View case study" position="left">
+            <ActionIcon visibleFrom="xs" component="div" variant="subtle" size={56}>
+              <IconArrowRight size={32} />
+            </ActionIcon>
+          </Tooltip>
         </Group>
       </Paper>
     </UnstyledButton>

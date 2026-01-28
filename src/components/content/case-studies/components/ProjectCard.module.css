@@ -1,0 +1,7 @@
+.card {
+  transition: border-color 300ms ease;
+}
+
+.card:hover {
+  border-color: var(--mantine-primary-color-filled);
+}
