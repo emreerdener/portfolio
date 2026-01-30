@@ -9,13 +9,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <>
+    <div>
       <GlobalSearch />
       {pathname?.startsWith('/case-study/') ? (
         <CaseStudyShell>{children}</CaseStudyShell>
       ) : (
         <HomeShell>{children}</HomeShell>
       )}
-    </>
+    </div>
   );
 }

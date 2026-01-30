@@ -23,6 +23,7 @@ export default function MoreBanner() {
           onClick={() => router.push('/case-studies')}
           size="md"
           className={classes.bannerButton}
+          variant="outline"
         >
           View work
         </Button>

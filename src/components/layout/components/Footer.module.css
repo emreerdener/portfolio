@@ -1,0 +1,18 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: -15rem;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+
+.footerSvg {
+  max-width: 100%;
+  height: auto;
+  transform: rotate(180deg);
+  color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-8));
+  display: block; /* Removes any line-height gaps */
+}
