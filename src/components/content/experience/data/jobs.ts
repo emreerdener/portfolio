@@ -9,13 +9,13 @@ export interface Job {
 
 export const JOBS: Job[] = [
   {
-    role: 'Senior UX Designer',
+    role: 'Staff Product Designer',
     company: 'Vivint',
     date: '2024 - Present',
     location: 'Remote',
     logoSrc: '/images/logos/experience/vivint.svg',
     bullets: [
-      'Lead design strategy and execution across 5+ product initiatives, collaborating directly with C-suite executives and cross-functional teams to align design vision with business objectives.',
+      'Lead design strategy and execution across 5+ product initiatives, collaborating with executives and cross-functional teams to align design vision with business objectives.',
       'Architected and rebuilt the entire design system from scratch in two months, resolving four years of technical debt and accelerating development velocity by 2x.',
       'Spearheaded the AI-powered Energy Intelligence UX design for Vivint and NRG platforms, transforming complex predictive data into intuitive interfaces.',
       'Redesigned the onboarding UX for Smart Locks and Smart Lighting, significantly reducing customer support ticket volume and optimizing user success rates.',
