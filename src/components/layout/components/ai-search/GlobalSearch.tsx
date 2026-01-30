@@ -236,12 +236,12 @@ export default function GlobalSearch() {
                 radius="xl"
                 autoFocus
                 leftSection={
-                  <HoverCard width={230} shadow="md" position="bottom-start">
+                  <HoverCard width={195} shadow="md" position="bottom-start">
                     <HoverCard.Target>
                       <IconSparkles2 size={28} aria-label="AI search" color="orange" />
                     </HoverCard.Target>
                     <HoverCard.Dropdown>
-                      <Text size="sm">Search my experience, profile, and design work with AI.</Text>
+                      <Text size="sm">Generated with ChatGPT</Text>
                     </HoverCard.Dropdown>
                   </HoverCard>
                 }

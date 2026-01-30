@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+import { createContext, ReactNode, useCallback, useContext, useRef, useState } from 'react';
 
 interface SearchResponse {
   summary: string;
@@ -30,6 +30,7 @@ export function SearchProvider({ children }: { children: ReactNode }) {
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<SearchResponse | null>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const openSpotlight = useCallback(() => setOpened(true), []);
   const closeSpotlight = useCallback(() => setOpened(false), []);
@@ -46,6 +47,11 @@ export function SearchProvider({ children }: { children: ReactNode }) {
       const searchQuery = overrideQuery || query;
       if (!searchQuery.trim()) return;
 
+      // Cancel any pending request
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+
       setSubmittedQuery(searchQuery);
       // Don't clear query immediately, or handle it in UI
       setTimeout(() => setQuery(''), 0);
@@ -53,11 +59,16 @@ export function SearchProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       if (!opened) setOpened(true);
 
+      // Create new controller for this request
+      const controller = new AbortController();
+      abortControllerRef.current = controller;
+
       try {
         const res = await fetch('/api/ai-search', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query: searchQuery }),
+          signal: controller.signal,
         });
 
         const responseData = await res.json();
@@ -68,10 +79,15 @@ export function SearchProvider({ children }: { children: ReactNode }) {
 
         setData(responseData);
       } catch (err: any) {
+        // Ignore abort errors as they are intentional
+        if (err.name === 'AbortError') return;
         console.error(err);
         // Could handle error state here
       } finally {
-        setLoading(false);
+        if (abortControllerRef.current === controller) {
+          setLoading(false);
+          abortControllerRef.current = null;
+        }
       }
     },
     [query, opened]
