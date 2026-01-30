@@ -171,7 +171,7 @@ export default function GlobalSearch() {
         ) : !data ? (
           // Initial "Spotlight" State
           <Box py="xl">
-            <Stack gap="lg" align="center" w="100%">
+            <Stack gap="sm" align="center" w="100%">
               <Stack mb="md" gap="xs">
                 <Title order={1} lh={1.2}>
                   <motion.div
@@ -221,9 +221,6 @@ export default function GlobalSearch() {
                     </motion.span>
                   </motion.div>
                 </Title>
-                <Text size="lg" c="dimmed" ta="center">
-                  Answers are sourced from my case studies and resume
-                </Text>
               </Stack>
               <Autocomplete
                 w="100%"
@@ -267,6 +264,10 @@ export default function GlobalSearch() {
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
               />
+
+              <Text size="sm" c="dimmed" ta="center">
+                Answers are sourced from my portfolio, case studies, and resume
+              </Text>
             </Stack>
           </Box>
         ) : (
