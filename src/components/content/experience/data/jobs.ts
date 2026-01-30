@@ -57,7 +57,7 @@ export const JOBS: Job[] = [
     company: 'Justuno',
     date: '2018 - 2020',
     location: 'Austin, TX',
-    logoSrc: '/images/logos/experience/justuno.png',
+    logoSrc: '/images/logos/experience/justuno.svg',
     bullets: [
       'Conceptualized product usability and design based on requirements gathered during stakeholder and user interviews.',
       'Created high-fidelity wireframes & prototypes to define visual and interactive product direction.',
