@@ -15,7 +15,7 @@ export default function Experience({ defaultExpanded = false, listSize }: Experi
   return (
     <Stack gap="xl" p={{ base: 'lg', lg: 'xl' }}>
       {/* Experience */}
-      <Group justify="space-between" w="100%">
+      <Group justify="space-between" w="100%" wrap="nowrap">
         <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
           Experience
         </Title>

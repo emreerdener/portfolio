@@ -3,7 +3,16 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
-const ROTATING_WORDS = ['work', 'experience', 'process', 'background', 'projects'];
+const ROTATING_WORDS = [
+  'work',
+  'experience',
+  'process',
+  'background',
+  'projects',
+  'skills',
+  'education',
+  'hobbies',
+];
 
 const WORD_GRADIENTS = [
   'linear-gradient(45deg, #FF6B6B, #FF8E53)', // work: orange-red
@@ -11,6 +20,9 @@ const WORD_GRADIENTS = [
   'linear-gradient(45deg, #43e97b, #38f9d7)', // process: green-teal
   'linear-gradient(45deg, #fa709a, #fee140)', // background: pink-yellow
   'linear-gradient(45deg, #667eea, #764ba2)', // projects: purple-indigo
+  'linear-gradient(45deg, #f093fb, #f5576c)', // skills: pink-red
+  'linear-gradient(45deg, #4facfe, #00f2fe)', // education: blue-cyan
+  'linear-gradient(45deg, #43e97b, #38f9d7)', // hobbies: green-teal
 ];
 
 interface RotatingHeaderProps {
@@ -24,7 +36,7 @@ export function RotatingHeader({ prefix = 'Learn about my' }: RotatingHeaderProp
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
-    }, 2500);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -54,7 +66,7 @@ export function RotatingHeader({ prefix = 'Learn about my' }: RotatingHeaderProp
             position: 'relative',
             justifyItems: isSmallScreen ? 'center' : 'start',
           }}
-          transition={{ layout: { duration: 0.3, ease: 'easeOut' } }}
+          transition={{ layout: { duration: 0.5, ease: 'easeOut' } }}
         >
           <AnimatePresence mode="popLayout">
             <motion.span

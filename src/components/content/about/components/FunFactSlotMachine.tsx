@@ -12,7 +12,7 @@ interface FunFact {
 
 const funFacts: FunFact[] = [
   { emoji: '👯', text: 'I have a twin sister and an older sister' },
-  { emoji: '🦒', text: `I am taller than a baby giraffe: 6'8" (~2 meters)` },
+  { emoji: '🦒', text: `I am taller than a baby giraffe: 6'8" (2m)` },
   { emoji: '🎲', text: 'I love playing backgammon' },
   {
     emoji: '🇹🇷',
@@ -20,7 +20,7 @@ const funFacts: FunFact[] = [
   },
   {
     emoji: '🔮',
-    text: "I'm named after a Sufi poet from the 13th century",
+    text: "I'm named after a Sufi mystic and poet",
   },
   { emoji: '🚲', text: 'I enjoy riding my titanium gravel bike' },
   { emoji: '🪵', text: "I'm an aspiring woodworker" },
@@ -193,7 +193,7 @@ export function FunFactSlotMachine() {
         {/* Button */}
         <Button
           variant="gradient"
-          gradient={{ from: 'orange', to: 'yellow', deg: 42 }}
+          gradient={{ from: 'green', to: 'teal', deg: 90 }}
           size="lg"
           onClick={spin}
           disabled={isSpinning}
