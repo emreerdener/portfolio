@@ -5,6 +5,7 @@ import { FadeIn } from '../components/animations/FadeIn';
 import ProjectCard from '../components/content/case-studies/components/ProjectCard';
 import { CASE_STUDIES } from '../components/content/case-studies/data/case-studies';
 import HomeSearchInput from '../components/layout/components/ai-search/HomeSearchInput';
+import { RotatingHeader } from '../components/layout/components/ai-search/RotatingHeader';
 import MoreBanner from '../components/layout/components/MoreBanner';
 
 export default function HomePage() {
@@ -13,7 +14,10 @@ export default function HomePage() {
     <>
       <Stack gap="xl" px={{ base: 0, lg: 'xl' }}>
         <FadeIn>
-          <HomeSearchInput />
+          <Stack mt="xl">
+            <RotatingHeader />
+            <HomeSearchInput />
+          </Stack>
         </FadeIn>
 
         <Grid gutter={{ base: 32, xs: 48 }}>

@@ -1,0 +1,55 @@
+.slotMachine {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reelWindow {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  /* Add subtle shadow/gradient overlay to simulate depth */
+}
+
+.reelWindow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--mantine-color-body), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.reelWindow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to top, var(--mantine-color-body), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.itemContainer {
+  height: 200px; /* Must match slotMachine height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--mantine-spacing-xl);
+  box-sizing: border-box;
+}
+
+.spinButton {
+  transition: transform 0.1s ease;
+}
+
+.spinButton:active {
+  transform: translateY(2px);
+}

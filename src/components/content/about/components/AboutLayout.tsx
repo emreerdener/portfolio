@@ -14,8 +14,6 @@ export default function AboutLayout() {
           <AboutMe
             titleSize={{ base: '2.5rem', sm: '3.5rem' }}
             bodySize={{ base: 'lg', md: '1.4rem' }}
-            emojiSize="1.8rem"
-            funFactSize="md"
           />
         </Grid.Col>
         <Grid.Col span={{ base: 12, lg: 6 }} order={{ base: 1, lg: 2 }}>

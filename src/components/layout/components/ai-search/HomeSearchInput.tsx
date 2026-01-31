@@ -65,7 +65,7 @@ export default function HomeSearchInput() {
           <Stack gap={0}>
             <Autocomplete
               maxLength={200}
-              placeholder="Ask about my work..."
+              placeholder="Ask a question..."
               value={query}
               onChange={setQuery}
               onKeyDown={handleKeyDown}
