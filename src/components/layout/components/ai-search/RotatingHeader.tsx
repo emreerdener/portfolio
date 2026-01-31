@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Title } from '@mantine/core';
+import { MantineSize, StyleProp, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 const ROTATING_WORDS = [
@@ -27,9 +27,13 @@ const WORD_GRADIENTS = [
 
 interface RotatingHeaderProps {
   prefix?: string;
+  fontSize?: StyleProp<MantineSize | (string & {}) | number>;
 }
 
-export function RotatingHeader({ prefix = 'Learn about my' }: RotatingHeaderProps) {
+export function RotatingHeader({
+  prefix = 'Learn about my',
+  fontSize = { base: '2.25rem', md: '3rem' },
+}: RotatingHeaderProps) {
   const [wordIndex, setWordIndex] = useState(0);
   const isSmallScreen = useMediaQuery('(max-width: 32em)');
 
@@ -41,7 +45,7 @@ export function RotatingHeader({ prefix = 'Learn about my' }: RotatingHeaderProp
   }, []);
 
   return (
-    <Title order={1} lh={1.2}>
+    <Title order={1} lh={1.1} ta="center" fz={fontSize}>
       <motion.div
         layout
         style={{
