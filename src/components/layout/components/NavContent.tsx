@@ -46,8 +46,8 @@ export default function NavContent({ onNavClick }: NavContentProps) {
               Emre Erdener
             </Title>
           </Anchor>
-          <Anchor href="mailto: hello@emre.design" fz={16} ta="center" underline="hover">
-            hello@emre.design
+          <Anchor href="mailto: erdener.emre@gmail.com" fz={16} ta="center" underline="hover">
+            erdener.emre@gmail.com
           </Anchor>
         </Stack>
 

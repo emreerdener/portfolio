@@ -15,7 +15,7 @@ const funFacts: FunFact[] = [
   { emoji: '🦒', text: `I am taller than a baby giraffe: 6'8" (2m)` },
   { emoji: '🎲', text: 'I love playing backgammon' },
   {
-    emoji: '🇹🇷',
+    emoji: '🇹🇷🇮🇪',
     text: 'I am half Turkish and half Irish',
   },
   {
@@ -191,14 +191,8 @@ export function FunFactSlotMachine() {
         </div>
 
         {/* Button */}
-        <Button
-          variant="gradient"
-          gradient={{ from: 'green', to: 'teal', deg: 90 }}
-          size="lg"
-          onClick={spin}
-          disabled={isSpinning}
-        >
-          Spin!
+        <Button variant="light" size="lg" onClick={spin} disabled={isSpinning}>
+          Spin
         </Button>
       </Stack>
     </Paper>
