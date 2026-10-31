@@ -1,0 +1,29 @@
+.sections {
+  gap: 32px;
+}
+
+@media (min-width: $mantine-breakpoint-md) {
+  .sections {
+    gap: 48px;
+  }
+}
+
+.pageIntro {
+  gap: 20px;
+}
+
+@media (min-width: $mantine-breakpoint-sm) {
+  .pageIntro {
+    gap: 32px;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-md) {
+  .pageIntro {
+    gap: 48px;
+  }
+}
+
+.introduction {
+  gap: 48px;
+}

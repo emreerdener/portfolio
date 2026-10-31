@@ -3,6 +3,7 @@
 import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function AdminCheckout() {
@@ -13,7 +14,7 @@ export default function AdminCheckout() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -32,7 +33,7 @@ export default function AdminCheckout() {
         <Image
           src={study.coverSrc}
           alt="Shopify case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -223,7 +224,7 @@ export default function AdminCheckout() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/admin-laptop-mockup.png"
             alt="Shopify admin checkout review UI image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -246,7 +247,7 @@ export default function AdminCheckout() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-admin/phases.png"
             alt="Shopify admin phases"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>

@@ -1,70 +1,70 @@
 'use client';
 
-import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { AppShell, Burger, Overlay, Stack, Transition } from '@mantine/core';
+import { AppShell, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { useScrollLock } from '@/src/components/layout/hooks/use-scroll-lock';
+import WoodworkingCard from '../../content/other-work/components/WoodworkingCard';
 import Aside from './Aside';
 import MobileHeader from './MobileHeader';
-import NavContent from './NavContent';
-import classes from './layout.module.css';
+import MobileSheet from './MobileSheet';
+import NavContent, { NavIdentity } from './NavContent';
+import classes from './shell.module.css';
 
 export function HomeShell({ children }: { children: React.ReactNode }) {
   const [opened, { toggle, close }] = useDisclosure();
-  const [_scrollLocked, setScrollLocked] = useScrollLock();
   const pathname = usePathname();
 
   // Standard Logic: Hide aside on any page that is not the home page
   const shouldHideAside = pathname !== '/';
 
-  useEffect(() => {
-    setScrollLocked(opened);
-  }, [opened, setScrollLocked]);
-
   return (
     <AppShell
       layout="alt"
-      header={{ height: 76 }}
-      navbar={{ width: 248, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-      aside={{
-        width: 480, // Fixed width for Home Profile
+      header={{ height: { base: 80, sm: 0 } }}
+      navbar={{
+        width: 480,
         breakpoint: 'xl',
         collapsed: { desktop: shouldHideAside, mobile: true },
       }}
-      padding="xl"
+      aside={{ width: { base: 280, md: 296 }, breakpoint: 'sm', collapsed: { mobile: true } }}
+      padding={{ base: 'xl', md: 48 }}
       className={classes.shell}
     >
       <MobileHeader opened={opened} toggle={toggle} />
 
-      <Transition transition="fade" duration={100} mounted={opened}>
-        {(styles) => (
-          <Overlay
-            color="#000"
-            backgroundOpacity={0.6}
-            zIndex={101}
-            hiddenFrom="sm"
-            onClick={toggle}
-            style={styles}
-            fixed
-          />
-        )}
-      </Transition>
+      <MobileSheet
+        opened={opened}
+        onClose={close}
+        title="Menu"
+        headerContent={<NavIdentity large onNavClick={close} />}
+      >
+        <NavContent onNavClick={close} large hideIdentity />
+      </MobileSheet>
 
-      <AppShell.Navbar className={classes.navbar} onClick={close}>
-        <Stack gap={0} className={classes.navbarContainer} onClick={(e) => e.stopPropagation()}>
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <NavContent onNavClick={close} />
-        </Stack>
-      </AppShell.Navbar>
+      {!shouldHideAside && (
+        <AppShell.Navbar className={classes.aside}>
+          <Aside />
+        </AppShell.Navbar>
+      )}
 
       <AppShell.Main className={classes.main}>{children}</AppShell.Main>
 
-      {!shouldHideAside && (
-        <AppShell.Aside className={classes.aside}>
-          <Aside />
-        </AppShell.Aside>
-      )}
+      <AppShell.Aside
+        visibleFrom="sm"
+        className={`${classes.navbar} ${classes.rightNav}`}
+        pt={{ base: 'xl', md: 48 }}
+        pr={{ base: 'xl', md: 48 }}
+        onClick={close}
+      >
+        <Stack gap={0} className={classes.navbarContainer} onClick={(e) => e.stopPropagation()}>
+          <NavContent onNavClick={close} />
+        </Stack>
+        {pathname === '/other-work' && (
+          <Stack visibleFrom="sm" mt={{ base: 32, md: 48 }} onClick={(e) => e.stopPropagation()}>
+            <WoodworkingCard />
+          </Stack>
+        )}
+      </AppShell.Aside>
     </AppShell>
   );
 }

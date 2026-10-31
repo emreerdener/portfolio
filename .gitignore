@@ -131,3 +131,5 @@ dist
 
 .DS_Store
 next-env.d.ts
+# Intermediate generated artwork (site assets live in public/)
+/generated_images/

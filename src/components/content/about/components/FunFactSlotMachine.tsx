@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { IconDice5 } from '@tabler/icons-react';
 import { motion, useAnimate } from 'framer-motion';
-import { Button, Card, Group, Paper, Stack, Text, Title } from '@mantine/core';
+import { Button, Group, Paper, Stack, Text, Title } from '@mantine/core';
 import classes from './FunFactSlot.module.css';
 
 interface FunFact {
@@ -54,7 +53,9 @@ export function FunFactSlotMachine() {
   }, []); // Run once on mount
 
   const spin = async () => {
-    if (isSpinning) return;
+    if (isSpinning) {
+      return;
+    }
     setIsSpinning(true);
 
     // Refill bag if empty

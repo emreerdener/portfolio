@@ -1,156 +1,146 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { IconInfoCircle, IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
+import { IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
 import WaveSurfer from 'wavesurfer.js';
-import {
-  ActionIcon,
-  Box,
-  Group,
-  HoverCard,
-  Loader,
-  Paper,
-  Stack,
-  Text,
-  Title,
-  Tooltip,
-  useComputedColorScheme,
-} from '@mantine/core';
+import { ActionIcon, Loader, Text, useComputedColorScheme } from '@mantine/core';
 import { useCaseStudyAudio } from '../context/CaseStudyAudioContext';
+import classes from './toolbar.module.css';
 
-interface WaveformPlayerProps {
-  audioSrc?: string; // Optional: If provided, can be used for logging or validation, otherwise unused as audio is from context
-}
+const formatTime = (seconds: number) =>
+  `${Math.floor(seconds / 60)}:${Math.floor(seconds % 60)
+    .toString()
+    .padStart(2, '0')}`;
 
-export default function WaveformPlayer({}: WaveformPlayerProps) {
+export default function WaveformPlayer() {
   const { isPlaying, toggleAudio, hasAudio, audioRef, audioError, caseStudyId } =
     useCaseStudyAudio();
   const containerRef = useRef<HTMLDivElement>(null);
   const wavesurfer = useRef<WaveSurfer | null>(null);
   const [isReady, setIsReady] = useState(false);
+  const [waveUnavailable, setWaveUnavailable] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const scheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
+  const waveColor = scheme === 'dark' ? '#696969' : '#adb5bd';
 
-  const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
-  const activeWaveColor = computedColorScheme === 'dark' ? '#424242' : '#dee2e6';
-
-  // Update wave color when theme changes
   useEffect(() => {
-    if (wavesurfer.current) {
-      wavesurfer.current.setOptions({
-        waveColor: activeWaveColor,
-      });
+    wavesurfer.current?.setOptions({ waveColor });
+  }, [waveColor]);
+
+  useEffect(() => {
+    setIsReady(false);
+    setWaveUnavailable(false);
+    setCurrentTime(0);
+    setDuration(0);
+    const media = audioRef.current;
+    if (!containerRef.current || !media || !hasAudio) {
+      return;
     }
-  }, [activeWaveColor]);
-
-  useEffect(() => {
-    if (!containerRef.current || !audioRef.current || !hasAudio) return;
-
-    // 1. Initialize Wavesurfer with shared media element
-    wavesurfer.current = WaveSurfer.create({
+    const wave = WaveSurfer.create({
       container: containerRef.current,
-      media: audioRef.current, // Use the shared audio element
-      waveColor: activeWaveColor,
+      media,
+      waveColor,
       progressColor: '#fd7e14',
       cursorColor: 'transparent',
       barWidth: 2,
       barGap: 2,
       barRadius: 99,
-      height: 40,
+      height: 36,
       normalize: true,
+      interact: true,
+      dragToSeek: true,
     });
-
-    // 2. Event Listeners
-    wavesurfer.current.on('ready', () => {
-      setIsReady(true);
+    wavesurfer.current = wave;
+    wave.on('ready', () => setIsReady(true));
+    let waveformFailed = false;
+    wave.on('error', () => {
+      waveformFailed = true;
+      setWaveUnavailable(true);
+      setIsReady(media.readyState >= 1);
     });
-
-    wavesurfer.current.on('error', (err) => {
-      console.error('WaveSurfer error:', err);
-    });
-
+    const update = () => {
+      if (waveformFailed && media.readyState >= 1) {
+        setIsReady(true);
+      }
+      setCurrentTime(media.currentTime);
+      setDuration(Number.isFinite(media.duration) ? media.duration : 0);
+    };
+    media.addEventListener('timeupdate', update);
+    media.addEventListener('loadedmetadata', update);
+    update();
     return () => {
-      wavesurfer.current?.destroy();
+      media.removeEventListener('timeupdate', update);
+      media.removeEventListener('loadedmetadata', update);
+      wave.destroy();
+      wavesurfer.current = null;
     };
   }, [audioRef, hasAudio, caseStudyId]);
 
-  if (audioError) {
-    return (
-      <Group
-        align="center"
-        gap="md"
-        w="100%"
-        style={{
-          border: '1px solid var(--mantine-color-error)',
-          padding: '12px 16px',
-          borderRadius: 'var(--mantine-radius-xl)',
-          backgroundColor: 'var(--mantine-color-body)',
-        }}
+  return (
+    <div
+      className={classes.player}
+      role="group"
+      aria-label="Case study audio"
+      aria-busy={!isReady && !audioError}
+      data-ready={isReady || undefined}
+      data-wave-unavailable={waveUnavailable || undefined}
+      data-error={audioError || undefined}
+    >
+      <ActionIcon
+        size={44}
+        variant="light"
+        disabled={!isReady || audioError}
+        onClick={toggleAudio}
+        aria-label={isPlaying ? 'Pause case study audio' : 'Play case study audio'}
+        style={{ flexShrink: 0 }}
       >
-        <Text size="sm" c="red">
+        {audioError || isReady ? (
+          isPlaying ? (
+            <IconPlayerPauseFilled size={18} />
+          ) : (
+            <IconPlayerPlayFilled size={18} />
+          )
+        ) : (
+          <Loader size={16} />
+        )}
+      </ActionIcon>
+      {audioError && (
+        <Text size="sm" className={classes.audioLabel}>
           Audio unavailable
         </Text>
-      </Group>
-    );
-  }
-
-  return (
-    <Stack w="100%" gap={0} pt="sm">
-      <Group wrap="nowrap" gap="xs">
-        <Title order={4} size="sm" c="dimmed" tt="uppercase">
-          Listen to case study
-        </Title>
-
-        <HoverCard width={210} shadow="md" position="top">
-          <HoverCard.Target>
-            <IconInfoCircle size={16} aria-label="Info" color="gray" />
-          </HoverCard.Target>
-          <HoverCard.Dropdown>
-            <Text size="sm">AI-generated audio transcript for accessibility.</Text>
-          </HoverCard.Dropdown>
-        </HoverCard>
-      </Group>
-      <Paper radius="md" withBorder py="xs" px="sm" w="100%" my="sm">
-        <Group align="center" gap="sm" w="100%">
-          {/* Play/Pause Button */}
-          <Tooltip label={`${isPlaying ? 'Pause' : 'Listen to case study'}`} position="right">
-            <ActionIcon
-              size="lg"
-              radius="md"
-              variant="outline"
-              disabled={!isReady}
-              onClick={toggleAudio} // Use context toggle
-              style={{ flexShrink: 0 }}
-              w={42}
-              h={42}
-            >
-              {isReady ? (
-                isPlaying ? (
-                  <IconPlayerPauseFilled size={18} />
-                ) : (
-                  <IconPlayerPlayFilled size={18} />
-                )
-              ) : (
-                <Loader size="xs" color="white" />
-              )}
-            </ActionIcon>
-          </Tooltip>
-          {/* Waveform Container */}
-          <Box style={{ flex: 1, position: 'relative', height: '40px' }} w="100%">
-            {/* The actual waveform canvas gets injected here */}
-            <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
-
-            {/* Fallback loading text if slow */}
-            {!isReady && (
-              <Text
-                size="sm"
-                c="dimmed"
-                style={{ position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)' }}
-              >
-                Loading case study audio...
-              </Text>
-            )}
-          </Box>
-        </Group>
-      </Paper>
-    </Stack>
+      )}
+      <div className={classes.waveTrack} aria-hidden="true">
+        <div className={classes.wavePlaceholder}>
+          {Array.from({ length: 180 }, (_, index) => (
+            <span
+              key={index}
+              style={{ height: `${35 + ((index * 17 + index * index * 7) % 66)}%` }}
+            />
+          ))}
+        </div>
+        <div className={classes.waveform} ref={containerRef} />
+      </div>
+      <input
+        className={classes.seek}
+        type="range"
+        min={0}
+        max={duration || 1}
+        step={0.1}
+        value={currentTime}
+        disabled={!isReady || audioError}
+        aria-label="Seek case study audio"
+        aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
+        onChange={(event) => {
+          if (audioRef.current) {
+            audioRef.current.currentTime = Number(event.target.value);
+          }
+          setCurrentTime(Number(event.target.value));
+        }}
+      />
+      <Text size="xs" c="dimmed" className={classes.time}>
+        {formatTime(currentTime)} / {formatTime(duration)}
+      </Text>
+    </div>
   );
 }

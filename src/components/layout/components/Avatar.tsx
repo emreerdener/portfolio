@@ -32,8 +32,12 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
       const moveY = Math.random() * 2 - 1; // -1 to 1px
       const transform = `translateY(${moveY}px)`;
 
-      if (leftEyebrowRef.current) leftEyebrowRef.current.style.transform = transform;
-      if (rightEyebrowRef.current) rightEyebrowRef.current.style.transform = transform;
+      if (leftEyebrowRef.current) {
+        leftEyebrowRef.current.style.transform = transform;
+      }
+      if (rightEyebrowRef.current) {
+        rightEyebrowRef.current.style.transform = transform;
+      }
 
       browTimeout = setTimeout(moveBrows, Math.random() * 2000 + 2000);
     };
@@ -47,14 +51,18 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
     const jump = 'translateY(-12px)';
 
     [leftEyebrowRef.current, rightEyebrowRef.current].forEach((brow) => {
-      if (!brow) return;
+      if (!brow) {
+        return;
+      }
       brow.style.transition = 'transform 0.1s ease-out';
       brow.style.transform = jump;
     });
 
     setTimeout(() => {
       [leftEyebrowRef.current, rightEyebrowRef.current].forEach((brow) => {
-        if (!brow) return;
+        if (!brow) {
+          return;
+        }
         brow.style.transition = 'transform 0.2s ease-in';
         brow.style.transform = 'translateY(0px)';
 
@@ -116,14 +124,18 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
       // Reset to center on mobile/tablet
       const center = 'translate(0px, 0px)';
       [leftPupilRef, rightPupilRef].forEach((ref) => {
-        if (ref.current) ref.current.style.transform = center;
+        if (ref.current) {
+          ref.current.style.transform = center;
+        }
       });
       eyeTransformRef.current = center;
       return;
     }
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (!svgRef.current) return;
+      if (!svgRef.current) {
+        return;
+      }
 
       const svgRect = svgRef.current.getBoundingClientRect();
       const scale = svgRect.width / 1394;
@@ -148,7 +160,9 @@ export function Avatar(props: BoxProps & { onClick?: () => void }) {
 
       pupils.forEach((p) => {
         const pupil = p.ref.current;
-        if (!pupil) return;
+        if (!pupil) {
+          return;
+        }
 
         // Exaggerated elliptical bounds
         const maxMoveX = 120 * scale;

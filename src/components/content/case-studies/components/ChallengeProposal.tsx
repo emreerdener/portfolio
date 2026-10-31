@@ -1,5 +1,6 @@
 import { IconCircleCheckFilled, IconExclamationCircleFilled } from '@tabler/icons-react';
 import { Blockquote, Group, Stack, Text, Title } from '@mantine/core';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 
 interface ChallengeProposalProps {
   problem: string;
@@ -8,7 +9,7 @@ interface ChallengeProposalProps {
 
 export default function ChallengeProposal({ problem, proposal }: ChallengeProposalProps) {
   return (
-    <Stack gap="xl" mt="md">
+    <Stack className={spacing.sections} mt="md">
       <Blockquote p="xl" color="orange">
         <Stack>
           <Group justify="space-between" wrap="nowrap">

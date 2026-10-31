@@ -1,5 +1,13 @@
 export const SEARCH_SUGGESTIONS_GROUPED = [
   {
+    group: 'Explore my work',
+    items: [
+      'Show me design systems work',
+      'What has Emre built?',
+      'Show me examples of design leadership',
+    ],
+  },
+  {
     group: 'Strategy & leadership',
     items: [
       'What is your approach to aligning design strategy with business goals?',

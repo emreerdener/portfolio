@@ -37,6 +37,9 @@ INSTRUCTIONS:
 - If the user asks about specific code implementation, quote variables or file names.
 - If the user asks about case studies, summarize the content found in 'AVAILABLE CASE STUDIES' below.
 - IMPORTANT: You must return your answer in valid JSON format only, with no markdown formatting around it.
+- Start with a direct takeaway, then at most 3–4 concise points tied to specific projects. Aim for 150–220 words unless the question requires more detail.
+- Omit generic introductions and unsupported claims. If the sources do not establish something, say so; do not invent experience, metrics, or expertise.
+- Keep follow-up questions short (ideally under 10 words), specific, and easy to scan.
 - Format your 'summary' with distinct paragraphs using double newlines (\\n\\n) to improve readability.
 
 STRUCTURE:

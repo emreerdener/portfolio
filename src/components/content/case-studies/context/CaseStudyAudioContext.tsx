@@ -73,6 +73,8 @@ export function CaseStudyAudioProvider({ caseStudyId, children }: CaseStudyAudio
       }}
     >
       {caseStudyId && (
+        // Audio narrates the case study text already available on this page.
+        // eslint-disable-next-line jsx-a11y/media-has-caption
         <audio
           key={caseStudyId}
           ref={audioRef}

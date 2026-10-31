@@ -1,0 +1,300 @@
+/* .main {
+  max-width: 1600px;
+  margin: 0 auto;
+} */
+
+.navbar {
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  padding: var(--mantine-spacing-xl);
+  padding-right: 0;
+}
+
+.navbarContainer {
+  position: relative;
+  border: 1px solid var(--app-shell-border-color);
+  border-radius: var(--mantine-radius-lg);
+  padding: var(--mantine-spacing-lg);
+  box-shadow: var(--mantine-shadow-sm);
+  background: light-dark(#fff, var(--mantine-color-dark-7));
+}
+
+.rightNav {
+  padding-left: 0;
+  padding-right: var(--mantine-spacing-xl);
+}
+
+.header {
+  border-bottom: 0;
+  background-color: transparent;
+  padding: var(--mantine-spacing-lg);
+}
+
+.navName {
+  color: var(--mantine-color-text);
+  transition: color 300ms ease;
+}
+
+.navName:hover,
+.navName[data-active] {
+  color: var(--mantine-color-orange-5);
+}
+
+.navlink {
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0;
+  transition: color 200ms ease;
+}
+
+.navlink:hover,
+.navlink[data-active]:hover {
+  background: transparent;
+  color: var(--mantine-primary-color-light-color);
+}
+
+.navlink[data-active] {
+  background: transparent;
+  color: var(--mantine-color-orange-5);
+}
+
+.navlink :global(.mantine-NavLink-section) {
+  color: inherit;
+}
+
+.navlink span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navlink :global(.mantine-NavLink-body) {
+  flex: 1;
+  text-align: left;
+}
+
+.navlink :global(.mantine-NavLink-section[data-position='right']) {
+  flex-shrink: 0;
+  margin-inline-start: var(--mantine-spacing-md);
+  margin-inline-end: 0;
+}
+
+.profilepic {
+  border: 1px solid var(--app-shell-border-color);
+  transition: 300ms ease all;
+}
+
+.profilepic:hover {
+  border-color: var(--mantine-color-orange-6);
+}
+
+.aside {
+  padding: 0;
+}
+
+.bannerPaper {
+  padding: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-lg);
+}
+
+.interactiveCard {
+  transition: border-color 0.2s ease;
+  height: 100%;
+}
+
+.interactiveCard:hover {
+  border-color: var(--mantine-color-orange-5);
+}
+
+.markdownContent p {
+  margin-bottom: var(--mantine-spacing-md);
+}
+
+.markdownContent p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 47.999em) {
+  .main {
+    padding-top: calc(var(--app-shell-header-offset, 0rem) + 16px);
+    padding-left: var(--mantine-spacing-lg);
+    padding-right: var(--mantine-spacing-lg);
+  }
+
+  .caseStudyMain {
+    padding-top: var(--app-shell-header-offset, 0rem);
+  }
+
+  .navbar {
+    display: none !important;
+  }
+
+  .navbarContainer {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .bannerLayout,
+  .bannerHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bannerHeader {
+    width: 100%;
+  }
+
+  .bannerPaper {
+    padding-right: var(--mantine-spacing-md);
+  }
+}
+
+@media (max-width: 43.749em) {
+  .compactLabel {
+    display: none;
+  }
+
+  .compactButton {
+    width: 44px;
+    padding-inline: 0;
+  }
+
+  .compactButton :global(.mantine-Button-section) {
+    margin: 0;
+  }
+
+  .compactButton :global(.mantine-Button-label) {
+    display: none;
+  }
+}
+
+@media (max-width: 24.999em) {
+  .header {
+    padding-inline: 12px;
+  }
+}
+
+.headerContent {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+@media (min-width: 25em) {
+  .toolbarGroup {
+    gap: 12px;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-sm) {
+  .caseStudyHeader {
+    padding: var(--mantine-spacing-xl);
+  }
+
+  .toolbarGroup {
+    gap: 16px;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-md) {
+  .caseStudyHeader {
+    padding: 48px;
+  }
+}
+
+@media (max-width: 24.999em) {
+  .toolbarGroup {
+    gap: 4px;
+  }
+
+  .caseStudyHeader {
+    padding-inline: var(--mantine-spacing-lg);
+  }
+}
+
+.sheetNavlink {
+  min-height: 56px;
+}
+
+.sheetNavlink span {
+  font-size: 20px;
+}
+
+@media (max-width: 24.999em) {
+  .toolbarAllStudies {
+    display: none;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-sm) {
+  .toolbarControl {
+    --toolbar-control-size: 50px;
+    font-size: 18px;
+  }
+
+  .toolbarControl :global(.mantine-Avatar-root) {
+    --avatar-size: 32px;
+  }
+
+  .toolbarControl svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .toolbarControl:global(.mantine-Button-root) {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 47.999em) {
+  .toolbarControl svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 24.999em) {
+  .sectionsButton {
+    width: 44px;
+    padding-inline: 0;
+  }
+
+  .sectionsButton :global(.mantine-Button-label) {
+    display: none;
+  }
+
+  .sectionsButton :global(.mantine-Button-section) {
+    margin: 0;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-sm) {
+  .header {
+    --toolbar-control-size: 50px;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-sm) {
+  .projectActions {
+    --toolbar-control-size: 50px;
+  }
+
+  .projectActions :global(.mantine-Button-root) {
+    --button-padding-x: 26px;
+  }
+}
+
+.floatingButton {
+  background-color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
+  border-color: transparent;
+
+  @mixin hover {
+    background-color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-gray-2));
+    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
+  }
+}

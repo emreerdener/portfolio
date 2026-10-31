@@ -3,6 +3,7 @@
 import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyPricing() {
@@ -13,7 +14,7 @@ export default function ShopifyPricing() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -31,7 +32,7 @@ export default function ShopifyPricing() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -50,7 +51,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/original.png"
             alt="Shopify legacy pricing page screenshot"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -71,7 +72,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/history.png"
             alt="Shopify legacy pricing page screenshot"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -102,7 +103,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/competitors.png"
             alt="Shopify competitors pricing page screenshots"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -122,7 +123,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/variants.png"
             alt="Shopify pricing page variants"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -162,7 +163,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/redesign.png"
             alt="Shopify pricing page redesign"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -171,7 +172,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/laptop-mockup.png"
             alt="Shopify pricing page on laptop mockup"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -194,7 +195,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/figma-canvas.png"
             alt="Shopify pricing page redesign Figma design canvas"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -203,7 +204,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/redesign-cover.png"
             alt="Shopify pricing page redesign UI"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -212,7 +213,7 @@ export default function ShopifyPricing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-pricing/redesign-monitor.png"
             alt="Shopify pricing page redesign monitor mockup"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
         </Center>

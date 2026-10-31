@@ -646,12 +646,12 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'rehear-score',
     title: 'Mobile Rehearsal Platform',
-    company: 'Music Theatre International',
+    company: 'Eureka Software',
     coverSrc: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/phones.png',
     headerImage:
       'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/rehearscore/rehearscore%20cover-c.png',
     coverAlt: 'RehearScore case study cover image',
-    logoSrc: '/images/logos/apps/rehearscore.svg',
+    logoSrc: '/images/logos/apps/eureka.svg',
     href: '/case-study/rehearscore',
     categories: ['Redesign', '0 to 1', 'Design System'],
     platforms: ['Mobile'],
@@ -659,7 +659,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featured: false,
     projectType: 'Client',
     heading: 'Restoring user trust',
-    metadata: 'Music Theatre International • Lead Designer • 2025',
+    metadata: 'Eureka Software • Lead Designer • 2025',
     description:
       'I led the redesign of a rehearsal tool that professional performers rely on. When we started, the app was outdated and struggling with stability. My team and I rebuilt it into a modern, accessible product—focusing entirely on reliability, so performers could trust the technology when the stakes were high.',
     prototypeUrl:

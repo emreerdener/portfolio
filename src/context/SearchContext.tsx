@@ -45,7 +45,9 @@ export function SearchProvider({ children }: { children: ReactNode }) {
   const performSearch = useCallback(
     async (overrideQuery?: string) => {
       const searchQuery = overrideQuery || query;
-      if (!searchQuery.trim()) return;
+      if (!searchQuery.trim()) {
+        return;
+      }
 
       // Cancel any pending request
       if (abortControllerRef.current) {
@@ -57,7 +59,9 @@ export function SearchProvider({ children }: { children: ReactNode }) {
       setTimeout(() => setQuery(''), 0);
 
       setLoading(true);
-      if (!opened) setOpened(true);
+      if (!opened) {
+        setOpened(true);
+      }
 
       // Create new controller for this request
       const controller = new AbortController();
@@ -80,7 +84,9 @@ export function SearchProvider({ children }: { children: ReactNode }) {
         setData(responseData);
       } catch (err: any) {
         // Ignore abort errors as they are intentional
-        if (err.name === 'AbortError') return;
+        if (err.name === 'AbortError') {
+          return;
+        }
         console.error(err);
         // Could handle error state here
       } finally {

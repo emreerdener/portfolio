@@ -5,6 +5,14 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 export default withBundleAnalyzer({
+  outputFileTracingIncludes: {
+    '/api/ai-search': [
+      './src/app/**/page.tsx',
+      './src/components/content/about/components/{AboutMe,CurrentProject}.tsx',
+      './src/components/content/experience/components/Experience.tsx',
+      './src/components/content/experience/data/*.ts',
+    ],
+  },
   reactStrictMode: false,
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],

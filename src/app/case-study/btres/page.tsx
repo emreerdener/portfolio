@@ -3,6 +3,7 @@
 import { Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function BTRES() {
@@ -13,7 +14,7 @@ export default function BTRES() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -32,7 +33,7 @@ export default function BTRES() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -50,7 +51,7 @@ export default function BTRES() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/logos.svg"
             alt="BTRES logo image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -59,7 +60,7 @@ export default function BTRES() {
           <Image
             src=" https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/logo-mockup.png"
             alt="BTRES logo mockup image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -68,7 +69,7 @@ export default function BTRES() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/dashboard.png"
             alt="BTRES dashboard image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -87,7 +88,7 @@ export default function BTRES() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/css.png"
             alt="BTRES style image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -104,7 +105,7 @@ export default function BTRES() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/screen.webp"
             alt="BTRES screen mockup image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -113,7 +114,7 @@ export default function BTRES() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/btres/product.png"
             alt="BTRES product image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>

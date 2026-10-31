@@ -1,8 +1,6 @@
 import { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { IconArrowRight } from '@tabler/icons-react';
 import {
-  ActionIcon,
   AspectRatio,
   Group,
   Image,
@@ -18,6 +16,7 @@ import classes from './ProjectCard.module.css';
 interface ProjectCardProps {
   title: string;
   company: string;
+  description?: string;
   coverSrc: string | StaticImageData;
   logoSrc?: string;
   href: string;
@@ -27,6 +26,7 @@ interface ProjectCardProps {
 export default function ProjectCard({
   title,
   company,
+  description,
   coverSrc,
   logoSrc,
   href,
@@ -34,10 +34,16 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const finalSrc = typeof coverSrc === 'string' ? coverSrc : coverSrc.src;
   return (
-    <UnstyledButton component={Link} href={href} aria-label="Go to case study" onClick={onClick}>
+    <UnstyledButton
+      component={Link}
+      href={href}
+      aria-label={`${title} — ${company} case study`}
+      onClick={onClick}
+      className={classes.container}
+    >
       <Paper
         shadow="sm"
-        radius="lg"
+        radius={24}
         withBorder
         className={classes.card}
         style={{ overflow: 'hidden' }}
@@ -47,32 +53,45 @@ export default function ProjectCard({
         </AspectRatio>
 
         <Group
-          p="sm"
+          p="lg"
           wrap="nowrap"
           gap="xs"
           justify="space-between"
           style={{ borderTop: '1px solid var(--app-shell-border-color)' }}
         >
           {/* Left */}
-          <Group wrap="nowrap">
-            <Image src={logoSrc} alt={`${company} logo`} w={56} h={56} radius={12} />
-            <Stack gap={3}>
+          <Group wrap="nowrap" align="flex-start" gap="lg" style={{ flex: 1, minWidth: 0 }}>
+            <Tooltip label={company}>
+              <Image
+                src={logoSrc}
+                alt={`${company} logo`}
+                visibleFrom="sm"
+                w={56}
+                h={56}
+                radius={12}
+              />
+            </Tooltip>
+            <Stack gap={8} style={{ flex: 1, minWidth: 0 }}>
               {/* Details */}
-              <Text size="md" c="dimmed" lineClamp={1}>
-                {company}
-              </Text>
-              <Title order={4} lineClamp={1} lts={-0.1}>
+              <Title
+                order={3}
+                fz={{ base: 'var(--mantine-h4-font-size)', sm: 'var(--mantine-h3-font-size)' }}
+                lineClamp={1}
+                lts={-0.1}
+              >
                 {title}
               </Title>
+              {description && (
+                <Text
+                  c="dimmed"
+                  lineClamp={3}
+                  className={`${classes.detailText} ${classes.description}`}
+                >
+                  {description}
+                </Text>
+              )}
             </Stack>
           </Group>
-
-          {/* Right */}
-          <Tooltip label="View case study" position="left">
-            <ActionIcon visibleFrom="xs" component="div" variant="subtle" size={56}>
-              <IconArrowRight size={32} />
-            </ActionIcon>
-          </Tooltip>
         </Group>
       </Paper>
     </UnstyledButton>

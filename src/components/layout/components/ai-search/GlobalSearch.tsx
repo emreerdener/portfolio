@@ -3,12 +3,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { IconArrowRight, IconSparkles2 } from '@tabler/icons-react';
-import { AnimatePresence, motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import {
   ActionIcon,
   Autocomplete,
   Box,
+  Button,
   Center,
   Container,
   HoverCard,
@@ -17,20 +17,17 @@ import {
   ScrollArea,
   Stack,
   Text,
-  Title,
   Tooltip,
 } from '@mantine/core';
 import { useHotkeys, useMediaQuery } from '@mantine/hooks';
 import { useSearch } from '../../../../context/SearchContext';
-import { FadeInUp } from '../../../animations/FadeInUp';
-import { StaggerContainer } from '../../../animations/StaggerContainer';
 import { Giraffes } from '../../../content/other-work/components/animations/data/giraffes';
-import MoreBanner from '../MoreBanner';
 import { AnalysisSection } from './AnalysisSection';
 import { LOADING_MESSAGES, SEARCH_SUGGESTIONS_GROUPED } from './constants';
 import { ContextSection } from './ContextSection';
 import { FollowUpSection } from './FollowUpSection';
 import { RotatingHeader } from './RotatingHeader';
+import classes from './SearchResults.module.css';
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
@@ -59,12 +56,10 @@ export default function GlobalSearch() {
 
   useHotkeys([['mod+K', () => openSpotlight()]]);
 
-  const [focused, setFocused] = useState(false);
   const [activeMessages, setActiveMessages] = useState<string[]>([]);
   const [messageIndex, setMessageIndex] = useState(0);
 
   const isMobile = useMediaQuery('(max-width: 62em)');
-  const isSmallScreen = useMediaQuery('(max-width: 32em)');
 
   const randomizedSuggestions = useMemo(() => {
     const groupsWithShuffledItems = SEARCH_SUGGESTIONS_GROUPED.map((group) => ({
@@ -124,18 +119,20 @@ export default function GlobalSearch() {
       fullScreen={isMobile}
       radius="lg"
       centered
-      title={!data && !loading ? 'AI insights' : 'Search results'}
+      title="Ask about my work"
       scrollAreaComponent={TinyScrollArea}
       transitionProps={{ transition: 'fade', duration: 200 }}
       styles={{
-        header: { top: -1 },
+        header: { top: 0 },
+        title: { fontSize: 16, fontWeight: 600 },
+        body: { paddingBottom: 0 },
       }}
       overlayProps={{
         backgroundOpacity: 0.8,
         blur: 6,
       }}
     >
-      <Container size="md" p={{ base: 0, md: 'sm' }} pb="xl">
+      <Container size="md" p={{ base: 0, md: 'sm' }} pb={0}>
         {loading ? (
           <Center style={{ height: '70vh' }}>
             <Stack>
@@ -198,8 +195,6 @@ export default function GlobalSearch() {
                 styles={{
                   ...autocompleteStyles,
                 }}
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
               />
 
               <Text size="sm" c="dimmed" ta="center">
@@ -208,70 +203,65 @@ export default function GlobalSearch() {
             </Stack>
           </Box>
         ) : (
-          // Results State
-          <StaggerContainer>
-            <Stack gap="xl">
-              <FadeInUp>
-                <AnalysisSection summary={data?.summary || ''} query={submittedQuery} />
-              </FadeInUp>
-
-              {data?.suggestedLinks && (
-                <FadeInUp>
-                  <ContextSection
-                    links={data.suggestedLinks}
-                    onLinkClick={(url) => {
-                      router.push(url);
-                      closeSpotlight();
-                    }}
-                  />
-                </FadeInUp>
+          <>
+            <Stack gap={32} pt={16}>
+              <AnalysisSection summary={data.summary || ''} query={submittedQuery} />
+              {data.suggestedLinks && (
+                <ContextSection
+                  links={data.suggestedLinks}
+                  onLinkClick={(url) => {
+                    router.push(url);
+                    closeSpotlight();
+                  }}
+                />
               )}
-
-              <Stack>
-                {data?.followUpQuestions && data.followUpQuestions.length > 0 && (
-                  <FadeInUp>
-                    <FollowUpSection
-                      questions={data.followUpQuestions}
-                      onQuestionClick={(q) => performSearch(q)}
-                    />
-                  </FadeInUp>
-                )}
-
-                {!data?.disableInput && (
-                  <FadeInUp>
-                    <Autocomplete
-                      maxLength={200}
-                      placeholder="Ask your own question..."
-                      value={query}
-                      onChange={setQuery}
-                      onKeyDown={handleKeyDown}
-                      onOptionSubmit={(val) => performSearch(val)}
-                      data={modalSuggestions}
-                      rightSection={
-                        <ActionIcon
-                          variant="transparent"
-                          size="lg"
-                          aria-label="Search"
-                          onClick={() => performSearch()}
-                        >
-                          <IconArrowRight size={24} />
-                        </ActionIcon>
-                      }
-                      size="lg"
-                      radius="md"
-                      onFocus={() => setFocused(true)}
-                      onBlur={() => setFocused(false)}
-                      styles={autocompleteStyles}
-                    />
-                  </FadeInUp>
-                )}
-              </Stack>
-
-              <FadeInUp>
-                <MoreBanner />
-              </FadeInUp>
+              <FollowUpSection
+                questions={data.followUpQuestions || []}
+                onQuestionClick={performSearch}
+              />
+              <Button
+                component="a"
+                href="/case-studies"
+                onClick={closeSpotlight}
+                variant="light"
+                size="sm"
+                w="fit-content"
+              >
+                View all case studies
+              </Button>
             </Stack>
-          </StaggerContainer>
+            {!data.disableInput && (
+              <Box className={classes.composer}>
+                <Autocomplete
+                  aria-label="Ask about my work"
+                  maxLength={200}
+                  placeholder="Ask another question…"
+                  value={query}
+                  onChange={setQuery}
+                  onKeyDown={handleKeyDown}
+                  onOptionSubmit={(value) => performSearch(value)}
+                  data={modalSuggestions}
+                  rightSection={
+                    <ActionIcon
+                      variant="light"
+                      size="lg"
+                      aria-label="Submit question"
+                      onClick={() => performSearch()}
+                    >
+                      <IconArrowRight size={18} />
+                    </ActionIcon>
+                  }
+                  size="lg"
+                  radius="md"
+                  styles={autocompleteStyles}
+                  comboboxProps={{ position: 'top', withinPortal: true }}
+                />
+                <Text size="xs" c="dimmed" mt={8}>
+                  AI answers based on my portfolio and resume.
+                </Text>
+              </Box>
+            )}
+          </>
         )}
       </Container>
     </Modal>

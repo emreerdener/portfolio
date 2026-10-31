@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function Waxwing() {
@@ -14,7 +15,7 @@ export default function Waxwing() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -32,7 +33,7 @@ export default function Waxwing() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -52,7 +53,7 @@ export default function Waxwing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/up-fade-c.png"
             alt="Waxwing user stories image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -80,7 +81,7 @@ export default function Waxwing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/ui-cover.png"
             alt="Waxwing UI mockup image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -102,7 +103,7 @@ export default function Waxwing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/canvas.png"
             alt="Waxwing design image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -201,7 +202,7 @@ export default function Waxwing() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/waxwing/mockup-laptop.png"
             alt="Waxwing mockup image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -252,7 +253,7 @@ export default function Waxwing() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

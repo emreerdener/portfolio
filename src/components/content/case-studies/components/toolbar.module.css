@@ -1,0 +1,179 @@
+.container {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+.navigation,
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.player {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 44px;
+}
+
+.audioLabel,
+.time {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+}
+
+.waveTrack {
+  margin-inline-start: 12px;
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+}
+
+.waveform,
+.wavePlaceholder {
+  position: absolute;
+  inset: 0;
+  transition: opacity 250ms ease;
+}
+
+.waveform {
+  opacity: 0;
+}
+
+.wavePlaceholder {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow: hidden;
+  animation: waveform-pulse 1.4s ease-in-out infinite alternate;
+}
+
+.wavePlaceholder span {
+  flex: 1 0 2px;
+  border-radius: 99px;
+  background: light-dark(#adb5bd, #696969);
+}
+
+.player[data-ready] .waveform {
+  opacity: 1;
+}
+
+.player[data-ready] .wavePlaceholder,
+.player[data-error] .wavePlaceholder {
+  opacity: 0;
+  animation: none;
+  pointer-events: none;
+}
+
+@keyframes waveform-pulse {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 0.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wavePlaceholder {
+    animation: none;
+    opacity: 0.55;
+  }
+
+  .waveform,
+  .wavePlaceholder {
+    transition: none;
+  }
+}
+
+.seek {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--mantine-color-orange-6);
+}
+
+.seek:focus-visible {
+  position: static;
+  width: auto;
+  height: 24px;
+  clip-path: none;
+}
+
+.player[data-wave-unavailable] .waveTrack {
+  display: none;
+}
+
+.player[data-wave-unavailable] .seek {
+  position: static;
+  width: auto;
+  height: 32px;
+  clip-path: none;
+}
+
+.player:has(.seek:focus-visible) .waveTrack {
+  display: none;
+}
+
+@container (max-width: 680px) {
+  .toolbar {
+    grid-template-columns: 1fr auto;
+    gap: 12px 24px;
+  }
+
+  .player {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .player[data-ready] .waveTrack {
+    display: none;
+  }
+
+  .player:not([data-ready]) .seek {
+    display: none;
+  }
+
+  .seek {
+    position: static;
+    width: auto;
+    height: 32px;
+    clip-path: none;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-xl) {
+  .toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 48px;
+  }
+
+  .player {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}

@@ -3,6 +3,7 @@
 import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function VivintBridge() {
@@ -13,7 +14,7 @@ export default function VivintBridge() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -32,7 +33,7 @@ export default function VivintBridge() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -61,7 +62,7 @@ export default function VivintBridge() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/user-frustrations.png"
             alt="Vivint user frustrations"
-            radius="lg"
+            radius={24}
             p="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -81,14 +82,14 @@ export default function VivintBridge() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/phones-mockup.png"
           alt="Vivint bridge phones mockup"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/canvas.png"
           alt="Vivint designs"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
 
@@ -107,21 +108,21 @@ export default function VivintBridge() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/qrcodes-drawbacks.png"
           alt="QR code drawbacks"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/mdns-benefits.png"
           alt="Benefits of mDNS"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
 
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-bridge/bridge-photo.jpg"
           alt="Photo of the bridge device"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
 

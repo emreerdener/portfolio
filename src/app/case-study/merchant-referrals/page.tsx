@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function MerchantReferrals() {
@@ -14,7 +15,7 @@ export default function MerchantReferrals() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -33,7 +34,7 @@ export default function MerchantReferrals() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -104,7 +105,7 @@ export default function MerchantReferrals() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/phone-m2m.png"
             alt="Shopify Merchant Referral Program phone mockup image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -182,7 +183,7 @@ export default function MerchantReferrals() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/macbook-m2m.png"
             alt="Shopify Merchant Referral Program mackbook mockup image"
-            radius="lg"
+            radius={24}
           />
         </Center>
 
@@ -204,7 +205,7 @@ export default function MerchantReferrals() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/north-star.png"
             alt="Shopify Merchant Referral Program north star image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -305,7 +306,7 @@ export default function MerchantReferrals() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/monitor-m2m.png"
             alt="Shopify Merchant Referral Program monitor mockup image"
-            radius="lg"
+            radius={24}
           />
         </Center>
 
@@ -342,7 +343,7 @@ export default function MerchantReferrals() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

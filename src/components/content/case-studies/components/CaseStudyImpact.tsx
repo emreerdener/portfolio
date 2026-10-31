@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, Paper, rem, SimpleGrid, Stack, Text, Title } from '@mantine/core';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 
 interface Stat {
   label: string;
@@ -24,7 +25,7 @@ export default function CaseStudyImpact({ stats, description }: CaseStudyImpactP
       withBorder
       shadow="sm"
     >
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         {/* Heading */}
         <Stack gap="xs">
           <Title order={2}>Impact & outcomes</Title>

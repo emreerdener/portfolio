@@ -1,10 +1,24 @@
 'use client';
 
-import { IconBrandFigma } from '@tabler/icons-react';
-import { Button, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Box, Flex, Image, Stack, Text, Title } from '@mantine/core';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
+import { CASE_STUDIES } from '../data/case-studies';
+import CaseStudyActions from './CaseStudyActions';
 import CaseStudyImpact from './CaseStudyImpact';
+import CaseStudyToolbar from './CaseStudyToolbar';
 import ChallengeProposal from './ChallengeProposal';
-import WaveformPlayer from './WaveformPlayer';
+
+const FULL_LOGOS: Record<string, string> = {
+  vivint: 'vivint',
+  shopify: 'shopify',
+  eureka: 'eureka',
+  tarbox: 'squiretarboxinn',
+  tinytails: 'tinytailstoyou',
+  btres: 'btres',
+  ufcu: 'ufcu',
+  tripway: 'tripway',
+  justuno: 'justuno',
+};
 
 interface Stat {
   label: string;
@@ -38,35 +52,75 @@ export default function CaseStudyHeader({
   stats,
   statsDescription,
 }: CaseStudyHeaderProps) {
-  const rawAudioSrc = id
-    ? `https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/audio/${id}.mp3`
-    : undefined;
-  const audioSrc = rawAudioSrc
-    ? `/api/proxy-audio?url=${encodeURIComponent(rawAudioSrc)}`
-    : undefined;
+  const study = CASE_STUDIES.find((project) => project.id === id);
+  const logoName = study?.logoSrc.split('/').pop()?.replace('.svg', '');
+  const fullLogo = logoName ? FULL_LOGOS[logoName] : undefined;
+  const usesSharedLogo = fullLogo === 'justuno' || fullLogo === 'ufcu';
+
+  const actions =
+    study?.prototypeUrl || study?.websiteUrl ? <CaseStudyActions study={study} /> : null;
+
   return (
-    <Stack gap="xl">
-      {/* Text and audio player*/}
-      <Stack align="flex-start" gap="lg">
-        <Text size="lg" c="dimmed">
-          {metadata}
-        </Text>
+    <Stack className={spacing.sections}>
+      {/* Company and introduction */}
+      <Stack align="flex-start" className={spacing.introduction} w="100%">
+        <Flex justify="space-between" align="flex-start" gap="lg" w="100%">
+          <Stack gap={16} align="flex-start">
+            {study?.logoSrc &&
+              (fullLogo ? (
+                <>
+                  <Image
+                    src={`/images/logos/full/${fullLogo}.png`}
+                    alt={`${study.company} logo`}
+                    w={136}
+                    h={34}
+                    fit="contain"
+                    darkHidden={!usesSharedLogo}
+                    style={{ objectPosition: 'left center' }}
+                  />
+                  {!usesSharedLogo && (
+                    <Image
+                      src={`/images/logos/full/${fullLogo}-dark.png`}
+                      alt={`${study.company} logo`}
+                      w={136}
+                      h={34}
+                      fit="contain"
+                      lightHidden
+                      style={{ objectPosition: 'left center' }}
+                    />
+                  )}
+                </>
+              ) : (
+                <Image
+                  src={study.logoSrc}
+                  alt={`${study.company} logo`}
+                  w={48}
+                  h={48}
+                  radius={12}
+                />
+              ))}
+            <Text size="lg" c="dimmed">
+              {metadata}
+            </Text>
+          </Stack>
+          {actions && <Box visibleFrom="xl">{actions}</Box>}
+        </Flex>
 
         {/* Text */}
-        <Stack>
+        <Stack gap={24} w="100%">
           <Title order={1} fz={{ base: '2.2rem', md: '2.8rem' }} lh={1.1} fw={800}>
             {title}
           </Title>
           <Text fz={{ base: 'md', md: 'xl' }}>{description}</Text>
         </Stack>
-
-        {audioSrc && <WaveformPlayer />}
       </Stack>
+
+      <CaseStudyToolbar />
 
       <Image
         src={coverImage}
         alt={coverAlt}
-        radius="lg"
+        radius={24}
         style={{ border: '1px solid var(--app-shell-border-color)' }}
       />
 

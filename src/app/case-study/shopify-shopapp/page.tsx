@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyShopApp() {
@@ -14,7 +15,7 @@ export default function ShopifyShopApp() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -33,7 +34,7 @@ export default function ShopifyShopApp() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -55,7 +56,7 @@ export default function ShopifyShopApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-shopapp/stories.png"
             alt="Shopify user groups"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -75,7 +76,7 @@ export default function ShopifyShopApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-shopapp/profiles.png"
             alt="Shopify profiles designs"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -95,7 +96,7 @@ export default function ShopifyShopApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-shopapp/collection.png"
             alt="Shopify shop app collections designs"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -104,7 +105,7 @@ export default function ShopifyShopApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-shopapp/phones-mockup.png"
             alt="Shopify shop app phones mockup"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -124,7 +125,7 @@ export default function ShopifyShopApp() {
           <Image
             src=" https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-shopapp/account.png"
             alt="Shopify shop account designs"
-            radius="lg"
+            radius={24}
             pt="xl"
             pb="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
@@ -135,7 +136,7 @@ export default function ShopifyShopApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-shopapp/phones-mockup-2.png"
             alt="Shopify shop app phones mockup"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -171,7 +172,7 @@ export default function ShopifyShopApp() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

@@ -1,4 +1,4 @@
-name: npm test
+name: Portfolio checks
 
 on:
   pull_request:
@@ -19,9 +19,11 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
+      - name: Enable Yarn
+        run: corepack enable
       - name: Install dependencies
-        run: yarn
+        run: yarn install --immutable
       - name: Run build
-        run: npm run build
+        run: yarn build
       - name: Run tests
-        run: npm test
+        run: yarn test

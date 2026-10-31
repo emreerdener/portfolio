@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyProductivityIncentives() {
@@ -14,7 +15,7 @@ export default function ShopifyProductivityIncentives() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -33,7 +34,7 @@ export default function ShopifyProductivityIncentives() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -56,7 +57,7 @@ export default function ShopifyProductivityIncentives() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/flow.svg"
             alt="Incentive flow chart"
-            radius="lg"
+            radius={24}
             p="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -66,7 +67,7 @@ export default function ShopifyProductivityIncentives() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/domain.png"
             alt="Incentive UX"
-            radius="lg"
+            radius={24}
             p="sm"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -76,7 +77,7 @@ export default function ShopifyProductivityIncentives() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/first-product.png"
             alt="Incentive UX"
-            radius="lg"
+            radius={24}
             p="sm"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -86,7 +87,7 @@ export default function ShopifyProductivityIncentives() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/edit-theme.png"
             alt="Incentive UX"
-            radius="lg"
+            radius={24}
             p="sm"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -96,7 +97,7 @@ export default function ShopifyProductivityIncentives() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/payments.png"
             alt="Incentive UX"
-            radius="lg"
+            radius={24}
             p="sm"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -152,7 +153,7 @@ export default function ShopifyProductivityIncentives() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/incentives-ui.png"
           alt="Shopify productivity incentives UI"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -170,7 +171,7 @@ export default function ShopifyProductivityIncentives() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/do-dont.svg"
           alt="Shopify productivity incentives guidelines"
-          radius="lg"
+          radius={24}
           p="xl"
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
@@ -178,7 +179,7 @@ export default function ShopifyProductivityIncentives() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-productivity/laptops-mockup.png"
           alt="Shopify productivity incentives laptop mockup"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -188,7 +189,7 @@ export default function ShopifyProductivityIncentives() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

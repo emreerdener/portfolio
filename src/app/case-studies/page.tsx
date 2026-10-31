@@ -1,10 +1,10 @@
 'use client';
 
-import { IconSearch } from '@tabler/icons-react';
 import Lottie from 'lottie-react';
-import { Box, Button, Grid, Space, Stack, Text, Title } from '@mantine/core';
+import { Box, Button, Space, Stack, Text, Title } from '@mantine/core';
 import { FadeIn } from '@/src/components/animations/FadeIn';
 import ProjectCard from '@/src/components/content/case-studies/components/ProjectCard';
+import classes from '@/src/components/content/case-studies/components/ProjectCard.module.css';
 import ProjectFilters from '@/src/components/content/case-studies/components/ProjectFilters';
 import { useProjectFilters } from '@/src/components/content/case-studies/hooks/use-project-filters';
 import { PolarBear } from '@/src/components/content/other-work/components/animations/data/polar-bear';
@@ -44,7 +44,10 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <Stack gap="xl">
+      <Stack
+        className={classes.sections}
+        style={{ containerType: 'inline-size', containerName: 'project-list' }}
+      >
         <ProjectFilters
           clients={CLIENTS}
           categories={CATEGORIES}
@@ -59,24 +62,25 @@ export default function CaseStudiesPage() {
           resultCount={filteredProjects.length}
         />
 
-        <Grid gutter={{ base: 'xl', xl: '3rem' }}>
+        <div className={classes.gridList}>
           {filteredProjects.map((project, index) => (
-            <Grid.Col key={index} span={{ base: 12, md: 6 }}>
+            <div key={project.id}>
               <FadeIn key={project.id} delay={index * 0.02}>
                 <ProjectCard
                   title={project.title}
                   company={project.company}
+                  description={project.description}
                   coverSrc={project.coverSrc}
                   logoSrc={project.logoSrc}
                   href={project.href}
                 />
               </FadeIn>
-            </Grid.Col>
+            </div>
           ))}
 
           {/* Empty */}
           {filteredProjects.length === 0 && (
-            <Grid.Col span={12}>
+            <div style={{ gridColumn: '1 / -1' }}>
               <Stack align="center" py={60} gap="md">
                 <Title order={2}>No case studies found</Title>
                 <Text c="dimmed" ta="center" maw={420}>
@@ -91,9 +95,9 @@ export default function CaseStudiesPage() {
                   <Lottie animationData={PolarBear} loop autoplay />
                 </Box>
               </Stack>
-            </Grid.Col>
+            </div>
           )}
-        </Grid>
+        </div>
       </Stack>
 
       <Space h="xl" />

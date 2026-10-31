@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Blockquote, Box, Card, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import HippoBambooAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoBambooAnimation';
 import HippoBikeAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoBikeAnimation';
 import HippoChairAnimation from '@/src/components/content/case-studies/components/tripway/animations/HippoChairAnimation';
@@ -19,7 +20,7 @@ export default function Tripway() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -38,7 +39,7 @@ export default function Tripway() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -56,7 +57,7 @@ export default function Tripway() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/database-monitor.png"
             alt="Tripway database mockup"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -83,7 +84,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/3phones.png"
           alt="Tripway phones mockup image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -108,7 +109,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/design-canvas.png"
           alt="Tripway designs"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -128,7 +129,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/prototype.png"
           alt="Tripway design prototype"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -147,7 +148,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/user-research.png"
           alt="Tripway user research"
-          radius="lg"
+          radius={24}
           pt="lg"
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
@@ -155,7 +156,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/phones-greece.png"
           alt="Tripway mockup"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -197,7 +198,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/logo.png"
           alt="Tripway logo"
-          radius="lg"
+          radius={24}
           p="lg"
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
@@ -205,7 +206,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/logo2.png"
           alt="Tripway logo"
-          radius="lg"
+          radius={24}
           p="sm"
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
@@ -213,14 +214,14 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/design-system.png"
           alt="Tripway design system"
-          radius="lg"
+          radius={24}
           p="sm"
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/illustrations.png"
           alt="Tripway illustrations and icons"
-          radius="lg"
+          radius={24}
           p="sm"
           style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
         />
@@ -228,7 +229,7 @@ export default function Tripway() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tripway/app-store.png"
           alt="Tripway app store mockups"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -238,7 +239,7 @@ export default function Tripway() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

@@ -1,0 +1,42 @@
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.control {
+  position: relative;
+  min-height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 0;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+.control:hover {
+  color: light-dark(var(--mantine-primary-color-8), var(--mantine-primary-color-5));
+  background-color: transparent;
+}
+
+.control[data-active] {
+  color: light-dark(var(--mantine-primary-color-8), var(--mantine-primary-color-5));
+  font-weight: 600;
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: light-dark(var(--mantine-primary-color-8), var(--mantine-primary-color-5));
+  pointer-events: none;
+}

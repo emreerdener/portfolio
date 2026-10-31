@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function UFCUBankingApp() {
@@ -14,7 +15,7 @@ export default function UFCUBankingApp() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -33,7 +34,7 @@ export default function UFCUBankingApp() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -53,7 +54,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/colors.png"
             alt="UFCU design system elements"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -62,7 +63,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/ds-elements.png"
             alt="UFCU design system elements"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -71,7 +72,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/ui-cover.png"
             alt="UFCU UI elements"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -98,7 +99,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/figma-canvas.png"
             alt="UFCU redesign Figma canvas"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -129,7 +130,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/login-before-after.png"
             alt="UFCU app redesign screenshots"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -138,7 +139,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/login-frames.png"
             alt="UFCU app redesign screenshots"
-            radius="lg"
+            radius={24}
             p="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -148,7 +149,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/login-designs.png"
             alt="UFCU app redesign screenshots"
-            radius="lg"
+            radius={24}
             p="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -179,7 +180,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/settings-before-after.png"
             alt="UFCU app redesign screenshots"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -188,7 +189,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/locations.png"
             alt="UFCU app redesign screenshots"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -197,7 +198,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/routing-number.png"
             alt="UFCU app redesign screenshots"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -206,7 +207,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/frames.png"
             alt="UFCU app redesign screenshots"
-            radius="lg"
+            radius={24}
             p="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -216,7 +217,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/phones-mockup.png"
             alt="UFCU app redesign phones mockup"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -239,7 +240,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/accounts.png"
             alt="UFCU app redesign phones mockup"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -248,7 +249,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/accounts-frames.png"
             alt="UFCU app redesign phones mockup"
-            radius="lg"
+            radius={24}
             p="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -275,7 +276,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/transfers.png"
             alt="UFCU app app redesigns"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -284,7 +285,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/transfers-frames.png"
             alt="UFCU app app redesigns"
-            radius="lg"
+            radius={24}
             p="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -294,7 +295,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/deposit-check.png"
             alt="UFCU app app redesigns"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -303,7 +304,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/deposit-frames.png"
             alt="UFCU app app redesigns"
-            radius="lg"
+            radius={24}
             p="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -326,7 +327,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/activity.png"
             alt="UFCU app app redesigns"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -335,7 +336,7 @@ export default function UFCUBankingApp() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/ufcu/activity-frames.png"
             alt="UFCU app app redesigns"
-            radius="lg"
+            radius={24}
             p="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -347,7 +348,7 @@ export default function UFCUBankingApp() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

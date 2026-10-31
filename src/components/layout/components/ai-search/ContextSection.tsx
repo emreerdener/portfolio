@@ -1,17 +1,18 @@
 import { IconExternalLink, IconFileDescription } from '@tabler/icons-react';
 import {
-  Box,
   Card,
   Group,
+  Image,
   SimpleGrid,
   Stack,
   Text,
   ThemeIcon,
+  Title,
   UnstyledButton,
 } from '@mantine/core';
-import ProjectCard from '../../../content/case-studies/components/ProjectCard';
 import { CASE_STUDIES } from '../../../content/case-studies/data/case-studies';
-import classes from '../layout.module.css';
+import classes from '../shell.module.css';
+import resultClasses from './SearchResults.module.css';
 
 interface LinkItem {
   label: string;
@@ -25,7 +26,9 @@ interface ContextSectionProps {
 }
 
 export function ContextSection({ links, onLinkClick }: ContextSectionProps) {
-  if (!links || links.length === 0) return null;
+  if (!links || links.length === 0) {
+    return null;
+  }
 
   // Separate links into case studies and other links
   const caseStudyLinks: { link: LinkItem; caseStudy: (typeof CASE_STUDIES)[0] }[] = [];
@@ -41,10 +44,10 @@ export function ContextSection({ links, onLinkClick }: ContextSectionProps) {
   });
 
   return (
-    <Stack gap="xl">
-      <Text size="sm" c="dimmed" tt="uppercase" fw={700}>
-        Recommended for you
-      </Text>
+    <Stack gap={16}>
+      <Title order={3} fz={{ base: 18, sm: 20 }} fw={600}>
+        Related case studies
+      </Title>
 
       {/* Other Links Grid */}
       {otherLinks.length > 0 && (
@@ -86,20 +89,29 @@ export function ContextSection({ links, onLinkClick }: ContextSectionProps) {
 
       {/* Case Studies Grid */}
       {caseStudyLinks.length > 0 && (
-        <SimpleGrid cols={caseStudyLinks.length === 1 ? 1 : { base: 1, sm: 2 }} spacing="xl">
-          {caseStudyLinks.map(({ link, caseStudy }, idx) => (
-            <ProjectCard
-              key={`cs-${idx}`}
-              title={caseStudy.title}
-              company={caseStudy.company}
-              coverSrc={caseStudy.coverSrc}
-              logoSrc={caseStudy.logoSrc}
-              href={caseStudy.href}
-              onClick={(e) => {
-                e.preventDefault();
-                onLinkClick(caseStudy.href);
-              }}
-            />
+        <SimpleGrid cols={1} spacing="md">
+          {caseStudyLinks.map(({ caseStudy }) => (
+            <UnstyledButton
+              key={caseStudy.id}
+              className={resultClasses.recommendation}
+              onClick={() => onLinkClick(caseStudy.href)}
+              aria-label={`${caseStudy.title} — ${caseStudy.company} case study`}
+            >
+              <Image
+                className={resultClasses.thumbnail}
+                src={caseStudy.coverSrc}
+                alt=""
+                fit="cover"
+              />
+              <Stack gap={8} style={{ flex: 1, minWidth: 0 }}>
+                <Text fw={600} fz={18} lh={1.3}>
+                  {caseStudy.title}
+                </Text>
+                <Text c="dimmed" fz={16} lh={1.5} lineClamp={2}>
+                  {caseStudy.description}
+                </Text>
+              </Stack>
+            </UnstyledButton>
           ))}
         </SimpleGrid>
       )}

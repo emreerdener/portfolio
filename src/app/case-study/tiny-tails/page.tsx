@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import BunnyAnimation from '@/src/components/content/case-studies/components/tiny-tails/animation/BunnyAnimation';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
@@ -15,7 +16,7 @@ export default function TinyTails() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -34,7 +35,7 @@ export default function TinyTails() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -56,7 +57,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/original.png"
             alt="Tiny Tails original website screenshot"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -65,7 +66,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/process.jpg"
             alt="Tiny Tails design process proposal"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -74,7 +75,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/features.jpg"
             alt="Tiny Tails design features proposal"
-            radius="lg"
+            radius={24}
             p="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -84,7 +85,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/timeline.png"
             alt="Tiny Tails design timeline proposal"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -93,7 +94,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/repitle.jpg"
             alt="Tiny Tails repitle"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -127,7 +128,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/lead-form.png"
             alt="The lead form for tiny tails web customers"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -137,7 +138,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/animal-groups.png"
             alt="Animal groups for tiny tails"
-            radius="lg"
+            radius={24}
             py="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -158,7 +159,7 @@ export default function TinyTails() {
             <Image
               src=" https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/data-flow.png"
               alt="Data flow for tiny tails"
-              radius="lg"
+              radius={24}
               py="lg"
               style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
             />
@@ -192,7 +193,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/order-form.png"
             alt="Tiny tails web order form screenshot"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
         </Center>
@@ -224,7 +225,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/database-schema.png"
             alt="Tiny tails database schema diagram"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -233,7 +234,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/database-monitor.png"
             alt="Tiny tails database mockup"
-            radius="lg"
+            radius={24}
             py="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -259,7 +260,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/analytics.png"
             alt="Tiny tails analytics mockup"
-            radius="lg"
+            radius={24}
             py="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -291,7 +292,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/2-hedgehog-mat-c.jpg"
             alt="A hedgehog on a mat"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -300,7 +301,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/party-bunny.jpg"
             alt="Party bunny"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -327,7 +328,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/devices-mockup.png"
             alt="Website mockup"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -337,7 +338,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/illustrations.png"
             alt="Animal illustrations"
-            radius="lg"
+            radius={24}
             p="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -347,7 +348,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/animals.png"
             alt="Animal groups"
-            radius="lg"
+            radius={24}
             p="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -373,7 +374,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/baskets.jpg"
             alt="Chelsea and coworkers with animal baskets"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -382,7 +383,7 @@ export default function TinyTails() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tiny-tails/chelsea-joe.jpg"
             alt="Chelsea and Joe co-owners"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -392,7 +393,7 @@ export default function TinyTails() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

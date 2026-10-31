@@ -1,0 +1,9 @@
+.sections {
+  gap: 32px;
+}
+
+@media (min-width: $mantine-breakpoint-md) {
+  .sections {
+    gap: 48px;
+  }
+}

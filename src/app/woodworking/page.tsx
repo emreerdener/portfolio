@@ -39,7 +39,7 @@ export default function Woodworking() {
             <AspectRatio
               ratio={1}
               style={{
-                borderRadius: 'var(--mantine-radius-lg)',
+                borderRadius: 24,
                 overflow: 'hidden',
                 position: 'relative',
               }}

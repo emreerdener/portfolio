@@ -21,11 +21,11 @@ export default function ResumePage() {
 
         <Stack pb="xl">
           <Text size="lg">
-            I am an interdisciplinary product designer and frontend engineer. I have 8+ years of
-            experience leading design, strategy, end-to-end execution, and user research, bridging
-            the gap between stakeholders, engineering, and users. I have a proven track record of
-            leading major product initiatives and integrating AI-driven solutions to deliver
-            impactful business results.
+            I’m a Staff Product Designer and Design Engineer with 10+ years of experience, including
+            roles at Vivint and Shopify. I bring strategy, systems thinking, and code together to
+            turn complexity into intuitive products. My technical background helps me bridge design
+            and development, using AI to move from concepts to working prototypes and shipped
+            experiences.
           </Text>
         </Stack>
 

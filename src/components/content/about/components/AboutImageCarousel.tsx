@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
 import { Carousel } from '@mantine/carousel';
-import { AspectRatio, Image } from '@mantine/core';
+import { Image } from '@mantine/core';
 
 const images = [
   'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/profile/amos.jpg',
@@ -32,7 +32,7 @@ export default function AboutImageCarousel() {
       style={{
         cursor: 'pointer',
         border: '1px solid var(--app-shell-border-color)',
-        borderRadius: 'var(--mantine-radius-lg)',
+        borderRadius: 24,
         overflow: 'hidden',
       }}
       styles={{

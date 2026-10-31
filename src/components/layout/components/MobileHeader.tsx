@@ -1,35 +1,90 @@
 'use client';
 
-import { IconMenu2 } from '@tabler/icons-react';
-import { AppShell, Group, Stack, Text, Title, UnstyledButton } from '@mantine/core';
-import classes from './layout.module.css';
+import { ReactNode } from 'react';
+import { IconList } from '@tabler/icons-react';
+import { ActionIcon, AppShell, Avatar, Box, Button, Group } from '@mantine/core';
+import classes from './shell.module.css';
 
 interface MobileHeaderProps {
+  hiddenFrom?: 'sm' | 'xl';
   opened: boolean;
   toggle: () => void;
+  onContentsClick?: () => void;
+  contentsOpened?: boolean;
+  navigation?: (profile: ReactNode, contents: ReactNode) => ReactNode;
 }
 
-export default function MobileHeader({ opened, toggle }: MobileHeaderProps) {
+export default function MobileHeader({
+  hiddenFrom = 'sm',
+  opened,
+  toggle,
+  onContentsClick,
+  contentsOpened,
+  navigation,
+}: MobileHeaderProps) {
+  const profile = (
+    <Box hiddenFrom="sm">
+      {!navigation ? (
+        <Button
+          className={classes.toolbarControl}
+          onClick={toggle}
+          variant="default"
+          radius="md"
+          h="var(--toolbar-control-size, 44px)"
+          px="sm"
+          leftSection={<Avatar src="/images/profile-pic.png" alt="" size={28} radius="xl" />}
+          aria-label="Open navigation"
+          aria-expanded={opened}
+        >
+          Emre Erdener
+        </Button>
+      ) : (
+        <ActionIcon
+          className={classes.toolbarControl}
+          onClick={toggle}
+          variant="default"
+          radius="md"
+          size="var(--toolbar-control-size, 44px)"
+          aria-label="Open navigation"
+          aria-expanded={opened}
+        >
+          <Avatar src="/images/profile-pic.png" alt="" size={28} radius="xl" />
+        </ActionIcon>
+      )}
+    </Box>
+  );
+  const contents = onContentsClick ? (
+    <Button
+      className={classes.sectionsButton}
+      h="var(--toolbar-control-size, 44px)"
+      size="md"
+      onClick={onContentsClick}
+      variant="default"
+      radius="md"
+      leftSection={<IconList size={20} />}
+      aria-label="Open sections"
+      aria-expanded={contentsOpened}
+      aria-haspopup="dialog"
+      style={{ flexShrink: 0 }}
+    >
+      Sections
+    </Button>
+  ) : null;
+
   return (
     <AppShell.Header
-      hiddenFrom="sm"
-      // Hide the header entirely when the menu is open to prevent duplicate close buttons and visual overlap
+      hiddenFrom={hiddenFrom}
       style={{ display: opened ? 'none' : undefined }}
-      className={classes.header}
+      className={`${classes.header} ${navigation ? classes.caseStudyHeader : ''}`}
     >
-      <UnstyledButton onClick={toggle} className={classes.headerButton}>
-        <Group gap="xs">
-          <IconMenu2 size={26} />
-          <Stack gap={0}>
-            <Title order={5} lh={1.1}>
-              Emre Erdener
-            </Title>
-            <Text size="xs" c="dimmed">
-              erdener.emre@gmail.com
-            </Text>
-          </Stack>
+      {navigation ? (
+        <Box className={classes.headerContent}>{navigation(profile, contents)}</Box>
+      ) : (
+        <Group justify="space-between" wrap="nowrap" gap="xs">
+          {profile}
+          {contents}
         </Group>
-      </UnstyledButton>
+      )}
     </AppShell.Header>
   );
 }

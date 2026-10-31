@@ -1,7 +1,54 @@
+.container {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.description {
+  display: -webkit-box;
+}
+
 .card {
   transition: border-color 300ms ease;
 }
 
 .card:hover {
   border-color: var(--mantine-primary-color-filled);
+}
+
+.detailText {
+  font-size: var(--mantine-font-size-md);
+}
+
+.gridList {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+@media (min-width: $mantine-breakpoint-md) {
+  .gridList {
+    gap: 48px;
+  }
+}
+
+@container project-list (min-width: 900px) {
+  .gridList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sections {
+  gap: 32px;
+}
+
+@media (min-width: $mantine-breakpoint-md) {
+  .sections {
+    gap: 48px;
+  }
+}
+
+@media (min-width: $mantine-breakpoint-sm) {
+  .moreGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

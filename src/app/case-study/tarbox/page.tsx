@@ -3,6 +3,7 @@
 import { Blockquote, Card, Center, Image, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import BedAnimation from '@/src/components/content/case-studies/components/tarbox/animations/BedAnimation';
 import CheersAnimation from '@/src/components/content/case-studies/components/tarbox/animations/CheersAnimation';
 import RingAnimation from '@/src/components/content/case-studies/components/tarbox/animations/RingAnimation';
@@ -16,7 +17,7 @@ export default function Tarbox() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -35,7 +36,7 @@ export default function Tarbox() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -58,7 +59,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/logo.jpg"
             alt="Tarbox logo image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -74,7 +75,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/sitemap.png"
             alt="Tarbox sitemap image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -106,7 +107,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/components.png"
             alt="Tarbox components image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -115,7 +116,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/monitors-mockup.png"
             alt="Tarbox monitors mockup image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -182,7 +183,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/devices-mockup.jpg"
             alt="Tarbox devices mockup image"
-            radius="lg"
+            radius={24}
             py="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -192,7 +193,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/emails.png"
             alt="Tarbox emails mockup image"
-            radius="lg"
+            radius={24}
             py="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -202,7 +203,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/giftcard.jpg"
             alt="Tarbox giftcard image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -211,7 +212,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/room.jpg"
             alt="Tarbox room image"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -256,7 +257,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/database-laptop.png"
             alt="Tarbox database laptop image"
-            radius="lg"
+            radius={24}
             py="md"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -266,7 +267,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/data-points.png"
             alt="Tarbox data points image"
-            radius="lg"
+            radius={24}
             py="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -276,7 +277,7 @@ export default function Tarbox() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/tarbox/stats.png"
             alt="Tarbox stats image"
-            radius="lg"
+            radius={24}
             py="xl"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />

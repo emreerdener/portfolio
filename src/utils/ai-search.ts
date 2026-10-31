@@ -21,7 +21,7 @@ function cleanContent(content: string) {
   text = text.replace(/[ \t]+/g, ' ');
 
   if (text.length > MAX_FILE_CHARS) {
-    return text.slice(0, MAX_FILE_CHARS) + '\n...[TRUNCATED]...';
+    return `${text.slice(0, MAX_FILE_CHARS)}\n...[TRUNCATED]...`;
   }
   return text;
 }
@@ -32,6 +32,11 @@ export function getPortfolioContext() {
     'src/app/page.tsx',
     'src/app/resume/page.tsx',
     'src/app/profile/page.tsx',
+    'src/components/content/about/components/AboutMe.tsx',
+    'src/components/content/about/components/CurrentProject.tsx',
+    'src/components/content/experience/components/Experience.tsx',
+    'src/components/content/experience/data/profileHighlights.ts',
+    'src/components/content/experience/data/jobs.ts',
   ];
 
   let context = '';

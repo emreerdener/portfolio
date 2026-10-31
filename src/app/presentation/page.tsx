@@ -1,12 +1,13 @@
 'use client';
 
 import { Box, Space, Stack } from '@mantine/core';
+import classes from '@/src/components/content/case-studies/components/ProjectCard.module.css';
 import MoreBanner from '@/src/components/layout/components/MoreBanner';
 
 export default function PresentationPage() {
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={classes.sections}>
         <Box
           component="iframe"
           src="https://embed.figma.com/proto/HJiWeAVq9BdNEXOK8ty5wi/Emre-Erdener--Presentation?page-id=0%3A1&node-id=1-2&p=f&viewport=29682%2C3758%2C0.45&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&hotspot-hints=0&embed-host=share&hide-ui=1"

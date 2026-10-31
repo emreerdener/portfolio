@@ -1,22 +1,28 @@
 import { IconDownload } from '@tabler/icons-react';
-import { Button, Group, MantineSize, Stack, StyleProp, Title } from '@mantine/core';
+import { Button, Divider, Group, MantineSize, Stack, StyleProp, Title } from '@mantine/core';
 import { JOBS } from '@/src/components/content/experience/data/jobs';
 import { FadeInUp } from '../../../animations/FadeInUp';
 import { StaggerContainer } from '../../../animations/StaggerContainer';
+import { PROFILE_HIGHLIGHTS } from '../data/profileHighlights';
 import ExperienceBlock from './ExperienceBlock';
-import classes from './experience.module.css';
+import classes from './ExperienceBlock.module.css';
 
 interface ExperienceProps {
   defaultExpanded?: boolean;
+  overview?: boolean;
   listSize?: StyleProp<MantineSize>;
 }
 
-export default function Experience({ defaultExpanded = false, listSize }: ExperienceProps) {
+export default function Experience({
+  defaultExpanded = false,
+  listSize,
+  overview = false,
+}: ExperienceProps) {
   return (
-    <Stack gap="xl" p={{ base: 'lg', lg: 'xl' }}>
+    <Stack className={classes.container} gap="xl" p={{ base: 'lg', lg: 'xl' }}>
       {/* Experience */}
       <Group justify="space-between" w="100%" wrap="nowrap">
-        <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
+        <Title order={4} size={overview ? 'md' : 'sm'} fw={700} c="dimmed" tt="uppercase" lh={1}>
           Experience
         </Title>
 
@@ -35,7 +41,13 @@ export default function Experience({ defaultExpanded = false, listSize }: Experi
         <Stack gap="xl">
           {JOBS.map((job, index) => (
             <FadeInUp key={index}>
-              <ExperienceBlock {...job} defaultExpanded={defaultExpanded} listSize={listSize} />
+              {index > 0 && <Divider className={classes.roleDivider} mb="xl" />}
+              <ExperienceBlock
+                {...job}
+                highlights={overview ? PROFILE_HIGHLIGHTS[job.company] : undefined}
+                defaultExpanded={defaultExpanded}
+                listSize={listSize}
+              />
             </FadeInUp>
           ))}
         </Stack>

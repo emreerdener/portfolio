@@ -9,7 +9,7 @@ import {
   useMantineColorScheme,
 } from '@mantine/core';
 
-export function ThemeSwitch() {
+export function ThemeSwitch({ large = false }: { large?: boolean }) {
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
   const [mounted, setMounted] = useState(false);
@@ -24,7 +24,7 @@ export function ThemeSwitch() {
       value: 'light',
       label: (
         <Center style={{ gap: 10 }}>
-          <IconSun size={20} />
+          <IconSun size={large ? 28 : 20} />
         </Center>
       ),
     },
@@ -32,21 +32,21 @@ export function ThemeSwitch() {
       value: 'dark',
       label: (
         <Center style={{ gap: 10 }}>
-          <IconMoon size={20} />
+          <IconMoon size={large ? 28 : 20} />
         </Center>
       ),
     },
   ];
 
   if (!mounted) {
-    return <SegmentedControl data={data} size="md" />;
+    return <SegmentedControl data={data} size={large ? 'xl' : 'md'} />;
   }
 
   return (
     <SegmentedControl
       value={computedColorScheme}
       onChange={(value) => setColorScheme(value as 'light' | 'dark')}
-      size="md"
+      size={large ? 'xl' : 'md'}
       data={data}
     />
   );

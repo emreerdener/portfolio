@@ -27,20 +27,26 @@ function cleanText(text: string) {
 }
 
 function splitTextIntoChunks(text: string, maxLength: number = 2500): string[] {
-  if (text.length <= maxLength) return [text];
+  if (text.length <= maxLength) {
+    return [text];
+  }
   const chunks: string[] = [];
   let currentChunk = '';
   const sentences = text.match(/[^.!?]+[.!?]+(\s+|$)/g) || [text];
 
   for (const sentence of sentences) {
     if ((currentChunk + sentence).length > maxLength) {
-      if (currentChunk) chunks.push(currentChunk.trim());
+      if (currentChunk) {
+        chunks.push(currentChunk.trim());
+      }
       currentChunk = sentence;
     } else {
       currentChunk += sentence;
     }
   }
-  if (currentChunk) chunks.push(currentChunk.trim());
+  if (currentChunk) {
+    chunks.push(currentChunk.trim());
+  }
   return chunks;
 }
 
@@ -54,7 +60,9 @@ async function streamToBuffer(stream: NodeJS.ReadableStream): Promise<Buffer> {
 
 async function generateAudio() {
   const outputDir = path.join(process.cwd(), 'public/audio-temp');
-  if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
 
   console.log(`🚀 Starting batch generation for ${CASE_STUDIES.length} case studies...`);
 
@@ -84,7 +92,7 @@ async function generateAudio() {
     for (const match of contentMatches) {
       const clean = cleanText(match[2]);
       if (clean && !clean.includes('study.') && clean.length > 15) {
-        bodyText += clean + '.\n\n';
+        bodyText += `${clean}.\n\n`;
       }
     }
 

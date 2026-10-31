@@ -1,19 +1,41 @@
 import { useRouter } from 'next/navigation';
-import { IconBook } from '@tabler/icons-react';
+import { IconIcons } from '@tabler/icons-react';
 import { Button, Group, Paper, Stack, Text, ThemeIcon, Title } from '@mantine/core';
-import classes from './layout.module.css';
+import { CASE_STUDIES } from '../../content/case-studies/data/case-studies';
+import classes from './shell.module.css';
 
-export default function MoreBanner() {
+interface MoreBannerProps {
+  visibleStudyHrefs?: string[];
+}
+
+export default function MoreBanner({ visibleStudyHrefs = [] }: MoreBannerProps) {
   const router = useRouter();
+  const remainingCount = CASE_STUDIES.filter(
+    (study) => !visibleStudyHrefs.includes(study.href)
+  ).length;
+  const hasVisibleStudies = visibleStudyHrefs.some((href) =>
+    CASE_STUDIES.some((study) => study.href === href)
+  );
+
+  if (remainingCount === 0) {
+    return null;
+  }
   return (
     <Paper withBorder radius="lg" shadow="sm" className={classes.bannerPaper}>
       <Group justify="space-between" wrap="nowrap" className={classes.bannerLayout}>
         <Group wrap="nowrap" className={classes.bannerHeader}>
           <ThemeIcon size={56} variant="light" radius={12}>
-            <IconBook size={32} />
+            <IconIcons size={32} />
           </ThemeIcon>
           <Stack gap={4}>
-            <Title order={4}>Case studies</Title>
+            <Title
+              order={3}
+              fz={{ base: 'var(--mantine-h4-font-size)', sm: 'var(--mantine-h3-font-size)' }}
+              lh={1.2}
+            >
+              {remainingCount} {hasVisibleStudies ? 'more ' : ''}
+              {remainingCount === 1 ? 'case study' : 'case studies'}
+            </Title>
             <Text c="dimmed" size="sm">
               Explore my design work across mobile apps, SaaS platforms, design systems, and more.
             </Text>
@@ -25,7 +47,7 @@ export default function MoreBanner() {
           className={classes.bannerButton}
           variant="outline"
         >
-          View work
+          View more
         </Button>
       </Group>
     </Paper>

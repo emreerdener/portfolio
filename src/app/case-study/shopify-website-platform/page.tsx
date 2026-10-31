@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Blockquote, Box, Card, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function ShopifyWebsitePlatform() {
@@ -14,7 +15,7 @@ export default function ShopifyWebsitePlatform() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -33,7 +34,7 @@ export default function ShopifyWebsitePlatform() {
         <Image
           src={study.coverSrc}
           alt="Case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -81,7 +82,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/user%20stories.png"
             alt="Website platform user stories"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -91,7 +92,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/design-canvas.png"
             alt="Website platform design canvas"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
         </Center>
@@ -114,7 +115,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/prototype.png"
             alt="Website platform prototype"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -136,7 +137,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/asset-library.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -146,7 +147,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/asset-details.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -156,7 +157,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/asset-components.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -165,7 +166,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/asset-library-canvas.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -174,7 +175,7 @@ export default function ShopifyWebsitePlatform() {
         <Image
           src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/devices-mockup.png"
           alt="Shopify website platform mockup"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -206,7 +207,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/pages-canvas.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -216,7 +217,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/pages-overview.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -226,7 +227,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/pages-editing.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -236,7 +237,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/pages-components.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -258,7 +259,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/localization.png"
             alt="Website platform localization UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -280,7 +281,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/cms-canvas.png"
             alt="Website platform CMS UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -290,7 +291,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/cms-collections.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -300,7 +301,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/cms-collection.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -310,7 +311,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/cms-new.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -320,7 +321,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/laptop-mockup.png"
             alt="Website platform UI mockup"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -329,7 +330,7 @@ export default function ShopifyWebsitePlatform() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-website/settings-canvas.png"
             alt="Website platform UI"
-            radius="lg"
+            radius={24}
             p="lg"
             style={{ border: '1px solid var(--app-shell-border-color)', background: 'white' }}
           />
@@ -341,7 +342,7 @@ export default function ShopifyWebsitePlatform() {
             style={{
               width: '100%',
               maxWidth: '1000px',
-              borderRadius: 'var(--mantine-radius-lg',
+              borderRadius: 24,
               border: '1px solid var(--app-shell-border-color)',
               overflow: 'hidden',
             }}

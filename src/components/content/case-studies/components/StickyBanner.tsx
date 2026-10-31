@@ -6,8 +6,9 @@ import {
   IconPlayerPauseFilled,
   IconPlayerPlayFilled,
 } from '@tabler/icons-react';
-import { Button, Group, rem, Transition } from '@mantine/core';
+import { Button, Group, Transition } from '@mantine/core';
 import { useWindowScroll } from '@mantine/hooks';
+import classes from '@/src/components/layout/components/shell.module.css';
 import { useCaseStudyAudio } from '../context/CaseStudyAudioContext';
 
 interface CaseStudyStickyBannerProps {
@@ -27,7 +28,7 @@ export default function CaseStudyStickyBanner({
     <div
       style={{
         position: 'fixed',
-        bottom: rem(16),
+        bottom: 'calc(16px + env(safe-area-inset-bottom, 0px))',
         left: 'var(--app-shell-navbar-offset, 0rem)',
         right: 'var(--app-shell-aside-offset, 0rem)',
         zIndex: 100,
@@ -41,6 +42,7 @@ export default function CaseStudyStickyBanner({
           <Group gap="xs" style={{ ...transitionStyles, pointerEvents: 'auto' }}>
             {prototypeUrl && (
               <Button
+                className={classes.floatingButton}
                 component="a"
                 href={prototypeUrl}
                 target="_blank"
@@ -56,6 +58,7 @@ export default function CaseStudyStickyBanner({
             )}
             {websiteUrl && (
               <Button
+                className={classes.floatingButton}
                 component="a"
                 href={websiteUrl}
                 target="_blank"
@@ -70,7 +73,8 @@ export default function CaseStudyStickyBanner({
 
             {hasAudio && (
               <Button
-                variant={isPlaying ? 'filled' : 'default'}
+                className={classes.floatingButton}
+                variant="default"
                 size="sm"
                 radius="xl"
                 leftSection={

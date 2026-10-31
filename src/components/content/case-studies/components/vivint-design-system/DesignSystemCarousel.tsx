@@ -49,7 +49,7 @@ export default function DesignSystemCarousel() {
       style={{
         cursor: 'pointer',
         border: '1px solid var(--app-shell-border-color)',
-        borderRadius: 'var(--mantine-radius-lg)',
+        borderRadius: 24,
         overflow: 'hidden',
       }}
       onClick={handleNext}

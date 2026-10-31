@@ -1,132 +1,193 @@
 'use client';
 
-import { useEffect } from 'react';
-import { IconBook } from '@tabler/icons-react';
-import {
-  ActionIcon,
-  AppShell,
-  Box,
-  Burger,
-  Drawer,
-  Overlay,
-  Space,
-  Stack,
-  Tooltip,
-  Transition,
-} from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useLayoutEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { IconArrowUp } from '@tabler/icons-react';
+import { Affix, AppShell, Box, Button, Group, Stack, Tooltip, Transition } from '@mantine/core';
+import { useDisclosure, useReducedMotion, useWindowScroll } from '@mantine/hooks';
 import MobileHeader from '@/src/components/layout/components/MobileHeader';
-import NavContent from '@/src/components/layout/components/NavContent';
-import { useScrollLock } from '@/src/components/layout/hooks/use-scroll-lock';
+import MobileSheet from '@/src/components/layout/components/MobileSheet';
+import NavContent, { NavIdentity } from '@/src/components/layout/components/NavContent';
+import { CASE_STUDIES } from '../data/case-studies';
+import CaseStudyActions from './CaseStudyActions';
 import CaseStudyAside from './CaseStudyAside';
+import CaseStudyNavigation from './CaseStudyNavigation';
 import MoreCaseStudies from './MoreCaseStudies';
-import classes from '../../../layout/components/layout.module.css';
+import classes from '../../../layout/components/shell.module.css';
 
 export function CaseStudyShell({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const [scroll] = useWindowScroll();
+  const reduceMotion = useReducedMotion();
+  const desktopContentsRef = useRef<HTMLDivElement>(null);
+  const sheetContentsRef = useRef<HTMLDivElement>(null);
+  const study = CASE_STUDIES.find((item) => item.href === pathname);
+  const toolbarRef = useRef<HTMLDivElement>(null);
+  const actionMeasureRef = useRef<HTMLDivElement>(null);
+  const sectionsRef = useRef<HTMLDivElement>(null);
+  const [showToolbarActions, setShowToolbarActions] = useState(false);
+
+  useLayoutEffect(() => {
+    const toolbar = toolbarRef.current;
+    const actions = actionMeasureRef.current;
+    const sections = sectionsRef.current;
+    const pages = toolbar?.querySelector<HTMLElement>('[data-page-navigation]');
+    if (!toolbar || !actions || !sections || !pages) {
+      return;
+    }
+
+    const update = () => {
+      // Measure intrinsic controls, independent of the action's current placement.
+      const requiredWidth =
+        pages.getBoundingClientRect().width +
+        actions.getBoundingClientRect().width +
+        sections.getBoundingClientRect().width +
+        48;
+      setShowToolbarActions(toolbar.clientWidth >= requiredWidth && toolbar.clientWidth > 0);
+    };
+    const observer = new ResizeObserver(update);
+    [toolbar, actions, sections, pages].forEach((element) => observer.observe(element));
+    update();
+    document.fonts.ready.then(() => {
+      if (toolbar.isConnected) {
+        update();
+      }
+    });
+    return () => observer.disconnect();
+  }, [pathname]);
   const [opened, { toggle, close }] = useDisclosure();
   const [tocOpened, { open: openToc, close: closeToc }] = useDisclosure(false);
-  const [_scrollLocked, setScrollLocked] = useScrollLock();
-
-  useEffect(() => {
-    // Lock scroll if either menu or TOC is open
-    setScrollLocked(opened || tocOpened);
-  }, [opened, tocOpened, setScrollLocked]);
 
   return (
     <AppShell
       layout="alt"
-      header={{ height: 76 }}
-      navbar={{ width: 248, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-      aside={{
+      header={{ height: { base: 104, xl: 0 } }}
+      navbar={{
         width: 360,
         breakpoint: 'xl',
         collapsed: { desktop: false, mobile: true },
       }}
-      padding="xl"
+      aside={{ width: { base: 280, md: 296 }, breakpoint: 'sm', collapsed: { mobile: true } }}
+      padding={{ base: 'xl', md: 48 }}
       className={classes.shell}
     >
-      <MobileHeader opened={opened} toggle={toggle} />
-
-      {/* Mobile TOC Trigger Button */}
-      <Box
-        hiddenFrom="sm" // Only show when the desktop Aside is hidden
-        pos="fixed"
-        top={20}
-        right={20}
-        style={{
-          zIndex: 100,
-        }}
-      >
-        <Tooltip label="Table of contents" position="left">
-          <ActionIcon
-            onClick={openToc}
-            size={56}
-            radius="md"
-            variant="default"
-            aria-label="Table of contents"
-            // style={{
-            //   boxShadow: 'var(--mantine-shadow-xs)',
-            // }}
-          >
-            <IconBook size={28} />
-          </ActionIcon>
-        </Tooltip>
-      </Box>
-
-      {/* Mobile TOC Drawer */}
-      <Drawer
-        opened={tocOpened}
-        onClose={closeToc}
-        title="Table of contents"
-        padding="md"
-        size="lg"
-        position="bottom"
+      <MobileHeader
         hiddenFrom="xl"
-        radius="lg"
-        styles={{
-          content: {
-            borderRadius: 'var(--mantine-radius-lg) var(--mantine-radius-lg) 0 0',
-          },
+        opened={opened}
+        toggle={() => {
+          closeToc();
+          toggle();
         }}
-      >
-        <Box h="100%">
-          <CaseStudyAside onLinkClick={closeToc} hideTitle noPadding />
-          <Space h="xl" />
-        </Box>
-      </Drawer>
-
-      <Transition transition="fade" duration={100} mounted={opened}>
-        {(styles) => (
-          <Overlay
-            color="#000"
-            backgroundOpacity={0.6}
-            zIndex={101}
-            hiddenFrom="sm"
-            onClick={toggle}
-            style={styles}
-            fixed
-          />
+        onContentsClick={() => {
+          close();
+          openToc();
+        }}
+        contentsOpened={tocOpened}
+        navigation={(profile, contents) => (
+          <Box ref={toolbarRef} w="100%" pos="relative">
+            <Box
+              ref={actionMeasureRef}
+              aria-hidden="true"
+              inert
+              pos="absolute"
+              style={{ visibility: 'hidden', width: 'max-content', pointerEvents: 'none' }}
+            >
+              <CaseStudyActions study={study} />
+            </Box>
+            <CaseStudyNavigation
+              compact
+              leading={profile}
+              trailing={
+                <Group gap="md" className={classes.toolbarGroup} wrap="nowrap">
+                  <CaseStudyActions study={study} compact={!showToolbarActions} />
+                  <Box ref={sectionsRef} style={{ flexShrink: 0 }}>
+                    {contents}
+                  </Box>
+                </Group>
+              }
+            />
+          </Box>
         )}
-      </Transition>
+      />
 
-      <AppShell.Navbar className={classes.navbar}>
-        <Stack>
-          <Stack gap={0} className={classes.navbarContainer}>
-            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-            <NavContent onNavClick={close} />
-          </Stack>
-        </Stack>
+      <MobileSheet opened={tocOpened} onClose={closeToc} title="Sections" hiddenFrom="xl">
+        <Box h="60dvh">
+          <CaseStudyAside onLinkClick={closeToc} noPadding viewportRef={sheetContentsRef} />
+        </Box>
+      </MobileSheet>
+
+      <MobileSheet
+        opened={opened}
+        onClose={close}
+        title="Menu"
+        headerContent={<NavIdentity large onNavClick={close} />}
+      >
+        <NavContent onNavClick={close} large hideIdentity />
+      </MobileSheet>
+
+      <AppShell.Navbar className={classes.aside}>
+        <CaseStudyAside viewportRef={desktopContentsRef} />
       </AppShell.Navbar>
 
-      <AppShell.Main className={classes.main}>
+      <AppShell.Main className={`${classes.main} ${classes.caseStudyMain}`}>
         <Stack align="center">
-          {children} <MoreCaseStudies />
+          <Box data-case-study-content w="100%">
+            {children}
+          </Box>
+          <MoreCaseStudies />
         </Stack>
       </AppShell.Main>
 
-      <AppShell.Aside className={classes.aside}>
-        <CaseStudyAside />
+      <AppShell.Aside
+        visibleFrom="sm"
+        className={`${classes.navbar} ${classes.rightNav}`}
+        pt={{ base: 'xl', md: 48 }}
+        pr={{ base: 'xl', md: 48 }}
+        onClick={close}
+      >
+        <Stack gap={0} className={classes.navbarContainer} onClick={(e) => e.stopPropagation()}>
+          <NavContent onNavClick={close} />
+        </Stack>
       </AppShell.Aside>
+      <Affix
+        position={{ bottom: 'calc(16px + env(safe-area-inset-bottom, 0px))', right: 24 }}
+        zIndex={201}
+      >
+        <Transition
+          mounted={scroll.y > 100 && !opened && !tocOpened}
+          transition="slide-up"
+          duration={reduceMotion ? 0 : 200}
+        >
+          {(styles) => (
+            <Tooltip label="Scroll to top" position="left">
+              <Button
+                className={classes.floatingButton}
+                style={{
+                  ...styles,
+                  width: 'var(--button-height)',
+                  boxShadow: 'var(--mantine-shadow-md)',
+                }}
+                size="sm"
+                px={0}
+                radius="xl"
+                variant="default"
+                aria-label="Scroll to top"
+                onClick={() => {
+                  const options: ScrollToOptions = {
+                    top: 0,
+                    behavior: reduceMotion ? 'instant' : 'smooth',
+                  };
+                  window.scrollTo(options);
+                  desktopContentsRef.current?.scrollTo(options);
+                  sheetContentsRef.current?.scrollTo(options);
+                }}
+              >
+                <IconArrowUp size={20} stroke={2.5} />
+              </Button>
+            </Tooltip>
+          )}
+        </Transition>
+      </Affix>
     </AppShell>
   );
 }

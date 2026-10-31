@@ -8,21 +8,32 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const response = await fetch(url);
+    const range = request.headers.get('range');
+    const response = await fetch(url, {
+      headers: range ? { Range: range } : undefined,
+    });
 
-    if (!response.ok) {
+    if (!response.ok && response.status !== 416) {
       return new NextResponse(`Failed to fetch audio: ${response.statusText}`, {
         status: response.status,
       });
     }
 
     const contentType = response.headers.get('Content-Type') || 'audio/mpeg';
+    const headers = new Headers({
+      'Content-Type': contentType,
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    });
+    for (const name of ['Accept-Ranges', 'Content-Range', 'Content-Length']) {
+      const value = response.headers.get(name);
+      if (value) {
+        headers.set(name, value);
+      }
+    }
 
     return new NextResponse(response.body, {
-      headers: {
-        'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=31536000, immutable',
-      },
+      status: response.status,
+      headers,
     });
   } catch (error) {
     console.error('Proxy error:', error);

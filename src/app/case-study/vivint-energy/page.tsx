@@ -17,6 +17,7 @@ import {
 } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
+import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
 import { CASE_STUDIES } from '@/src/components/content/case-studies/data/case-studies';
 
 export default function VivintEnergy() {
@@ -27,7 +28,7 @@ export default function VivintEnergy() {
   }
   return (
     <>
-      <Stack gap="xl">
+      <Stack className={spacing.sections}>
         <CaseStudyHeader
           id={study.id}
           coverImage={study.headerImage}
@@ -46,7 +47,7 @@ export default function VivintEnergy() {
         <Image
           src={study.coverSrc}
           alt="Vivint case study cover image"
-          radius="lg"
+          radius={24}
           style={{ border: '1px solid var(--app-shell-border-color)' }}
         />
 
@@ -76,7 +77,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/house-c.png"
             alt="A image of a home."
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -104,7 +105,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/mvp-features-c.png"
             alt="MVP components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -124,7 +125,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/1-intro.png"
             alt="1.0 product designs"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -133,7 +134,7 @@ export default function VivintEnergy() {
 
         {/* Design Principals */}
         <Blockquote p="xl" color="green">
-          <Stack gap="xl">
+          <Stack className={spacing.sections}>
             <Stack gap="xs">
               <Title order={2}>Design principals</Title>
               <Text fz={{ base: 'md', md: 'xl' }}>
@@ -222,7 +223,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/bill-0-1.png"
             alt="1.0 product designs"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -231,7 +232,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/weekly-insights-0-1.png"
             alt="1.0 product designs"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -240,7 +241,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/disagg-0-1.png"
             alt="1.0 product designs"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -249,7 +250,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/charts-0-1.png"
             alt="1.0 product designs"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -270,7 +271,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/woman-on-phone-1.jpg"
             alt="A woman in her house looking at her phone"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -289,7 +290,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/11.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -314,7 +315,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/19.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -323,7 +324,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/billing-cycle-comparisons.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -332,7 +333,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/energy-spend-figma-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -358,7 +359,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/14.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -367,7 +368,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/insights-evolution-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -376,7 +377,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/energy-insights-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -401,7 +402,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/17.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -410,7 +411,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/charts-comparisons.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -419,7 +420,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/charts-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -444,7 +445,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/21.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -453,7 +454,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/savings-comparisons.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -462,7 +463,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/savings-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -483,7 +484,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/16.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -492,7 +493,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20figma%20screenshots/energy-profile-figma-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -511,7 +512,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/12.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -520,7 +521,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/13.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -556,7 +557,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/27.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -583,7 +584,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/24-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>
@@ -603,7 +604,7 @@ export default function VivintEnergy() {
           <Image
             src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/vivint-energy/2.0%20slides/25-c.png"
             alt="2.0 components"
-            radius="lg"
+            radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />
         </Center>

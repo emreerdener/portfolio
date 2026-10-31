@@ -1,9 +1,8 @@
 import { usePathname, useRouter } from 'next/navigation';
 import {
-  IconBook,
-  IconBookFilled,
   IconIcons,
   IconIconsFilled,
+  IconPencilRuler,
   IconPlayerPlay,
   IconPlayerPlayFilled,
   IconUser,
@@ -11,15 +10,57 @@ import {
 } from '@tabler/icons-react';
 import { Anchor, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
 import NavAIButton from './ai-search/NavAIButton';
-import { Avatar } from './Avatar';
 import { ThemeSwitch } from './ThemeSwitch';
-import classes from './layout.module.css';
+import classes from './shell.module.css';
 
 interface NavContentProps {
+  large?: boolean;
+  hideIdentity?: boolean;
   onNavClick?: () => void;
 }
 
-export default function NavContent({ onNavClick }: NavContentProps) {
+export function NavIdentity({ large = false, onNavClick }: NavContentProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const handleNavClick = (path: string) => {
+    router.push(path);
+    onNavClick?.();
+  };
+  return (
+    <Stack gap={4} align="flex-start">
+      <Anchor
+        href="/"
+        onClick={(event) => {
+          event.preventDefault();
+          handleNavClick('/');
+        }}
+        underline="never"
+        className={classes.navName}
+        data-active={pathname === '/' || undefined}
+        aria-current={pathname === '/' ? 'page' : undefined}
+      >
+        <Title order={2} ta="left" fz={large ? 30 : 26} style={{ whiteSpace: 'nowrap' }}>
+          Emre Erdener
+        </Title>
+      </Anchor>
+      <Anchor
+        href="mailto:erdener.emre@gmail.com"
+        c="dimmed"
+        fz={large ? 18 : 14}
+        ta="left"
+        underline="hover"
+      >
+        erdener.emre@gmail.com
+      </Anchor>
+    </Stack>
+  );
+}
+
+export default function NavContent({
+  onNavClick,
+  large = false,
+  hideIdentity = false,
+}: NavContentProps) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -32,42 +73,21 @@ export default function NavContent({ onNavClick }: NavContentProps) {
 
   return (
     <>
-      <Stack align="center">
-        <Stack gap={0} align="center">
-          <Avatar
-            w={160}
-            mb="sm"
-            onClick={() => handleNavClick('/')}
-            style={{ cursor: 'pointer' }}
-          />
+      <Stack gap="lg" w="100%">
+        {!hideIdentity && <NavIdentity large={large} onNavClick={onNavClick} />}
 
-          <Anchor onClick={() => handleNavClick('/')} underline="never" className={classes.navName}>
-            <Title order={2} ta="center" fz={26}>
-              Emre Erdener
-            </Title>
-          </Anchor>
-          <Anchor href="mailto: erdener.emre@gmail.com" fz={16} ta="center" underline="hover">
-            erdener.emre@gmail.com
-          </Anchor>
-        </Stack>
-
-        <SimpleGrid maw={236} w="100%" cols={{ base: 1 }} spacing={8}>
-          <NavLink
-            onClick={() => handleNavClick('/profile')}
-            label="Profile"
-            rightSection={
-              pathname === '/profile' ? <IconUserFilled size={20} /> : <IconUser size={20} />
-            }
-            className={classes.navlink}
-            active={pathname === '/profile'}
-          />
+        <SimpleGrid w="100%" cols={1} spacing={4}>
           <NavLink
             onClick={() => handleNavClick('/case-studies')}
             label="Case studies"
             rightSection={
-              pathname === '/case-studies' ? <IconBookFilled size={20} /> : <IconBook size={20} />
+              pathname === '/case-studies' ? (
+                <IconIconsFilled size={large ? 26 : 20} />
+              ) : (
+                <IconIcons size={large ? 26 : 20} />
+              )
             }
-            className={classes.navlink}
+            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
             active={pathname === '/case-studies'}
           />
           <NavLink
@@ -75,27 +95,38 @@ export default function NavContent({ onNavClick }: NavContentProps) {
             label="Presentation"
             rightSection={
               pathname === '/presentation' ? (
-                <IconPlayerPlayFilled size={20} />
+                <IconPlayerPlayFilled size={large ? 26 : 20} />
               ) : (
-                <IconPlayerPlay size={20} />
+                <IconPlayerPlay size={large ? 26 : 20} />
               )
             }
-            className={classes.navlink}
+            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
             active={pathname === '/presentation'}
+          />
+          <NavLink
+            onClick={() => handleNavClick('/profile')}
+            label="Profile"
+            rightSection={
+              pathname === '/profile' ? (
+                <IconUserFilled size={large ? 26 : 20} />
+              ) : (
+                <IconUser size={large ? 26 : 20} />
+              )
+            }
+            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
+            active={pathname === '/profile'}
           />
           <NavLink
             onClick={() => handleNavClick('/other-work')}
             label="Other work"
-            rightSection={
-              pathname === '/other-work' ? <IconIconsFilled size={20} /> : <IconIcons size={20} />
-            }
-            className={classes.navlink}
+            rightSection={<IconPencilRuler size={large ? 26 : 20} />}
+            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
             active={pathname === '/other-work'}
           />
         </SimpleGrid>
-        <Stack maw={236} w="100%">
-          <NavAIButton />
-          <ThemeSwitch />
+        <NavAIButton onOpen={onNavClick} large={large} />
+        <Stack w="100%">
+          <ThemeSwitch large={large} />
         </Stack>
       </Stack>
     </>

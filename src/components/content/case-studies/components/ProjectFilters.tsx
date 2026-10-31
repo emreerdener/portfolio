@@ -272,8 +272,8 @@ export default function ProjectFilters({
       <Box
         hiddenFrom="sm"
         pos="fixed"
-        top={20}
-        right={20}
+        top="var(--mantine-spacing-lg)"
+        right="var(--mantine-spacing-lg)"
         style={{
           zIndex: 100,
         }}
@@ -288,14 +288,12 @@ export default function ProjectFilters({
         >
           <ActionIcon
             onClick={open}
-            size={56}
+            aria-label="Filter case studies"
+            size={44}
             radius="md"
             variant="default"
-            style={{
-              boxShadow: 'var(--mantine-shadow-xs)',
-            }}
           >
-            <IconFilter2 size={28} />
+            <IconFilter2 size={20} />
           </ActionIcon>
         </Indicator>
       </Box>
