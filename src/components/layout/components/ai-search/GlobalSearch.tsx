@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { IconArrowRight, IconSparkles2 } from '@tabler/icons-react';
+import { IconArrowRight, IconSparkles2, IconSparkles2Filled } from '@tabler/icons-react';
 import Lottie from 'lottie-react';
 import {
   ActionIcon,
@@ -58,8 +58,11 @@ export default function GlobalSearch() {
 
   const [activeMessages, setActiveMessages] = useState<string[]>([]);
   const [messageIndex, setMessageIndex] = useState(0);
+  const [focused, setFocused] = useState(false);
 
   const isMobile = useMediaQuery('(max-width: 62em)');
+
+  const SparkleIcon = focused || query.length > 0 ? IconSparkles2Filled : IconSparkles2;
 
   const randomizedSuggestions = useMemo(() => {
     const groupsWithShuffledItems = SEARCH_SUGGESTIONS_GROUPED.map((group) => ({
@@ -169,10 +172,12 @@ export default function GlobalSearch() {
                 size="xl"
                 radius="xl"
                 autoFocus
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
                 leftSection={
                   <HoverCard width={195} shadow="md" position="bottom-start">
                     <HoverCard.Target>
-                      <IconSparkles2 size={28} aria-label="AI search" color="orange" />
+                      <SparkleIcon size={28} aria-label="AI search" color="orange" />
                     </HoverCard.Target>
                     <HoverCard.Dropdown>
                       <Text size="sm">Generated with ChatGPT</Text>
