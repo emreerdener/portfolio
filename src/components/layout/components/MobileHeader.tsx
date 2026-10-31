@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { IconList } from '@tabler/icons-react';
+import { IconList, IconMail } from '@tabler/icons-react';
 import { ActionIcon, AppShell, Avatar, Box, Button, Group } from '@mantine/core';
 import classes from './shell.module.css';
 
@@ -85,6 +85,7 @@ export default function MobileHeader({
           <Button
             component="a"
             href="mailto:erdener.emre@gmail.com"
+            leftSection={<IconMail size={20} />}
             variant="filled"
             radius="md"
             h="var(--toolbar-control-size, 44px)"
