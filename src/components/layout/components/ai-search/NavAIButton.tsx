@@ -22,7 +22,7 @@ export default function NavAIButton({
         openSpotlight();
       }}
     >
-      Ask about my work
+      Ask about me
     </Button>
   );
 }

@@ -119,7 +119,7 @@ export default function GlobalSearch() {
       fullScreen={isMobile}
       radius="lg"
       centered
-      title="Ask about my work"
+      title="About me"
       scrollAreaComponent={TinyScrollArea}
       transitionProps={{ transition: 'fade', duration: 200 }}
       styles={{
@@ -233,7 +233,7 @@ export default function GlobalSearch() {
             {!data.disableInput && (
               <Box className={classes.composer}>
                 <Autocomplete
-                  aria-label="Ask about my work"
+                  aria-label="Ask about me"
                   maxLength={200}
                   placeholder="Ask another question…"
                   value={query}
