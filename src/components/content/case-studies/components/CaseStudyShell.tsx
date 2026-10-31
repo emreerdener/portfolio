@@ -25,14 +25,18 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
   const toolbarRef = useRef<HTMLDivElement>(null);
   const actionMeasureRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<HTMLDivElement>(null);
+  const sectionsMeasureRef = useRef<HTMLDivElement>(null);
+  const visibleActionsRef = useRef<HTMLDivElement>(null);
+  const [showSectionsLabel, setShowSectionsLabel] = useState(false);
   const [showToolbarActions, setShowToolbarActions] = useState(false);
 
   useLayoutEffect(() => {
     const toolbar = toolbarRef.current;
     const actions = actionMeasureRef.current;
-    const sections = sectionsRef.current;
+    const sections = sectionsMeasureRef.current;
+    const visibleActions = visibleActionsRef.current;
     const pages = toolbar?.querySelector<HTMLElement>('[data-page-navigation]');
-    if (!toolbar || !actions || !sections || !pages) {
+    if (!toolbar || !actions || !sections || !pages || !visibleActions) {
       return;
     }
 
@@ -44,9 +48,18 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
         sections.getBoundingClientRect().width +
         48;
       setShowToolbarActions(toolbar.clientWidth >= requiredWidth && toolbar.clientWidth > 0);
+      setShowSectionsLabel(
+        toolbar.clientWidth >=
+          pages.getBoundingClientRect().width +
+            visibleActions.getBoundingClientRect().width +
+            sections.getBoundingClientRect().width +
+            48
+      );
     };
     const observer = new ResizeObserver(update);
-    [toolbar, actions, sections, pages].forEach((element) => observer.observe(element));
+    [toolbar, actions, sections, pages, visibleActions].forEach((element) =>
+      observer.observe(element)
+    );
     update();
     document.fonts.ready.then(() => {
       if (toolbar.isConnected) {
@@ -94,13 +107,28 @@ export function CaseStudyShell({ children }: { children: React.ReactNode }) {
             >
               <CaseStudyActions study={study} />
             </Box>
+            <Box
+              ref={sectionsMeasureRef}
+              aria-hidden="true"
+              inert
+              pos="absolute"
+              style={{ visibility: 'hidden', width: 'max-content', pointerEvents: 'none' }}
+            >
+              {contents}
+            </Box>
             <CaseStudyNavigation
               compact
               leading={profile}
               trailing={
                 <Group gap="md" className={classes.toolbarGroup} wrap="nowrap">
-                  <CaseStudyActions study={study} compact={!showToolbarActions} />
-                  <Box ref={sectionsRef} style={{ flexShrink: 0 }}>
+                  <Box ref={visibleActionsRef}>
+                    <CaseStudyActions study={study} compact={!showToolbarActions} />
+                  </Box>
+                  <Box
+                    ref={sectionsRef}
+                    data-sections-compact={!showSectionsLabel || undefined}
+                    style={{ flexShrink: 0 }}
+                  >
                     {contents}
                   </Box>
                 </Group>

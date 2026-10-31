@@ -224,7 +224,7 @@
   font-size: 20px;
 }
 
-@media (max-width: 24.999em) {
+@media (max-width: 47.999em) {
   .toolbarAllStudies {
     display: none;
   }
@@ -257,19 +257,17 @@
   }
 }
 
-@media (max-width: 24.999em) {
-  .sectionsButton {
-    width: 44px;
-    padding-inline: 0;
-  }
+[data-sections-compact] .sectionsButton {
+  width: var(--toolbar-control-size, 44px);
+  padding-inline: 0;
+}
 
-  .sectionsButton :global(.mantine-Button-label) {
-    display: none;
-  }
+[data-sections-compact] .sectionsButton :global(.mantine-Button-label) {
+  display: none;
+}
 
-  .sectionsButton :global(.mantine-Button-section) {
-    margin: 0;
-  }
+[data-sections-compact] .sectionsButton :global(.mantine-Button-section) {
+  margin: 0;
 }
 
 @media (min-width: $mantine-breakpoint-sm) {
