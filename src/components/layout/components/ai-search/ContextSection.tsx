@@ -10,6 +10,7 @@ import {
   Title,
   UnstyledButton,
 } from '@mantine/core';
+import { validPortfolioLinks } from '../../../../utils/portfolio-links';
 import { CASE_STUDIES } from '../../../content/case-studies/data/case-studies';
 import classes from '../shell.module.css';
 import resultClasses from './SearchResults.module.css';
@@ -26,7 +27,8 @@ interface ContextSectionProps {
 }
 
 export function ContextSection({ links, onLinkClick }: ContextSectionProps) {
-  if (!links || links.length === 0) {
+  const validLinks = validPortfolioLinks(links);
+  if (validLinks.length === 0) {
     return null;
   }
 
@@ -34,8 +36,8 @@ export function ContextSection({ links, onLinkClick }: ContextSectionProps) {
   const caseStudyLinks: { link: LinkItem; caseStudy: (typeof CASE_STUDIES)[0] }[] = [];
   const otherLinks: LinkItem[] = [];
 
-  links.forEach((link) => {
-    const caseStudy = CASE_STUDIES.find((cs) => link.url.includes(cs.href));
+  validLinks.forEach((link) => {
+    const caseStudy = CASE_STUDIES.find((cs) => link.url === cs.href);
     if (caseStudy) {
       caseStudyLinks.push({ link, caseStudy });
     } else {
@@ -46,7 +48,9 @@ export function ContextSection({ links, onLinkClick }: ContextSectionProps) {
   return (
     <Stack gap={16}>
       <Title order={3} fz={{ base: 18, sm: 20 }} fw={600}>
-        Related case studies
+        {caseStudyLinks.length > 0 && otherLinks.length === 0
+          ? 'Related case studies'
+          : 'Related links'}
       </Title>
 
       {/* Other Links Grid */}

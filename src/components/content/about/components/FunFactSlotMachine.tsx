@@ -1,29 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimate } from 'framer-motion';
 import { Button, Group, Paper, Stack, Text, Title } from '@mantine/core';
+import { FunFact, funFacts } from '../data/funFacts';
 import classes from './FunFactSlot.module.css';
-
-interface FunFact {
-  emoji: string;
-  text: string;
-  link?: string;
-}
-
-const funFacts: FunFact[] = [
-  { emoji: '👯', text: 'I have a twin sister and an older sister' },
-  { emoji: '🦒', text: `I am taller than a baby giraffe: 6'8" (2m)` },
-  { emoji: '🎲', text: 'I love playing backgammon' },
-  {
-    emoji: '🇹🇷🇮🇪',
-    text: 'I am half Turkish and half Irish',
-  },
-  {
-    emoji: '🔮',
-    text: "I'm named after a Sufi mystic and poet",
-  },
-  { emoji: '🚲', text: 'I enjoy riding my titanium gravel bike' },
-  { emoji: '🪵', text: "I'm an aspiring woodworker" },
-];
 
 const ITEM_HEIGHT = 200;
 const NUM_SPIN_ITEMS = 15;

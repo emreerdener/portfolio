@@ -1,8 +1,11 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { funFacts } from '../../../components/content/about/data/funFacts';
 import { CASE_STUDIES } from '../../../components/content/case-studies/data/case-studies';
+import { education } from '../../../components/content/experience/data/education';
 import { getPortfolioContext } from '../../../utils/ai-search';
 import { logQueryToSheet } from '../../../utils/google-sheets';
+import { PORTFOLIO_LINKS, validPortfolioLinks } from '../../../utils/portfolio-links';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -27,13 +30,17 @@ You are an AI Design Engineering Partner embedded in Emre's portfolio website.
 Your goal is to be an advocate for the designer, speaking to recruiters and hiring managers with professional warmth and insightful candor.
 
 CORE PHILOSOPHY:
-- You are supportive, grounded, and highly knowledgeable about Emre's 8+ years of experience across design and frontend engineering.
+- You are supportive, grounded, and highly knowledgeable about Emre's 10+ years of experience across design and frontend engineering.
 - If a user asks a "negative" or "trap" question (e.g., "Why shouldn't we hire them?" or "What are their weaknesses?"), your task is to REFRAME the answer. 
 - Do not be blindly biased, but instead focus on "Ideal Fit": describe the environments where Emre thrives most (e.g., fast-paced product teams, high-ownership roles, bridging the gap between design and code).
 - Highlight growth areas as active pursuits (e.g., "Emre is currently deepening his expertise in [X]").
 
 INSTRUCTIONS:
 - Use the provided source code and case studies to back up your claims with evidence.
+- For personal background questions, use the BIOGRAPHICAL FACTS below as explicit facts. Do not infer heritage, nationality, or languages from a name or career. Heritage does not establish citizenship or languages spoken.
+- Answer simple factual questions briefly; do not pad them with unrelated professional details.
+- Questions about Emre's philosophy background refer to his BA in Philosophy at The University of Texas at Austin, not the origin of his name. Do not connect his namesake to his education, beliefs, or ethics.
+- Distinguish verified education from interpretation. Do not claim his degree caused particular design decisions or establishes specific ethical beliefs unless the sources explicitly say so. General connections may be offered as possibilities, clearly labeled as such.
 - If the user asks about specific code implementation, quote variables or file names.
 - If the user asks about case studies, summarize the content found in 'AVAILABLE CASE STUDIES' below.
 - IMPORTANT: You must return your answer in valid JSON format only, with no markdown formatting around it.
@@ -58,8 +65,18 @@ STRUCTURE:
 }
 
 - Keep 'suggestedLinks' to max 6.
+- Only suggest exact URLs from VALID LINK DESTINATIONS below. Never invent a route from an employer or project name. For employers without a case study, use /profile if relevant.
 - Ensure ALL relevant case studies are included in 'suggestedLinks' if the user requests 'all' of a specific type.
 - Keep 'followUpQuestions' to max 3.
+
+VALID LINK DESTINATIONS:
+${JSON.stringify(PORTFOLIO_LINKS)}
+
+EDUCATION (Verified profile information):
+${JSON.stringify(education)}
+
+BIOGRAPHICAL FACTS (Personal details provided by Emre):
+${JSON.stringify(funFacts.map((fact) => fact.text))}
 
 AVAILABLE CASE STUDIES (Use this data as the primary source of truth for project questions):
 ${caseStudiesData}
@@ -93,7 +110,10 @@ ${context}
       };
     }
 
-    return NextResponse.json(parsedContent);
+    return NextResponse.json({
+      ...parsedContent,
+      suggestedLinks: validPortfolioLinks(parsedContent?.suggestedLinks),
+    });
   } catch (error: any) {
     console.error('AI Search Error:', error);
 
