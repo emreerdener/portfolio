@@ -47,8 +47,8 @@ export default function ExperienceBlock({
           <Image
             src={logoSrc}
             alt="Company logo"
-            w={72}
-            h={72}
+            w={{ base: 48, sm: 72 }}
+            h={{ base: 48, sm: 72 }}
             radius={18}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
           />

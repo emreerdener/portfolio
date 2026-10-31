@@ -1,7 +1,6 @@
 'use client';
 
-import Script from 'next/script';
-import { Blockquote, Box, Center, Image, Stack, Text, Title } from '@mantine/core';
+import { Blockquote, Center, Image, Stack, Text, Title } from '@mantine/core';
 import CaseStudyHeader from '@/src/components/content/case-studies/components/CaseStudyHeader';
 import CaseStudySkills from '@/src/components/content/case-studies/components/CaseStudySkills';
 import spacing from '@/src/components/content/case-studies/components/CaseStudySpacing.module.css';
@@ -165,44 +164,6 @@ export default function ShopifyShopApp() {
             content available, backed by Shopify's extensive merchant ecosystem.
           </Text>
         </Blockquote>
-
-        {/* Video */}
-        <Center>
-          <Box
-            style={{
-              width: '100%',
-              maxWidth: '1000px',
-              borderRadius: 24,
-              border: '1px solid var(--app-shell-border-color)',
-              overflow: 'hidden',
-            }}
-          >
-            {/* Load Wistia Scripts */}
-            <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
-            <Script
-              src="https://fast.wistia.com/embed/5gz2w33elv.js"
-              strategy="lazyOnload"
-              type="module"
-            />
-
-            {/* Render Styles and Player using dangerouslySetInnerHTML to avoid JSX errors with custom elements */}
-            <div
-              dangerouslySetInnerHTML={{
-                __html: `
-                <style>
-                  wistia-player[media-id='5gz2w33elv']:not(:defined) {
-                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/5gz2w33elv/swatch');
-                    display: block;
-                    filter: blur(5px);
-                    padding-top: 56.25%;
-                  }
-                </style>
-                <wistia-player media-id="5gz2w33elv" aspect="1.7777777777777777"></wistia-player>
-              `,
-              }}
-            />
-          </Box>
-        </Center>
 
         <CaseStudySkills
           skills={[

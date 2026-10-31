@@ -36,6 +36,7 @@ export interface CaseStudy {
   statsDescription?: string;
   prototypeUrl?: string;
   websiteUrl?: string;
+  videoId?: string;
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -134,6 +135,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Waxwing software cover image',
     logoSrc: '/images/logos/apps/eureka.svg',
     href: '/case-study/waxwing',
+    videoId: '12qyvr8n03',
     categories: ['0 to 1', 'SaaS', 'E-commerce'],
     platforms: ['Web'],
     date: '2022-11-01',
@@ -295,6 +297,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Tripway cover image',
     logoSrc: '/images/logos/apps/tripway.svg',
     href: '/case-study/tripway',
+    videoId: 'rl8hsnw49n',
     categories: ['0 to 1', 'Design System'],
     platforms: ['Mobile'],
     date: '2023-11-01',
@@ -373,6 +376,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Shopify Merchant Referral Program cover image',
     logoSrc: '/images/logos/apps/shopify.svg',
     href: '/case-study/merchant-referrals',
+    videoId: 'w159dbv5h3',
     categories: ['0 to 1', 'Growth', 'SaaS', 'E-commerce', 'Featured'],
     platforms: ['Web', 'Mobile'],
     date: '2023-11-01',
@@ -456,6 +460,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Shopify Shop app cover image',
     logoSrc: '/images/logos/apps/shopify.svg',
     href: '/case-study/shopify-shopapp',
+    videoId: '5gz2w33elv',
     categories: ['0 to 1', 'Marketing', 'Growth', 'E-commerce'],
     platforms: ['Web', 'Mobile'],
     date: '2023-11-01',
@@ -495,6 +500,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'UFCU app cover image',
     logoSrc: '/images/logos/apps/ufcu.svg',
     href: '/case-study/ufcu',
+    videoId: '5gld8ybmmd',
     categories: ['0 to 1', 'Redesign', 'Design System', 'SaaS'],
     platforms: ['Web', 'Mobile'],
     date: '2023-11-01',
@@ -533,6 +539,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Shopify website platform cover image',
     logoSrc: '/images/logos/apps/shopify.svg',
     href: '/case-study/shopify-website-platform',
+    videoId: 'zkwzhxzk35',
     categories: ['0 to 1', 'SaaS', 'E-commerce'],
     platforms: ['Web'],
     date: '2023-11-01',
@@ -574,6 +581,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Shopify productivity incentives cover image',
     logoSrc: '/images/logos/apps/shopify.svg',
     href: '/case-study/shopify-productivity-incentives',
+    videoId: 'lmrsk9q71f',
     categories: ['0 to 1', 'SaaS', 'Growth', 'E-commerce'],
     platforms: ['Web', 'Mobile'],
     date: '2023-11-01',

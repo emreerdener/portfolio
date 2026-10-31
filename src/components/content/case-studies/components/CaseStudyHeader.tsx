@@ -6,6 +6,7 @@ import { CASE_STUDIES } from '../data/case-studies';
 import CaseStudyActions from './CaseStudyActions';
 import CaseStudyImpact from './CaseStudyImpact';
 import CaseStudyToolbar from './CaseStudyToolbar';
+import CaseStudyVideo from './CaseStudyVideo';
 import ChallengeProposal from './ChallengeProposal';
 
 const FULL_LOGOS: Record<string, string> = {
@@ -116,6 +117,8 @@ export default function CaseStudyHeader({
       </Stack>
 
       <CaseStudyToolbar />
+
+      {study?.videoId && <CaseStudyVideo mediaId={study.videoId} />}
 
       <Image
         src={coverImage}

@@ -21,8 +21,8 @@ export default function CurrentProject() {
         <Image
           src="/images/logos/apps/naturebook-light.png"
           alt="Naturebook app logo"
-          w={72}
-          h={72}
+          w={{ base: 48, sm: 72 }}
+          h={{ base: 48, sm: 72 }}
           radius={18}
           darkHidden
           style={{ flexShrink: 0 }}
@@ -30,8 +30,8 @@ export default function CurrentProject() {
         <Image
           src="/images/logos/apps/naturebook-dark.png"
           alt="Naturebook app logo"
-          w={72}
-          h={72}
+          w={{ base: 48, sm: 72 }}
+          h={{ base: 48, sm: 72 }}
           radius={18}
           lightHidden
           style={{ flexShrink: 0 }}

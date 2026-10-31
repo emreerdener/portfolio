@@ -39,14 +39,14 @@ export function ThemeSwitch({ large = false }: { large?: boolean }) {
   ];
 
   if (!mounted) {
-    return <SegmentedControl data={data} size={large ? 'xl' : 'md'} />;
+    return <SegmentedControl data={data} size={large ? 'lg' : 'md'} />;
   }
 
   return (
     <SegmentedControl
       value={computedColorScheme}
       onChange={(value) => setColorScheme(value as 'light' | 'dark')}
-      size={large ? 'xl' : 'md'}
+      size={large ? 'lg' : 'md'}
       data={data}
     />
   );

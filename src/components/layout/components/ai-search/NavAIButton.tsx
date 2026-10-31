@@ -18,7 +18,9 @@ export default function NavAIButton({
       size={large ? 'lg' : 'md'}
       variant="default"
       fullWidth
-      rightSection={<IconMessageChatbotFilled size={large ? 24 : 20} />}
+      rightSection={
+        <IconMessageChatbotFilled size={large ? 24 : 20} color="var(--mantine-color-orange-5)" />
+      }
       onClick={() => {
         onOpen?.();
         openSpotlight();

@@ -82,7 +82,17 @@ export default function MobileHeader({
       ) : (
         <Group justify="space-between" wrap="nowrap" gap="xs">
           {profile}
-          {contents}
+          <Button
+            component="a"
+            href="mailto:erdener.emre@gmail.com"
+            variant="filled"
+            radius="md"
+            h="var(--toolbar-control-size, 44px)"
+            size="md"
+            style={{ flexShrink: 0 }}
+          >
+            Contact
+          </Button>
         </Group>
       )}
     </AppShell.Header>
