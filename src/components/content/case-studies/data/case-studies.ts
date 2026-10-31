@@ -338,6 +338,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverAlt: 'Tiny Tails image',
     logoSrc: '/images/logos/apps/tinytails.svg',
     href: '/case-study/tiny-tails',
+    videoId: 'wh5jf1eeh6',
     categories: ['0 to 1', 'Marketing', 'Growth', 'Featured'],
     platforms: ['Web'],
     date: '2018-11-01',

@@ -153,7 +153,7 @@ export default function GlobalSearch() {
           </Center>
         ) : !data ? (
           // Initial "Spotlight" State
-          <Box py="xl">
+          <Box pt={{ base: 32, sm: 48 }} pb={{ base: 48, sm: 64 }} px={{ base: 8, sm: 32 }}>
             <Stack gap="sm" align="center" w="100%">
               <Stack mb="md">
                 <RotatingHeader prefix="Ask about my" />
