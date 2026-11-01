@@ -29,11 +29,10 @@ export default function AboutMe({
             Hello, I'm Emre
           </Title>
           <Text fz={bodySize}>
-            I’m a Staff Product Designer and Design Engineer with 10+ years of experience, including
-            roles at Vivint and Shopify. I bring strategy, systems thinking, and code together to
-            turn complexity into intuitive products. My technical background helps me bridge design
-            and development, using AI to move from concepts to working prototypes and shipped
-            experiences.
+            I’m a Staff Product Designer and Design Engineer with 10+ years of experience. I bring
+            strategy, systems thinking, and code together to turn complexity into intuitive
+            products. My technical background helps me bridge design and development, using AI to
+            move from concepts to working prototypes and shipped experiences.
           </Text>
         </Stack>
 

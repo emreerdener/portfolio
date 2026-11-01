@@ -1,6 +1,6 @@
 'use client';
 
-import { IconMessageChatbotFilled } from '@tabler/icons-react';
+import { IconMessageChatbot } from '@tabler/icons-react';
 import { Button } from '@mantine/core';
 import { useSearch } from '../../../../context/SearchContext';
 
@@ -18,9 +18,7 @@ export default function NavAIButton({
       size={large ? 'lg' : 'md'}
       variant="default"
       fullWidth
-      rightSection={
-        <IconMessageChatbotFilled size={large ? 24 : 20} color="var(--mantine-color-orange-5)" />
-      }
+      rightSection={<IconMessageChatbot size={large ? 24 : 20} />}
       onClick={() => {
         onOpen?.();
         openSpotlight();

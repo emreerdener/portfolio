@@ -36,14 +36,13 @@
   transition: color 300ms ease;
 }
 
-.navName:hover,
-.navName[data-active] {
+.navName:hover {
   color: var(--mantine-color-orange-5);
 }
 
 .navlink {
   width: 100%;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0;
   border-radius: 0;
   background: transparent;

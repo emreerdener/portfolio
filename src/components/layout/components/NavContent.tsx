@@ -8,7 +8,7 @@ import {
   IconUser,
   IconUserFilled,
 } from '@tabler/icons-react';
-import { Anchor, NavLink, SimpleGrid, Stack, Title } from '@mantine/core';
+import { Anchor, NavLink, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import NavAIButton from './ai-search/NavAIButton';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './shell.module.css';
@@ -39,19 +39,13 @@ export function NavIdentity({ large = false, onNavClick }: NavContentProps) {
         data-active={pathname === '/' || undefined}
         aria-current={pathname === '/' ? 'page' : undefined}
       >
-        <Title order={2} ta="left" fz={large ? 30 : 26} style={{ whiteSpace: 'nowrap' }}>
+        <Title order={2} ta="left" fz={large ? 30 : 32} style={{ whiteSpace: 'nowrap' }}>
           Emre Erdener
         </Title>
       </Anchor>
-      <Anchor
-        href="mailto:erdener.emre@gmail.com"
-        c="dimmed"
-        fz={large ? 18 : 14}
-        ta="left"
-        underline="hover"
-      >
-        erdener.emre@gmail.com
-      </Anchor>
+      <Text c="dimmed" fz={large ? 18 : 18} ta="left">
+        Staff Product Designer
+      </Text>
     </Stack>
   );
 }
@@ -76,11 +70,11 @@ export default function NavContent({
       <Stack gap="lg" w="100%">
         {!hideIdentity && <NavIdentity large={large} onNavClick={onNavClick} />}
 
-        <SimpleGrid w="100%" cols={1} spacing={4}>
+        <SimpleGrid w="100%" cols={1} spacing={3}>
           <NavLink
             onClick={() => handleNavClick('/case-studies')}
             label="Case studies"
-            rightSection={
+            leftSection={
               pathname === '/case-studies' ? (
                 <IconIconsFilled size={large ? 26 : 20} />
               ) : (
@@ -93,7 +87,7 @@ export default function NavContent({
           <NavLink
             onClick={() => handleNavClick('/presentation')}
             label="Presentation"
-            rightSection={
+            leftSection={
               pathname === '/presentation' ? (
                 <IconPlayerPlayFilled size={large ? 26 : 20} />
               ) : (
@@ -106,7 +100,7 @@ export default function NavContent({
           <NavLink
             onClick={() => handleNavClick('/profile')}
             label="Profile"
-            rightSection={
+            leftSection={
               pathname === '/profile' ? (
                 <IconUserFilled size={large ? 26 : 20} />
               ) : (
@@ -119,7 +113,7 @@ export default function NavContent({
           <NavLink
             onClick={() => handleNavClick('/other-work')}
             label="Other work"
-            rightSection={<IconPencilRuler size={large ? 26 : 20} />}
+            leftSection={<IconPencilRuler size={large ? 26 : 20} />}
             className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
             active={pathname === '/other-work'}
           />
