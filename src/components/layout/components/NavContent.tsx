@@ -101,6 +101,13 @@ export default function NavContent({
             active={pathname === '/presentation'}
           />
           <NavLink
+            onClick={() => handleNavClick('/other-work')}
+            label="Other work"
+            leftSection={<IconPencilRuler size={large ? 26 : 20} />}
+            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
+            active={pathname === '/other-work'}
+          />
+          <NavLink
             onClick={() => handleNavClick('/profile')}
             label="Profile"
             leftSection={
@@ -112,13 +119,6 @@ export default function NavContent({
             }
             className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
             active={pathname === '/profile'}
-          />
-          <NavLink
-            onClick={() => handleNavClick('/other-work')}
-            label="Other work"
-            leftSection={<IconPencilRuler size={large ? 26 : 20} />}
-            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
-            active={pathname === '/other-work'}
           />
           <NavLink
             onClick={() => {
