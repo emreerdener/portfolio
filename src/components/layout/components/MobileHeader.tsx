@@ -32,6 +32,7 @@ export default function MobileHeader({
           radius="md"
           h="var(--toolbar-control-size, 44px)"
           px="sm"
+          fz="md"
           leftSection={<Avatar src="/images/profile-pic.png" alt="" size={28} radius="xl" />}
           aria-label="Open navigation"
           aria-expanded={opened}

@@ -84,7 +84,7 @@ export default function ProjectCard({
               {description && (
                 <Text
                   c="dimmed"
-                  lineClamp={3}
+                  lineClamp={2}
                   className={`${classes.detailText} ${classes.description}`}
                 >
                   {description}

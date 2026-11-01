@@ -6,7 +6,7 @@ export interface FunFact {
 
 export const funFacts: FunFact[] = [
   { emoji: '👯', text: 'I have a twin sister and an older sister' },
-  { emoji: '🦒', text: `I am taller than a baby giraffe: 6'8" (2m)` },
+  { emoji: '🦒', text: `I'm taller than a baby giraffe: 6'8" (2m)` },
   { emoji: '🎲', text: 'I love playing backgammon' },
   {
     emoji: '🇹🇷🇮🇪',
