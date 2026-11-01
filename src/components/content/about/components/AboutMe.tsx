@@ -13,7 +13,7 @@ interface AboutMeProps {
 export default function AboutMe({
   showCurrentProject = true,
   titleSize,
-  bodySize = 'lg',
+  bodySize = 'md',
   paddingTop = { base: 0, lg: 'lg' },
 }: AboutMeProps) {
   return (
@@ -32,7 +32,7 @@ export default function AboutMe({
             I’m a Staff Product Designer and Design Engineer with 10+ years of experience. I bring
             strategy, systems thinking, and code together to turn complexity into intuitive
             products. My technical background helps me bridge design and development, using AI to
-            move from concepts to working prototypes and shipped experiences.
+            move from prototypes to shipped experiences.
           </Text>
         </Stack>
 
