@@ -90,7 +90,8 @@ export default function MobileHeader({
             radius="md"
             h="var(--toolbar-control-size, 44px)"
             size="md"
-            style={{ flexShrink: 0 }}
+            aria-label="Contact"
+            className={classes.contactButton}
           >
             Contact
           </Button>

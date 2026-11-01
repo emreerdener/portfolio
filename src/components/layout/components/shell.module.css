@@ -172,6 +172,25 @@
   }
 }
 
+.contactButton {
+  flex-shrink: 0;
+}
+
+@media (max-width: 26em) {
+  .contactButton {
+    width: var(--toolbar-control-size, 44px);
+    padding-inline: 0;
+  }
+
+  .contactButton :global(.mantine-Button-section) {
+    margin: 0;
+  }
+
+  .contactButton :global(.mantine-Button-label) {
+    display: none;
+  }
+}
+
 @media (max-width: 24.999em) {
   .header {
     padding-inline: 12px;
@@ -232,7 +251,7 @@
 @media (min-width: $mantine-breakpoint-sm) {
   .toolbarControl {
     --toolbar-control-size: 50px;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .toolbarControl :global(.mantine-Avatar-root) {
@@ -273,9 +292,7 @@
   .header {
     --toolbar-control-size: 50px;
   }
-}
 
-@media (min-width: $mantine-breakpoint-sm) {
   .projectActions {
     --toolbar-control-size: 50px;
   }

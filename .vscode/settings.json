@@ -1,0 +1,9 @@
+{
+  "css.validate": false,
+  "scss.validate": false,
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "node_modules/@mantine/core/styles.css"
+  ]
+}
