@@ -2,6 +2,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import {
   IconIcons,
   IconIconsFilled,
+  IconMessageChatbot,
+  IconMessageChatbotFilled,
   IconPencilRuler,
   IconPlayerPlay,
   IconPlayerPlayFilled,
@@ -9,7 +11,7 @@ import {
   IconUserFilled,
 } from '@tabler/icons-react';
 import { Anchor, NavLink, SimpleGrid, Stack, Text, Title } from '@mantine/core';
-import NavAIButton from './ai-search/NavAIButton';
+import { useSearch } from '../../../context/SearchContext';
 import { ThemeSwitch } from './ThemeSwitch';
 import classes from './shell.module.css';
 
@@ -57,6 +59,7 @@ export default function NavContent({
 }: NavContentProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const { openSpotlight, opened: spotlightOpened } = useSearch();
 
   const handleNavClick = (path: string) => {
     router.push(path);
@@ -117,8 +120,23 @@ export default function NavContent({
             className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
             active={pathname === '/other-work'}
           />
+          <NavLink
+            onClick={() => {
+              onNavClick?.();
+              openSpotlight();
+            }}
+            label="Ask about me"
+            leftSection={
+              spotlightOpened ? (
+                <IconMessageChatbotFilled size={large ? 26 : 20} />
+              ) : (
+                <IconMessageChatbot size={large ? 26 : 20} />
+              )
+            }
+            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
+            active={spotlightOpened}
+          />
         </SimpleGrid>
-        <NavAIButton onOpen={onNavClick} large={large} />
         <Stack w="100%">
           <ThemeSwitch large={large} />
         </Stack>
