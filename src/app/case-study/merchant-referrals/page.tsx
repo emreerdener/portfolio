@@ -102,7 +102,7 @@ export default function MerchantReferrals() {
 
         <Center py="md">
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/phone-m2m.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/macbook-m2m.png"
             alt="Shopify Merchant Referral Program phone mockup image"
             radius={24}
             style={{ border: '1px solid var(--app-shell-border-color)' }}
@@ -180,7 +180,7 @@ export default function MerchantReferrals() {
 
         <Center py="md">
           <Image
-            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/macbook-m2m.png"
+            src="https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg"
             alt="Shopify Merchant Referral Program mackbook mockup image"
             radius={24}
           />

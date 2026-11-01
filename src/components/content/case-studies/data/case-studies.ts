@@ -374,7 +374,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     company: 'Shopify',
     coverSrc:
       'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m-cover-c.png',
-    headerImage: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/m2m-cover.svg',
+    headerImage: 'https://pub-e42ab952d43b4bb2b7d9131b00ac9de4.r2.dev/shopify-m2m/shopify-m2m.png',
     coverAlt: 'Shopify Merchant Referral Program cover image',
     logoSrc: '/images/logos/apps/shopify.svg',
     href: '/case-study/merchant-referrals',
