@@ -21,10 +21,10 @@ export default function ResumePage() {
 
         <Stack pb="xl">
           <Text size="lg">
-            I’m a Staff Product Designer and Design Engineer with 10+ years of experience. I bring
-            strategy, process, and design thinking to my work across design, engineering, and
-            product. My experience with AI-native design and development enables me to ship
-            thoughtful, well-crafted products.
+            I’m a Staff Product Designer and Design Engineer with 10+ years of experience. I combine
+            product strategy and systems thinking with AI-native design and development. I shape
+            product direction, build design systems, and craft how products look, feel, and
+            function.
           </Text>
         </Stack>
 
