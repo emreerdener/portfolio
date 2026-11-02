@@ -29,7 +29,7 @@ export default function PresentationCard({ compact = false }: { compact?: boolea
       variant="outline"
       style={{ alignSelf: compact ? 'center' : 'flex-start', flexShrink: 0 }}
     >
-      View
+      Play
     </Button>
   );
 
