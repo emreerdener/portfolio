@@ -1,27 +1,19 @@
-import { IconBrandLinkedin, IconFile } from '@tabler/icons-react';
-import { Button, Group, MantineSize, Paper, Stack, StyleProp, Text, Title } from '@mantine/core';
-import CurrentProject from './CurrentProject';
-import spacing from './ProfileSpacing.module.css';
+import { IconBrandLinkedin, IconFileCv } from '@tabler/icons-react';
+import { Button, Group, MantineSize, Stack, StyleProp, Text, Title } from '@mantine/core';
 
 interface AboutMeProps {
-  showCurrentProject?: boolean;
   titleSize?: StyleProp<MantineSize | (string & {}) | number>;
   bodySize?: StyleProp<MantineSize | (string & {}) | number>;
   paddingTop?: StyleProp<MantineSize | (string & {}) | number>;
 }
 
 export default function AboutMe({
-  showCurrentProject = true,
   titleSize,
   bodySize = 'md',
   paddingTop = { base: 0, lg: 'lg' },
 }: AboutMeProps) {
   return (
-    <Stack
-      gap="xl"
-      className={showCurrentProject ? spacing.sections : undefined}
-      style={{ flex: 1 }}
-    >
+    <Stack gap="xl" style={{ flex: 1 }}>
       <Stack gap="xl">
         {/* Text */}
         <Stack gap="xs" pt={paddingTop}>
@@ -30,9 +22,9 @@ export default function AboutMe({
           </Title>
           <Text fz={bodySize}>
             I’m a Staff Product Designer and Design Engineer with 10+ years of experience. I bring
-            strategy, systems thinking, and code together to turn complexity into intuitive
-            products. My technical background helps me bridge design and development, using AI to
-            move from prototypes to shipped experiences.
+            strategy, process, and design thinking to my work across design, engineering, and
+            product. AI-native design and development enables me to ship thoughtful, well-crafted
+            products.
           </Text>
         </Stack>
 
@@ -43,7 +35,7 @@ export default function AboutMe({
             href="/Emre-Erdener-Resume.pdf"
             target="_blank"
             size="md"
-            leftSection={<IconFile size={24} />}
+            leftSection={<IconFileCv size={24} />}
           >
             Resume
           </Button>
@@ -59,11 +51,6 @@ export default function AboutMe({
           </Button>
         </Group>
       </Stack>
-      {showCurrentProject && (
-        <Paper mt="auto" withBorder radius="lg" p={{ base: 'lg', lg: 'xl' }} shadow="sm">
-          <CurrentProject />
-        </Paper>
-      )}
     </Stack>
   );
 }

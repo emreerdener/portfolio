@@ -21,17 +21,16 @@ export default function ResumePage() {
 
         <Stack pb="xl">
           <Text size="lg">
-            I’m a Staff Product Designer and Design Engineer with 10+ years of experience, including
-            roles at Vivint and Shopify. I bring strategy, systems thinking, and code together to
-            turn complexity into intuitive products. My technical background helps me bridge design
-            and development, using AI to move from concepts to working prototypes and shipped
-            experiences.
+            I’m a Staff Product Designer and Design Engineer with 10+ years of experience. I bring
+            strategy, process, and design thinking to my work across design, engineering, and
+            product. My experience with AI-native design and development enables me to ship
+            thoughtful, well-crafted products.
           </Text>
         </Stack>
 
         <Divider />
 
-        <Experience defaultExpanded listSize="lg" />
+        <Experience listSize="lg" />
 
         <Divider />
 

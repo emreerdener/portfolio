@@ -1,20 +1,34 @@
-import { Stack, Title } from '@mantine/core';
+import { ImageProps, Stack, StyleProp, TitleOrder } from '@mantine/core';
 import { FadeInUp } from '../../../animations/FadeInUp';
 import { StaggerContainer } from '../../../animations/StaggerContainer';
 import { education } from '../data/education';
 import ExperienceBlock from './ExperienceBlock';
 
-export default function Education() {
+interface EducationProps {
+  roleTitleOrder?: TitleOrder;
+  withPadding?: boolean;
+  logoRadius?: ImageProps['radius'];
+  logoSize?: StyleProp<number>;
+}
+
+export default function Education({
+  logoRadius,
+  logoSize,
+  withPadding = true,
+  roleTitleOrder = 3,
+}: EducationProps) {
   return (
-    <Stack gap="xl" p={{ base: 'lg', lg: 'xl' }}>
-      <Title order={4} size="sm" c="dimmed" tt="uppercase" lh={1}>
-        Education
-      </Title>
+    <Stack gap="xl" p={withPadding ? { base: 'lg', lg: 'xl' } : 0}>
       <StaggerContainer>
         <Stack gap="md">
           {education.map((edu, index) => (
             <FadeInUp key={index}>
-              <ExperienceBlock {...edu} />
+              <ExperienceBlock
+                {...edu}
+                logoRadius={logoRadius}
+                logoSize={logoSize}
+                roleTitleOrder={roleTitleOrder}
+              />
             </FadeInUp>
           ))}
         </Stack>

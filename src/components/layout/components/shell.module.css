@@ -42,7 +42,7 @@
 
 .navlink {
   width: 100%;
-  min-height: 40px;
+  min-height: 44px;
   padding: 0;
   border-radius: 0;
   background: transparent;
@@ -68,7 +68,7 @@
 }
 
 .navlink span {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 

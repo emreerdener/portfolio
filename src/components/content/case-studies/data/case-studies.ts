@@ -464,7 +464,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     href: '/case-study/shopify-shopapp',
     videoId: '5gz2w33elv',
     categories: ['0 to 1', 'Marketing', 'Growth', 'E-commerce'],
-    platforms: ['Web', 'Mobile'],
+    platforms: ['Mobile'],
     date: '2023-11-01',
     featured: false,
     projectType: 'Client',

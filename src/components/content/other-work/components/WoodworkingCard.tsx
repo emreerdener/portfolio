@@ -5,7 +5,7 @@ export default function WoodworkingCard() {
   return (
     <Paper p="lg" radius="lg" withBorder shadow="sm">
       <Stack gap="md">
-        <Text fz={32} aria-hidden>
+        <Text fz={32} lh={1} h={32} aria-hidden>
           🪵🪚
         </Text>
         <Stack gap={4}>

@@ -1,4 +1,4 @@
-import { Divider, Grid, Paper, Space, Stack } from '@mantine/core';
+import { Box, Divider, Grid, Paper, Space, Stack } from '@mantine/core';
 import { FadeInUp } from '../../../animations/FadeInUp';
 import { StaggerContainer } from '../../../animations/StaggerContainer';
 import MoreBanner from '../../../layout/components/MoreBanner';
@@ -7,6 +7,7 @@ import SelectedWorkHeader from '../../case-studies/components/SelectedWorkHeader
 import { CASE_STUDIES } from '../../case-studies/data/case-studies';
 import Education from '../../experience/components/Education';
 import Experience from '../../experience/components/Experience';
+import OtherWorkCard from '../../other-work/components/OtherWorkCard';
 import AboutImageCarousel from './AboutImageCarousel';
 import AboutMe from './AboutMe';
 import projectClasses from '../../case-studies/components/ProjectCard.module.css';
@@ -27,13 +28,14 @@ export default function AboutLayout() {
     <StaggerContainer>
       <Stack className={spacing.sections}>
         <FadeInUp>
-          <Grid align="stretch" gutter={{ base: 32, md: 48 }}>
+          <Grid align="center" gutter={{ base: 32, md: 48 }}>
             <Grid.Col
               span={{ base: 12, lg: 6 }}
               order={{ base: 2, lg: 1 }}
               style={{ display: 'flex', flexDirection: 'column' }}
             >
               <AboutMe
+                paddingTop={0}
                 titleSize={{ base: '2.5rem', sm: '3.5rem' }}
                 bodySize={{ base: 'lg', md: '1.4rem' }}
               />
@@ -45,8 +47,19 @@ export default function AboutLayout() {
         </FadeInUp>
 
         <FadeInUp>
-          <Paper radius="lg" withBorder shadow="sm">
-            <Experience overview defaultExpanded listSize={{ base: 'sm', md: 'lg' }} />
+          <Paper
+            id="experience"
+            radius="lg"
+            withBorder
+            shadow="sm"
+            style={{ scrollMarginTop: 'calc(var(--app-shell-header-offset, 0px) + 24px)' }}
+          >
+            <Experience
+              overview
+              showDividers
+              showDownload={false}
+              listSize={{ base: 'sm', md: 'lg' }}
+            />
             <Divider />
             <Education />
           </Paper>
@@ -72,6 +85,10 @@ export default function AboutLayout() {
         </FadeInUp>
 
         <MoreBanner visibleStudyHrefs={selectedWork.map((study) => study.href)} />
+
+        <Box hiddenFrom="sm">
+          <OtherWorkCard compact />
+        </Box>
 
         <Space h="xl" />
       </Stack>

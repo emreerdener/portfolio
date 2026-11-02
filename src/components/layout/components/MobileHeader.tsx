@@ -83,19 +83,21 @@ export default function MobileHeader({
       ) : (
         <Group justify="space-between" wrap="nowrap" gap="xs">
           {profile}
-          <Button
-            component="a"
-            href="mailto:erdener.emre@gmail.com"
-            leftSection={<IconMail size={20} />}
-            variant="filled"
-            radius="md"
-            h="var(--toolbar-control-size, 44px)"
-            size="md"
-            aria-label="Contact"
-            className={classes.contactButton}
-          >
-            Contact
-          </Button>
+          <Group id="mobile-header-actions" wrap="nowrap" gap="xs" style={{ flexShrink: 0 }}>
+            <Button
+              component="a"
+              href="mailto:erdener.emre@gmail.com"
+              leftSection={<IconMail size={20} />}
+              variant="filled"
+              radius="md"
+              h="var(--toolbar-control-size, 44px)"
+              size="md"
+              aria-label="Contact"
+              className={classes.contactButton}
+            >
+              Contact
+            </Button>
+          </Group>
         </Group>
       )}
     </AppShell.Header>

@@ -4,9 +4,6 @@ import {
   IconIconsFilled,
   IconMessageChatbot,
   IconMessageChatbotFilled,
-  IconPencilRuler,
-  IconPlayerPlay,
-  IconPlayerPlayFilled,
   IconUser,
   IconUserFilled,
 } from '@tabler/icons-react';
@@ -73,48 +70,28 @@ export default function NavContent({
       <Stack gap="lg" w="100%">
         {!hideIdentity && <NavIdentity large={large} onNavClick={onNavClick} />}
 
-        <SimpleGrid w="100%" cols={1} spacing={3}>
+        <SimpleGrid w="100%" cols={1} spacing={4}>
           <NavLink
             onClick={() => handleNavClick('/case-studies')}
             label="Case studies"
             leftSection={
               pathname === '/case-studies' ? (
-                <IconIconsFilled size={large ? 26 : 20} />
+                <IconIconsFilled size={large ? 26 : 24} />
               ) : (
-                <IconIcons size={large ? 26 : 20} />
+                <IconIcons size={large ? 26 : 24} />
               )
             }
             className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
             active={pathname === '/case-studies'}
           />
           <NavLink
-            onClick={() => handleNavClick('/presentation')}
-            label="Presentation"
-            leftSection={
-              pathname === '/presentation' ? (
-                <IconPlayerPlayFilled size={large ? 26 : 20} />
-              ) : (
-                <IconPlayerPlay size={large ? 26 : 20} />
-              )
-            }
-            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
-            active={pathname === '/presentation'}
-          />
-          <NavLink
-            onClick={() => handleNavClick('/other-work')}
-            label="Other work"
-            leftSection={<IconPencilRuler size={large ? 26 : 20} />}
-            className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
-            active={pathname === '/other-work'}
-          />
-          <NavLink
             onClick={() => handleNavClick('/profile')}
             label="Profile"
             leftSection={
               pathname === '/profile' ? (
-                <IconUserFilled size={large ? 26 : 20} />
+                <IconUserFilled size={large ? 26 : 24} />
               ) : (
-                <IconUser size={large ? 26 : 20} />
+                <IconUser size={large ? 26 : 24} />
               )
             }
             className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}
@@ -128,9 +105,9 @@ export default function NavContent({
             label="Ask about me"
             leftSection={
               spotlightOpened ? (
-                <IconMessageChatbotFilled size={large ? 26 : 20} />
+                <IconMessageChatbotFilled size={large ? 26 : 24} />
               ) : (
-                <IconMessageChatbot size={large ? 26 : 20} />
+                <IconMessageChatbot size={large ? 26 : 24} />
               )
             }
             className={`${classes.navlink} ${large ? classes.sheetNavlink : ''}`}

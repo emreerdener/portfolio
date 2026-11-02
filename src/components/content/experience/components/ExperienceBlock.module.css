@@ -4,6 +4,7 @@
 
 .role {
   display: grid;
+  align-items: start;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--mantine-spacing-lg);
 }
@@ -18,13 +19,5 @@
   .role {
     grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.5fr);
     gap: var(--mantine-spacing-xl);
-  }
-}
-
-.roleDivider {
-  margin-inline: calc(-1 * var(--mantine-spacing-lg));
-
-  @media (min-width: $mantine-breakpoint-lg) {
-    margin-inline: calc(-1 * var(--mantine-spacing-xl));
   }
 }

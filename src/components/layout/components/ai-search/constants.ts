@@ -2,51 +2,52 @@ export const SEARCH_SUGGESTIONS_GROUPED = [
   {
     group: 'Explore my work',
     items: [
-      'Show me design systems work',
-      'What has Emre built?',
-      'Show me examples of design leadership',
+      'Where should I start with Emre’s work?',
+      'Show me his design systems work',
+      'What has Emre built independently?',
     ],
   },
   {
-    group: 'Strategy & leadership',
+    group: 'Strategy & collaboration',
     items: [
-      'What is your approach to aligning design strategy with business goals?',
-      'How have you led cross-functional teams to deliver product outcomes?',
-      'What is your experience with zero-to-one product development?',
-      'How do you measure and communicate the business impact of design?',
+      'How does Emre help define product direction?',
+      'Show me a project he helped shape from the start',
+      'How does he work with product and engineering?',
+      'What impact has his work had?',
     ],
   },
   {
-    group: 'Design engineering & systems',
+    group: 'Systems & code',
     items: [
-      'How do you architect and scale design systems for large organizations?',
-      'What is your process for improving development velocity through design?',
-      'How do you handle technical debt and component governance at scale?',
-      'Describe your experience bridging the gap between design and code.',
+      'How has Emre helped teams build and use design systems?',
+      'How does his knowledge of code influence his design work?',
+      'What does he build with code?',
+      'How does he take an idea from prototype to product?',
     ],
   },
   {
-    group: 'Emerging tech & AI',
+    group: 'AI & exploration',
     items: [
-      'How do you approach designing for AI-powered and agentic workflows?',
-      'What are your principles for establishing trust in automated systems?',
-      'How does your philosophy background influence your view on tech ethics?',
+      'How does Emre use AI in his work?',
+      'What has he learned from building Naturebook?',
+      'How does he design experiences that use AI?',
     ],
   },
   {
-    group: 'Specialized domain expertise',
+    group: 'Product experience',
     items: [
-      'What are the challenges of designing for IoT and hardware ecosystems?',
-      'How do you design for complex, multi-sided e-commerce marketplaces?',
-      'How do you handle latency and connectivity constraints in product design?',
+      'What did Emre work on at Shopify?',
+      'How has he approached smart home design at Vivint?',
+      'Show me how he makes complex workflows easier to use',
     ],
   },
   {
-    group: 'Professional profile',
+    group: 'About Emre',
     items: [
-      'What are the core pillars of your design philosophy?',
-      'How do you mentor junior designers and foster a critique culture?',
-      'Summarize your professional background and key career milestones.',
+      'What experience would Emre bring to a team?',
+      'How does he support other designers?',
+      'How does his philosophy background influence his work?',
+      'Give me a quick overview of his career',
     ],
   },
 ];
@@ -61,13 +62,8 @@ export const shuffleArray = <T>(array: T[]): T[] => {
 };
 
 export const LOADING_MESSAGES = [
-  'Analyzing portfolio...',
-  'Searching experience...',
-  'Digging into case studies...',
-  'Writing analysis...',
-  'Reviewing design systems...',
-  'Polishing the pixels...',
-  'Auditing UX flows...',
-  'Curating artifacts...',
-  'Outlining an answer...',
+  'Looking through my work...',
+  'Finding relevant examples...',
+  'Connecting the details...',
+  'Putting an answer together...',
 ];

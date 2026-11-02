@@ -3,6 +3,9 @@
 import { usePathname } from 'next/navigation';
 import { AppShell, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import NaturebookCard from '../../content/about/components/NaturebookCard';
+import PresentationCard from '../../content/case-studies/components/PresentationCard';
+import OtherWorkCard from '../../content/other-work/components/OtherWorkCard';
 import WoodworkingCard from '../../content/other-work/components/WoodworkingCard';
 import Aside from './Aside';
 import MobileHeader from './MobileHeader';
@@ -22,7 +25,7 @@ export function HomeShell({ children }: { children: React.ReactNode }) {
       layout="alt"
       header={{ height: { base: 80, sm: 0 } }}
       navbar={{
-        width: 480,
+        width: 360,
         breakpoint: 'xl',
         collapsed: { desktop: shouldHideAside, mobile: true },
       }}
@@ -59,6 +62,21 @@ export function HomeShell({ children }: { children: React.ReactNode }) {
         <Stack gap={0} className={classes.navbarContainer} onClick={(e) => e.stopPropagation()}>
           <NavContent onNavClick={close} />
         </Stack>
+        {pathname === '/' && (
+          <Stack visibleFrom="sm" mt={{ base: 32, md: 48 }} onClick={(e) => e.stopPropagation()}>
+            <NaturebookCard />
+          </Stack>
+        )}
+        {pathname === '/case-studies' && (
+          <Stack visibleFrom="sm" mt={{ base: 32, md: 48 }} onClick={(e) => e.stopPropagation()}>
+            <PresentationCard />
+          </Stack>
+        )}
+        {pathname === '/profile' && (
+          <Stack visibleFrom="sm" mt={{ base: 32, md: 48 }} onClick={(e) => e.stopPropagation()}>
+            <OtherWorkCard />
+          </Stack>
+        )}
         {pathname === '/other-work' && (
           <Stack visibleFrom="sm" mt={{ base: 32, md: 48 }} onClick={(e) => e.stopPropagation()}>
             <WoodworkingCard />

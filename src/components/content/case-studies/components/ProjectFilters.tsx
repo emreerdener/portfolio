@@ -18,6 +18,7 @@ import {
   Drawer,
   Group,
   Indicator,
+  Portal,
   ScrollArea,
   Stack,
   Text,
@@ -269,34 +270,28 @@ export default function ProjectFilters({
       </Drawer>
 
       {/* Mobile: Filter Button Trigger */}
-      <Box
-        hiddenFrom="sm"
-        pos="fixed"
-        top="var(--mantine-spacing-lg)"
-        right="var(--mantine-spacing-lg)"
-        style={{
-          zIndex: 100,
-        }}
-      >
-        <Indicator
-          disabled={!hasActiveFilters}
-          position="top-end"
-          offset={4}
-          withBorder
-          color="orange"
-          size={16}
-        >
-          <ActionIcon
-            onClick={open}
-            aria-label="Filter case studies"
-            size={44}
-            radius="md"
-            variant="default"
+      <Portal target="#mobile-header-actions">
+        <Box hiddenFrom="sm">
+          <Indicator
+            disabled={!hasActiveFilters}
+            position="top-end"
+            offset={4}
+            withBorder
+            color="orange"
+            size={16}
           >
-            <IconFilter2 size={20} />
-          </ActionIcon>
-        </Indicator>
-      </Box>
+            <ActionIcon
+              onClick={open}
+              aria-label="Filter case studies"
+              size="var(--toolbar-control-size, 44px)"
+              radius="md"
+              variant="default"
+            >
+              <IconFilter2 size={20} />
+            </ActionIcon>
+          </Indicator>
+        </Box>
+      </Portal>
 
       {/* --- Main Bar (Desktop) --- */}
       <Group

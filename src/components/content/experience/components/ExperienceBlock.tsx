@@ -1,19 +1,23 @@
-import { useState } from 'react';
 import {
   Box,
   Group,
   Image,
+  ImageProps,
   List,
   MantineSize,
-  Spoiler,
   Stack,
   StyleProp,
   Text,
   Title,
+  TitleOrder,
 } from '@mantine/core';
 import classes from './ExperienceBlock.module.css';
 
 interface ExperienceBlockProps {
+  logoRadius?: ImageProps['radius'];
+  logoSize?: StyleProp<number>;
+  roleTitleOrder?: TitleOrder;
+  showDetails?: boolean;
   role: string;
   company: string;
   date: string;
@@ -21,11 +25,14 @@ interface ExperienceBlockProps {
   bullets?: string[];
   highlights?: { label: string; text: string }[];
   logoSrc?: string;
-  defaultExpanded?: boolean;
   listSize?: StyleProp<MantineSize>;
 }
 
 export default function ExperienceBlock({
+  logoRadius = 'lg',
+  logoSize = { base: 48, sm: 72 },
+  roleTitleOrder = 3,
+  showDetails = true,
   role,
   company,
   date,
@@ -33,110 +40,69 @@ export default function ExperienceBlock({
   bullets = [],
   highlights,
   logoSrc,
-  defaultExpanded = false,
   listSize = 'sm',
 }: ExperienceBlockProps) {
-  const [expanded, setExpanded] = useState(defaultExpanded);
-  // 2. Define the height at which the content is cut off
-  const MAX_HEIGHT = 110;
-
   return (
-    <Stack gap="md" className={highlights ? classes.role : undefined}>
-      <Group wrap="nowrap" align="flex-start">
+    <Stack gap="md" className={highlights && showDetails ? classes.role : undefined}>
+      <Group wrap="nowrap" align="center">
         {logoSrc && (
-          <Image
-            src={logoSrc}
-            alt="Company logo"
-            w={{ base: 48, sm: 72 }}
-            h={{ base: 48, sm: 72 }}
-            radius={18}
-            style={{ border: '1px solid var(--app-shell-border-color)' }}
-          />
+          <Image src={logoSrc} alt="Company logo" w={logoSize} h={logoSize} radius={logoRadius} />
         )}
 
         <Stack gap={4}>
           <Text size="sm" fw={500} lh={1}>
             {company}
           </Text>
-          <Title order={3} lh={1.2}>
+          <Title order={roleTitleOrder} lh={1.2}>
             {role}
           </Title>
-          <Group gap={6} wrap="nowrap" align="center">
-            <Text size="sm" c="dimmed">
-              {date}
-            </Text>
-            <Text size="sm" c="dimmed">
-              •
-            </Text>
-            <Text size="sm" c="dimmed">
-              {location}
-            </Text>
-          </Group>
+          {(date || location) && (
+            <Group gap={6} wrap="nowrap" align="center">
+              {date && (
+                <Text size="sm" c="dimmed">
+                  {date}
+                </Text>
+              )}
+              {date && location && (
+                <Text size="sm" c="dimmed">
+                  •
+                </Text>
+              )}
+              {location && (
+                <Text size="sm" c="dimmed">
+                  {location}
+                </Text>
+              )}
+            </Group>
+          )}
         </Stack>
       </Group>
 
-      {highlights ? (
-        <List spacing="sm" fz={listSize} className={classes.highlights}>
-          {highlights.map(({ label, text }) => (
-            <List.Item key={label} c="dimmed" style={{ lineHeight: 1.55 }}>
-              <Text fz="inherit" fw={700} c="var(--mantine-color-text)">
-                {label}
-              </Text>
-              <Text fz="inherit" c="dimmed" lh={1.55}>
-                {text}
-              </Text>
-            </List.Item>
-          ))}
-        </List>
-      ) : (
-        bullets.length > 0 && (
-          <Box pos="relative">
-            {/* 3. Wrap List in Spoiler */}
-            <Spoiler
-              maxHeight={MAX_HEIGHT}
-              showLabel="Show more"
-              hideLabel="Show less"
-              expanded={expanded}
-              onExpandedChange={setExpanded}
-              // Style the control button to match your dimmed text style
-              styles={{
-                control: {
-                  // If defaultExpanded is true, hide the button entirely
-                  display: defaultExpanded ? 'none' : undefined,
-                  fontSize: 'var(--mantine-font-size-sm)',
-                  marginTop: 4,
-                  marginLeft: 20,
-                  color: 'var(--mantine-color-dimmed)',
-                },
-              }}
-            >
-              <List spacing={6} fz={listSize} center={false}>
-                {bullets.map((item, index) => (
-                  <List.Item key={index} style={{ lineHeight: 1.4, opacity: 0.85 }}>
-                    {item}
-                  </List.Item>
-                ))}
-              </List>
-            </Spoiler>
-
-            {/* 4. Custom Fade Overlay
-              - Only visible when collapsed AND we have enough content to likely need it
-          */}
-            {!expanded && bullets.length > 2 && (
-              <Box
-                pos="absolute"
-                top={MAX_HEIGHT - 40}
-                left={0}
-                right={0}
-                h={40}
-                style={{
-                  pointerEvents: 'none',
-                  background: 'linear-gradient(to bottom, transparent, var(--mantine-color-body))',
-                }}
-              />
-            )}
-          </Box>
-        )
+      {showDetails && (highlights?.length || bullets.length > 0) && (
+        <Box>
+          {highlights ? (
+            <List spacing="sm" fz={listSize} className={classes.highlights}>
+              {highlights.map(({ label, text }) => (
+                <List.Item key={label} c="dimmed" style={{ lineHeight: 1.55 }}>
+                  <Text fz="inherit" fw={700} c="var(--mantine-color-text)">
+                    {label}
+                  </Text>
+                  <Text fz="inherit" c="dimmed" lh={1.55}>
+                    {text}
+                  </Text>
+                </List.Item>
+              ))}
+            </List>
+          ) : (
+            <List spacing={6} fz={listSize} center={false}>
+              {bullets.map((item, index) => (
+                <List.Item key={index} style={{ lineHeight: 1.4, opacity: 0.85 }}>
+                  {item}
+                </List.Item>
+              ))}
+            </List>
+          )}
+        </Box>
       )}
     </Stack>
   );

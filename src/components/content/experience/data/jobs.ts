@@ -28,7 +28,7 @@ export const JOBS: Job[] = [
     company: 'Shopify',
     date: '2021 - 2023',
     location: 'Remote',
-    logoSrc: '/images/logos/experience/shopify.jpg',
+    logoSrc: '/images/logos/experience/shopify.svg',
     bullets: [
       'Championed and designed an internal CMS tool for the Website Platform team, enabling autonomous management of 150,000+ pages and generating $45M in annual cost savings.',
       'Researched, designed, and shipped a merchant referral program that improved payback efficiency by 63% and drove an estimated +200k new users.',
@@ -43,7 +43,7 @@ export const JOBS: Job[] = [
     company: 'Mello Studio',
     date: '2016 - 2021',
     location: 'Austin, TX',
-    logoSrc: '/images/logos/experience/mello.jpg',
+    logoSrc: '/images/logos/experience/mello.svg',
     bullets: [
       'Delivered end-to-end product, web, and marketing design for startups and enterprise clients.',
       'Conducted user research and usability testing to define and optimize product roadmaps.',
@@ -64,6 +64,17 @@ export const JOBS: Job[] = [
       'Conducted workshops and testing to evaluate designs and identify usability enhancements.',
       'Developed a design system for rapid prototyping, ensuring continuity and efficient communication across development teams.',
       'Designed the brand identity, created assets, and coordinated implementation between Marketing, Sales, Client Success, and Partnership teams.',
+    ],
+  },
+  {
+    role: 'Community Operations',
+    company: 'Meta',
+    date: '2015 - 2016',
+    location: 'Austin, TX',
+    logoSrc: '/images/logos/experience/meta.svg',
+    bullets: [
+      'Provided individualized support for a beta group of users on the concept team.',
+      'Handled support tickets and reviewed reported content against platform policies, identifying user trends and helping the team meet response targets and quality standards.',
     ],
   },
 ];

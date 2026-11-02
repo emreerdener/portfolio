@@ -3,6 +3,7 @@
 import Lottie from 'lottie-react';
 import { Box, Button, Space, Stack, Text, Title } from '@mantine/core';
 import { FadeIn } from '@/src/components/animations/FadeIn';
+import PresentationCard from '@/src/components/content/case-studies/components/PresentationCard';
 import ProjectCard from '@/src/components/content/case-studies/components/ProjectCard';
 import classes from '@/src/components/content/case-studies/components/ProjectCard.module.css';
 import ProjectFilters from '@/src/components/content/case-studies/components/ProjectFilters';
@@ -48,6 +49,9 @@ export default function CaseStudiesPage() {
         className={classes.sections}
         style={{ containerType: 'inline-size', containerName: 'project-list' }}
       >
+        <Box hiddenFrom="sm">
+          <PresentationCard compact />
+        </Box>
         <ProjectFilters
           clients={CLIENTS}
           categories={CATEGORIES}

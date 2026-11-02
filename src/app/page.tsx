@@ -1,10 +1,11 @@
 'use client';
 
-import { Space, Stack } from '@mantine/core';
+import { Box, Space, Stack } from '@mantine/core';
 import classes from '@/src/components/content/case-studies/components/ProjectCard.module.css';
 import { FadeIn } from '../components/animations/FadeIn';
 import AboutImageCarousel from '../components/content/about/components/AboutImageCarousel';
 import AboutMe from '../components/content/about/components/AboutMe';
+import NaturebookCard from '../components/content/about/components/NaturebookCard';
 import ProjectCard from '../components/content/case-studies/components/ProjectCard';
 import SelectedWorkHeader from '../components/content/case-studies/components/SelectedWorkHeader';
 import { CASE_STUDIES } from '../components/content/case-studies/data/case-studies';
@@ -20,7 +21,7 @@ export default function HomePage() {
       >
         <Stack hiddenFrom="xl" gap="xl">
           <AboutImageCarousel />
-          <AboutMe paddingTop={0} showCurrentProject={false} />
+          <AboutMe paddingTop={0} />
         </Stack>
 
         <Stack gap="lg">
@@ -46,6 +47,10 @@ export default function HomePage() {
         </Stack>
 
         <MoreBanner visibleStudyHrefs={featuredProjects.map((project) => project.href)} />
+
+        <Box hiddenFrom="sm">
+          <NaturebookCard compact />
+        </Box>
 
         <Space h="xl" />
       </Stack>

@@ -67,4 +67,14 @@ export const PROFILE_HIGHLIGHTS: Record<string, { label: string; text: string }[
       text: 'Designed the brand identity and coordinated implementation across customer-facing teams.',
     },
   ],
+  Meta: [
+    {
+      label: 'Community operations',
+      text: 'Supported a beta group of users and handled support tickets within a large-scale platform operation.',
+    },
+    {
+      label: 'Content review',
+      text: 'Reviewed reported content against platform policies, identified user trends, and helped meet response targets and quality standards.',
+    },
+  ],
 };

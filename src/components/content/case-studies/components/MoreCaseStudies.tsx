@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Space, Stack, Title } from '@mantine/core';
+import { Button, Group, Space, Stack, Title } from '@mantine/core';
 import MoreBanner from '@/src/components/layout/components/MoreBanner';
 import { CASE_STUDIES, CaseStudy } from '../data/case-studies';
 import ProjectCard from './ProjectCard';
@@ -42,7 +43,12 @@ export default function MoreCaseStudies({ heading = 'More of my work' }: MoreCas
         containerName: 'project-list',
       }}
     >
-      <Title order={2}>{heading}</Title>
+      <Group justify="space-between" gap="md">
+        <Title order={2}>{heading}</Title>
+        <Button component={Link} href="/case-studies" variant="light" size="md">
+          View all
+        </Button>
+      </Group>
       <div className={`${classes.gridList} ${classes.moreGrid}`}>
         {randomStudies.map((study) => (
           <ProjectCard
