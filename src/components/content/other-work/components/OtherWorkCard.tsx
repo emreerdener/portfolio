@@ -4,7 +4,7 @@ import { Button, Group, Paper, Stack, Text, Title } from '@mantine/core';
 export default function OtherWorkCard({ compact = false }: { compact?: boolean }) {
   const summary = (
     <Stack gap={4} style={{ flex: 1 }}>
-      <Title order={4}>Other work</Title>
+      <Title order={4}>Visual design</Title>
       <Text c="dimmed" size="sm">
         Visual design, motion design, illustrations, and more.
       </Text>

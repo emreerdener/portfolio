@@ -1,13 +1,17 @@
 import { IconBrandLinkedin, IconFileCv } from '@tabler/icons-react';
 import { Button, Group, MantineSize, Stack, StyleProp, Text, Title } from '@mantine/core';
+import { FadeInUp } from '../../../animations/FadeInUp';
+import { StaggerContainer } from '../../../animations/StaggerContainer';
 
 interface AboutMeProps {
+  showActions?: boolean;
   titleSize?: StyleProp<MantineSize | (string & {}) | number>;
   bodySize?: StyleProp<MantineSize | (string & {}) | number>;
   paddingTop?: StyleProp<MantineSize | (string & {}) | number>;
 }
 
 export default function AboutMe({
+  showActions = true,
   titleSize,
   bodySize = 'md',
   paddingTop = { base: 0, lg: 'lg' },
@@ -28,8 +32,17 @@ export default function AboutMe({
           </Text>
         </Stack>
 
-        {/* Buttons */}
-        <Group gap="lg" mb="md">
+        {showActions && <AboutMeActions />}
+      </Stack>
+    </Stack>
+  );
+}
+
+export function AboutMeActions() {
+  return (
+    <StaggerContainer>
+      <Group gap="lg" mb="md">
+        <FadeInUp>
           <Button
             component="a"
             href="/Emre-Erdener-Resume.pdf"
@@ -39,6 +52,8 @@ export default function AboutMe({
           >
             Resume
           </Button>
+        </FadeInUp>
+        <FadeInUp>
           <Button
             component="a"
             href="https://www.linkedin.com/in/emre-erdener/"
@@ -49,8 +64,8 @@ export default function AboutMe({
           >
             LinkedIn
           </Button>
-        </Group>
-      </Stack>
-    </Stack>
+        </FadeInUp>
+      </Group>
+    </StaggerContainer>
   );
 }

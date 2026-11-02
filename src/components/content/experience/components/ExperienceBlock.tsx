@@ -30,7 +30,7 @@ interface ExperienceBlockProps {
 
 export default function ExperienceBlock({
   logoRadius = 'lg',
-  logoSize = { base: 48, sm: 72 },
+  logoSize = { base: 64, sm: 72 },
   roleTitleOrder = 3,
   showDetails = true,
   role,

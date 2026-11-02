@@ -16,7 +16,7 @@ export default function NaturebookCard({ compact = false }: { compact?: boolean 
     <Stack gap={4} style={{ flex: 1 }}>
       <Title order={4}>Naturebook</Title>
       <Text c="dimmed" size="sm">
-        An app for discovering and identifying the nature around you through photos and sound.
+        An app for discovering and identifying nature.
       </Text>
     </Stack>
   );
