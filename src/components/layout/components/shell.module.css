@@ -114,19 +114,6 @@
   flex-shrink: 0;
 }
 
-[data-sections-compact] .sectionsButton {
-  width: var(--toolbar-control-size, 44px);
-  padding-inline: 0;
-}
-
-[data-sections-compact] .sectionsButton :global(.mantine-Button-label) {
-  display: none;
-}
-
-[data-sections-compact] .sectionsButton :global(.mantine-Button-section) {
-  margin: 0;
-}
-
 .floatingButton {
   background-color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));

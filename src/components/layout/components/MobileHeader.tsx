@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { IconList, IconMail } from '@tabler/icons-react';
+import { IconMail } from '@tabler/icons-react';
 import { ActionIcon, AppShell, Avatar, Box, Button, Group } from '@mantine/core';
 import classes from './shell.module.css';
 
@@ -9,17 +9,13 @@ interface MobileHeaderProps {
   hiddenFrom?: 'sm' | 'xl';
   opened: boolean;
   toggle: () => void;
-  onContentsClick?: () => void;
-  contentsOpened?: boolean;
-  navigation?: (profile: ReactNode, contents: ReactNode) => ReactNode;
+  navigation?: (profile: ReactNode) => ReactNode;
 }
 
 export default function MobileHeader({
   hiddenFrom = 'sm',
   opened,
   toggle,
-  onContentsClick,
-  contentsOpened,
   navigation,
 }: MobileHeaderProps) {
   const profile = (
@@ -54,23 +50,6 @@ export default function MobileHeader({
       )}
     </Box>
   );
-  const contents = onContentsClick ? (
-    <Button
-      className={classes.sectionsButton}
-      h="var(--toolbar-control-size, 44px)"
-      size="md"
-      onClick={onContentsClick}
-      variant="default"
-      radius="md"
-      leftSection={<IconList size={20} />}
-      aria-label="Open sections"
-      aria-expanded={contentsOpened}
-      aria-haspopup="dialog"
-      style={{ flexShrink: 0 }}
-    >
-      Sections
-    </Button>
-  ) : null;
 
   return (
     <AppShell.Header
@@ -79,7 +58,7 @@ export default function MobileHeader({
       className={`${classes.header} ${navigation ? classes.caseStudyHeader : ''}`}
     >
       {navigation ? (
-        <Box className={classes.headerContent}>{navigation(profile, contents)}</Box>
+        <Box className={classes.headerContent}>{navigation(profile)}</Box>
       ) : (
         <Group justify="space-between" wrap="nowrap" gap="xs">
           {profile}
