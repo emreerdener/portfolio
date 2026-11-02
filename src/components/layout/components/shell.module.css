@@ -1,7 +1,4 @@
-/* .main {
-  max-width: 1600px;
-  margin: 0 auto;
-} */
+/* Shell layout */
 
 .navbar {
   border: none;
@@ -30,6 +27,17 @@
   background-color: transparent;
   padding: var(--mantine-spacing-lg);
 }
+
+.aside {
+  padding: 0;
+}
+
+.headerContent {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+/* Navigation */
 
 .navName {
   color: var(--mantine-color-text);
@@ -92,9 +100,45 @@
   border-color: var(--mantine-color-orange-6);
 }
 
-.aside {
-  padding: 0;
+.sheetNavlink {
+  min-height: 56px;
 }
+
+.sheetNavlink span {
+  font-size: 20px;
+}
+
+/* Toolbar controls */
+
+.contactButton {
+  flex-shrink: 0;
+}
+
+[data-sections-compact] .sectionsButton {
+  width: var(--toolbar-control-size, 44px);
+  padding-inline: 0;
+}
+
+[data-sections-compact] .sectionsButton :global(.mantine-Button-label) {
+  display: none;
+}
+
+[data-sections-compact] .sectionsButton :global(.mantine-Button-section) {
+  margin: 0;
+}
+
+.floatingButton {
+  background-color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
+  border-color: transparent;
+
+  @mixin hover {
+    background-color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-gray-2));
+    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
+  }
+}
+
+/* Content */
 
 .bannerPaper {
   padding: var(--mantine-spacing-md);
@@ -118,6 +162,8 @@
   margin-bottom: 0;
 }
 
+/* Responsive layout: narrow screens */
+
 @media (max-width: 47.999em) {
   .main {
     padding-top: calc(var(--app-shell-header-offset, 0rem) + 16px);
@@ -138,18 +184,23 @@
     max-width: 280px;
   }
 
-  .bannerLayout,
   .bannerHeader {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .bannerHeader {
     width: 100%;
   }
 
   .bannerPaper {
     padding-right: var(--mantine-spacing-md);
+  }
+
+  .toolbarAllStudies {
+    display: none;
+  }
+
+  .toolbarControl svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -172,10 +223,6 @@
   }
 }
 
-.contactButton {
-  flex-shrink: 0;
-}
-
 @media (max-width: 26em) {
   .contactButton {
     width: var(--toolbar-control-size, 44px);
@@ -191,16 +238,28 @@
   }
 }
 
+@media (max-width: 25.8em) {
+  .bannerLayout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 24.999em) {
   .header {
     padding-inline: 12px;
   }
+
+  .toolbarGroup {
+    gap: 4px;
+  }
+
+  .caseStudyHeader {
+    padding-inline: var(--mantine-spacing-lg);
+  }
 }
 
-.headerContent {
-  max-width: 1000px;
-  margin-inline: auto;
-}
+/* Responsive layout: wider screens */
 
 @media (min-width: 25em) {
   .toolbarGroup {
@@ -216,39 +275,7 @@
   .toolbarGroup {
     gap: 16px;
   }
-}
 
-@media (min-width: $mantine-breakpoint-md) {
-  .caseStudyHeader {
-    padding: 48px;
-  }
-}
-
-@media (max-width: 24.999em) {
-  .toolbarGroup {
-    gap: 4px;
-  }
-
-  .caseStudyHeader {
-    padding-inline: var(--mantine-spacing-lg);
-  }
-}
-
-.sheetNavlink {
-  min-height: 56px;
-}
-
-.sheetNavlink span {
-  font-size: 20px;
-}
-
-@media (max-width: 47.999em) {
-  .toolbarAllStudies {
-    display: none;
-  }
-}
-
-@media (min-width: $mantine-breakpoint-sm) {
   .toolbarControl {
     --toolbar-control-size: 50px;
     font-size: 16px;
@@ -266,29 +293,7 @@
   .toolbarControl:global(.mantine-Button-root) {
     padding-inline: 16px;
   }
-}
 
-@media (max-width: 47.999em) {
-  .toolbarControl svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-[data-sections-compact] .sectionsButton {
-  width: var(--toolbar-control-size, 44px);
-  padding-inline: 0;
-}
-
-[data-sections-compact] .sectionsButton :global(.mantine-Button-label) {
-  display: none;
-}
-
-[data-sections-compact] .sectionsButton :global(.mantine-Button-section) {
-  margin: 0;
-}
-
-@media (min-width: $mantine-breakpoint-sm) {
   .header {
     --toolbar-control-size: 50px;
   }
@@ -302,13 +307,8 @@
   }
 }
 
-.floatingButton {
-  background-color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
-  border-color: transparent;
-
-  @mixin hover {
-    background-color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-gray-2));
-    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
+@media (min-width: $mantine-breakpoint-md) {
+  .caseStudyHeader {
+    padding: 48px;
   }
 }

@@ -43,7 +43,6 @@ export default function MoreBanner({ visibleStudyHrefs = [] }: MoreBannerProps) 
         </Group>
         <Button
           onClick={() => router.push('/case-studies')}
-          size="md"
           className={classes.bannerButton}
           variant="outline"
         >
